@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637661997894910847
-    m_Hash: 2418204640
+      ticks: 637662007993294200
+    m_Hash: 827132331
   m_LockFileStatus:
     m_FilePath: C:/Users/XJeff/Documents/GitHub/Hero-Game/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637661997894980878
-    m_Hash: 3514516736
+      ticks: 637662007993294200
+    m_Hash: 4284066620
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
