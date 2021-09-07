@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class PlayerHealthBarUI : MonoBehaviour
     //private variables
     private float shakeAmount = 1000f;
     private float waitTime = 0f;
-    private float _decreaseRate = 0.01f;
+    private float _decreaseRate = 50f;
     private float _decreaseMultipler = 1f;
     private float _increaseRate = 0.5f;
     private List<float> _healAmounts = new List<float>();
@@ -22,6 +23,9 @@ public class PlayerHealthBarUI : MonoBehaviour
     
     private RectTransform _rt;
     private Vector2 _originalPos;
+
+    private DateTime _before;
+    private DateTime _after;
     
     void Start()
     {
@@ -37,7 +41,7 @@ public class PlayerHealthBarUI : MonoBehaviour
         // This will create the shaking motion the health bar will perform when damaged
         if (_shaking)
         {
-            Vector2 newPos = _originalPos + Random.insideUnitCircle * (Time.deltaTime * shakeAmount);
+            Vector2 newPos = _originalPos + UnityEngine.Random.insideUnitCircle * shakeAmount;
             _rt.anchoredPosition = newPos;
         }
         else
@@ -49,10 +53,10 @@ public class PlayerHealthBarUI : MonoBehaviour
         // This will have the damage slider (the yellow one) slowly decrease to the point to where our current health is
         if (_damaged)
         {
-            damageSlider.value -= _decreaseRate * _decreaseMultipler;
+            damageSlider.value -= (_decreaseRate * Time.deltaTime) * _decreaseMultipler;
 
             // The damage slider will decrease at an increasing rate, but only to the limit of 100x the original speed
-            _decreaseMultipler += .25f;
+            _decreaseMultipler += 10f * Time.deltaTime;
             if (_decreaseMultipler > 100)
                 _decreaseMultipler = 100;
 
@@ -62,6 +66,9 @@ public class PlayerHealthBarUI : MonoBehaviour
                 damageSlider.value = healthSlider.value;
                 _decreaseMultipler = 1;
                 _damaged = false;
+                _after = DateTime.Now;
+                TimeSpan duration = _after.Subtract(_before);
+                Debug.Log(duration);
             }
         }
 
@@ -117,7 +124,7 @@ public class PlayerHealthBarUI : MonoBehaviour
     // Decrease the current health by a given amount
     public void DecreaseHealth(int amount)
     {
-        shakeAmount = Mathf.Log((float)amount) * 500f;
+        shakeAmount = Mathf.Log((float)amount) * 2.5f;
         waitTime = Mathf.Log((float)amount) / 20f;
         
         DamageShake(); 
@@ -147,6 +154,7 @@ public class PlayerHealthBarUI : MonoBehaviour
         {
             _shaking = true;
             _damaged = true;
+            _before = DateTime.Now;
             yield return new WaitForSeconds(waitTime);
             _shaking = false;
         }
