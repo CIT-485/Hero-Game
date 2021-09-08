@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Audio/Gamal this is your scene.unity
+- path: Assets/UiAssets/DemoHealthBar.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
