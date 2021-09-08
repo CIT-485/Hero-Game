@@ -38,6 +38,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Back Splash
+    uniqueID: 3870487671
+    locked: 0
+  - name: BG3
+    uniqueID: 1661542619
+    locked: 0
+  - name: BG2
+    uniqueID: 649804377
+    locked: 0
+  - name: BG1
+    uniqueID: 2641542825
+    locked: 0
+  - name: ground BG
+    uniqueID: 1917317635
+    locked: 0
+  - name: plants and bugs
+    uniqueID: 3054517971
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
