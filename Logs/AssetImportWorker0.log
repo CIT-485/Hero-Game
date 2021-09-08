@@ -15,11 +15,11 @@ C:/Users/XJeff/Documents/GitHub/Hero-Game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-14156
+12175
 Successfully changed project path to: C:/Users/XJeff/Documents/GitHub/Hero-Game
 C:/Users/XJeff/Documents/GitHub/Hero-Game
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 69.94 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 58.86 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.16f1 (049d6eca3c44)
 [Subsystems] Discovering subsystems at path Z:/Unity/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
@@ -36,72 +36,72 @@ Initialize mono
 Mono path[0] = 'Z:/Unity/2020.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'Z:/Unity/2020.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'Z:/Unity/2020.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56844
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56308
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: Z:/Unity/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000893 seconds.
+Registered in 0.001002 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 62.93 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 60.34 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.800 seconds
+- Completed reload, in  0.792 seconds
 Domain Reload Profiling:
-	ReloadAssembly (800ms)
-		BeginReloadAssembly (44ms)
+	ReloadAssembly (792ms)
+		BeginReloadAssembly (42ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (396ms)
-			LoadAssemblies (43ms)
+		EndReloadAssembly (389ms)
+			LoadAssemblies (41ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (128ms)
+			SetupTypeCache (127ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (29ms)
-			SetupLoadedEditorAssemblies (178ms)
+			SetupLoadedEditorAssemblies (173ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (63ms)
-				BeforeProcessingInitializeOnLoad (16ms)
-				ProcessInitializeOnLoadAttributes (71ms)
-				ProcessInitializeOnLoadMethodAttributes (24ms)
+				RefreshPlugins (60ms)
+				BeforeProcessingInitializeOnLoad (13ms)
+				ProcessInitializeOnLoadAttributes (68ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003972 seconds.
+Registered in 0.005779 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 61.75 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 64.93 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.143 seconds
+- Completed reload, in  1.166 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1144ms)
-		BeginReloadAssembly (127ms)
+	ReloadAssembly (1167ms)
+		BeginReloadAssembly (135ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (965ms)
-			LoadAssemblies (79ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (977ms)
+			LoadAssemblies (81ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (295ms)
+			SetupTypeCache (302ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (52ms)
-			SetupLoadedEditorAssemblies (420ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (410ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (62ms)
-				BeforeProcessingInitializeOnLoad (89ms)
-				ProcessInitializeOnLoadAttributes (249ms)
+				RefreshPlugins (65ms)
+				BeforeProcessingInitializeOnLoad (88ms)
+				ProcessInitializeOnLoadAttributes (237ms)
 				ProcessInitializeOnLoadMethodAttributes (14ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
@@ -111,15 +111,15 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3240 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 140.8 MB.
-System memory in use after: 141.0 MB.
+Unloading 3287 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 144.0 MB.
+System memory in use after: 144.2 MB.
 
-Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 3677.
-Total: 4.021300 ms (FindLiveObjects: 0.483200 ms CreateObjectMapping: 0.228400 ms MarkObjects: 3.225500 ms  DeleteObjects: 0.081800 ms)
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 3724.
+Total: 3.959300 ms (FindLiveObjects: 0.413100 ms CreateObjectMapping: 0.146900 ms MarkObjects: 3.318400 ms  DeleteObjects: 0.079200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -134,17 +134,65 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/2d Render.asset
-  artifactKey: Guid(61d478d7281ae3f438a2cc78c8c64cd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2d Render.asset using Guid(61d478d7281ae3f438a2cc78c8c64cd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03740da5320de369650520a34162098f') in 0.033175 seconds 
-  Import took 0.038744 seconds .
+  path: Assets/Audio/Environment/The fantasy music collection STARTER
+  artifactKey: Guid(48f0e5f75bd8cd14fb738ed0fbe210ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Environment/The fantasy music collection STARTER using Guid(48f0e5f75bd8cd14fb738ed0fbe210ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5225d4d53e2ea3aafe6f5c82784dbb08') in 0.010686 seconds 
+  Import took 0.016049 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000250 seconds.
-  path: Assets/URPAsset.asset
-  artifactKey: Guid(5d75960082b209f49ac8c921d6dd291b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/URPAsset.asset using Guid(5d75960082b209f49ac8c921d6dd291b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8859fa0c008da7b8c4ff8357a8b7d360') in 0.010234 seconds 
-  Import took 0.015110 seconds .
+  Time since last request: 0.000257 seconds.
+  path: Assets/Audio/Environment
+  artifactKey: Guid(5e0564b3f7082294dbd6f1b5df91bf7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Environment using Guid(5e0564b3f7082294dbd6f1b5df91bf7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dea9a305e476b128890861a88eb8336e') in 0.008244 seconds 
+  Import took 0.013397 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.490409 seconds.
+  path: Assets/UIAssets/HealthBar.png
+  artifactKey: Guid(792ddd64570decd4dbc2e8e7a420c93f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UIAssets/HealthBar.png using Guid(792ddd64570decd4dbc2e8e7a420c93f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ab12575a29939271a5552e82a3be8f5') in 0.140698 seconds 
+  Import took 0.145453 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/UIAssets/HealthBar.prefab
+  artifactKey: Guid(ee76bfe9978c78a4f8d271af24054e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UIAssets/HealthBar.prefab using Guid(ee76bfe9978c78a4f8d271af24054e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '861cfea20e5fb0d1734e647c99c72a2b') in 0.021168 seconds 
+  Import took 0.025900 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/UIAssets/HealthBarEnding.png
+  artifactKey: Guid(e17d6399ef936da45a980734faf365e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UIAssets/HealthBarEnding.png using Guid(e17d6399ef936da45a980734faf365e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c0553070362f7a7caa3e1f3109bf4fd') in 0.017832 seconds 
+  Import took 0.023043 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/UIAssets/HealthBarBG.png
+  artifactKey: Guid(d20ed60555b14bf488809b83547f7717) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UIAssets/HealthBarBG.png using Guid(d20ed60555b14bf488809b83547f7717) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e0bd6de8dce589d45d1f4af5d1ab79f') in 0.020651 seconds 
+  Import took 0.025766 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.659253 seconds.
+  path: Assets/UIAssets/DemoHealthBar.unity
+  artifactKey: Guid(555238d2d359ebd4faaba34275fe60e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UIAssets/DemoHealthBar.unity using Guid(555238d2d359ebd4faaba34275fe60e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5735c23e801407fcf508d05d439c7723') in 0.006571 seconds 
+  Import took 0.011358 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.227727 seconds.
+  path: Assets/Audio/Gamal this is your scene.unity
+  artifactKey: Guid(7c6a1faeef462d44db4683a842099a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Gamal this is your scene.unity using Guid(7c6a1faeef462d44db4683a842099a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e15ea33621cc819aedfff1150374474a') in 0.007377 seconds 
+  Import took 0.013007 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
