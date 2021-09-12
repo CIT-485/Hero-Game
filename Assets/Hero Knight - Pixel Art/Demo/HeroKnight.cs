@@ -12,8 +12,6 @@ public class HeroKnight : MonoBehaviour {
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private Sensor_HeroKnight   m_groundSensor;
-    private AudioSource         m_audioSource;
-    private AudioManager_PrototypeHero m_audioManager;
     private Sensor_HeroKnight   m_wallSensorR1;
     private Sensor_HeroKnight   m_wallSensorR2;
     private Sensor_HeroKnight   m_wallSensorL1;
@@ -34,8 +32,6 @@ public class HeroKnight : MonoBehaviour {
     {
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
-        m_audioSource = GetComponent<AudioSource>();
-        m_audioManager = AudioManager_PrototypeHero.instance;
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_HeroKnight>();
         m_wallSensorR1 = transform.Find("WallSensor_R1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
@@ -178,26 +174,6 @@ public class HeroKnight : MonoBehaviour {
     }
 
     // Animation Events
-    // These functions are called inside the animation files
-    void AE_runStop()
-    {
-        m_audioManager.PlaySound("RunStop");
-    }
-
-    void AE_footstep()
-    {
-        m_audioManager.PlaySound("Footstep");
-    }
-
-    void AE_Jump()
-    {
-        m_audioManager.PlaySound("Jump");
-    }
-
-    void AE_Landing()
-    {
-        m_audioManager.PlaySound("Landing");
-    }
     // Called in slide animation.
     void AE_SlideDust()
     {
