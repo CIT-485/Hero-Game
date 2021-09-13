@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Audio_HeroKnight : MonoBehaviour
 {
+	// HeroKnight directional movement variable
 	float dirX;
 	[SerializeField]
-	float moveSpeed = 5f;
+	// Movement speed variable
+	float moveSpeed = 4.0f;
 	Rigidbody2D rb;
 	AudioSource audioSrc;
 	bool isMoving = false;
@@ -21,13 +23,15 @@ public class Audio_HeroKnight : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		// dirX is set to left or right depending on if the left or right arrow is pressed on the keyboard mutiplied by movement speed
 		dirX = Input.GetAxis("Horizontal") * moveSpeed;
 
+		// HeroKnight is moving 
 		if (rb.velocity.x != 0)
 			isMoving = true;
 		else
 			isMoving = false;
-
+		// Play audio sound if HeroKnight is moving
 		if (isMoving)
 		{
 			if (!audioSrc.isPlaying)

@@ -15,11 +15,11 @@ C:/Users/wolga/source/repos/MG5896TG/CIS485-01/Hero-Game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-62929
+54794
 Successfully changed project path to: C:/Users/wolga/source/repos/MG5896TG/CIS485-01/Hero-Game
 C:/Users/wolga/source/repos/MG5896TG/CIS485-01/Hero-Game
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 60.46 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 60.64 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.16f1 (049d6eca3c44)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
@@ -36,38 +36,38 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56404
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56336
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001897 seconds.
+Registered in 0.001900 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 56.60 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 61.46 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.947 seconds
+- Completed reload, in  1.008 seconds
 Domain Reload Profiling:
-	ReloadAssembly (947ms)
-		BeginReloadAssembly (45ms)
+	ReloadAssembly (1008ms)
+		BeginReloadAssembly (56ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (380ms)
-			LoadAssemblies (43ms)
+		EndReloadAssembly (400ms)
+			LoadAssemblies (54ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (127ms)
+			SetupTypeCache (137ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (168ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (174ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (57ms)
-				BeforeProcessingInitializeOnLoad (14ms)
+				RefreshPlugins (62ms)
+				BeforeProcessingInitializeOnLoad (15ms)
 				ProcessInitializeOnLoadAttributes (69ms)
 				ProcessInitializeOnLoadMethodAttributes (24ms)
 				AfterProcessingInitializeOnLoad (0ms)
@@ -76,35 +76,35 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003982 seconds.
+Registered in 0.003850 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 58.73 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 60.20 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.120 seconds
+- Completed reload, in  1.136 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1120ms)
-		BeginReloadAssembly (124ms)
+	ReloadAssembly (1137ms)
+		BeginReloadAssembly (126ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (15ms)
-		EndReloadAssembly (942ms)
-			LoadAssemblies (80ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (955ms)
+			LoadAssemblies (81ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (287ms)
+			SetupTypeCache (289ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (413ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (419ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (59ms)
-				BeforeProcessingInitializeOnLoad (86ms)
-				ProcessInitializeOnLoadAttributes (247ms)
+				RefreshPlugins (60ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (248ms)
 				ProcessInitializeOnLoadMethodAttributes (12ms)
 				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
@@ -115,14 +115,14 @@ Platform modules already initialized, skipping
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3289 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 144.2 MB.
-System memory in use after: 144.4 MB.
+System memory in use before: 144.1 MB.
+System memory in use after: 144.3 MB.
 
 Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 3726.
-Total: 3.245400 ms (FindLiveObjects: 0.316500 ms CreateObjectMapping: 0.163100 ms MarkObjects: 2.647400 ms  DeleteObjects: 0.117600 ms)
+Total: 3.425800 ms (FindLiveObjects: 0.274500 ms CreateObjectMapping: 0.192000 ms MarkObjects: 2.889600 ms  DeleteObjects: 0.068700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -136,9 +136,129 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets
-  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42d402b061de3733987d63b9cc3b64de') in 0.007651 seconds 
-  Import took 0.011754 seconds .
+  path: Assets/Hero Knight - Pixel Art/Demo/HeroKnight_Green.prefab
+  artifactKey: Guid(2f7eeaf41636b0f4f8ca52ea6858fd36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hero Knight - Pixel Art/Demo/HeroKnight_Green.prefab using Guid(2f7eeaf41636b0f4f8ca52ea6858fd36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ede2826f0f7404620ee09a5ceb60a80d') in 0.199934 seconds 
+  Import took 0.204815 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Classic Footstep SFX/Sliding_on_ground3.wav
+  artifactKey: Guid(f76b4e8c8e400f34dba1aeb2aaaddd98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Classic Footstep SFX/Sliding_on_ground3.wav using Guid(f76b4e8c8e400f34dba1aeb2aaaddd98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e666e040a57753d93b82237aead846c') in 0.031686 seconds 
+  Import took 0.035914 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000116 seconds.
+  path: Assets/Classic Footstep SFX/Sliding_on_ground0.wav
+  artifactKey: Guid(574d70118068c704e9d2654d8e5b386f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Classic Footstep SFX/Sliding_on_ground0.wav using Guid(574d70118068c704e9d2654d8e5b386f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59da2e499680eb6c1141e75277c5665a') in 0.011427 seconds 
+  Import took 0.015681 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000117 seconds.
+  path: Assets/Hero Knight - Pixel Art/Demo/HeroKnight.prefab
+  artifactKey: Guid(a4b4a6d32bcb19248a754d6602ffc7e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hero Knight - Pixel Art/Demo/HeroKnight.prefab using Guid(a4b4a6d32bcb19248a754d6602ffc7e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1a9ae2d27f500c7279dd46a05d77c7b') in 0.021162 seconds 
+  Import took 0.026024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000128 seconds.
+  path: Assets/Classic Footstep SFX/Sliding_on_ground0.wav
+  artifactKey: Guid(574d70118068c704e9d2654d8e5b386f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Classic Footstep SFX/Sliding_on_ground0.wav using Guid(574d70118068c704e9d2654d8e5b386f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59da2e499680eb6c1141e75277c5665a') in 0.021727 seconds 
+  Import took 0.025992 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000147 seconds.
+  path: Assets/Hero Knight - Pixel Art/Demo/HeroKnight_Yellow.prefab
+  artifactKey: Guid(3e14bf7b39e2c2940a826eb72e6b8043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hero Knight - Pixel Art/Demo/HeroKnight_Yellow.prefab using Guid(3e14bf7b39e2c2940a826eb72e6b8043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c7cf8baed53e201028ec963efaae0f0') in 0.024500 seconds 
+  Import took 0.028996 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000130 seconds.
+  path: Assets/Hero Knight - Pixel Art/Demo/SlideDust.prefab
+  artifactKey: Guid(8b8c8cc6774fb074cb9139cc631b108e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hero Knight - Pixel Art/Demo/SlideDust.prefab using Guid(8b8c8cc6774fb074cb9139cc631b108e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3bde493e43d4612591fb31fbb31b421') in 0.023984 seconds 
+  Import took 0.028463 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Classic Footstep SFX/Sliding_on_ground4.wav
+  artifactKey: Guid(dc12b3fea9c332f4a88d3b03843cf9c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Classic Footstep SFX/Sliding_on_ground4.wav using Guid(dc12b3fea9c332f4a88d3b03843cf9c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cc1bbb21a73a72e0fec75907bf425e8') in 0.014411 seconds 
+  Import took 0.018608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/Classic Footstep SFX/Sliding_on_ground2.wav
+  artifactKey: Guid(4a2772599b7a7d64b98ba0c3ffbc6c19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Classic Footstep SFX/Sliding_on_ground2.wav using Guid(4a2772599b7a7d64b98ba0c3ffbc6c19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce427dcb99a1587e75d90ff08abdb275') in 0.020930 seconds 
+  Import took 0.025131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/Classic Footstep SFX/Sliding_on_ground5.wav
+  artifactKey: Guid(e353574aee6cacc4badcd5ac34123e20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Classic Footstep SFX/Sliding_on_ground5.wav using Guid(e353574aee6cacc4badcd5ac34123e20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3586a4c17ba23bbb2e51c0f876102b07') in 0.009939 seconds 
+  Import took 0.014241 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000131 seconds.
+  path: Assets/Hero Knight - Pixel Art/Demo/BlockFlash.prefab
+  artifactKey: Guid(803b96fa8ebd5a749bdf32bd0e553139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hero Knight - Pixel Art/Demo/BlockFlash.prefab using Guid(803b96fa8ebd5a749bdf32bd0e553139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3caf5d8d8db34be32372ff6d9573ccb8') in 0.011044 seconds 
+  Import took 0.015522 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000125 seconds.
+  path: Assets/Classic Footstep SFX/Sliding_on_ground1.wav
+  artifactKey: Guid(6233c85216cd1854e8d87991c7568256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Classic Footstep SFX/Sliding_on_ground1.wav using Guid(6233c85216cd1854e8d87991c7568256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1874edb7ca0bc5168d880555782b0806') in 0.011344 seconds 
+  Import took 0.015524 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.279016 seconds.
+  path: Assets/Classic Footstep SFX
+  artifactKey: Guid(69edacf9ab86d114eac619ecbc5b7657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Classic Footstep SFX using Guid(69edacf9ab86d114eac619ecbc5b7657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40860011a9f3b60dfadc44500ec882ad') in 0.004816 seconds 
+  Import took 0.009257 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005075 seconds.
+  path: Assets/Classic Footstep SFX
+  artifactKey: Guid(69edacf9ab86d114eac619ecbc5b7657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Classic Footstep SFX using Guid(69edacf9ab86d114eac619ecbc5b7657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40860011a9f3b60dfadc44500ec882ad') in 0.001814 seconds 
+  Import took 0.006195 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.327378 seconds.
+  path: Assets/2d Render.asset
+  artifactKey: Guid(61d478d7281ae3f438a2cc78c8c64cd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2d Render.asset using Guid(61d478d7281ae3f438a2cc78c8c64cd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03740da5320de369650520a34162098f') in 0.007455 seconds 
+  Import took 0.012241 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000126 seconds.
+  path: Assets/URPAsset.asset
+  artifactKey: Guid(5d75960082b209f49ac8c921d6dd291b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/URPAsset.asset using Guid(5d75960082b209f49ac8c921d6dd291b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8859fa0c008da7b8c4ff8357a8b7d360') in 0.006054 seconds 
+  Import took 0.010289 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
