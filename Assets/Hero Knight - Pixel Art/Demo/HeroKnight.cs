@@ -8,9 +8,6 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] float      m_rollForce = 6.0f;
     [SerializeField] bool       m_noBlood = false;
     [SerializeField] GameObject m_slideDust;
-    [SerializeField] GameObject m_attack1Hitbox;
-    [SerializeField] GameObject m_attack2Hitbox;
-    [SerializeField] GameObject m_attack3Hitbox;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -28,9 +25,6 @@ public class HeroKnight : MonoBehaviour {
     private float               m_delayToIdle = 0.0f;
     private float               m_rollDuration = 8.0f / 14.0f;
     private float               m_rollCurrentTime;
-    private PlayerHealthBar     m_healthBar;
-    private bool                m_damaged = false;
-
 
 
     // Use this for initialization
@@ -43,7 +37,6 @@ public class HeroKnight : MonoBehaviour {
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
-        m_healthBar = GetComponent<PlayerHealthBar>();
     }
 
     // Update is called once per frame
@@ -91,7 +84,7 @@ public class HeroKnight : MonoBehaviour {
         }
 
         // Move
-        if (!m_rolling && !m_damaged)
+        if (!m_rolling )
             m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y);
 
         //Set AirSpeed in animator
@@ -102,29 +95,20 @@ public class HeroKnight : MonoBehaviour {
         m_isWallSliding = (m_wallSensorR1.State() && m_wallSensorR2.State()) || (m_wallSensorL1.State() && m_wallSensorL2.State());
         m_animator.SetBool("WallSlide", m_isWallSliding);
 
-        if (m_isWallSliding || m_damaged)
-        {
-            DeactivateHitboxes();
-        }
-
         //Death
-        if (Input.GetKeyDown("e") && !m_rolling && !m_damaged)
+        if (Input.GetKeyDown("e") && !m_rolling)
         {
             m_animator.SetBool("noBlood", m_noBlood);
             m_animator.SetTrigger("Death");
         }
             
         //Hurt
-        else if (Input.GetKeyDown("q") && !m_rolling && !m_damaged)
-        {
-            DeactivateHitboxes();
+        else if (Input.GetKeyDown("q") && !m_rolling)
             m_animator.SetTrigger("Hurt");
-        }
 
         //Attack
-        else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")) && m_timeSinceAttack > 0.25f && !m_rolling && !m_damaged)
+        else if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
         {
-            DeactivateHitboxes();
             m_currentAttack++;
 
             // Loop back to one after third attack
@@ -138,49 +122,12 @@ public class HeroKnight : MonoBehaviour {
             // Call one of three attack animations "Attack1", "Attack2", "Attack3"
             m_animator.SetTrigger("Attack" + m_currentAttack);
 
-            if (m_currentAttack == 1)
-            {
-                m_attack1Hitbox.SetActive(true);
-                if (m_facingDirection == 1 && m_attack1Hitbox.transform.localPosition.x < 0)
-                {
-                    m_attack1Hitbox.transform.localPosition = new Vector3(-m_attack1Hitbox.transform.localPosition.x, m_attack1Hitbox.transform.localPosition.y);
-                }
-                else if (m_facingDirection == -1 && m_attack1Hitbox.transform.localPosition.x > 0)
-                {
-                    m_attack1Hitbox.transform.localPosition = new Vector3(-m_attack1Hitbox.transform.localPosition.x, m_attack1Hitbox.transform.localPosition.y);
-                }
-            }
-            else if (m_currentAttack == 2)
-            {
-                m_attack2Hitbox.SetActive(true);
-                if (m_facingDirection == 1 && m_attack2Hitbox.transform.localPosition.x < 0)
-                {
-                    m_attack2Hitbox.transform.localPosition = new Vector3(-m_attack2Hitbox.transform.localPosition.x, m_attack2Hitbox.transform.localPosition.y);
-                }
-                else if (m_facingDirection == -1 && m_attack2Hitbox.transform.localPosition.x > 0)
-                {
-                    m_attack2Hitbox.transform.localPosition = new Vector3(-m_attack2Hitbox.transform.localPosition.x, m_attack2Hitbox.transform.localPosition.y);
-                }
-            }
-            else
-            {
-                m_attack3Hitbox.SetActive(true);
-                if (m_facingDirection == 1 && m_attack3Hitbox.transform.localPosition.x < 0)
-                {
-                    m_attack3Hitbox.transform.localPosition = new Vector3(-m_attack3Hitbox.transform.localPosition.x, m_attack3Hitbox.transform.localPosition.y);
-                }
-                else if (m_facingDirection == -1 && m_attack3Hitbox.transform.localPosition.x > 0)
-                {
-                    m_attack3Hitbox.transform.localPosition = new Vector3(-m_attack3Hitbox.transform.localPosition.x, m_attack3Hitbox.transform.localPosition.y);
-                }
-            }
-
             // Reset timer
             m_timeSinceAttack = 0.0f;
         }
 
         // Block
-        else if (Input.GetMouseButtonDown(1) && !m_rolling && !m_damaged)
+        else if (Input.GetMouseButtonDown(1) && !m_rolling)
         {
             m_animator.SetTrigger("Block");
             m_animator.SetBool("IdleBlock", true);
@@ -190,28 +137,26 @@ public class HeroKnight : MonoBehaviour {
             m_animator.SetBool("IdleBlock", false);
 
         // Roll
-        else if (Input.GetKeyDown("left shift") && !m_rolling && !m_isWallSliding && !m_damaged)
+        else if (Input.GetKeyDown("left shift") && !m_rolling && !m_isWallSliding)
         {
             m_rolling = true;
             m_animator.SetTrigger("Roll");
             m_body2d.velocity = new Vector2(m_facingDirection * m_rollForce, m_body2d.velocity.y);
-            DeactivateHitboxes();
         }
             
 
         //Jump
-        else if (Input.GetKeyDown("space") && m_grounded && !m_rolling && !m_damaged)
+        else if (Input.GetKeyDown("space") && m_grounded && !m_rolling)
         {
             m_animator.SetTrigger("Jump");
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
             m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
             m_groundSensor.Disable(0.2f);
-            DeactivateHitboxes();
         }
 
         //Run
-        else if (Mathf.Abs(inputX) > Mathf.Epsilon && !m_damaged)
+        else if (Mathf.Abs(inputX) > Mathf.Epsilon)
         {
             // Reset timer
             m_delayToIdle = 0.05f;
@@ -226,35 +171,6 @@ public class HeroKnight : MonoBehaviour {
                 if(m_delayToIdle < 0)
                     m_animator.SetInteger("AnimState", 0);
         }
-    }
-
-    void DeactivateHitboxes()
-    {
-        m_attack1Hitbox.SetActive(false);
-        m_attack2Hitbox.SetActive(false);
-        m_attack3Hitbox.SetActive(false);
-    }
-
-    void Attack1_End()
-    {
-        m_attack1Hitbox.SetActive(false);
-    }
-    void Attack2_End()
-    {
-        m_attack2Hitbox.SetActive(false);
-    }
-    void Attack3_End()
-    {
-        m_attack3Hitbox.SetActive(false);
-    }
-    void Damaged()
-    {
-        m_body2d.velocity = Vector2.zero;
-        m_damaged = true;
-    }
-    void Damaged_End()
-    {
-        m_damaged = false;
     }
 
     // Animation Events
@@ -274,20 +190,6 @@ public class HeroKnight : MonoBehaviour {
             GameObject dust = Instantiate(m_slideDust, spawnPosition, gameObject.transform.localRotation) as GameObject;
             // Turn arrow in correct direction
             dust.transform.localScale = new Vector3(m_facingDirection, 1, 1);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "EnemyHitbox")
-        {
-            DeactivateHitboxes();
-            m_animator.SetTrigger("Hurt");
-            m_healthBar.TakeDamage(collision.transform.parent.GetComponent<Damages>().activeDamage);
-            if (collision.transform.parent.position.x < transform.position.x)
-                m_body2d.AddForce(new Vector2(75, 30));
-            else
-                m_body2d.AddForce(new Vector2(-75, 30));
         }
     }
 }

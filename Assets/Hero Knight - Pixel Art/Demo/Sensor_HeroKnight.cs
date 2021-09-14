@@ -21,14 +21,12 @@ public class Sensor_HeroKnight : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag != "Enemy")
         m_ColCount++;
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag != "Enemy")
-            m_ColCount--;
+        m_ColCount--;
     }
 
     void Update()

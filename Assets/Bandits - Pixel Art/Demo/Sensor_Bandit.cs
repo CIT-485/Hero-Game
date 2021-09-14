@@ -20,7 +20,7 @@ public class Sensor_Bandit : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other)
-    {   
+    {
         m_ColCount++;
     }
 

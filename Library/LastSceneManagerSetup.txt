@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Hero Knight - Pixel Art/Demo/Demo.unity
+- path: Assets/Scenes/ClassDemo.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

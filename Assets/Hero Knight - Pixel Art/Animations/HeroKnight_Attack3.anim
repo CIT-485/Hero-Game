@@ -88,7 +88,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.21428572
-    functionName: Attack3_End
+    functionName: AE_Attack3_End
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
