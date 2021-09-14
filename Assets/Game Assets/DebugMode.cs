@@ -11,12 +11,17 @@ public class DebugMode : MonoBehaviour
         {
             GameObject[] playerHitboxes = GameObject.FindGameObjectsWithTag("PlayerHitbox");
             GameObject[] enemyHitboxes = GameObject.FindGameObjectsWithTag("EnemyHitbox");
+            GameObject[] draws = GameObject.FindGameObjectsWithTag("Draw");
 
             foreach (GameObject g in playerHitboxes)
             {
                 g.GetComponent<SpriteRenderer>().enabled = debugMode;
             }
             foreach (GameObject g in enemyHitboxes)
+            {
+                g.GetComponent<SpriteRenderer>().enabled = debugMode;
+            }
+            foreach (GameObject g in draws)
             {
                 g.GetComponent<SpriteRenderer>().enabled = debugMode;
             }

@@ -9,6 +9,7 @@ TagManager:
   - PlayerHitbox
   - Enemy
   - Platform
+  - Draw
   layers:
   - Default
   - TransparentFX
