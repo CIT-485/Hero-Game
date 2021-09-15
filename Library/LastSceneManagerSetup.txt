@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/ClassDemo.unity
+- path: Assets/Scenes/JordanClassDemo.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
