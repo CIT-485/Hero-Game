@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroundSensor : MonoBehaviour
 {
-    public GameObject player;
+    GameObject player;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -15,13 +15,13 @@ public class GroundSensor : MonoBehaviour
         {
             if (col.transform.position.x > player.transform.position.x)
             {
-                player.transform.position += new Vector3(-0.1f, -0.05f);
-                col.transform.position += new Vector3(0.01f, 0);
+                player.transform.position += new Vector3(-0.1f, -0.1f);
+                col.transform.position += new Vector3(0.1f, 0);
             }
             if (col.transform.position.x < player.transform.position.x)
             {
-                player.transform.position += new Vector3(0.1f, -0.05f);
-                col.transform.position += new Vector3(-0.01f, 0);
+                player.transform.position += new Vector3(0.1f, -0.1f);
+                col.transform.position += new Vector3(-0.1f, 0);
             }
         }
     }

@@ -10,6 +10,7 @@ public class PlayerCombat : MonoBehaviour {
     [HideInInspector] public Animator           animator;
     [HideInInspector] public Rigidbody2D        body2d;
     [HideInInspector] public HealthBar          healthBar;
+    [HideInInspector] public Collider2D         hurtbox;
 
     private int                                 m_currentAttack = 0;
     private float                               m_timeSinceAttack = 0.0f;
@@ -41,6 +42,8 @@ public class PlayerCombat : MonoBehaviour {
         m_attack3Hitbox.transform.localPosition = new Vector2(0.65f, 0.85f);
 
         DeactivateHitboxes();
+
+        hurtbox = transform.Find("Player_Hurtbox").GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -171,7 +174,7 @@ public class PlayerCombat : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "EnemyHitbox" && !m_damaged && !m_movement.isInvul)
+        if (collision.tag == "EnemyHitbox" && !m_damaged)
         {
             DeactivateHitboxes();
             body2d.velocity = Vector2.zero;
@@ -179,10 +182,8 @@ public class PlayerCombat : MonoBehaviour {
             m_movement.rolling = false;
             m_movement.isWallSliding = false;
             m_damaged = true;
-            
-                animator.SetTrigger("Hurt");
-                healthBar.TakeDamage(collision.transform.parent.GetComponent<Damages>().activeDamage);
-
+            animator.SetTrigger("Hurt");
+            healthBar.TakeDamage(collision.transform.parent.GetComponent<Damages>().activeDamage);
             if (collision.transform.parent.position.x < transform.position.x)
                 body2d.AddForce(new Vector2(75, 30));
             else

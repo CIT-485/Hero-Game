@@ -7,19 +7,16 @@ public class PlayerMovement : MonoBehaviour
     public float                            speed = 4.0f;
     public float                            jumpForce = 7.5f;
     public float                            rollForce = 6.0f;
-    public GameObject                       hurtbox;
-    public GameObject                       rollingHurtbox;
-    public GameObject                       groundSensor;
-
+    
     [SerializeField] GameObject             m_slideDust;
 
     [HideInInspector] public bool           isWallSliding = false;
     public bool           grounded = false;
     [HideInInspector] public bool           rolling = false;
-    [HideInInspector] public bool           actionAllowed = true;
+    public bool           actionAllowed = true;
     [HideInInspector] public int            facingDirection = 1;
     [HideInInspector] public float          inputX = 0;
-    [HideInInspector] public bool           isInvul = false;
+    [HideInInspector] public Collider2D     hurtbox;
 
     private Animator                        m_animator;
     private Rigidbody2D                     m_body2d;
@@ -30,10 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private float                           m_delayToIdle = 0.0f;
     private float                           m_rollDuration = 8.0f / 14.0f;
     private float                           m_rollCurrentTime = 0;
-    private float                           m_invulDuration = 30.0f / 60.0f;
-    private float                           m_invulCurrentTime = 0;
-    private float                           m_invulStartUpDuration = 8.0f / 60.0f;
-    private float                           m_invulStartUpTime = 0;
+    
 
     // Use this for initialization
     void Start()
@@ -44,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<CollisionSensor>();
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<CollisionSensor>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<CollisionSensor>();
+        hurtbox = transform.Find("Player_Hurtbox").GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -53,24 +48,6 @@ public class PlayerMovement : MonoBehaviour
         if (rolling)
         {
             m_rollCurrentTime += Time.deltaTime;
-            if (!isInvul)
-            {
-                m_invulStartUpTime += Time.deltaTime;
-            }
-        }
-
-        if (m_invulStartUpTime > m_invulStartUpDuration)
-        {
-            isInvul = true;
-            m_invulStartUpTime = 0;
-        }
-
-        if (isInvul)
-        {
-            hurtbox.SetActive(false);
-            groundSensor.SetActive(false);
-            rollingHurtbox.SetActive(true);
-            m_invulCurrentTime += Time.deltaTime;
         }
 
         // Disable rolling if timer extends duration
@@ -78,15 +55,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rolling = false;
             m_rollCurrentTime = 0;
-        }
-
-        if (m_invulCurrentTime > m_invulDuration)
-        {
-            hurtbox.SetActive(true);
-            groundSensor.SetActive(true);
-            rollingHurtbox.SetActive(false);
-            isInvul = false;
-            m_invulCurrentTime = 0;
         }
 
         // if action is allowed
@@ -113,9 +81,7 @@ public class PlayerMovement : MonoBehaviour
             // Move
             if (!rolling)
                 m_body2d.velocity = new Vector2(inputX * speed, m_body2d.velocity.y);
-            else
-                m_body2d.velocity = new Vector2(inputX * speed * 0.8f, m_body2d.velocity.y);
-            
+
             //Set AirSpeed in animator
             m_animator.SetFloat("AirSpeedY", m_body2d.velocity.y);
 
@@ -125,18 +91,18 @@ public class PlayerMovement : MonoBehaviour
             m_animator.SetBool("WallSlide", isWallSliding);
 
             // Roll
-            if (Input.GetKeyDown("v") && grounded && !rolling)
+            if (Input.GetKeyDown("left shift") && grounded && !rolling)
             {
                 rolling = true;
                 m_animator.SetTrigger("Roll");
-                //m_body2d.velocity = new Vector2(facingDirection * rollForce, m_body2d.velocity.y);
+                m_body2d.velocity = new Vector2(facingDirection * rollForce, m_body2d.velocity.y);
             }
 
             //Jump
             if (Input.GetKeyDown("space") && grounded && !rolling)
             {
-                grounded = false;
                 m_animator.SetTrigger("Jump");
+                grounded = false;
                 m_animator.SetBool("Grounded", grounded);
                 m_body2d.velocity = new Vector2(m_body2d.velocity.x, jumpForce);
             }

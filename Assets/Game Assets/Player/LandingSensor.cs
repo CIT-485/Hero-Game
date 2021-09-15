@@ -41,16 +41,16 @@ public class LandingSensor : MonoBehaviour
             transform.position = new Vector2(player.transform.position.x, highest.y);
         }
     }
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
-        if (col == player.GetComponent<PlayerMovement>().hurtbox.GetComponent<Collider2D>())
+        if (col == player.GetComponent<PlayerMovement>().hurtbox)
         {
             player.GetComponent<PlayerMovement>().grounded = true;
         }
     }
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col == player.GetComponent<PlayerMovement>().hurtbox.GetComponent<Collider2D>())
+        if (col == player.GetComponent<PlayerMovement>().hurtbox)
         {
             player.GetComponent<PlayerMovement>().grounded = false;
         }
