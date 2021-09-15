@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerHealthBar
+  - EnemyHitbox
+  - PlayerHitbox
+  - Enemy
+  - Platform
+  - Draw
   layers:
   - Default
   - TransparentFX
