@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BanditTest : MonoBehaviour {
 
-    [SerializeField] float      m_speed = 4.0f;
-    [SerializeField] float      m_jumpForce = 7.5f;
+    //[SerializeField] float      m_speed = 4.0f;
+    //[SerializeField] float      m_jumpForce = 7.5f;
     [SerializeField] GameObject m_attackHitbox;
 
     private Damages             m_damages;
@@ -14,8 +14,8 @@ public class BanditTest : MonoBehaviour {
     private Sensor_Bandit       m_groundSensor;
     public HealthBar           healthBar;
     private bool                m_grounded = false;
-    private bool                m_combatIdle = false;
-    private bool                m_isDead = false;
+    //private bool                m_combatIdle = false;
+    //private bool                m_isDead = false;
     private bool                m_attacking = false;
 
     // Use this for initialization
