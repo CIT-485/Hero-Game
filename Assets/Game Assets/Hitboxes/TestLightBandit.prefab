@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2061287561}
   - component: {fileID: 2061287562}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_Hurtbox
   m_TagString: EnemyHitbox
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 212259381048184306}
   - component: {fileID: 50512961935941442}
   - component: {fileID: 61252362154681264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TestLightBandit
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -135,9 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc928af9f5030f409d91e460d9d966c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 4
-  m_jumpForce: 7.5
   m_attackHitbox: {fileID: 2582895849533247247}
+  damaged: 0
+  healthBar: {fileID: 0}
 --- !u!114 &2168767539601273185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,9 +295,9 @@ GameObject:
   - component: {fileID: 4269114208525818}
   - component: {fileID: 114926350374723154}
   - component: {fileID: 61368513597639598}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundSensor
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 4158400818966808264}
   - component: {fileID: 2403994400407514616}
   - component: {fileID: 265031999046029321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_Hitbox
   m_TagString: EnemyHitbox
   m_Icon: {fileID: 0}
@@ -474,10 +474,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBarCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5511003305124428018, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129131887868173075, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7129131888117030494, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
       propertyPath: m_SizeDelta.x
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 7129131888753150851, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129131888933130569, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7129131888933130570, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -486,6 +502,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7129131889045699180, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129131889180734643, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129131889298171171, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129131889326504770, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129131889357910871, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7129131889357910888, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -493,6 +529,10 @@ PrefabInstance:
     - target: {fileID: 7129131889357910888, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441687440753979863, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9126112935156948031, guid: a4ccf5de4b0f0924384cdd328142812b, type: 3}
       propertyPath: m_Pivot.x
