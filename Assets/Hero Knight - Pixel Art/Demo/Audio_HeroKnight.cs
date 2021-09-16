@@ -71,13 +71,22 @@ public class Audio_HeroKnight : MonoBehaviour
 
     private void Update()
     {
-        if((movement.inputX > 0 || movement.inputX < 0) && isWalking == false)
+        if((movement.inputX > 0 || movement.inputX < 0) && isWalking == false && movement.m_grounded == true)
         {
 			isWalking = true;
-			PlaySound("Footstep");
-        } else
+			StartCoroutine("FootstepsTimer");
+		} else if(movement.inputX == 0)
         {
 			isWalking = false;
+        }
+    }
+
+	IEnumerator FootstepsTimer()
+    {
+        while (isWalking == true)
+        {
+			PlaySound("Footstep");
+			yield return new WaitForSeconds(0.4f);
         }
     }
 

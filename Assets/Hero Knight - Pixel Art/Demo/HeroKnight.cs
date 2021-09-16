@@ -20,7 +20,7 @@ public class HeroKnight : MonoBehaviour {
     private Sensor_HeroKnight   m_wallSensorL1;
     private Sensor_HeroKnight   m_wallSensorL2;
     private bool                m_isWallSliding = false;
-    private bool                m_grounded = false;
+    public bool                m_grounded = false;
     private bool                m_rolling = false;
     private int                 m_facingDirection = 1;
     private int                 m_currentAttack = 0;
