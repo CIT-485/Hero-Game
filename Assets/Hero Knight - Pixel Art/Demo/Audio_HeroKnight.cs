@@ -6,7 +6,7 @@ using UnityEngine;
 public class Sound
 {
 	public string name;
-	public AudioClip clip;
+	public AudioClip[] clip;
 
 	[Range(0f, 1f)]
 	public float volume = 0.7f;
@@ -23,11 +23,17 @@ public class Sound
 	public void SetSource (AudioSource _source)
     {
 		source = _source;
-		source.clip = clip;
-    }
+		int randomClip = Random.Range(0, clip.Length - 1);
+		source.clip = clip[randomClip];
+	}
 
 	public void Play ()
     {
+		if (clip.Length > 1)
+		{
+			int randomClip = Random.Range(0, clip.Length - 1);
+			source.clip = clip[randomClip];
+		}
 		source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
 		source.pitch = pitch * (1 + Random.Range(-randomPitch / 2f, randomVolume / 2f));
 		source.Play();
