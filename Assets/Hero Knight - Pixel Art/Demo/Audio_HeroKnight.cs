@@ -2,47 +2,82 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Sound
+{
+	public string name;
+	public AudioClip clip;
+
+	[Range(0f, 1f)]
+	public float volume = 0.7f;
+	[Range(0f, 1.5f)]
+	public float pitch = 1f;
+
+	[Range(0f, 0.5f)]
+	public float randomVolume = 0.1f;
+	[Range(0f, 0.5f)]
+	public float randomPitch = 0.1f;
+
+	private AudioSource source;
+
+	public void SetSource (AudioSource _source)
+    {
+		source = _source;
+		source.clip = clip;
+    }
+
+	public void Play ()
+    {
+		source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
+		source.pitch = pitch * (1 + Random.Range(-randomPitch / 2f, randomVolume / 2f));
+		source.Play();
+    }
+
+}
+
 public class Audio_HeroKnight : MonoBehaviour
 {
-	// HeroKnight directional movement variable
-	float dirX;
+	public static Audio_HeroKnight instance;
+
 	[SerializeField]
-	// Movement speed variable
-	float moveSpeed = 4.0f;
-	Rigidbody2D rb;
-	AudioSource audioSrc;
-	bool isMoving = false;
+	Sound[] sounds;
 
-	// Use this for initialization
-	void Start()
-	{
-		rb = GetComponent<Rigidbody2D>();
-		audioSrc = GetComponent<AudioSource>();
-	}
+    private void Awake()
+    {
+        if(instance != null)
+        {
+			Debug.LogError("More than one AudioManager in the scene.");
+        } else
+        {
+			instance = this;
+        }
+    }
 
-	// Update is called once per frame
-	void Update()
-	{
-		// dirX is set to left or right depending on if the left or right arrow is pressed on the keyboard mutiplied by movement speed
-		dirX = Input.GetAxis("Horizontal") * moveSpeed;
+    private void Start()
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+			GameObject _go = new GameObject("Sound_" + i + " " + sounds[i].name);
+			_go.transform.SetParent(this.transform);
+			sounds[i].SetSource(_go.AddComponent<AudioSource>());
+        }
 
-		// HeroKnight is moving 
-		if (rb.velocity.x != 0)
-			isMoving = true;
-		else
-			isMoving = false;
-		// Play audio sound if HeroKnight is moving
-		if (isMoving)
-		{
-			if (!audioSrc.isPlaying)
-				audioSrc.Play();
-		}
-		else
-			audioSrc.Stop();
-	}
+		// delete this line of code
+		// PlaySound("Footstep");
+    }
 
-	void FixedUpdate()
-	{
-		rb.velocity = new Vector2(dirX, rb.velocity.y);
-	}
+	public void PlaySound (string _name)
+    {
+		for (int i = 0; i < sounds.Length; i++)
+        {
+			if (sounds[i].name == _name)
+            {
+				sounds[i].Play();
+				return;
+            }
+        }
+
+		// no sounds with _name
+		Debug.LogWarning("AudioManager: Sound not found in list, " + _name);
+    }
 }
