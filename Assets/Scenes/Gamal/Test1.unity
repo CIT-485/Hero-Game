@@ -545,9 +545,11 @@ MonoBehaviour:
   - name: Footstep
     clip: {fileID: 8300000, guid: 0609acde86b59a2458aaf135531f8756, type: 3}
     volume: 1
-    pitch: 1.5
-    randomVolume: 0.1
-    randomPitch: 0.1
+    pitch: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  movement: {fileID: 0}
+  isWalking: 0
 --- !u!4 &1535551471
 Transform:
   m_ObjectHideFlags: 0

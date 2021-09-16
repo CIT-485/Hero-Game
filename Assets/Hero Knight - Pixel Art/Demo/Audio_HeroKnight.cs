@@ -41,6 +41,8 @@ public class Audio_HeroKnight : MonoBehaviour
 
 	[SerializeField]
 	Sound[] sounds;
+	public HeroKnight movement;
+	public bool isWalking = false;
 
     private void Awake()
     {
@@ -62,11 +64,24 @@ public class Audio_HeroKnight : MonoBehaviour
 			sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
 
+		movement = GameObject.FindGameObjectWithTag("Player").GetComponent<HeroKnight>();
 		// delete this line of code
 		// PlaySound("Footstep");
     }
 
-	public void PlaySound (string _name)
+    private void Update()
+    {
+        if((movement.inputX > 0 || movement.inputX < 0) && isWalking == false)
+        {
+			isWalking = true;
+			PlaySound("Footstep");
+        } else
+        {
+			isWalking = false;
+        }
+    }
+
+    public void PlaySound (string _name)
     {
 		for (int i = 0; i < sounds.Length; i++)
         {

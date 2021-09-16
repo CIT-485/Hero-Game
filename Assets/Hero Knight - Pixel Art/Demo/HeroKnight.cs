@@ -12,6 +12,9 @@ public class HeroKnight : MonoBehaviour {
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private Sensor_HeroKnight   m_groundSensor;
+    // Audio instance variables
+    private AudioSource         m_audioSource;
+    private Audio_HeroKnight    m_audioManager;
     private Sensor_HeroKnight   m_wallSensorR1;
     private Sensor_HeroKnight   m_wallSensorR2;
     private Sensor_HeroKnight   m_wallSensorL1;
@@ -25,6 +28,7 @@ public class HeroKnight : MonoBehaviour {
     private float               m_delayToIdle = 0.0f;
     private float               m_rollDuration = 8.0f / 14.0f;
     private float               m_rollCurrentTime;
+    public float inputX;
 
 
     // Use this for initialization
@@ -68,7 +72,7 @@ public class HeroKnight : MonoBehaviour {
         }
 
         // -- Handle input and movement --
-        float inputX = Input.GetAxis("Horizontal");
+        inputX = Input.GetAxis("Horizontal");
 
         // Swap direction of sprite depending on walk direction
         if (inputX > 0)
