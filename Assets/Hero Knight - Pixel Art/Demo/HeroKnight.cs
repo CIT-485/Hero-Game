@@ -12,9 +12,6 @@ public class HeroKnight : MonoBehaviour {
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private Sensor_HeroKnight   m_groundSensor;
-    // Audio instance variables
-    private AudioSource         m_audioSource;
-    private Audio_HeroKnight    m_audioManager;
     private Sensor_HeroKnight   m_wallSensorR1;
     private Sensor_HeroKnight   m_wallSensorR2;
     private Sensor_HeroKnight   m_wallSensorL1;
