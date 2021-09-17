@@ -17,7 +17,7 @@ public class PlayerCombat : MonoBehaviour {
     private bool                                m_prevGround = false;
     private bool                                m_guarding = false;
     private PlayerMovement                      m_movement;
-    public bool attackConnected = false;
+    public bool                                 attackConnected = false;
 
     // Use this for initialization
     void Start ()

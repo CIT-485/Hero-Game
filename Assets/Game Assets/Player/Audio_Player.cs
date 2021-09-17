@@ -112,10 +112,11 @@ public class Audio_Player : MonoBehaviour
 
 		if(combat.attackConnected == false && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")))
         {
-
+			PlaySound("Sword swing");
         } else if(combat.attackConnected == true && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")))
         {
-			
+			PlaySound("Sword attack");
+			combat.attackConnected = false;
         }
     }
 
