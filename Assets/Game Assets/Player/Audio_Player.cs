@@ -9,14 +9,17 @@ public class Sound
 	public AudioClip[] clip;
 
 	[Range(0f, 1f)]
-	public float volume = 0.7f;
+	public float volume = 1.0f;
 	[Range(0f, 1.5f)]
-	public float pitch = 1f;
+	public float pitch = 1.0f;
 
-	[Range(0f, 0.5f)]
-	public float randomVolume = 0.1f;
-	[Range(0f, 0.5f)]
-	public float randomPitch = 0.1f;
+	//[Range(0f, 0.5f)]
+	//public float randomVolume = 0.1f;
+	//[Range(0f, 0.5f)]
+	//public float randomPitch = 0.1f;
+
+	public Vector2 randomVolume = new Vector2(1.0f, 1.0f);
+	public Vector2 randomPitch = new Vector2(1.0f, 1.0f);
 
 	private AudioSource source;
 
@@ -34,10 +37,14 @@ public class Sound
 			int randomClip = Random.Range(0, clip.Length - 1);
 			source.clip = clip[randomClip];
 		}
-		source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
-		source.pitch = pitch * (1 + Random.Range(-randomPitch / 2f, randomVolume / 2f));
+		//source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
+		//source.pitch = pitch * (1 + Random.Range(-randomPitch / 2f, randomVolume / 2f));
+		//source.Play();
+
+		source.volume = volume * Random.Range(randomVolume.x, randomVolume.y);
+		source.pitch = pitch * Random.Range(randomPitch.x, randomPitch.y);
 		source.Play();
-    }
+	}
 
 }
 
@@ -48,7 +55,10 @@ public class Audio_Player : MonoBehaviour
 	[SerializeField]
 	Sound[] sounds;
 	public PlayerMovement movement;
+	public PlayerCombat combat;
 	public bool isWalking = false;
+	public bool isJumping = false;
+	public bool isLanded = false;
 
     private void Awake()
     {
@@ -66,13 +76,13 @@ public class Audio_Player : MonoBehaviour
         for (int i = 0; i < sounds.Length; i++)
         {
 			GameObject _go = new GameObject("Sound_" + i + " " + sounds[i].name);
-			_go.transform.SetParent(this.transform);
+			//_go.transform.SetParent(this.transform);
+			_go.transform.SetParent(transform);
 			sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
 
 		movement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-		// delete this line of code
-		// PlaySound("Footstep");
+		combat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombat>();
     }
 
     private void Update()
@@ -81,18 +91,42 @@ public class Audio_Player : MonoBehaviour
         {
 			isWalking = true;
 			StartCoroutine("FootstepsTimer");
-		} else if(movement.inputX == 0)
+		}
+		else if(movement.inputX == 0)
         {
 			isWalking = false;
         }
+
+		if(Input.GetKeyDown("space") && isJumping == false)
+		{
+			isJumping = true;
+			PlaySound("Jump");
+			isLanded = false;
+        }
+		else if(movement.grounded == true && isLanded == false)
+        {
+			isLanded = true;
+			PlaySound("Jump");
+			isJumping = false;
+        }
+
+		if(combat.attackConnected == false && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")))
+        {
+
+        } else if(combat.attackConnected == true && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")))
+        {
+			
+        }
     }
+
+
 
 	IEnumerator FootstepsTimer()
     {
         while (isWalking == true)
         {
 			PlaySound("Footstep");
-			yield return new WaitForSeconds(0.4f);
+			yield return new WaitForSeconds(0.3f);
         }
     }
 

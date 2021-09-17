@@ -17,6 +17,7 @@ public class PlayerCombat : MonoBehaviour {
     private bool                                m_prevGround = false;
     private bool                                m_guarding = false;
     private PlayerMovement                      m_movement;
+    public bool attackConnected = false;
 
     // Use this for initialization
     void Start ()
@@ -173,6 +174,7 @@ public class PlayerCombat : MonoBehaviour {
     {
         if (collision.tag == "EnemyHitbox" && !m_damaged && !m_movement.isInvul)
         {
+            attackConnected = true;
             DeactivateHitboxes();
             body2d.velocity = Vector2.zero;
             m_movement.actionAllowed = false;

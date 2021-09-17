@@ -563,16 +563,22 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 0609acde86b59a2458aaf135531f8756, type: 3}
     - {fileID: 8300000, guid: fdfa07727ba18e146b0d737f16110ba5, type: 3}
     - {fileID: 8300000, guid: e988fcf175fd1874db4f82c3b2d75db3, type: 3}
-    - {fileID: 8300000, guid: 98e005e2d5100484b88927d0803cb395, type: 3}
-    - {fileID: 8300000, guid: b3e9cdac26b78934197456d8199e30bc, type: 3}
-    - {fileID: 8300000, guid: ddc4973571f36404d95c23401b7d2f12, type: 3}
-    - {fileID: 8300000, guid: 8c9f76b14113ab640ab4b94535ad82e3, type: 3}
     volume: 1
     pitch: 1
-    randomVolume: 0.5
-    randomPitch: 0.5
+    randomVolume: {x: 0.6, y: 1}
+    randomPitch: {x: 0.6, y: 0.9}
+  - name: Jump
+    clip:
+    - {fileID: 8300000, guid: c025c43d1749af5469c7dd8af13e162f, type: 3}
+    volume: 1
+    pitch: 1.2
+    randomVolume: {x: 1, y: 1}
+    randomPitch: {x: 1, y: 1}
   movement: {fileID: 0}
+  combat: {fileID: 0}
   isWalking: 0
+  isJumping: 0
+  isLanded: 0
 --- !u!4 &1535551471
 Transform:
   m_ObjectHideFlags: 0
