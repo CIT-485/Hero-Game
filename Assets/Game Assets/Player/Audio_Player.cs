@@ -13,15 +13,10 @@ public class Sound
 	[Range(0f, 1.5f)]
 	public float pitch = 1.0f;
 
-	//[Range(0f, 0.5f)]
-	//public float randomVolume = 0.1f;
-	//[Range(0f, 0.5f)]
-	//public float randomPitch = 0.1f;
-
 	public Vector2 randomVolume = new Vector2(1.0f, 1.0f);
 	public Vector2 randomPitch = new Vector2(1.0f, 1.0f);
 
-	private AudioSource source;
+	public AudioSource source;
 
 	public void SetSource (AudioSource _source)
     {
@@ -56,6 +51,7 @@ public class Audio_Player : MonoBehaviour
 	Sound[] sounds;
 	public PlayerMovement movement;
 	public PlayerCombat combat;
+
 	public bool isWalking = false;
 	public bool isJumping = false;
 	public bool isLanded = false;
@@ -85,42 +81,60 @@ public class Audio_Player : MonoBehaviour
 		combat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombat>();
     }
 
-    private void Update()
+	private void playFootsteps()
     {
-        if((movement.inputX > 0 || movement.inputX < 0) && isWalking == false && movement.grounded == true)
-        {
+		if ((movement.inputX > 0 || movement.inputX < 0) && isWalking == false && movement.grounded == true)
+		{
 			isWalking = true;
 			StartCoroutine("FootstepsTimer");
 		}
-		else if(movement.inputX == 0)
-        {
+		else if (movement.inputX == 0)
+		{
 			isWalking = false;
-        }
+		}
+	}
 
-		if(Input.GetKeyDown("space") && isJumping == false)
+	private void playJump()
+    {
+		if (Input.GetKeyDown("space") && isJumping == false)
 		{
 			isJumping = true;
 			PlaySound("Jump");
 			isLanded = false;
-        }
-		else if(movement.grounded == true && isLanded == false)
-        {
+		}
+		else if (movement.grounded == true && isLanded == false)
+		{
 			isLanded = true;
 			PlaySound("Jump");
 			isJumping = false;
-        }
+		}
+	}
 
-		if(combat.attackConnected == false && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")))
-        {
+	private void playSword()
+    {
+		/*
+		if (combat.attackConnected == false && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")))
+		{
 			PlaySound("Sword swing");
-        } else if(combat.attackConnected == true && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")))
-        {
+		}
+		else if (combat.attackConnected == true && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")))
+		{
 			PlaySound("Sword attack");
 			combat.attackConnected = false;
-        }
+		}
+		*/
+
+		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")) {
+			PlaySound("Sword swing");
+		}
+	}
+
+    private void Update()
+    {
+		playFootsteps();
+		playJump();
+		playSword();
     }
-
-
 
 	IEnumerator FootstepsTimer()
     {

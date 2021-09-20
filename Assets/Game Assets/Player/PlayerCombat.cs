@@ -172,6 +172,7 @@ public class PlayerCombat : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //attackConnected = true;
         if (collision.tag == "EnemyHitbox" && !m_damaged && !m_movement.isInvul)
         {
             attackConnected = true;
@@ -191,6 +192,7 @@ public class PlayerCombat : MonoBehaviour {
                 body2d.AddForce(new Vector2(-75, 30));
             StartCoroutine("invul");
         }
+        //attackConnected = false;
     }
     IEnumerator invul()
     {
