@@ -3,13 +3,9 @@ using System.Collections;
 
 public class BanditTest : MonoBehaviour {
 
-    [SerializeField] float      m_speed = 4.0f;
-    [SerializeField] float      m_jumpForce = 7.5f;
-    [SerializeField] float      agroRange;
-    [SerializeField] float      attackRange;
-
+    //[SerializeField] float      m_speed = 4.0f;
+    //[SerializeField] float      m_jumpForce = 7.5f;
     [SerializeField] GameObject m_attackHitbox;
-    [SerializeField] Transform  player;
 
     private Damages             m_damages;
     public bool damaged = false;
@@ -18,12 +14,9 @@ public class BanditTest : MonoBehaviour {
     private Sensor_Bandit       m_groundSensor;
     public HealthBar           healthBar;
     private bool                m_grounded = false;
-    private bool                m_combatIdle = false;
-    private bool                m_isDead = false;
+    //private bool                m_combatIdle = false;
+    //private bool                m_isDead = false;
     private bool                m_attacking = false;
-
-
-
 
     // Use this for initialization
     void Start () {
@@ -69,40 +62,6 @@ public class BanditTest : MonoBehaviour {
         if(Input.GetKeyDown("l")) {
             m_animator.SetTrigger("Attack");
         }
-
-        //distance to hero knight
-        float distToPlayer = Vector2.Distance(transform.position, player.position);
-
-        if (distToPlayer < agroRange && distToPlayer>= attackRange)
-        {
-            prepAttack();
-            m_animator.SetInteger("AnimState", 1);
-        }
-
-        else if (distToPlayer < attackRange)
-        {
-            m_animator.SetTrigger("Attack");
-        }
-
-        else
-        {
-            m_animator.SetInteger("AnimState", 0);
-        }
-
-
-    }
-
-
-    void prepAttack()
-    {
-        if(transform.position.x < player.position.x)
-        {
-            transform.localScale = new Vector2(-1, 1);
-        }
-        else if(transform.position.x > player.position.x)
-        {
-            transform.localScale = new Vector2(1, 1);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -115,9 +74,9 @@ public class BanditTest : MonoBehaviour {
                 m_animator.SetTrigger("Hurt");
             healthBar.TakeDamage(collision.transform.parent.GetComponent<Damages>().activeDamage);
             if (collision.transform.parent.position.x < transform.position.x)
-                m_body2d.AddForce(new Vector2(30, 10));
+                m_body2d.AddForce(new Vector2(1000, 1000));
             else
-                m_body2d.AddForce(new Vector2(-30, 10));
+                m_body2d.AddForce(new Vector2(-1000, 1000));
         }
     }
 
