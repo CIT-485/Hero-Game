@@ -138,7 +138,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c5dea467677cdd449a7f8190f8453783, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 90115a0fe3e8b4e098b1111cc014a9cc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -236,7 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6a098626e578a41819e3fe1fa0230a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
 --- !u!1 &451821320
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,15 +796,15 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Sword swing
     clip:
-    - {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
+    - {fileID: 8300000, guid: 4a578695dfac4422d81299af3481ea10, type: 3}
     volume: 1
     pitch: 1
     randomVolume: {x: 1, y: 1}
     randomPitch: {x: 1, y: 1}
     source: {fileID: 0}
-  - name: Sword attack
+  - name: AWP_Impact_Body_08
     clip:
-    - {fileID: 8300000, guid: a7736c1763bd76c4eb0d52aaad581deb, type: 3}
+    - {fileID: 8300000, guid: 90115a0fe3e8b4e098b1111cc014a9cc, type: 3}
     volume: 1
     pitch: 1
     randomVolume: {x: 1, y: 1}
