@@ -49,10 +49,11 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 0609acde86b59a2458aaf135531f8756, type: 3}
     - {fileID: 8300000, guid: fdfa07727ba18e146b0d737f16110ba5, type: 3}
     - {fileID: 8300000, guid: e988fcf175fd1874db4f82c3b2d75db3, type: 3}
-    volume: 1
-    pitch: 1
-    randomVolume: {x: 0.6, y: 1}
-    randomPitch: {x: 0.6, y: 0.9}
+    volume: 0.8
+    pitch: 1.2
+    randomVolume: {x: 1, y: 1}
+    randomPitch: {x: 1, y: 1}
+    loop: 1
     source: {fileID: 0}
   - name: Jump
     clip:
@@ -61,17 +62,18 @@ MonoBehaviour:
     pitch: 1.2
     randomVolume: {x: 1, y: 1}
     randomPitch: {x: 1, y: 1}
+    loop: 0
     source: {fileID: 0}
   - name: Sword swing
     clip:
     - {fileID: 8300000, guid: 4a578695dfac4422d81299af3481ea10, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
-    randomVolume: {x: 1, y: 1}
-    randomPitch: {x: 1, y: 1}
+    randomVolume: {x: 0.8, y: 1.2}
+    randomPitch: {x: 1, y: 1.1}
+    loop: 0
     source: {fileID: 0}
   movement: {fileID: 0}
   combat: {fileID: 0}
   isWalking: 0
   isJumping: 0
-  isLanded: 0

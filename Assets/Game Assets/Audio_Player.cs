@@ -16,6 +16,8 @@ public class Sound
 	public Vector2 randomVolume = new Vector2(1.0f, 1.0f);
 	public Vector2 randomPitch = new Vector2(1.0f, 1.0f);
 
+	public bool loop = false;
+
 	[HideInInspector]
 	public AudioSource source;
 
@@ -36,24 +38,30 @@ public class Sound
 
 		source.volume = volume * Random.Range(randomVolume.x, randomVolume.y);
 		source.pitch = pitch * Random.Range(randomPitch.x, randomPitch.y);
+		source.loop = loop;
 		source.Play();
 	}
+
+	public void Stop()
+    {
+		source.Stop();
+    }
 
 }
 
 public class Audio_Player : MonoBehaviour
 {
-	public static Audio_Player instance;
+	public static Audio_Player	instance;
 
 	[SerializeField]
-	Sound[] sounds;
-	public PlayerMovement movement;
-	public PlayerCombat combat;
+	private Sound[]				sounds;
+	private PlayerMovement		movement;
+	private PlayerCombat		combat;
 
-	public bool isWalking = false;
-	public bool isJumping = false;
-	public bool isLanded = false;
-
+	private bool				isWalking = false;
+	private bool				isJumping = false;
+	private bool				isLanded = false;
+	
     private void Awake()
     {
         if(instance != null)
@@ -77,17 +85,26 @@ public class Audio_Player : MonoBehaviour
 
 		movement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 		combat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombat>();
-    }
+	}
 
-	private void playFootsteps()
-    {
+	private void Update()
+	{
+		playFootsteps();
+		playJump();
+		playSword();
+	}
+
+    private void playFootsteps()
+	{
 		if ((movement.inputX > 0 || movement.inputX < 0) && isWalking == false && movement.grounded == true)
 		{
 			isWalking = true;
-			StartCoroutine("FootstepsTimer");
+			PlaySound("Footstep");
+			//StartCoroutine("FootstepsTimer");
 		}
-		else if (movement.inputX == 0)
+		else if (movement.inputX == 0 || isWalking == false)
 		{
+			StopSound("Footstep");
 			isWalking = false;
 		}
 	}
@@ -97,8 +114,9 @@ public class Audio_Player : MonoBehaviour
 		if (Input.GetKeyDown("space") && isJumping == false)
 		{
 			isJumping = true;
-			PlaySound("Jump");
+			//PlaySound("Jump");
 			isLanded = false;
+			isWalking = false;
 		}
 		else if (movement.grounded == true && isLanded == false)
 		{
@@ -110,26 +128,21 @@ public class Audio_Player : MonoBehaviour
 
 	private void playSword()
     {
-		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")) {
+		if (combat.canAttack && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k"))) {
 			PlaySound("Sword swing");
 		}
 	}
 
-    private void Update()
-    {
-		playFootsteps();
-		playJump();
-		playSword();
-    }
-
+	/*
+	 * I removed this since it created the meshing noise when the player rapidly pressed left and right
 	IEnumerator FootstepsTimer()
     {
         while (isWalking == true)
         {
-			PlaySound("Footstep");
-			yield return new WaitForSeconds(0.3f);
-        }
+			yield return new WaitForSeconds(0.4f);
+		}
     }
+	*/
 
     public void PlaySound (string _name)
     {
@@ -145,4 +158,18 @@ public class Audio_Player : MonoBehaviour
 		// no sounds with _name
 		Debug.LogWarning("AudioManager: Sound not found in list, " + _name);
     }
+	public void StopSound (string _name)
+	{
+		for (int i = 0; i < sounds.Length; i++)
+		{
+			if (sounds[i].name == _name)
+			{
+				sounds[i].Stop();
+				return;
+			}
+		}
+
+		// no sounds with _name
+		Debug.LogWarning("AudioManager: Sound not found in list, " + _name);
+	}
 }

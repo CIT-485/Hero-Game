@@ -12,11 +12,11 @@ public class BanditTest : MonoBehaviour {
     [SerializeField] Transform  player;
 
     private Damages             m_damages;
-    public bool damaged = false;
+    public bool                 damaged = false;
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private Sensor_Bandit       m_groundSensor;
-    public HealthBar           healthBar;
+    public HealthBar            healthBar;
     private bool                m_grounded = false;
     private bool                m_combatIdle = false;
     private bool                m_isDead = false;
@@ -33,6 +33,7 @@ public class BanditTest : MonoBehaviour {
         healthBar = GetComponent<HealthBar>();
         m_damages.activeDamage = m_damages.list[0];
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 	
 	// Update is called once per frame
@@ -78,18 +79,14 @@ public class BanditTest : MonoBehaviour {
             prepAttack();
             m_animator.SetInteger("AnimState", 1);
         }
-
         else if (distToPlayer < attackRange)
         {
             m_animator.SetTrigger("Attack");
         }
-
         else
         {
             m_animator.SetInteger("AnimState", 0);
         }
-
-
     }
 
 

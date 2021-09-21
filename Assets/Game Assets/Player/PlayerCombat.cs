@@ -3,9 +3,7 @@ using System.Collections;
 
 public class PlayerCombat : MonoBehaviour {
 
-    [SerializeField] GameObject                 m_attack1Hitbox;
-    [SerializeField] GameObject                 m_attack2Hitbox;
-    [SerializeField] GameObject                 m_attack3Hitbox;
+    [SerializeField] GameObject                 m_attackHitbox;
 
     [HideInInspector] public Animator           animator;
     [HideInInspector] public Rigidbody2D        body2d;
@@ -18,6 +16,7 @@ public class PlayerCombat : MonoBehaviour {
     private bool                                m_guarding = false;
     private PlayerMovement                      m_movement;
     public bool                                 attackConnected = false;
+    public bool                                 canAttack = true;
 
     // Use this for initialization
     void Start ()
@@ -27,19 +26,9 @@ public class PlayerCombat : MonoBehaviour {
         healthBar = GetComponent<HealthBar>();
         m_movement = GetComponent<PlayerMovement>();
 
-        m_attack1Hitbox = GameObject.Instantiate(m_attack1Hitbox);
-        m_attack2Hitbox = GameObject.Instantiate(m_attack2Hitbox);
-        m_attack3Hitbox = GameObject.Instantiate(m_attack3Hitbox);
-
-        m_attack1Hitbox.transform.parent = transform;
-        m_attack2Hitbox.transform.parent = transform;
-        m_attack3Hitbox.transform.parent = transform;
-
-        //m_attack1Hitbox.transform.localPosition = new Vector2(0.6f, 0.95f);
-        //m_attack2Hitbox.transform.localPosition = new Vector2(0.225f, 0.85f);
-        m_attack1Hitbox.transform.localPosition = new Vector2(0.65f, 0.85f);
-        m_attack2Hitbox.transform.localPosition = new Vector2(0.65f, 0.85f);
-        m_attack3Hitbox.transform.localPosition = new Vector2(0.65f, 0.85f);
+        m_attackHitbox = GameObject.Instantiate(m_attackHitbox);
+        m_attackHitbox.transform.parent = transform;
+        m_attackHitbox.transform.localPosition = new Vector2(0.65f, 0.85f);
 
         DeactivateHitboxes();
     }
@@ -72,9 +61,13 @@ public class PlayerCombat : MonoBehaviour {
             DeactivateHitboxes();
         }
 
+        if (m_timeSinceAttack > 0.25f)
+            canAttack = true;
+
         //Attack
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")) && m_timeSinceAttack > 0.25f && !m_movement.rolling && !m_movement.isWallSliding && !m_damaged && !m_guarding)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")) && canAttack && !m_movement.rolling && !m_movement.isWallSliding && !m_damaged && !m_guarding)
         {
+            canAttack = false;
             DeactivateHitboxes();
             m_currentAttack++;
 
@@ -89,42 +82,14 @@ public class PlayerCombat : MonoBehaviour {
             // Call one of three attack animations "Attack1", "Attack2", "Attack3"
             animator.SetTrigger("Attack" + m_currentAttack);
 
-            // Makes sure the orientation of the hitbox is properly placed for each of the 3 attacks
-            if (m_currentAttack == 1)
+            m_attackHitbox.SetActive(true);
+            if (m_movement.facingDirection == 1 && m_attackHitbox.transform.localPosition.x < 0)
             {
-                m_attack1Hitbox.SetActive(true);
-                if (m_movement.facingDirection == 1 && m_attack1Hitbox.transform.localPosition.x < 0)
-                {
-                    m_attack1Hitbox.transform.localPosition = new Vector3(-m_attack1Hitbox.transform.localPosition.x, m_attack1Hitbox.transform.localPosition.y);
-                }
-                else if (m_movement.facingDirection == -1 && m_attack1Hitbox.transform.localPosition.x > 0)
-                {
-                    m_attack1Hitbox.transform.localPosition = new Vector3(-m_attack1Hitbox.transform.localPosition.x, m_attack1Hitbox.transform.localPosition.y);
-                }
+                m_attackHitbox.transform.localPosition = new Vector3(-m_attackHitbox.transform.localPosition.x, m_attackHitbox.transform.localPosition.y);
             }
-            else if (m_currentAttack == 2)
+            else if (m_movement.facingDirection == -1 && m_attackHitbox.transform.localPosition.x > 0)
             {
-                m_attack2Hitbox.SetActive(true);
-                if (m_movement.facingDirection == 1 && m_attack2Hitbox.transform.localPosition.x < 0)
-                {
-                    m_attack2Hitbox.transform.localPosition = new Vector3(-m_attack2Hitbox.transform.localPosition.x, m_attack2Hitbox.transform.localPosition.y);
-                }
-                else if (m_movement.facingDirection == -1 && m_attack2Hitbox.transform.localPosition.x > 0)
-                {
-                    m_attack2Hitbox.transform.localPosition = new Vector3(-m_attack2Hitbox.transform.localPosition.x, m_attack2Hitbox.transform.localPosition.y);
-                }
-            }
-            else
-            {
-                m_attack3Hitbox.SetActive(true);
-                if (m_movement.facingDirection == 1 && m_attack3Hitbox.transform.localPosition.x < 0)
-                {
-                    m_attack3Hitbox.transform.localPosition = new Vector3(-m_attack3Hitbox.transform.localPosition.x, m_attack3Hitbox.transform.localPosition.y);
-                }
-                else if (m_movement.facingDirection == -1 && m_attack3Hitbox.transform.localPosition.x > 0)
-                {
-                    m_attack3Hitbox.transform.localPosition = new Vector3(-m_attack3Hitbox.transform.localPosition.x, m_attack3Hitbox.transform.localPosition.y);
-                }
+                m_attackHitbox.transform.localPosition = new Vector3(-m_attackHitbox.transform.localPosition.x, m_attackHitbox.transform.localPosition.y);
             }
 
             // Reset timer
@@ -148,22 +113,20 @@ public class PlayerCombat : MonoBehaviour {
 
     public void DeactivateHitboxes()
     {
-        m_attack1Hitbox.SetActive(false);
-        m_attack2Hitbox.SetActive(false);
-        m_attack3Hitbox.SetActive(false);
+        m_attackHitbox.SetActive(false);
     }
 
     void AE_Attack1_End()
     {
-        m_attack1Hitbox.SetActive(false);
+        m_attackHitbox.SetActive(false);
     }
     void AE_Attack2_End()
     {
-        m_attack2Hitbox.SetActive(false);
+        m_attackHitbox.SetActive(false);
     }
     void AE_Attack3_End()
     {
-        m_attack3Hitbox.SetActive(false);
+        m_attackHitbox.SetActive(false);
     }
     void AE_Damaged_End()
     {
