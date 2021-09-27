@@ -14,11 +14,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Ignore Player
+  - Only Player
   - 
   - 
   - 
@@ -61,6 +61,9 @@ TagManager:
     locked: 0
   - name: plants and bugs
     uniqueID: 3054517971
+    locked: 0
+  - name: Player
+    uniqueID: 3271874227
     locked: 0
   - name: Default
     uniqueID: 0

@@ -21,13 +21,13 @@ public class CollisionSensor : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag != "Enemy")
+        if (other.tag == "Platform")
             m_ColCount++;
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag != "Enemy")
+        if (other.tag == "Platform")
             m_ColCount--;
     }
 

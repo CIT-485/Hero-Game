@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class PlayerCombat : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class PlayerCombat : MonoBehaviour {
     [HideInInspector] public Animator           animator;
     [HideInInspector] public Rigidbody2D        body2d;
     [HideInInspector] public HealthBar          healthBar;
+    public GameObject                           damageFlash;
 
     private int                                 m_currentAttack = 0;
     private float                               m_timeSinceAttack = 0.0f;
@@ -16,7 +18,10 @@ public class PlayerCombat : MonoBehaviour {
     private bool                                m_guarding = false;
     private PlayerMovement                      m_movement;
     public bool                                 attackConnected = false;
-    public bool                                 canAttack = true;
+    public bool                                 isAttacking = true;
+    public float                                hurtTimer = 0.5f;
+
+    private AttackManager                       m_am;
 
     // Use this for initialization
     void Start ()
@@ -25,6 +30,7 @@ public class PlayerCombat : MonoBehaviour {
         body2d = GetComponent<Rigidbody2D>();
         healthBar = GetComponent<HealthBar>();
         m_movement = GetComponent<PlayerMovement>();
+        m_am = GetComponent<AttackManager>();
 
         m_attackHitbox = GameObject.Instantiate(m_attackHitbox);
         m_attackHitbox.transform.parent = transform;
@@ -39,15 +45,24 @@ public class PlayerCombat : MonoBehaviour {
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
 
+        if (Input.GetKeyDown("t"))
+        {
+            transform.position = new Vector2(245, 14);
+        }
+
+        if (Input.GetKeyDown("r"))
+        {
+            transform.position = new Vector2(-15, 0);
+        }
+
+        if (Input.GetKeyDown("q"))
+        {
+            healthBar.Healing(300);
+        }
+
         if (m_movement.rolling)
         {
             DeactivateHitboxes();
-        }
-
-        if (Input.GetKeyDown("q") && !m_movement.rolling && !m_damaged)
-        {
-            DeactivateHitboxes();
-            animator.SetTrigger("Hurt");
         }
 
         if (m_prevGround != m_movement.grounded)
@@ -61,13 +76,10 @@ public class PlayerCombat : MonoBehaviour {
             DeactivateHitboxes();
         }
 
-        if (m_timeSinceAttack > 0.25f)
-            canAttack = true;
-
         //Attack
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")) && canAttack && !m_movement.rolling && !m_movement.isWallSliding && !m_damaged && !m_guarding)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")) && m_timeSinceAttack > 0.25f && !m_movement.rolling && !m_movement.isWallSliding && !m_damaged && !m_guarding)
         {
-            canAttack = false;
+            isAttacking = true;
             DeactivateHitboxes();
             m_currentAttack++;
 
@@ -119,18 +131,20 @@ public class PlayerCombat : MonoBehaviour {
     void AE_Attack1_End()
     {
         m_attackHitbox.SetActive(false);
+        isAttacking = false;
     }
     void AE_Attack2_End()
     {
         m_attackHitbox.SetActive(false);
+        isAttacking = false;
     }
     void AE_Attack3_End()
     {
         m_attackHitbox.SetActive(false);
+        isAttacking = false;
     }
     void AE_Damaged_End()
     {
-        m_movement.actionAllowed = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -144,22 +158,45 @@ public class PlayerCombat : MonoBehaviour {
             m_movement.actionAllowed = false;
             m_movement.rolling = false;
             m_movement.isWallSliding = false;
+            isAttacking = false;
             m_damaged = true;
             
-                animator.SetTrigger("Hurt");
-                healthBar.TakeDamage(collision.transform.parent.GetComponent<Damages>().activeDamage);
+            animator.SetTrigger("Hurt");
 
+            int damage = -1;
+            float stun = 0.1f;
+            Transform current = collision.transform.parent;
+            while (current != null && damage < 0)
+            {
+                if (current.GetComponent<AttackManager>())
+                {
+                    damage = current.GetComponent<AttackManager>().currentAttack.attackDamage;
+                    stun = current.GetComponent<AttackManager>().currentAttack.stunTime;
+                }
+                else
+                {
+                    current = current.parent;
+                }
+            }
+            if (damage < 0)
+                damage = 0;
+            Debug.Log(damage);
+            healthBar.TakeDamage(damage);
             if (collision.transform.parent.position.x < transform.position.x)
-                body2d.AddForce(new Vector2(75, 30));
+                body2d.AddForce(new Vector2(damage, damage/2));
             else
-                body2d.AddForce(new Vector2(-75, 30));
-            StartCoroutine("invul");
+                body2d.AddForce(new Vector2(-damage, damage/2));
+            StartCoroutine(invul(stun));
         }
         //attackConnected = false;
     }
-    IEnumerator invul()
+    IEnumerator invul(float time)
     {
-        yield return new WaitForSeconds(0.1f);
+        damageFlash.SetActive(true);
+        yield return new WaitForSeconds(time);
+        damageFlash.SetActive(false);
+        animator.SetTrigger("HurtDone");
+        m_movement.actionAllowed = true;
         m_damaged = false;
     }
 }

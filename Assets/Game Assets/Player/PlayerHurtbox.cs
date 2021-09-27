@@ -15,7 +15,7 @@ public class PlayerHurtbox : MonoBehaviour
         {
             player.GetComponent<PlayerCombat>().DeactivateHitboxes();
             player.GetComponent<PlayerCombat>().animator.SetTrigger("Hurt");
-            player.GetComponent<PlayerCombat>().healthBar.TakeDamage(collision.transform.parent.GetComponent<Damages>().activeDamage);
+            //player.GetComponent<PlayerCombat>().healthBar.TakeDamage(collision.transform.parent.GetComponent<Damages>().activeDamage);
             if (collision.transform.parent.position.x < transform.position.x)
                 player.GetComponent<PlayerCombat>().body2d.AddForce(new Vector2(75, 30));
             else

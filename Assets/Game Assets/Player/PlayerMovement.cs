@@ -14,15 +14,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject             m_slideDust;
 
     [HideInInspector] public bool           isWallSliding = false;
-    public bool           grounded = false;
-    [HideInInspector] public bool           rolling = false;
-    [HideInInspector] public bool           actionAllowed = true;
+    public bool                             grounded = false;
+    public bool                             rolling = false;
+    public bool                             actionAllowed = true;
     [HideInInspector] public int            facingDirection = 1;
     [HideInInspector] public float          inputX = 0;
-    [HideInInspector] public bool           isInvul = false;
+    public bool                             isInvul = false;
 
     private Animator                        m_animator;
-    private Rigidbody2D                     m_body2d;
+    public Rigidbody2D                      m_body2d;
     private CollisionSensor                 m_wallSensorR1;
     private CollisionSensor                 m_wallSensorR2;
     private CollisionSensor                 m_wallSensorL1;
@@ -113,8 +113,8 @@ public class PlayerMovement : MonoBehaviour
             // Move
             if (!rolling)
                 m_body2d.velocity = new Vector2(inputX * speed, m_body2d.velocity.y);
-            else
-                m_body2d.velocity = new Vector2(inputX * speed * 0.8f, m_body2d.velocity.y);
+            //else
+            //    m_body2d.velocity = new Vector2(inputX * speed * 0.8f, m_body2d.velocity.y);
             
             //Set AirSpeed in animator
             m_animator.SetFloat("AirSpeedY", m_body2d.velocity.y);
@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 rolling = true;
                 m_animator.SetTrigger("Roll");
-                //m_body2d.velocity = new Vector2(facingDirection * rollForce, m_body2d.velocity.y);
+                m_body2d.velocity = new Vector2(facingDirection * rollForce, m_body2d.velocity.y);
             }
 
             //Jump

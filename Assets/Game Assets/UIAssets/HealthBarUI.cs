@@ -125,9 +125,9 @@ public class HealthBarUI : MonoBehaviour
     {
         shakeAmount = Mathf.Log((float)amount) * 2.5f;
         waitTime = Mathf.Log((float)amount) / 20f;
-        
-        DamageShake(); 
-        
+
+        StartCoroutine(DamageAction());
+
         healthSlider.value -= amount;
     }
 
@@ -138,12 +138,6 @@ public class HealthBarUI : MonoBehaviour
 
         // Here we add the amount given to a list, we have a list so that we can potentially use multiple healing items at the same time
         _healAmounts.Add(amount);
-    }
-
-    // This is to call the routines defined below
-    void DamageShake()
-    {
-        StartCoroutine("DamageAction");
     }
 
     // This will set the shaking and damaged boolean to true then wait a defined amount of time before setting the shaking boolean back to false

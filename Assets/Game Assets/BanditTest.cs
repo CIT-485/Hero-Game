@@ -11,7 +11,7 @@ public class BanditTest : MonoBehaviour {
     [SerializeField] GameObject m_attackHitbox;
     [SerializeField] Transform  player;
 
-    private Damages             m_damages;
+    private AttackManager       m_am;
     public bool                 damaged = false;
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -29,9 +29,9 @@ public class BanditTest : MonoBehaviour {
     void Start () {
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
-        m_damages = GetComponent<Damages>();
+        m_am = GetComponent<AttackManager>();
         healthBar = GetComponent<HealthBar>();
-        m_damages.activeDamage = m_damages.list[0];
+        //m_damages.activeDamage = m_damages.list[0];
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -107,10 +107,10 @@ public class BanditTest : MonoBehaviour {
         if (collision.tag == "PlayerHitbox" && !damaged)
         {
             damaged = true;
-            StartCoroutine("invul");
+            StartCoroutine(invul(collision.transform.parent.GetComponent<AttackManager>().currentAttack.stunTime));
             if (!m_attacking)
                 m_animator.SetTrigger("Hurt");
-            healthBar.TakeDamage(collision.transform.parent.GetComponent<Damages>().activeDamage);
+            healthBar.TakeDamage(collision.transform.parent.GetComponent<AttackManager>().currentAttack.attackDamage);
             if (collision.transform.parent.position.x < transform.position.x)
                 m_body2d.AddForce(new Vector2(30, 10));
             else
@@ -133,9 +133,9 @@ public class BanditTest : MonoBehaviour {
         m_attacking = false;
     }
 
-    IEnumerator invul()
+    IEnumerator invul(float time)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(time);
         damaged = false;
     }
 }

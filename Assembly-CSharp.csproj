@@ -69,8 +69,9 @@
     <Compile Include="Assets\Game Assets\Player\CollisionSensor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
-    <Compile Include="Assets\Game Assets\Damages.cs" />
+    <Compile Include="Assets\Game Assets\AttackManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\Game Assets\BossHealthBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Game Assets\Player\GroundSensor.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Game Assets\EnemyHitAudio.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\Game Assets\Giant Rat\Scripts\GiantRatAI.cs" />
     <Compile Include="Assets\Game Assets\UIAssets\HealthBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
@@ -94,6 +96,8 @@
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Sensor_Bandit.cs" />
+    <Compile Include="Assets\Game Assets\Camera\GiantRatBossTrigger.cs" />
+    <Compile Include="Assets\Game Assets\FlashingLight2D.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Game Assets\Player\PlayerHurtbox.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -110,8 +114,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Game Assets\Camera\CameraFollowObject.cs" />
     <Compile Include="Assets\Game Assets\Player\LandingSensor.cs" />
     <Compile Include="Assets\Game Assets\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Game Assets\Giant Rat\Scripts\Flag.cs" />
+    <Compile Include="Assets\Game Assets\StickToObject.cs" />
+    <Compile Include="Assets\Game Assets\Deathzone.cs" />
+    <Compile Include="Assets\Game Assets\DEMO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

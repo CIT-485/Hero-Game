@@ -12,6 +12,8 @@ public class Sound
 	public float volume = 1.0f;
 	[Range(0f, 1.5f)]
 	public float pitch = 1.0f;
+	[Range(0f, 5f)]
+	public float fadeTime = 1.0f;
 
 	public Vector2 randomVolume = new Vector2(1.0f, 1.0f);
 	public Vector2 randomPitch = new Vector2(1.0f, 1.0f);
@@ -46,7 +48,6 @@ public class Sound
     {
 		source.Stop();
     }
-
 }
 
 public class Audio_Player : MonoBehaviour
@@ -61,8 +62,9 @@ public class Audio_Player : MonoBehaviour
 	private bool				isWalking = false;
 	private bool				isJumping = false;
 	private bool				isLanded = false;
-	
-    private void Awake()
+	private bool				isAttacking = false;
+
+	private void Awake()
     {
         if(instance != null)
         {
@@ -87,7 +89,7 @@ public class Audio_Player : MonoBehaviour
 		combat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombat>();
 	}
 
-	private void Update()
+	private void LateUpdate()
 	{
 		playFootsteps();
 		playJump();
@@ -96,15 +98,19 @@ public class Audio_Player : MonoBehaviour
 
     private void playFootsteps()
 	{
-		if ((movement.inputX > 0 || movement.inputX < 0) && isWalking == false && movement.grounded == true)
+		if ((movement.inputX > 0 || movement.inputX < 0) && isWalking == false && movement.grounded == true && !movement.rolling)
 		{
-			isWalking = true;
 			PlaySound("Footstep");
+			isWalking = true;
 			//StartCoroutine("FootstepsTimer");
 		}
-		else if (movement.inputX == 0 || isWalking == false)
-		{
+		else if (!movement.actionAllowed)
+        {
 			StopSound("Footstep");
+        }
+		else if (movement.inputX == 0 || isWalking == false || !movement.grounded || movement.rolling)
+		{
+			FadeOutSound("Footstep");
 			isWalking = false;
 		}
 	}
@@ -128,9 +134,14 @@ public class Audio_Player : MonoBehaviour
 
 	private void playSword()
     {
-		if (combat.canAttack && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k"))) {
+		if (!isAttacking && combat.isAttacking && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k"))) {
+			isAttacking = true;
 			PlaySound("Sword swing");
 		}
+		else if (!combat.isAttacking)
+        {
+			isAttacking = false;
+        }
 	}
 
 	/*
@@ -143,8 +154,31 @@ public class Audio_Player : MonoBehaviour
 		}
     }
 	*/
-
-    public void PlaySound (string _name)
+	public
+	IEnumerator FadeOut(Sound sound)
+	{
+		while (sound.volume > 0)
+		{
+			sound.source.volume -= sound.volume * Time.deltaTime / sound.fadeTime;
+			yield return null;
+		}
+		sound.Stop();
+		sound.source.volume = sound.volume;
+	}
+	public void FadeOutSound(string _name)
+	{
+		for (int i = 0; i < sounds.Length; i++)
+		{
+			if (sounds[i].name == _name)
+			{
+				IEnumerator fade = FadeOut(sounds[i]);
+				StartCoroutine(fade);
+				StopCoroutine(fade);
+				return;
+			}
+		}
+	}
+	public void PlaySound (string _name)
     {
 		for (int i = 0; i < sounds.Length; i++)
         {
@@ -168,8 +202,5 @@ public class Audio_Player : MonoBehaviour
 				return;
 			}
 		}
-
-		// no sounds with _name
-		Debug.LogWarning("AudioManager: Sound not found in list, " + _name);
 	}
 }
