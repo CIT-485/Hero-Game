@@ -15,8 +15,8 @@ public class LandingSensor : MonoBehaviour
     {
         points.Clear();
         
-        RaycastHit2D[] hitR = Physics2D.RaycastAll(player.transform.position + new Vector3(0.375f, 0.5f), Vector2.down);
-        RaycastHit2D[] hitL = Physics2D.RaycastAll(player.transform.position + new Vector3(-0.375f, 0.5f), Vector2.down);
+        RaycastHit2D[] hitR = Physics2D.RaycastAll(player.transform.position + new Vector3(0.375f, 1f), Vector2.down);
+        RaycastHit2D[] hitL = Physics2D.RaycastAll(player.transform.position + new Vector3(-0.375f, 1f), Vector2.down);
 
         foreach (RaycastHit2D h in hitR)
             if (h && h.collider.tag == "Platform")
@@ -30,6 +30,7 @@ public class LandingSensor : MonoBehaviour
 
         if (points.Count == 0)
         {
+            //fail safe just in case
             transform.position = player.transform.position;
         }
         else

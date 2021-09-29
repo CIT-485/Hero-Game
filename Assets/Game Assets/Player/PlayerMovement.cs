@@ -6,10 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
     public float                            speed = 4.0f;
     public float                            jumpForce = 7.5f;
+    public float                            fallMultiplier = 2.0f;
+    public float                            lowJumpFallMultiplier = 2.0f;
     public float                            rollForce = 6.0f;
     public GameObject                       hurtbox;
     public GameObject                       rollingHurtbox;
     public GameObject                       groundSensor;
+    public bool                             jumpButtonPressed = false;
 
     [SerializeField] GameObject             m_slideDust;
 
@@ -49,6 +52,22 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("space"))
+            jumpButtonPressed = true;
+        if (Input.GetKeyUp("space"))
+            jumpButtonPressed = false;
+        // else, if the velocity is more than 0, as in we are rising into the air, and we are holding the jump button, then
+        // the player object is less effected by gravity making it seem like we are floating
+        else if (m_body2d.velocity.y > 0 && jumpButtonPressed)
+        {
+            m_body2d.velocity += Vector2.up * Physics.gravity.y * lowJumpFallMultiplier * Time.deltaTime;
+        }
+        // this makes it so we are short jumping when we quickly press the jump button
+        else if (m_body2d.velocity.y > 0 && !jumpButtonPressed)
+        {
+            m_body2d.velocity += Vector2.up * Physics.gravity.y * fallMultiplier * Time.deltaTime;
+        }
+
         // Increase timer that checks roll duration
         if (rolling)
         {

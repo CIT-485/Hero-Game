@@ -47,7 +47,7 @@ public class PlayerCombat : MonoBehaviour {
 
         if (Input.GetKeyDown("t"))
         {
-            transform.position = new Vector2(245, 14);
+            transform.position = new Vector2(240, 10);
         }
 
         if (Input.GetKeyDown("r"))
@@ -77,7 +77,7 @@ public class PlayerCombat : MonoBehaviour {
         }
 
         //Attack
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")) && m_timeSinceAttack > 0.25f && !m_movement.rolling && !m_movement.isWallSliding && !m_damaged && !m_guarding)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("k")) && m_timeSinceAttack > 0.35f && !m_movement.rolling && !m_movement.isWallSliding && !m_damaged && !m_guarding)
         {
             isAttacking = true;
             DeactivateHitboxes();

@@ -6,15 +6,16 @@ public class Parallax : MonoBehaviour
 {
 
     private float length, startpos;
-    public GameObject cam;
+    private GameObject cam;
     public float parallaxEffect;
+    public float offset;
 
     // Start is called before the first frame update
     void Start()
     {
         startpos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
-        
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     // Update is called once per frame
@@ -24,8 +25,13 @@ public class Parallax : MonoBehaviour
         float dist = (cam.transform.position.x * parallaxEffect);
 
         transform.position = new Vector3(startpos + dist, transform.position.y, transform.position.y);
-
-        if (temp > startpos + length) startpos += length;
-        else if (temp < startpos - length) startpos -= length;
+        if (temp > startpos + (length - offset))
+        {
+            startpos += length;
+        }
+        else if (temp < startpos - (length - offset))
+        {
+            startpos -= length;
+        }
     }
 }

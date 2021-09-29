@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BanditTest : MonoBehaviour {
 
-    [SerializeField] float      m_speed = 4.0f;
-    [SerializeField] float      m_jumpForce = 7.5f;
+    //[SerializeField] float      m_speed = 4.0f;
+    //[SerializeField] float      m_jumpForce = 7.5f;
     [SerializeField] float      agroRange;
     [SerializeField] float      attackRange;
 
@@ -17,8 +17,9 @@ public class BanditTest : MonoBehaviour {
     private Rigidbody2D         m_body2d;
     private Sensor_Bandit       m_groundSensor;
     public HealthBar            healthBar;
+    public GameObject healthBarGameObject;
     private bool                m_grounded = false;
-    private bool                m_combatIdle = false;
+    //private bool                m_combatIdle = false;
     private bool                m_isDead = false;
     private bool                m_attacking = false;
 
@@ -38,54 +39,67 @@ public class BanditTest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //Check if character just landed on the ground
-        if (!m_grounded && m_groundSensor.State())
+        if (healthBar.currentHealth > 0)
         {
-            m_grounded = true;
-            m_animator.SetBool("Grounded", m_grounded);
-        }
+            //Check if character just landed on the ground
+            if (!m_grounded && m_groundSensor.State())
+            {
+                m_grounded = true;
+                m_animator.SetBool("Grounded", m_grounded);
+            }
 
-        //Check if character just started falling
-        if(m_grounded && !m_groundSensor.State())
-        {
-            m_grounded = false;
-            m_animator.SetBool("Grounded", m_grounded);
-        }
+            //Check if character just started falling
+            if (m_grounded && !m_groundSensor.State())
+            {
+                m_grounded = false;
+                m_animator.SetBool("Grounded", m_grounded);
+            }
 
-        //Set AirSpeed in animator
-        m_animator.SetFloat("AirSpeed", m_body2d.velocity.y);
+            //Set AirSpeed in animator
+            m_animator.SetFloat("AirSpeed", m_body2d.velocity.y);
 
-        // -- Handle Animations --
-        /*//Death
-        if (Input.GetKeyDown("e")) {
-            if(!m_isDead)
-                m_animator.SetTrigger("Death");
+            // -- Handle Animations --
+            //Death
+            if (Input.GetKeyDown("e")) {
+                if(!m_isDead)
+                    m_animator.SetTrigger("Death");
+                else
+                    m_animator.SetTrigger("Recover");
+
+                m_isDead = !m_isDead;
+            }
+
+            //Attack
+            if (Input.GetKeyDown("l"))
+            {
+                m_animator.SetTrigger("Attack");
+            }
+
+            //distance to hero knight
+            float distToPlayer = Vector2.Distance(transform.position, player.position);
+
+            if (distToPlayer < agroRange && distToPlayer >= attackRange)
+            {
+                prepAttack();
+                m_animator.SetInteger("AnimState", 1);
+            }
+            else if (distToPlayer < attackRange)
+            {
+                m_animator.SetTrigger("Attack");
+            }
             else
-                m_animator.SetTrigger("Recover");
-
-            m_isDead = !m_isDead;
-        }*/
-
-        //Attack
-        if(Input.GetKeyDown("l")) {
-            m_animator.SetTrigger("Attack");
-        }
-
-        //distance to hero knight
-        float distToPlayer = Vector2.Distance(transform.position, player.position);
-
-        if (distToPlayer < agroRange && distToPlayer>= attackRange)
-        {
-            prepAttack();
-            m_animator.SetInteger("AnimState", 1);
-        }
-        else if (distToPlayer < attackRange)
-        {
-            m_animator.SetTrigger("Attack");
+            {
+                m_animator.SetInteger("AnimState", 0);
+            }
         }
         else
         {
-            m_animator.SetInteger("AnimState", 0);
+            if (!m_isDead)
+            {
+                m_isDead = true;
+                m_animator.SetTrigger("Death");
+                Destroy(healthBarGameObject);
+            }
         }
     }
 
@@ -104,7 +118,7 @@ public class BanditTest : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "PlayerHitbox" && !damaged)
+        if (collision.tag == "PlayerHitbox" && !damaged && !m_isDead)
         {
             damaged = true;
             StartCoroutine(invul(collision.transform.parent.GetComponent<AttackManager>().currentAttack.stunTime));

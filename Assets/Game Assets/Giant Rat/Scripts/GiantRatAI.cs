@@ -4,42 +4,64 @@ using UnityEngine;
 
 public class GiantRatAI : MonoBehaviour
 {
-    private Animator            m_animator;
-    private Rigidbody2D         m_body2d;
+    private Animator            animator;
     private GameObject          player;
-    private int                 facingDirection = -1;
     private HealthBar           healthBar;
+    private Rigidbody2D         body2d;
     private bool                damaged;
+    private float               attackWaitTime;
+    //private int                 facingDirection = -1;
+    
+    public Flag                 attack0_Flag;
+    public List<GameObject>     attack0_Hitboxes = new List<GameObject>();
     public bool                 attacking;
-    public Flag                 m_attack0_Flag;
-    public List<GameObject>     m_attack0_Hitboxes = new List<GameObject>();
 
     public void Start()
     {
         healthBar = GetComponent<HealthBar>();
-        m_animator = GetComponent<Animator>();
-        m_body2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        body2d = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
     public void Update()
     {
-        if (m_attack0_Flag.flagged)
+        attackWaitTime += Time.deltaTime;
+        if (attackWaitTime > 3)
         {
-            StartCoroutine(Attack0());
-            StopCoroutine(Attack0());
+            if (attack0_Flag.flagged)
+            {
+                Debug.Log("attack ready");
+                int attackChance = Random.Range(0, 100);
+                Debug.Log(attackChance);
+                if (attackChance < 30)
+                {
+                    float holdTime = Random.Range(1f, 2f);
+                    StartCoroutine(Attack0(holdTime));
+                    attackWaitTime = 0;
+                }
+                else
+                {
+                    Debug.Log("still thinking");
+                    attackWaitTime = 2;
+                }
+            }
+            else
+            {
+                Debug.Log("not in range");
+            }
         }
         if (attacking)
         {
-            m_body2d.velocity = new Vector2(0, m_body2d.velocity.y);
+            body2d.velocity = new Vector2(0, body2d.velocity.y);
         }
         else
         {
-            if (!m_animator.GetBool("Moving"))
-                m_animator.SetBool("Moving", true);
+            if (!animator.GetBool("Moving"))
+                animator.SetBool("Moving", true);
             if (player.transform.position.x < transform.position.x)
-                m_body2d.velocity = new Vector2(-1, m_body2d.velocity.y);
+                body2d.velocity = new Vector2(-1, body2d.velocity.y);
             else
-                m_body2d.velocity = new Vector2(1, m_body2d.velocity.y);
+                body2d.velocity = new Vector2(1, body2d.velocity.y);
         }
     }
 
@@ -57,52 +79,42 @@ public class GiantRatAI : MonoBehaviour
         yield return new WaitForSeconds(time);
         damaged = false;
     }
-    IEnumerator Attack0()
+    IEnumerator Attack0(float time)
     {
-        while (m_attack0_Flag.flagged)
-        {
-            int rand = Random.Range(0, 100);
-            Debug.Log(rand);
-            if (rand < 30)
-            {
-                m_animator.SetBool("Moving", false);
-                attacking = true;
-                StartCoroutine(Attack0());
-                m_attack0_Flag.flagged = false;
-                m_attack0_Flag.paused = true;
-                m_animator.SetTrigger("Attack0_Start_Trigger");
-                yield return new WaitForSeconds(1.2f);
-                m_animator.SetTrigger("Attack0_Trigger");
-            }
-            else
-            {
-                yield return new WaitForSeconds(2f);
-            }
-        }
+        animator.SetBool("Moving", false);
+        attacking = true;
+        attack0_Flag.flagged = false;
+        attack0_Flag.paused = true;
+        animator.SetTrigger("Attack0_Start_Trigger");
+        yield return new WaitForSeconds(time);
+        animator.SetTrigger("Attack0_Trigger");
     }
     public void Attack0_Hitbox0()
     {
-        m_attack0_Hitboxes[0].SetActive(true);
+        attack0_Hitboxes[0].SetActive(true);
     }
     public void Attack0_Hitbox1()
     {
-        m_attack0_Hitboxes[0].SetActive(false);
-        m_attack0_Hitboxes[1].SetActive(true);
+        attack0_Hitboxes[0].SetActive(false);
+        attack0_Hitboxes[1].SetActive(true);
     }
     public void Attack0_Hitbox2()
     {
-        m_attack0_Hitboxes[1].SetActive(false);
-        m_attack0_Hitboxes[2].SetActive(true);
+        attack0_Hitboxes[1].SetActive(false);
+        attack0_Hitboxes[2].SetActive(true);
     }
     public void Attack0_Hitbox3()
     {
-        m_attack0_Hitboxes[2].SetActive(false);
-        m_attack0_Hitboxes[3].SetActive(true);
+        attack0_Hitboxes[2].SetActive(false);
+        attack0_Hitboxes[3].SetActive(true);
     }
     public void Attack0_End()
     {
-        m_attack0_Hitboxes[3].SetActive(false);
-        m_attack0_Flag.paused = false;
+        attack0_Hitboxes[3].SetActive(false);
+    }
+    public void Attack0_Cancellable()
+    {
+        attack0_Flag.paused = false;
         attacking = false;
     }
 }
