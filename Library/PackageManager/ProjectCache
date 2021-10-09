@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637673435319340588
+      ticks: 637693980731130216
     m_Hash: 827132331
   m_LockFileStatus:
     m_FilePath: C:/Users/wolga/source/repos/MG5896TG/CIS485-01/Hero-Game/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637673435319350561
+      ticks: 637693980731130216
     m_Hash: 4284066620
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
