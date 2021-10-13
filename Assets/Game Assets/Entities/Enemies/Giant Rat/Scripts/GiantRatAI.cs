@@ -13,8 +13,11 @@ public class GiantRatAI : MonoBehaviour
     public List<GameObject>     attack0_Hitboxes = new List<GameObject>();
     public List<GameObject>     attack1_Hitboxes = new List<GameObject>();
     public List<GameObject>     intoDown_Hitboxes = new List<GameObject>();
+    public List<GameObject>     running_Hitboxes = new List<GameObject>();
     public GameObject           damageFlash;
     public GameObject           locationPoint;
+    public GameObject           locationPoint2;
+    public GameObject           locationPoint3;
     public float                acceleration = 4f;
     public float                maxSpeed = 2f;
     public bool                 attacking;
@@ -34,6 +37,8 @@ public class GiantRatAI : MonoBehaviour
     public bool                 facingRight = false;
     private bool                doOnce = false;
     private bool                cinematic = false;
+    private bool                moveLeft = true;
+    private bool                running = false;
     
     
     public void Start()
@@ -77,6 +82,28 @@ public class GiantRatAI : MonoBehaviour
                 }
                 else
                 {
+                    if (running)
+                    {
+                        if (transform.position.x > locationPoint2.transform.position.x && moveLeft)
+                        {
+                            directionalForce += new Vector2(-acceleration, body2d.velocity.y);
+                        }
+                        else if (transform.position.x <= locationPoint2.transform.position.x && moveLeft)
+                        {
+                            ChangeFacingDirection();
+                            moveLeft = false;
+                        }
+
+                        if (transform.position.x < locationPoint3.transform.position.x && !moveLeft)
+                        {
+                            directionalForce += new Vector2(acceleration, body2d.velocity.y);
+                        }
+                        else if (transform.position.x >= locationPoint3.transform.position.x && !moveLeft)
+                        {
+                            ChangeFacingDirection();
+                            moveLeft = true;
+                        }
+                    }
 
                     // Getting down
                     // RAWR
@@ -178,7 +205,7 @@ public class GiantRatAI : MonoBehaviour
                                 forward = true;
                                 decided = true;
                             }
-                            else if (moveChance >= 80 && moveChance < 90)
+                            else if (moveChance >= 80 && moveChance < 95)
                             {
                                 forward = false;
                                 decided = true;
@@ -408,6 +435,19 @@ public class GiantRatAI : MonoBehaviour
     {
 
         intoDown_Hitboxes[2].SetActive(false);
+    }
+    public void Into_Down_End()
+    {
+        if (cinematic)
+        {
+            moveLeft = true;
+            acceleration = 12f;
+            maxSpeed = 10f;
+            running = true;
+            running_Hitboxes[0].SetActive(true);
+            attackManager.index = 3;
+            animator.SetTrigger("Down_Move_Trigger");
+        }
     }
     public void Down_Idle_Start()
     {
