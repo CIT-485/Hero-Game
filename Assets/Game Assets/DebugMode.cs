@@ -7,6 +7,10 @@ public class DebugMode : MonoBehaviour
     public bool debugMode = false;
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            debugMode = !debugMode;
+        }
         if (debugMode || !debugMode)
         {
             GameObject[] playerHitboxes = GameObject.FindGameObjectsWithTag("PlayerHitbox");
