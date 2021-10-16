@@ -421,7 +421,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: QUIT
+  m_Text: QUIT Game
 --- !u!222 &479952798
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &651387992
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1016,8 +1016,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.608, y: -8.135}
-  m_SizeDelta: {x: 85.9197, y: 38.589}
+  m_AnchoredPosition: {x: -94.836235, y: -29.493805}
+  m_SizeDelta: {x: 158.3945, y: 58.9879}
   m_Pivot: {x: -0.1122892, y: 0.5}
 --- !u!114 &1297122331
 MonoBehaviour:
@@ -2168,8 +2168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.608, y: 30.454}
-  m_SizeDelta: {x: 85.9197, y: 38.589}
+  m_AnchoredPosition: {x: -94.354, y: 24.875}
+  m_SizeDelta: {x: 154.1, y: 49.749}
   m_Pivot: {x: -0.1122892, y: 0.5}
 --- !u!114 &1989925611
 MonoBehaviour:
@@ -2351,7 +2351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Menu
+  m_Text: Main Menu
 --- !u!222 &2011188026
 CanvasRenderer:
   m_ObjectHideFlags: 0
