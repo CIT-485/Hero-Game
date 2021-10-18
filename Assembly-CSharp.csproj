@@ -126,6 +126,8 @@
     <Compile Include="Assets\Game Assets\Camera\CameraFollowObject.cs" />
     <Compile Include="Assets\Game Assets\Player\LandingSensor.cs" />
     <Compile Include="Assets\Game Assets\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Game Assets\Monsters Creatures Fantasy\Scripts\EnemyFollow.cs" />
+    <Compile Include="Assets\Game Assets\Monsters Creatures Fantasy\Scripts\Patrol.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Text\TextMesh Pro\Shaders\TMPro.cginc" />
