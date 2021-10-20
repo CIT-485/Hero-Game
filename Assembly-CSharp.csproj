@@ -58,58 +58,58 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
-    <Compile Include="Assets\Game Assets\Deathzone.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Deathzone.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
-    <Compile Include="Assets\Game Assets\DebugMode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\DebugMode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
-    <Compile Include="Assets\Game Assets\Entities\Player\CollisionSensor.cs" />
-    <Compile Include="Assets\Game Assets\Flag.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Player\CollisionSensor.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Flag.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
-    <Compile Include="Assets\Game Assets\Entities\AttackManager.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\AttackManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
-    <Compile Include="Assets\Game Assets\HealthBar\BossHealthBar.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\HealthBar\BossHealthBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
-    <Compile Include="Assets\Game Assets\SpriteFade.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\SpriteFade.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
-    <Compile Include="Assets\Game Assets\Entities\Player\GroundSensor.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Player\GroundSensor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-    <Compile Include="Assets\Game Assets\ChangeBackground.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\ChangeBackground.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets\Game Assets\Audio\Audio_Player.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Audio\Audio_Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Game Assets\Audio\EnemyHitAudio.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\EnemyHitAudio.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
-    <Compile Include="Assets\Game Assets\Entities\Enemies\Giant Rat\Scripts\GiantRatAI.cs" />
-    <Compile Include="Assets\Game Assets\HealthBar\HealthBar.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRatAI.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\HealthBar\HealthBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
-    <Compile Include="Assets\Game Assets\DEMO.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\DEMO.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
-    <Compile Include="Assets\Game Assets\LetterBoxer.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\LetterBoxer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Sensor_Bandit.cs" />
-    <Compile Include="Assets\Game Assets\Entities\Enemies\Giant Rat\GiantRatBossTrigger.cs" />
-    <Compile Include="Assets\Game Assets\FlashingLight2D.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRatBossTrigger.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\FlashingLight2D.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
-    <Compile Include="Assets\Game Assets\Entities\Player\Player.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
-    <Compile Include="Assets\Game Assets\StickToObject.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\StickToObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\backgroundLoop.cs" />
-    <Compile Include="Assets\Game Assets\HealthBar\HealthBarUI.cs" />
-    <Compile Include="Assets\Game Assets\Entities\Enemies\Bandit\BanditTest.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\HealthBar\HealthBarUI.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\Bandit\BanditTest.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
@@ -117,9 +117,20 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Game Assets\Entities\Enemies\EnemySpriteFlashRenderer.cs" />
-    <Compile Include="Assets\Game Assets\Camera\CameraFollowObject.cs" />
-    <Compile Include="Assets\Game Assets\Entities\Player\LandingSensor.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\EnemySpriteFlashRenderer.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Camera\CameraFollowObject.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Player\LandingSensor.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\Node.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTree.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\ActionNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\DecoratorNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\CompositeNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DebugLogNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTreeRunner.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\RepeatNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\SequenceNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\WaitNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\RootNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -287,7 +298,7 @@
       <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsNativeModule">
       <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsNativeModule.dll</HintPath>
@@ -362,7 +373,7 @@
       <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UIElementsModule">
-      <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UIElementsSamplesModule">
       <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
@@ -878,6 +889,22 @@
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{CB3F42E7-5D33-1929-7627-4DC267F9D777}</Project>
       <Name>Unity.2D.SpriteShape.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UIBuilderModule.csproj">
+      <Project>{9294B4E9-8FF8-E94B-1E3C-7C46B850139C}</Project>
+      <Name>UnityEditor.UIBuilderModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TextCoreTextEngineModule.csproj">
+      <Project>{C232E16A-BF8A-8974-7C5F-6871A86CC679}</Project>
+      <Name>UnityEngine.TextCoreTextEngineModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.TextCoreTextEngineModule.csproj">
+      <Project>{394BA206-DEAD-49B1-F5F0-4E291E5FE54B}</Project>
+      <Name>UnityEditor.TextCoreTextEngineModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UIElementsInputSystemModule.csproj">
+      <Project>{61872FEC-2607-85BF-FF04-FC6E94EAB329}</Project>
+      <Name>UnityEngine.UIElementsInputSystemModule</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
