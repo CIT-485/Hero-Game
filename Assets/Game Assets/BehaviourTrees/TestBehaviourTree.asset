@@ -15,7 +15,8 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: cbaaec0bf42f24a4586fd85b111aa74e
-  position: {x: 9.549989, y: 108.000015}
+  position: {x: 174.40662, y: 22.298706}
+  description: 
   child: {fileID: -1423314383538444601}
 --- !u!114 &-1891419174365982604
 MonoBehaviour:
@@ -32,8 +33,26 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 32815ae0ba40a8f4a93db2d80c59ba48
-  position: {x: -139.99992, y: 506.5606}
+  position: {x: -151, y: 421}
+  description: 
   message: Working!!!
+--- !u!114 &-1845815548411742422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aadb3ec46485704d854321083022e22, type: 3}
+  m_Name: BreakNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: d62c74cdac0df984396fb793592c8895
+  position: {x: 174, y: 421}
+  description: 
 --- !u!114 &-1423314383538444601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,7 +68,8 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: eefbaa4ec3d487247b6c2d1ebbd17bb8
-  position: {x: 9.999998, y: 226.56062}
+  position: {x: 174.40662, y: 141.2987}
+  description: 
   child: {fileID: 7442392206396899406}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -73,6 +93,7 @@ MonoBehaviour:
   - {fileID: -6473039431342989585}
   - {fileID: 130869417898185406}
   - {fileID: 4850463513010120471}
+  - {fileID: -1845815548411742422}
 --- !u!114 &130869417898185406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +109,8 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: c47b06d10bb33fc49b4e38870b602444
-  position: {x: 160, y: 506.5606}
+  position: {x: 354, y: 421}
+  description: 
   message: Test2
 --- !u!114 &2579944528775497482
 MonoBehaviour:
@@ -105,8 +127,9 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 013c2e446001819449fd00e76688d764
-  position: {x: 9.999998, y: 506.5606}
-  duration: 1
+  position: {x: -1, y: 421}
+  description: 
+  duration: 10
 --- !u!114 &4850463513010120471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +145,8 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ef0f928231983a74987ad93a61d6d1d3
-  position: {x: 310, y: 506.5606}
+  position: {x: 504, y: 421}
+  description: 
   duration: 1
 --- !u!114 &7442392206396899406
 MonoBehaviour:
@@ -139,9 +163,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 984ed14c304311247b20e3a2bb783fe8
-  position: {x: 9.999998, y: 355.5606}
+  position: {x: 173.99997, y: 265.40005}
+  description: 
   children:
   - {fileID: -1891419174365982604}
   - {fileID: 2579944528775497482}
+  - {fileID: -1845815548411742422}
   - {fileID: 130869417898185406}
   - {fileID: 4850463513010120471}

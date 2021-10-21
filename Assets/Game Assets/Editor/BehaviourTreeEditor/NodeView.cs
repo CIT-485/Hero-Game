@@ -5,6 +5,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor;
+using UnityEditor.UIElements;
 
 public class NodeView : UnityEditor.Experimental.GraphView.Node
 {
@@ -24,6 +25,10 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         CreateInputPorts();
         CreateOutputPorts();
         SetupClasses();
+
+        Label descriptionLabel = this.Q<Label>("description");
+        descriptionLabel.bindingPath = "description";
+        descriptionLabel.Bind(new SerializedObject(node));
     }
 
     private void SetupClasses()
@@ -128,5 +133,30 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     private int SortByHorizontalPosition(Node left, Node right)
     {
         return left.position.x < right.position.x ? -1 : 1;
+    }
+
+    public void UpdateState()
+    {
+        RemoveFromClassList("running");
+        RemoveFromClassList("failure");
+        RemoveFromClassList("success");
+        if (Application.isPlaying)
+        {
+            switch (node.state)
+            {
+                case Node.State.RUNNING:
+                    if (node.started)
+                    {
+                        AddToClassList("running");
+                    }
+                    break;
+                case Node.State.FAILURE:
+                    AddToClassList("failure");
+                    break;
+                case Node.State.SUCCESS:
+                    AddToClassList("success");
+                    break;
+            }
+        }
     }
 }
