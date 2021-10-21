@@ -55,15 +55,17 @@
   <ItemGroup>
     <Compile Include="Assets\Game Assets\Editor\LetterBoxerEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\FlagEditor.cs" />
-    <Compile Include="Assets\Game Assets\Editor\AttackManagerEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\BehaviourTreeView.cs" />
+    <Compile Include="Assets\Game Assets\Editor\AttackManagerEditor.cs" />
+    <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\NodeView.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\InspectorView.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\BehaviourTreeEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\SplitView.cs" />
-    <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\NodeView.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Game Assets\Editor\BehaviourTreeEditor\NodeViewStyle.uss" />
     <None Include="Assets\Game Assets\Editor\BehaviourTreeEditor\BehaviourTreeEditor.uss" />
+    <None Include="Assets\Game Assets\Editor\BehaviourTreeEditor\NodeView.uxml" />
     <None Include="Assets\Game Assets\Editor\BehaviourTreeEditor\BehaviourTreeEditor.uxml" />
   </ItemGroup>
   <ItemGroup>
@@ -769,9 +771,17 @@
       <Project>{254AD85C-E2C2-C061-0428-0D3227E8A8F2}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEditor.UIBuilderModule.csproj">
+      <Project>{9294B4E9-8FF8-E94B-1E3C-7C46B850139C}</Project>
+      <Name>UnityEditor.UIBuilderModule</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
       <Project>{C513BA9F-A84C-11A2-4170-426FE8EFD492}</Project>
       <Name>Unity.InternalAPIEditorBridge.001</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UIElementsInputSystemModule.csproj">
+      <Project>{61872FEC-2607-85BF-FF04-FC6E94EAB329}</Project>
+      <Name>UnityEngine.UIElementsInputSystemModule</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{33368046-9CFB-6139-23CD-E896409657D3}</Project>
@@ -784,6 +794,10 @@
     <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
       <Project>{337F3E22-8729-1EE8-F1C4-E1FE9CDF0EBF}</Project>
       <Name>Unity.ShaderGraph.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TextCoreTextEngineModule.csproj">
+      <Project>{C232E16A-BF8A-8974-7C5F-6871A86CC679}</Project>
+      <Name>UnityEngine.TextCoreTextEngineModule</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj">
       <Project>{4FB57823-5EBC-88E9-574A-9F375D5B114A}</Project>
@@ -813,6 +827,10 @@
       <Project>{2639C62C-D84B-8DC7-A91A-363556CF17B6}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEditor.TextCoreTextEngineModule.csproj">
+      <Project>{394BA206-DEAD-49B1-F5F0-4E291E5FE54B}</Project>
+      <Name>UnityEditor.TextCoreTextEngineModule</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Editor.csproj">
       <Project>{551701F4-A6CB-52F0-2D1F-9DAE53DB275B}</Project>
       <Name>Unity.Mathematics.Editor</Name>
@@ -836,22 +854,6 @@
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{CB3F42E7-5D33-1929-7627-4DC267F9D777}</Project>
       <Name>Unity.2D.SpriteShape.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UIBuilderModule.csproj">
-      <Project>{9294B4E9-8FF8-E94B-1E3C-7C46B850139C}</Project>
-      <Name>UnityEditor.UIBuilderModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.TextCoreTextEngineModule.csproj">
-      <Project>{C232E16A-BF8A-8974-7C5F-6871A86CC679}</Project>
-      <Name>UnityEngine.TextCoreTextEngineModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.TextCoreTextEngineModule.csproj">
-      <Project>{394BA206-DEAD-49B1-F5F0-4E291E5FE54B}</Project>
-      <Name>UnityEditor.TextCoreTextEngineModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UIElementsInputSystemModule.csproj">
-      <Project>{61872FEC-2607-85BF-FF04-FC6E94EAB329}</Project>
-      <Name>UnityEngine.UIElementsInputSystemModule</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

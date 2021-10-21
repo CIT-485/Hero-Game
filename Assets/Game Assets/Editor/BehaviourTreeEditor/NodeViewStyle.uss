@@ -1,0 +1,103 @@
+#node-border {
+    background-color: rgba(56, 56, 56, 255);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgba(106, 106, 106, 255);
+    border-right-color: rgba(106, 106, 106, 255);
+    border-top-color: rgba(106, 106, 106, 255);
+    border-bottom-color: rgba(106, 106, 106, 255);
+}
+
+#input {
+    align-items: center;
+}
+
+#output {
+    align-items: center;
+}
+
+#selection-border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgba(0, 185, 255, 255);
+    border-right-color: rgba(0, 185, 255, 255);
+    border-top-color: rgba(0, 185, 255, 255);
+    border-bottom-color: rgba(0, 185, 255, 255);
+}
+
+:hover > #selection-border {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+:selected > #selection-border {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+:hover:selected > #selection-border {
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.node {
+    min-width: 150px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#title {
+    font-size: 14px;
+    -unity-font-style: bold;
+}
+
+#description {
+    font-size: 10px;
+}
+
+#divider {
+    background-color: rgba(95, 95, 95, 255);
+    min-height: 1px;
+}
+
+.root #input {
+    background-color: rgba(219, 61, 83, 255);
+    min-height: 20px;
+}
+
+.decorator #input {
+    background-color: rgba(79, 128, 229, 255);
+}
+
+.composite #input {
+    background-color: rgba(236, 180, 50, 255);
+}
+
+.action #input {
+    background-color: rgba(73, 212, 152, 255);
+}

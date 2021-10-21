@@ -53,7 +53,9 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTree.cs" />
     <Compile Include="Assets\Scripts\Camera_Follow.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DebugLogNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
@@ -68,7 +70,9 @@
     <Compile Include="Assets\Game Assets\Scripts\Flag.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\SequenceNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\AttackManager.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\RepeatNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Game Assets\Scripts\HealthBar\BossHealthBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
@@ -80,20 +84,23 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\Node.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Game Assets\Scripts\ChangeBackground.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Audio\Audio_Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\EnemyHitAudio.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\DecoratorNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRatAI.cs" />
     <Compile Include="Assets\Game Assets\Scripts\HealthBar\HealthBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\DEMO.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\DEMO.cs" />
     <Compile Include="Assets\Game Assets\Scripts\LetterBoxer.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\CompositeNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -103,6 +110,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\WaitNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Game Assets\Scripts\StickToObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
@@ -110,8 +118,10 @@
     <Compile Include="Assets\Scripts\backgroundLoop.cs" />
     <Compile Include="Assets\Game Assets\Scripts\HealthBar\HealthBarUI.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\Bandit\BanditTest.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\RootNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\ActionNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
@@ -120,17 +130,7 @@
     <Compile Include="Assets\Game Assets\Scripts\Enemies\EnemySpriteFlashRenderer.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Camera\CameraFollowObject.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\LandingSensor.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\Node.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTree.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\ActionNode.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\DecoratorNode.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\CompositeNode.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DebugLogNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTreeRunner.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\RepeatNode.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\SequenceNode.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\WaitNode.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\RootNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -822,9 +822,17 @@
       <Project>{254AD85C-E2C2-C061-0428-0D3227E8A8F2}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEditor.UIBuilderModule.csproj">
+      <Project>{9294B4E9-8FF8-E94B-1E3C-7C46B850139C}</Project>
+      <Name>UnityEditor.UIBuilderModule</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
       <Project>{C513BA9F-A84C-11A2-4170-426FE8EFD492}</Project>
       <Name>Unity.InternalAPIEditorBridge.001</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UIElementsInputSystemModule.csproj">
+      <Project>{61872FEC-2607-85BF-FF04-FC6E94EAB329}</Project>
+      <Name>UnityEngine.UIElementsInputSystemModule</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{33368046-9CFB-6139-23CD-E896409657D3}</Project>
@@ -837,6 +845,10 @@
     <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
       <Project>{337F3E22-8729-1EE8-F1C4-E1FE9CDF0EBF}</Project>
       <Name>Unity.ShaderGraph.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TextCoreTextEngineModule.csproj">
+      <Project>{C232E16A-BF8A-8974-7C5F-6871A86CC679}</Project>
+      <Name>UnityEngine.TextCoreTextEngineModule</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj">
       <Project>{4FB57823-5EBC-88E9-574A-9F375D5B114A}</Project>
@@ -866,6 +878,10 @@
       <Project>{2639C62C-D84B-8DC7-A91A-363556CF17B6}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEditor.TextCoreTextEngineModule.csproj">
+      <Project>{394BA206-DEAD-49B1-F5F0-4E291E5FE54B}</Project>
+      <Name>UnityEditor.TextCoreTextEngineModule</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Editor.csproj">
       <Project>{551701F4-A6CB-52F0-2D1F-9DAE53DB275B}</Project>
       <Name>Unity.Mathematics.Editor</Name>
@@ -889,22 +905,6 @@
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{CB3F42E7-5D33-1929-7627-4DC267F9D777}</Project>
       <Name>Unity.2D.SpriteShape.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UIBuilderModule.csproj">
-      <Project>{9294B4E9-8FF8-E94B-1E3C-7C46B850139C}</Project>
-      <Name>UnityEditor.UIBuilderModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.TextCoreTextEngineModule.csproj">
-      <Project>{C232E16A-BF8A-8974-7C5F-6871A86CC679}</Project>
-      <Name>UnityEngine.TextCoreTextEngineModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.TextCoreTextEngineModule.csproj">
-      <Project>{394BA206-DEAD-49B1-F5F0-4E291E5FE54B}</Project>
-      <Name>UnityEditor.TextCoreTextEngineModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UIElementsInputSystemModule.csproj">
-      <Project>{61872FEC-2607-85BF-FF04-FC6E94EAB329}</Project>
-      <Name>UnityEngine.UIElementsInputSystemModule</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

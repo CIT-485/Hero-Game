@@ -22,6 +22,14 @@ public class BehaviourTreeView : GraphView
         this.AddManipulator(new RectangleSelector());
         var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Game Assets/Editor/BehaviourTreeEditor/BehaviourTreeEditor.uss");
         styleSheets.Add(styleSheet);
+
+        Undo.undoRedoPerformed += OnUndoRedo;
+    }
+
+    private void OnUndoRedo()
+    {
+        PopulateView(tree);
+        AssetDatabase.SaveAssets();
     }
 
     NodeView FindNodeView(Node node)
@@ -101,6 +109,14 @@ public class BehaviourTreeView : GraphView
             });
         }
 
+        if (graphViewChange.movedElements != null)
+        {
+            nodes.ForEach((n) =>
+            {
+                NodeView view = n as NodeView;
+                view.SortChildren();
+            });
+        }
         return graphViewChange;
     }
 
