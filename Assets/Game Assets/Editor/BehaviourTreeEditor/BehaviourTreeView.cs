@@ -42,7 +42,7 @@ public class BehaviourTreeView : GraphView
         this.tree = tree;
 
         graphViewChanged -= OnGraphViewChanged;
-        DeleteElements(graphElements);
+        DeleteElements(graphElements as System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.GraphElement>);
         graphViewChanged += OnGraphViewChanged;
 
         if (tree)
@@ -134,7 +134,16 @@ public class BehaviourTreeView : GraphView
             var types = TypeCache.GetTypesDerivedFrom<ActionNode>();
             foreach (var type in types)
             {
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+                if (type.Name == "DelegateNode")
+                    evt.menu.AppendAction($"[{type.Name}] {type.Name}", (a) => CreateNode(type));
+            }
+        }
+        {
+            var types = TypeCache.GetTypesDerivedFrom<ActionNode>();
+            foreach (var type in types)
+            {
+                if (type.Name != "DelegateNode")
+                    evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
             }
         }
         {

@@ -1,5 +1,69 @@
-#node-border {
-    background-color: rgb(56, 56, 56);
+.root #node-border {
+    background-color: rgb(56, 44, 45);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgb(106, 106, 106);
+    border-right-color: rgb(106, 106, 106);
+    border-top-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(106, 106, 106);
+}
+
+.decorator #node-border {
+    background-color: rgb(44, 48, 56);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgb(106, 106, 106);
+    border-right-color: rgb(106, 106, 106);
+    border-top-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(106, 106, 106);
+}
+
+.composite #node-border {
+    background-color: rgb(56, 51, 44);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgb(106, 106, 106);
+    border-right-color: rgb(106, 106, 106);
+    border-top-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(106, 106, 106);
+}
+
+.action #node-border {
+    background-color: rgb(50, 44, 56);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgb(106, 106, 106);
+    border-right-color: rgb(106, 106, 106);
+    border-top-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(106, 106, 106);
+}
+
+.delegate #node-border {
+    background-color: rgb(44, 56, 51);
     border-left-width: 1px;
     border-right-width: 1px;
     border-top-width: 1px;
@@ -16,6 +80,7 @@
 
 #input {
     align-items: center;
+    min-height: 30px;
 }
 
 #output {
@@ -74,6 +139,8 @@
 #title {
     font-size: 14px;
     -unity-font-style: bold;
+    white-space: normal;
+    max-width: 150px;
 }
 
 #description {
@@ -89,7 +156,7 @@
 
 .root #input {
     background-color: rgb(219, 61, 83);
-    min-height: 20px;
+    min-height: 30px;
 }
 
 .decorator #input {
@@ -101,6 +168,10 @@
 }
 
 .action #input {
+    background-color: rgb(143, 50, 236);
+}
+
+.delegate #input {
     background-color: rgb(73, 212, 152);
 }
 
@@ -116,11 +187,100 @@
     background-color: rgb(0, 255, 0);
 }
 
+.output #connector {
+    left: 25%;
+    position: relative;
+}
+
+.input #connector {
+    left: -27.5%;
+}
+
 .port {
     min-width: 150px;
     left: -25%;
 }
 
-.connectorBox {
+.input {
     left: 25%;
+}
+
+#connector {
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    opacity: 0;
+}
+
+#cap {
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    width: 0;
+    height: 0;
+    max-height: 0;
+    max-width: 0;
+    min-width: 0;
+    min-height: 0;
+}
+
+.decorator #input-button {
+    background-color: rgb(61, 100, 178);
+}
+
+.decorator :hover > #input-button {
+    background-color: rgba(53, 86, 153, 255);
+}
+
+.composite #input-button {
+    background-color: rgba(178, 136, 37, 255);
+}
+
+.composite :hover > #input-button {
+    background-color: rgb(153, 117, 32);
+}
+
+.action #input-button {
+    background-color: rgba(108, 37, 178, 255);
+}
+
+.action :hover > #input-button {
+    background-color: rgba(92, 31, 153, 255);
+}
+
+.delegate #input-button {
+    background-color: rgb(58, 166, 119);
+}
+
+.delegate :hover > #input-button {
+    background-color: rgb(49, 140, 101);
+}
+
+.root #output-button {
+    background-color: rgba(46, 36, 36, 255);
+}
+
+.root :hover > #output-button {
+    background-color: rgba(31, 24, 24, 255);
+}
+
+.decorator #output-button {
+    background-color: rgb(36, 39, 46);
+}
+
+.decorator :hover > #output-button {
+    background-color: rgb(24, 26, 31);
+}
+
+.composite #output-button {
+    background-color: rgb(46, 43, 36);
+}
+
+.composite :hover > #output-button {
+    background-color: rgb(31, 29, 24);
 }

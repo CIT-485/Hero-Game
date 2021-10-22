@@ -1,5 +1,39 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8607363407325368419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  doneOnce: 0
+  guid: ed7288fda2b860c46b0faf3ad83112ab
+  position: {x: 415.00003, y: 707.0502}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    delegates:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+  description: 
+  keybind: DelegateTest
 --- !u!114 &-6890390318493329456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,19 +47,29 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 1
+  started: 0
   doneOnce: 0
   guid: fbac709398a435343831677d07d9b53c
-  position: {x: 242.73314, y: 5.247014}
+  position: {x: 257, y: -45}
   blackboard:
-    intKeys: []
-    floatKeys: []
-    stringKeys: []
-    boolKeys: []
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    delegates:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
   description: 
   keybind: 
-  child: {fileID: -4989402312112616792}
---- !u!114 &-4989402312112616792
+  child: {fileID: 4521304799548559692}
+--- !u!114 &-2068116735140800253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,21 +78,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daeeb086b2ba8df4dbbb2cb1afda4442, type: 3}
-  m_Name: DebugLogNode
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
   m_EditorClassIdentifier: 
   state: 0
   started: 0
   doneOnce: 0
-  guid: d394e4178bb2d1848bc6ae7026d3cdb6
-  position: {x: 242.73314, y: 166.24702}
+  guid: 6e858ac172ea0c54ab68757074029ae8
+  position: {x: 257, y: 218}
   blackboard:
-    intKeys: []
-    floatKeys: []
-    stringKeys: []
-    boolKeys: []
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    delegates:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
   description: 
-  keybind: 
+  keybind: boolstart
+  child: {fileID: 6489381846028041844}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,9 +120,174 @@ MonoBehaviour:
   treeState: 0
   nodes:
   - {fileID: -6890390318493329456}
-  - {fileID: -4989402312112616792}
+  - {fileID: -8607363407325368419}
+  - {fileID: 4521304799548559692}
+  - {fileID: 6489381846028041844}
+  - {fileID: 7681320000553386257}
+  - {fileID: -2068116735140800253}
+  - {fileID: 8014018566687224588}
   blackboard:
-    intKeys: []
-    floatKeys: []
-    stringKeys: []
-    boolKeys: []
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: boolstart
+        value: 1
+      - name: boolrundelegate
+        value: 1
+    delegates:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+--- !u!114 &4521304799548559692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9c09a170e57d34ab622867e811d627, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  doneOnce: 0
+  guid: 9a1a1f16b3819b041b1523469e9a2c75
+  position: {x: 257, y: 88}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    delegates:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+  description: 
+  keybind: 
+  child: {fileID: -2068116735140800253}
+  loopInfinitely: 1
+  loopCount: 0
+  count: 0
+  prevCountForState: 0
+--- !u!114 &6489381846028041844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  doneOnce: 0
+  guid: 37f388cdc5f00cb4d81c2486e3b5f5ec
+  position: {x: 256.99988, y: 351.00003}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    delegates:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+  description: 
+  keybind: 
+  children:
+  - {fileID: 7681320000553386257}
+  - {fileID: 8014018566687224588}
+--- !u!114 &7681320000553386257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67b30722d3ecc047ad873caf36c4e2f, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  doneOnce: 0
+  guid: 62f0241da8c3d994baf578678b91fd17
+  position: {x: 99.00002, y: 566}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    delegates:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+  description: 
+  keybind: 
+  duration: 0.1
+--- !u!114 &8014018566687224588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  doneOnce: 0
+  guid: 073ef613b4d2354408705f55cf065218
+  position: {x: 415.00003, y: 554.65}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    delegates:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+  description: 
+  keybind: boolrundelegate
+  child: {fileID: -8607363407325368419}

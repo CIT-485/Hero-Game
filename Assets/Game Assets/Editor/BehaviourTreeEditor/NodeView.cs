@@ -35,7 +35,10 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     {
         if (node is ActionNode)
         {
-            AddToClassList("action");
+            if (node is DelegateNode)
+                AddToClassList("delegate");
+            else
+                AddToClassList("action");
         }
         else if (node is CompositeNode)
         {

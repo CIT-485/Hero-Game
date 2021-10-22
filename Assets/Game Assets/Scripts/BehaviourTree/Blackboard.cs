@@ -5,12 +5,51 @@ using UnityEngine;
 [System.Serializable]
 public class Blackboard
 {
-    [SerializeField]
-    public List<Key<int>> intKeys = new List<Key<int>>();
-    public List<Key<float>> floatKeys = new List<Key<float>>();
-    public List<Key<string>> stringKeys = new List<Key<string>>();
-    public List<Key<bool>> boolKeys = new List<Key<bool>>();
-    public Dictionary<string, Key<int>> blackboard = new Dictionary<string, Key<int>>();
+    public enum State { RUNNING, FAILURE, SUCCESS }
+    public Group<int> integers = new Group<int>();
+    public Group<float> floats = new Group<float>();
+    public Group<string> strings = new Group<string>();
+    public Group<bool> booleans = new Group<bool>();
+    public Group<DoSomething> delegates = new Group<DoSomething>();
+    public Group<Vector2> vector2s = new Group<Vector2>();
+    public Group<GameObject> gameObjects = new Group<GameObject>();
+
+    public delegate Node.State DoSomething();
+}
+
+[System.Serializable]
+public class Group<T>
+{
+    public List<Key<T>> keys = new List<Key<T>>();
+    private T dummy = default(T);
+
+    public ref T Find(string name)
+    {
+        foreach (Key<T> key in keys)
+            if (key.name == name)
+                return ref key.value;
+        return ref dummy;
+    }
+    public void Add(string name, T value)
+    {
+        keys.Add(new Key<T>(name, value));
+    }
+    public void Remove(string name)
+    {
+        foreach (Key<T> key in keys)
+            if (key.name == name)
+                keys.Remove(key);
+    }
+    public bool Exist(string name)
+    {
+        List<string> names = new List<string>();
+        foreach (Key<T> key in keys)
+            names.Add(key.name);
+        if (names.Contains(name))
+            return true;
+        else
+            return false;
+    }
 }
 
 [System.Serializable]
