@@ -53,6 +53,7 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Game Assets\Editor\RepeatNodeEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\LetterBoxerEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\FlagEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\BehaviourTreeView.cs" />

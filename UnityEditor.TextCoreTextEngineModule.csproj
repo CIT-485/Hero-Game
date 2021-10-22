@@ -53,38 +53,38 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextCorePreBuildProcessor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextCoreShaderGUISDF.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\FontAssetCreationMenu.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextSettingsEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextCoreContextMenuItems.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\FontAssetEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\SpriteAssetImporter.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\SpriteAssetImportFormats.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\GlyphPairAdjustmentRecordPropertyDrawer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\SpriteCharacterPropertyDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextStyleAssetCreationMenu.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextColorGradientAssetCreationMenu.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\AssemblyInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\GlyphMetricsPropertyDrawer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextStyleAssetCreationMenu.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextColorGradientEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextSpriteAssetEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextStyleSheetEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\SpriteCharacterPropertyDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextCorePreBuildProcessor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextCoreContextMenuItems.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\SpriteGlyphPropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextSettingsCreationMenu.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\EditorShaderUtilities.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\FontAssetCreatorWindow.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextCoreShaderGUI.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\UnicodeLineBreakingRulesPropertyDrawer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\CharacterPropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextAssetPostProcessor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\GlyphRectPropertyDrawer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextSpriteAssetEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\GlyphPropertyDrawer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextEditorResourceManager.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextStyleSheetEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextCoreShaderGUISDF.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextColorGradientAssetCreationMenu.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\SerializedPropertyHolder.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\EditorShaderUtilities.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextCoreEditorUtilities.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\SpriteAssetImporter.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\SpriteAssetImportFormats.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\CharacterPropertyDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\GlyphRectPropertyDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextEditorResourceManager.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\SerializedPropertyHolder.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextCoreShaderGUIBitmap.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\FontAssetEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\GlyphPairAdjustmentRecordPropertyDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\TextCoreShaderGUI.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\FontAssetCreatorWindow.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\UnicodeLineBreakingRulesPropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\SpriteAssetCreationMenu.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\FontAssetCreationMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Editor\UnityEditor.TextCoreTextEngineModule.asmdef" />

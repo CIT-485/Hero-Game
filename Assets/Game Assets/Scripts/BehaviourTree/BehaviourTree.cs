@@ -11,6 +11,7 @@ public class BehaviourTree : ScriptableObject
     public Node rootNode;
     public Node.State treeState = Node.State.RUNNING;
     public List<Node> nodes = new List<Node>();
+    public Blackboard blackboard;
     public Node.State Update()
     {
         if (rootNode.state == Node.State.RUNNING)
@@ -144,5 +145,13 @@ public class BehaviourTree : ScriptableObject
             tree.nodes.Add(n);
         });
         return tree;
+    }
+
+    public void Bind()
+    {
+        Traverse(rootNode, node => 
+        {
+            node.blackboard = blackboard;
+        });
     }
 }

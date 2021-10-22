@@ -53,40 +53,40 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\MaterialReference.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\MaterialManager.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\FontAssetUtilities.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextProcessingStacks.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\FontAsset.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextStyle.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextMarkupTagsCommon.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\SpriteGlyph.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\UnicodeLineBreakingRules.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\SpriteAsset.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\MeshInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextElementInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\AssemblyInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextAsset.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextShaderUtilities.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextColorGradient.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextStyleSheet.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextGenerator.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\FontFeatureTable.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextEventManager.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\LinkInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\ColorUtilities.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\LineInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextProcessingStacks.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\SpriteAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextStyleSheet.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextGeneratorUtilities.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\SpriteCharacter.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\Character.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextGeneratorCommon.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextResourcesManager.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\MaterialReferenceManager.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextUtilities.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextElement.cs" />
-    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\LineInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\MeshInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\FontAssetUtilities.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\SpriteGlyph.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\UnicodeLineBreakingRules.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextElementInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\FontFeatureTable.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\MaterialReferenceManager.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\MaterialReference.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\MaterialManager.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextStyle.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextGenerator.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\LinkInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\ColorUtilities.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\Character.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextResourcesManager.cs" />
     <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\FastAction.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextShaderUtilities.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextGeneratorCommon.cs" />
+    <Compile Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\TextElement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.textcore@1.0.0-preview.3\Scripts\Runtime\UnityEngine.TextCoreTextEngineModule.asmdef" />

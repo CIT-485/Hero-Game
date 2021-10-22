@@ -45,29 +45,33 @@ public class BehaviourTreeView : GraphView
         DeleteElements(graphElements);
         graphViewChanged += OnGraphViewChanged;
 
-        if (tree.rootNode == null)
+        if (tree)
         {
-            tree.rootNode = tree.CreateNode(typeof(RootNode)) as RootNode;
-            EditorUtility.SetDirty(tree);
-            AssetDatabase.SaveAssets();
-        }
-
-        // Create the node views
-        tree.nodes.ForEach(n => CreateNodeView(n));
-
-        // Create the edges
-        tree.nodes.ForEach(n => 
-        {
-            var children = tree.GetChildren(n);
-            children.ForEach(c => 
+            if (tree.rootNode == null)
             {
-                NodeView parentView = FindNodeView(n);
-                NodeView childView = FindNodeView(c);
+                tree.nodes.Clear();
+                tree.rootNode = tree.CreateNode(typeof(RootNode)) as RootNode;
+                EditorUtility.SetDirty(tree);
+                AssetDatabase.SaveAssets();
+            }
 
-                Edge edge = parentView.output.ConnectTo(childView.input);
-                AddElement(edge);
+            // Create the node views
+            tree.nodes.ForEach(n => CreateNodeView(n));
+
+            // Create the edges
+            tree.nodes.ForEach(n => 
+            {
+                var children = tree.GetChildren(n);
+                children.ForEach(c => 
+                {
+                    NodeView parentView = FindNodeView(n);
+                    NodeView childView = FindNodeView(c);
+
+                    Edge edge = parentView.output.ConnectTo(childView.input);
+                    AddElement(edge);
+                });
             });
-        });
+        }
     }
 
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
@@ -117,6 +121,9 @@ public class BehaviourTreeView : GraphView
                 view.SortChildren();
             });
         }
+
+        UpdateNodeStates();
+
         return graphViewChange;
     }
 
@@ -164,7 +171,61 @@ public class BehaviourTreeView : GraphView
         nodes.ForEach((n) =>
         {
             NodeView view = n as NodeView;
+            RepeatNode repeater = view.node as RepeatNode;
             view.UpdateState();
         });
+        nodes.ForEach((n) =>
+        {
+            NodeView view = n as NodeView;
+            RepeatNode repeater = view.node as RepeatNode;
+            if (repeater && repeater.prevCountForState != repeater.count)
+            {
+                repeater.prevCountForState = repeater.count;
+                List<Node> list = new List<Node>();
+                Traverse(repeater, node =>
+                {
+                    list.Add(node);
+                });
+                nodes.ForEach((m) =>
+                {
+                    NodeView view2 = m as NodeView;
+                    if (list.Contains(view2.node))
+                        view2.RemoveStatesFromClassList();
+                });
+            }
+        });
+    }
+
+    public List<Node> GetChildren(Node parent)
+    {
+        List<Node> children = new List<Node>();
+        DecoratorNode decorator = parent as DecoratorNode;
+        if (decorator && decorator.child != null)
+        {
+            children.Add(decorator.child);
+        }
+
+        RootNode root = parent as RootNode;
+        if (root && root.child != null)
+        {
+            children.Add(root.child);
+        }
+
+        CompositeNode composite = parent as CompositeNode;
+        if (composite)
+        {
+            return composite.children;
+        }
+        return children;
+    }
+
+    public void Traverse(Node node, System.Action<Node> visitor)
+    {
+        if (node)
+        {
+            visitor.Invoke(node);
+            var children = GetChildren(node);
+            children.ForEach((n) => Traverse(n, visitor));
+        }
     }
 }

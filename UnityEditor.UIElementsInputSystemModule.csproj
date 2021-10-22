@@ -54,8 +54,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\Editor\InputSystemEventSystemInspector.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\Editor\AssemblyInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\Editor\InputActionDropdownInspector.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\Editor\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\Editor\UnityEditor.UIElementsInputSystemModule.asmdef" />

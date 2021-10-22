@@ -6,7 +6,6 @@ public class SequenceNode : CompositeNode
 {
     int current;
     protected override void OnStart() { current = 0; }
-    protected override void OnStop() { }
     protected override State OnUpdate()
     {
         var child = children[current];

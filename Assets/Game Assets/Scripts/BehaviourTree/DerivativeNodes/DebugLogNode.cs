@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class DebugLogNode : ActionNode
 {
-    public string message;
+    string message;
     protected override void OnStart()
-    { Debug.Log("On Start: " + message); }
-    protected override void OnStop()
-    { Debug.Log("On Stop: " + message); }
+    {
+        foreach (Key<string> key in blackboard.stringKeys)
+            if (keybind == key.name)
+                message = key.value;
+    }
     protected override State OnUpdate()
     {
-        Debug.Log("On Update: " + message);
+        Debug.Log(message);
         return State.SUCCESS;
     }
 }

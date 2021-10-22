@@ -137,9 +137,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
     public void UpdateState()
     {
-        RemoveFromClassList("running");
-        RemoveFromClassList("failure");
-        RemoveFromClassList("success");
+        RemoveStatesFromClassList();
         if (Application.isPlaying)
         {
             switch (node.state)
@@ -158,5 +156,11 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
                     break;
             }
         }
+    }
+    public void RemoveStatesFromClassList()
+    {
+        RemoveFromClassList("running");
+        RemoveFromClassList("failure");
+        RemoveFromClassList("success");
     }
 }

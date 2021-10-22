@@ -53,14 +53,14 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\InputWrapper.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\InputSystemEventSystem.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\AssemblyInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\IMGUIKeyboardEventProcessor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\InputSystemInitializer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\ButtonWithSignModifier.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\InputWrapper.cs" />
     <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\InputActionDropdownAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\InputSystemKeyboardEventProcessor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\ButtonWithSignModifier.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\InputSystemEventSystem.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\AssemblyInfo.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\InputSystemInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.ui@1.0.0-preview.17\InputSystem\UnityEngine.UIElementsInputSystemModule.asmdef" />

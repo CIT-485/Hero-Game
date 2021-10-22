@@ -105,13 +105,22 @@
 }
 
 .running #node-state {
-    background-color: rgba(255, 255, 0, 255);
+    background-color: rgb(255, 255, 0);
 }
 
 .failure #node-state {
-    background-color: rgba(255, 0, 0, 255);
+    background-color: rgb(255, 0, 0);
 }
 
 .success #node-state {
-    background-color: rgba(0, 255, 0, 255);
+    background-color: rgb(0, 255, 0);
+}
+
+.port {
+    min-width: 150px;
+    left: -25%;
+}
+
+.connectorBox {
+    left: 25%;
 }

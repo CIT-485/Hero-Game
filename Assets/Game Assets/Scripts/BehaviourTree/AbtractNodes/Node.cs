@@ -5,8 +5,9 @@ using UnityEngine;
 public abstract class Node : ScriptableObject
 {
     public enum State { RUNNING, FAILURE, SUCCESS }
-    [HideInInspector] public State state = State.RUNNING;
-    [HideInInspector] public bool started = false;
+    public State state = State.RUNNING;
+    public bool started = false;
+    public bool doneOnce = false;
     [HideInInspector] public string guid;
     [HideInInspector] public Vector2 position;
     [HideInInspector] public Blackboard blackboard;
@@ -31,8 +32,8 @@ public abstract class Node : ScriptableObject
     {
         return Instantiate(this);
     }
-    protected abstract void OnStart();
-    protected abstract void OnStop();
+    protected virtual void OnStart() { }
+    protected virtual void OnStop() { doneOnce = true; }
     protected abstract State OnUpdate();
 
 }
