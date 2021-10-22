@@ -16,6 +16,7 @@ public class BehaviourTreeEditor : EditorWindow
         wnd.titleContent = new GUIContent("BehaviourTreeEditor");
     }
 
+    [OnOpenAsset]
     public static bool OnOpenAsset(int instanceId, int line)
     {
         if (Selection.activeObject is BehaviourTree)

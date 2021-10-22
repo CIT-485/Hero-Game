@@ -115,6 +115,7 @@ m_PackageAssets:
         - 5.0.6
         - 5.0.7
         - 5.0.8
+        - 5.0.9
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.1
@@ -130,7 +131,8 @@ m_PackageAssets:
         - 5.0.6
         - 5.0.7
         - 5.0.8
-        verified: 5.0.8
+        - 5.0.9
+        verified: 5.0.9
       dependencies:
       - name: com.unity.2d.common
         version: 4.0.3
@@ -314,6 +316,7 @@ m_PackageAssets:
         - 4.0.2
         - 4.1.0
         - 4.1.1
+        - 4.1.2
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.1
@@ -328,7 +331,8 @@ m_PackageAssets:
         compatible:
         - 4.1.0
         - 4.1.1
-        verified: 4.1.1
+        - 4.1.2
+        verified: 4.1.2
       dependencies:
       - name: com.unity.2d.common
         version: 4.0.3
@@ -1459,6 +1463,7 @@ m_PackageAssets:
         - 1.5.4
         - 1.5.5
         - 1.5.6
+        - 1.5.7
         - 1.6.0-pre.1
         - 1.6.0-pre.3
         - 1.6.0-pre.4
@@ -1481,6 +1486,7 @@ m_PackageAssets:
         - 1.5.4
         - 1.5.5
         - 1.5.6
+        - 1.5.7
         - 1.6.0-pre.1
         - 1.6.0-pre.3
         - 1.6.0-pre.4

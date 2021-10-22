@@ -55,7 +55,7 @@
   <ItemGroup>
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTree.cs" />
     <Compile Include="Assets\Scripts\Camera_Follow.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DebugLogNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DebugLogNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
@@ -70,9 +70,9 @@
     <Compile Include="Assets\Game Assets\Scripts\Flag.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\SequenceNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\SequenceNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\AttackManager.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\RepeatNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\RepeatNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Game Assets\Scripts\HealthBar\BossHealthBar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
@@ -110,7 +110,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\WaitNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\WaitNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Game Assets\Scripts\StickToObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
@@ -126,12 +126,15 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\BreakNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\EnemySpriteFlashRenderer.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Camera\CameraFollowObject.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\LandingSensor.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTreeRunner.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BreakNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\SelectorNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ConditionNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\Blackboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
