@@ -1,11 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Blackboard
+public class Blackboard : ISerializationCallbackReceiver
 {
-    public enum State { RUNNING, FAILURE, SUCCESS }
+    public List<object> objects = new List<object>();
     public Group<int> integers = new Group<int>();
     public Group<float> floats = new Group<float>();
     public Group<string> strings = new Group<string>();
@@ -14,7 +15,18 @@ public class Blackboard
     public Group<Vector2> vector2s = new Group<Vector2>();
     public Group<GameObject> gameObjects = new Group<GameObject>();
 
+    public List<string> keys = new List<string>();
+
     public delegate Node.State DoSomething();
+
+    public void OnBeforeSerialize()
+    {
+        keys.Clear();
+        foreach (Key<int> key in integers.keys)
+            keys.Add(key.name + " : " + key.value.GetType());
+    }
+
+    public void OnAfterDeserialize() { }
 }
 
 [System.Serializable]
@@ -57,11 +69,12 @@ public class Key<T>
 {
     public string name;
     public T value;
-
+    public Type type;
     public Key(string name, T value)
     {
         this.name = name;
         this.value = value;
+        type = value.GetType();
     }
     public Key() { }
 }

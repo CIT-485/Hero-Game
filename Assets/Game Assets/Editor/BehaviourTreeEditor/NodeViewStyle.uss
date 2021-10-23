@@ -1,3 +1,7 @@
+#node-border {
+    min-width: 150px;
+}
+
 .root #node-border {
     background-color: rgb(56, 44, 45);
     border-left-width: 1px;
@@ -234,11 +238,11 @@
 }
 
 .decorator :hover > #input-button {
-    background-color: rgba(53, 86, 153, 255);
+    background-color: rgb(53, 86, 153);
 }
 
 .composite #input-button {
-    background-color: rgba(178, 136, 37, 255);
+    background-color: rgb(178, 136, 37);
 }
 
 .composite :hover > #input-button {
@@ -246,11 +250,11 @@
 }
 
 .action #input-button {
-    background-color: rgba(108, 37, 178, 255);
+    background-color: rgb(108, 37, 178);
 }
 
 .action :hover > #input-button {
-    background-color: rgba(92, 31, 153, 255);
+    background-color: rgb(92, 31, 153);
 }
 
 .delegate #input-button {
@@ -262,11 +266,11 @@
 }
 
 .root #output-button {
-    background-color: rgba(46, 36, 36, 255);
+    background-color: rgb(46, 36, 36);
 }
 
 .root :hover > #output-button {
-    background-color: rgba(31, 24, 24, 255);
+    background-color: rgb(31, 24, 24);
 }
 
 .decorator #output-button {

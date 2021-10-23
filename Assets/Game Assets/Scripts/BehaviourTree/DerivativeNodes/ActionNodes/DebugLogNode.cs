@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DebugLogNode : ActionNode
 {
-    string message;
+    public string message;
+    public bool enableKey = false;
     protected override void OnStart()
     {
         if (blackboard.integers.Exist(keybind))

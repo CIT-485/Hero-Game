@@ -42,7 +42,12 @@ public class BehaviourTreeView : GraphView
         this.tree = tree;
 
         graphViewChanged -= OnGraphViewChanged;
-        DeleteElements(graphElements as System.Collections.Generic.IEnumerable<UnityEditor.Experimental.GraphView.GraphElement>);
+
+
+        // When you open unity, this will cause an error. Delete this line and save, then undo the deletion and save again. This should fix the error
+        DeleteElements(graphElements);
+        
+        
         graphViewChanged += OnGraphViewChanged;
 
         if (tree)

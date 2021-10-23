@@ -7,7 +7,13 @@ public class ConditionNode : DecoratorNode
     bool success = false;
     protected override void OnStart()
     {
-        success = blackboard.booleans.Find(keybind);
+        if (blackboard.booleans.Exist(keybind))
+            success = blackboard.booleans.Find(keybind);
+        else
+        {
+            success = false;
+            Debug.LogWarning("WARNING: The key " + keybind + "does not currently exist! automatically set boolean to fail safe value: false");
+        }
     }
     protected override State OnUpdate()
     {

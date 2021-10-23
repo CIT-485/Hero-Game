@@ -53,7 +53,7 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Game Assets\Editor\RepeatNodeEditor.cs" />
+    <Compile Include="Assets\Game Assets\Editor\NodeEditor\RepeatNodeEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\LetterBoxerEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\FlagEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\BehaviourTreeView.cs" />
@@ -62,6 +62,8 @@
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\InspectorView.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\BehaviourTreeEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\SplitView.cs" />
+    <Compile Include="Assets\Game Assets\Editor\NodeEditor\WaitNodeEditor.cs" />
+    <Compile Include="Assets\Game Assets\Editor\NodeEditor\NodeEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Game Assets\Editor\BehaviourTreeEditor\NodeViewStyle.uss" />

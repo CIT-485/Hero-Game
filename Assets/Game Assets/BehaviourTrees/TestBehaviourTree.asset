@@ -13,27 +13,81 @@ MonoBehaviour:
   m_Name: DelegateNode
   m_EditorClassIdentifier: 
   state: 0
+  index: 0
   started: 0
   doneOnce: 0
   guid: ed7288fda2b860c46b0faf3ad83112ab
-  position: {x: 415.00003, y: 707.0502}
+  position: {x: 484.64615, y: 707}
   blackboard:
     integers:
-      keys: []
+      keys:
+      - name: asd
+        value: 0
     floats:
       keys: []
     strings:
       keys: []
     booleans:
-      keys: []
+      keys:
+      - name: boolstart
+        value: 1
+      - name: boolrundelegate
+        value: 1
     delegates:
       keys: []
     vector2s:
       keys: []
     gameObjects:
       keys: []
+    keys:
+    - 'asd : System.Int32'
   description: 
   keybind: DelegateTest
+--- !u!114 &-7284426572263718148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daeeb086b2ba8df4dbbb2cb1afda4442, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  started: 0
+  doneOnce: 0
+  guid: ee92824937bb4834b8999f06e95415ea
+  position: {x: 26.56257, y: 555}
+  blackboard:
+    integers:
+      keys:
+      - name: asd
+        value: 0
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: boolstart
+        value: 1
+      - name: boolrundelegate
+        value: 1
+    delegates:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    keys:
+    - 'asd : System.Int32'
+  description: 
+  keybind: 
+  message: 
+  enableKey: 0
 --- !u!114 &-6890390318493329456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,25 +101,34 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   state: 0
+  index: 0
   started: 0
   doneOnce: 0
   guid: fbac709398a435343831677d07d9b53c
   position: {x: 257, y: -45}
   blackboard:
     integers:
-      keys: []
+      keys:
+      - name: asd
+        value: 0
     floats:
       keys: []
     strings:
       keys: []
     booleans:
-      keys: []
+      keys:
+      - name: boolstart
+        value: 1
+      - name: boolrundelegate
+        value: 1
     delegates:
       keys: []
     vector2s:
       keys: []
     gameObjects:
       keys: []
+    keys:
+    - 'asd : System.Int32'
   description: 
   keybind: 
   child: {fileID: 4521304799548559692}
@@ -82,25 +145,34 @@ MonoBehaviour:
   m_Name: ConditionNode
   m_EditorClassIdentifier: 
   state: 0
+  index: 0
   started: 0
   doneOnce: 0
   guid: 6e858ac172ea0c54ab68757074029ae8
   position: {x: 257, y: 218}
   blackboard:
     integers:
-      keys: []
+      keys:
+      - name: asd
+        value: 0
     floats:
       keys: []
     strings:
       keys: []
     booleans:
-      keys: []
+      keys:
+      - name: boolstart
+        value: 1
+      - name: boolrundelegate
+        value: 1
     delegates:
       keys: []
     vector2s:
       keys: []
     gameObjects:
       keys: []
+    keys:
+    - 'asd : System.Int32'
   description: 
   keybind: boolstart
   child: {fileID: 6489381846028041844}
@@ -126,9 +198,12 @@ MonoBehaviour:
   - {fileID: 7681320000553386257}
   - {fileID: -2068116735140800253}
   - {fileID: 8014018566687224588}
+  - {fileID: -7284426572263718148}
   blackboard:
     integers:
-      keys: []
+      keys:
+      - name: asd
+        value: 0
     floats:
       keys: []
     strings:
@@ -145,6 +220,8 @@ MonoBehaviour:
       keys: []
     gameObjects:
       keys: []
+    keys:
+    - 'asd : System.Int32'
 --- !u!114 &4521304799548559692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,32 +235,42 @@ MonoBehaviour:
   m_Name: RepeatNode
   m_EditorClassIdentifier: 
   state: 0
+  index: 0
   started: 0
   doneOnce: 0
   guid: 9a1a1f16b3819b041b1523469e9a2c75
-  position: {x: 257, y: 88}
+  position: {x: 257, y: 94}
   blackboard:
     integers:
-      keys: []
+      keys:
+      - name: asd
+        value: 0
     floats:
       keys: []
     strings:
       keys: []
     booleans:
-      keys: []
+      keys:
+      - name: boolstart
+        value: 1
+      - name: boolrundelegate
+        value: 1
     delegates:
       keys: []
     vector2s:
       keys: []
     gameObjects:
       keys: []
+    keys:
+    - 'asd : System.Int32'
   description: 
-  keybind: 
+  keybind: loopamount
   child: {fileID: -2068116735140800253}
   loopInfinitely: 1
   loopCount: 0
   count: 0
   prevCountForState: 0
+  enableKeyloop: 1
 --- !u!114 &6489381846028041844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,28 +284,38 @@ MonoBehaviour:
   m_Name: SequenceNode
   m_EditorClassIdentifier: 
   state: 0
+  index: 0
   started: 0
   doneOnce: 0
   guid: 37f388cdc5f00cb4d81c2486e3b5f5ec
   position: {x: 256.99988, y: 351.00003}
   blackboard:
     integers:
-      keys: []
+      keys:
+      - name: asd
+        value: 0
     floats:
       keys: []
     strings:
       keys: []
     booleans:
-      keys: []
+      keys:
+      - name: boolstart
+        value: 1
+      - name: boolrundelegate
+        value: 1
     delegates:
       keys: []
     vector2s:
       keys: []
     gameObjects:
       keys: []
+    keys:
+    - 'asd : System.Int32'
   description: 
   keybind: 
   children:
+  - {fileID: -7284426572263718148}
   - {fileID: 7681320000553386257}
   - {fileID: 8014018566687224588}
 --- !u!114 &7681320000553386257
@@ -234,28 +331,38 @@ MonoBehaviour:
   m_Name: WaitNode
   m_EditorClassIdentifier: 
   state: 0
+  index: 0
   started: 0
   doneOnce: 0
   guid: 62f0241da8c3d994baf578678b91fd17
-  position: {x: 99.00002, y: 566}
+  position: {x: 257, y: 555}
   blackboard:
     integers:
-      keys: []
+      keys:
+      - name: asd
+        value: 0
     floats:
       keys: []
     strings:
       keys: []
     booleans:
-      keys: []
+      keys:
+      - name: boolstart
+        value: 1
+      - name: boolrundelegate
+        value: 1
     delegates:
       keys: []
     vector2s:
       keys: []
     gameObjects:
       keys: []
+    keys:
+    - 'asd : System.Int32'
   description: 
-  keybind: 
-  duration: 0.1
+  keybind: waittime
+  duration: 3
+  enableKey: 1
 --- !u!114 &8014018566687224588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,25 +376,34 @@ MonoBehaviour:
   m_Name: ConditionNode
   m_EditorClassIdentifier: 
   state: 0
+  index: 0
   started: 0
   doneOnce: 0
   guid: 073ef613b4d2354408705f55cf065218
-  position: {x: 415.00003, y: 554.65}
+  position: {x: 484.64615, y: 555}
   blackboard:
     integers:
-      keys: []
+      keys:
+      - name: asd
+        value: 0
     floats:
       keys: []
     strings:
       keys: []
     booleans:
-      keys: []
+      keys:
+      - name: boolstart
+        value: 1
+      - name: boolrundelegate
+        value: 1
     delegates:
       keys: []
     vector2s:
       keys: []
     gameObjects:
       keys: []
+    keys:
+    - 'asd : System.Int32'
   description: 
   keybind: boolrundelegate
   child: {fileID: -8607363407325368419}

@@ -19,14 +19,10 @@ public class Attack
 
 public class AttackManager : MonoBehaviour, ISerializationCallbackReceiver
 {
-    [HideInInspector]
-    public int index;
-    [SerializeField]
-    public Attack[] attacks = new Attack[] { };
-    [HideInInspector]
-    public List<string> attackList = new List<string>();
-    [HideInInspector]
-    public Attack currentAttack;
+    [HideInInspector] public int index;
+    [SerializeField] public Attack[] attacks = new Attack[] { };
+    [HideInInspector] public List<string> attackList = new List<string>();
+    [HideInInspector] public Attack currentAttack;
     public void Update()
     {
         for (int i = 0; i < attacks.Length; i++)

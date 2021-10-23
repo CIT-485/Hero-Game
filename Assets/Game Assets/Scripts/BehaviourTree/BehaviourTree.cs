@@ -6,7 +6,7 @@ using UnityEditor;
 #endif
 
 [CreateAssetMenu]
-public class BehaviourTree : ScriptableObject
+public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
 {
     public Node rootNode;
     public Node.State treeState = Node.State.RUNNING;
@@ -49,7 +49,6 @@ public class BehaviourTree : ScriptableObject
 
         AssetDatabase.SaveAssets();
     }
-#endif
     public void AddChild(Node parent, Node child)
     {
         DecoratorNode decorator = parent as DecoratorNode;
@@ -102,6 +101,7 @@ public class BehaviourTree : ScriptableObject
             EditorUtility.SetDirty(composite);
         }
     }
+#endif
     public List<Node> GetChildren(Node parent)
     {
         List<Node> children = new List<Node>();
@@ -154,4 +154,7 @@ public class BehaviourTree : ScriptableObject
             node.blackboard = blackboard;
         });
     }
+
+    public void OnBeforeSerialize() { Bind(); }
+    public void OnAfterDeserialize() { }
 }

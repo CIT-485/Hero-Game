@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Node : ScriptableObject
+public abstract class Node : ScriptableObject 
 {
     public enum State { RUNNING, FAILURE, SUCCESS }
-    public State state = State.RUNNING;
-    public bool started = false;
-    public bool doneOnce = false;
+    [HideInInspector] public State state = State.RUNNING;
+    [HideInInspector] public int index;
+    [HideInInspector] public bool started = false;
+    [HideInInspector] public bool doneOnce = false;
     [HideInInspector] public string guid;
     [HideInInspector] public Vector2 position;
     [HideInInspector] public Blackboard blackboard;
@@ -35,5 +36,4 @@ public abstract class Node : ScriptableObject
     protected virtual void OnStart() { }
     protected virtual void OnStop() { doneOnce = true; }
     protected abstract State OnUpdate();
-
 }

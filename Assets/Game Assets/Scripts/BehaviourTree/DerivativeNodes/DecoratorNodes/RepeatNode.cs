@@ -6,12 +6,24 @@ public class RepeatNode : DecoratorNode
 {
     [HideInInspector] public bool loopInfinitely = true;
     [HideInInspector] public int loopCount = 0;
-    public int count;
+    [HideInInspector] public int count;
     [HideInInspector] public int prevCountForState;
+    [HideInInspector] public bool enableKeyloop = false;
+
     protected override void OnStart() 
     { 
         count = 1;
         prevCountForState = 0;
+        if (!loopInfinitely)
+        {
+            if (blackboard.integers.Exist(keybind) && enableKeyloop)
+                loopCount = blackboard.integers.Find(keybind);
+            else if (enableKeyloop)
+            {
+                loopCount = 0;
+                Debug.LogWarning("WARNING: The key \"" + keybind + "\" does not currently exist! automatically set loopCount to fail safe value: 1");
+            }
+        }
     }
     protected override State OnUpdate()
     {
