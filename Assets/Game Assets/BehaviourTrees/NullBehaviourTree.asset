@@ -16,6 +16,21 @@ MonoBehaviour:
   treeState: 0
   nodes:
   - {fileID: 1321365297275300837}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
 --- !u!114 &1321365297275300837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29,7 +44,27 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   state: 0
+  index: 0
+  keybinds: []
   started: 0
+  doneOnce: 0
   guid: 6f6a6a089cbb73849a975af398414b77
   position: {x: 0, y: 0}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
   child: {fileID: 0}

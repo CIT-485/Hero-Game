@@ -3,30 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum VariableType { INTEGER, FLOAT, BOOLEAN, STRING, VECTOR2, GAMEOBJECT, DELEGATE }
+
 [System.Serializable]
-public class Blackboard : ISerializationCallbackReceiver
+public class Blackboard
 {
-    public List<object> objects = new List<object>();
     public Group<int> integers = new Group<int>();
     public Group<float> floats = new Group<float>();
     public Group<string> strings = new Group<string>();
     public Group<bool> booleans = new Group<bool>();
-    public Group<DoSomething> delegates = new Group<DoSomething>();
     public Group<Vector2> vector2s = new Group<Vector2>();
     public Group<GameObject> gameObjects = new Group<GameObject>();
-
-    public List<string> keys = new List<string>();
+    public Group<DoSomething> delegates = new Group<DoSomething>();
 
     public delegate Node.State DoSomething();
-
-    public void OnBeforeSerialize()
-    {
-        keys.Clear();
-        foreach (Key<int> key in integers.keys)
-            keys.Add(key.name + " : " + key.value.GetType());
-    }
-
-    public void OnAfterDeserialize() { }
 }
 
 [System.Serializable]

@@ -105,7 +105,7 @@ public class BehaviourTreeEditor : EditorWindow
                 }
             }
         }
-        if (tree)
+        if (tree && treeView != null)
         {
             treeView.PopulateView(tree);
         }
@@ -113,7 +113,8 @@ public class BehaviourTreeEditor : EditorWindow
         {
             treeObject = new SerializedObject(tree);
             blackboardProperty = treeObject.FindProperty("blackboard");
-            treeView.UpdateNodeStates();
+            if (treeView != null)
+                treeView.UpdateNodeStates();
         }
     }
 
@@ -124,6 +125,7 @@ public class BehaviourTreeEditor : EditorWindow
 
     private void OnInspectorUpdate()
     {
-        treeView.UpdateNodeStates();
+        if (treeView != null)
+            treeView.UpdateNodeStates();
     }
 }

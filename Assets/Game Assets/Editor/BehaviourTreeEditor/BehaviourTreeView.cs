@@ -43,11 +43,9 @@ public class BehaviourTreeView : GraphView
 
         graphViewChanged -= OnGraphViewChanged;
 
-
-        // When you open unity, this will cause an error. Delete this line and save, then undo the deletion and save again. This should fix the error
+        // When you open unity, this will cause an error. Delete this line and save the code, After unity registers the changes, undo the deletion and save again. This should fix the error
         DeleteElements(graphElements);
-        
-        
+
         graphViewChanged += OnGraphViewChanged;
 
         if (tree)

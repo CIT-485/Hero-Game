@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Node : ScriptableObject 
+public abstract class Node : ScriptableObject, ISerializationCallbackReceiver
 {
     public enum State { RUNNING, FAILURE, SUCCESS }
     [HideInInspector] public State state = State.RUNNING;
     [HideInInspector] public int index;
+    [HideInInspector] public List<string> keybinds = new List<string>();
     [HideInInspector] public bool started = false;
     [HideInInspector] public bool doneOnce = false;
     [HideInInspector] public string guid;
     [HideInInspector] public Vector2 position;
     [HideInInspector] public Blackboard blackboard;
-    [TextArea] public string description;
-    public string keybind;
+    [HideInInspector] public string description;
+    [HideInInspector] public string keybind;
     public State Update()
     {
         if (!started)
@@ -36,4 +37,6 @@ public abstract class Node : ScriptableObject
     protected virtual void OnStart() { }
     protected virtual void OnStop() { doneOnce = true; }
     protected abstract State OnUpdate();
+    public virtual void OnBeforeSerialize() { }
+    public virtual void OnAfterDeserialize() { }
 }

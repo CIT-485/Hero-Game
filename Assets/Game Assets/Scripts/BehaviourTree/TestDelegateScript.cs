@@ -8,7 +8,10 @@ public class TestDelegateScript : MonoBehaviour
     void Start()
     {
         btc = GetComponent<BehaviourTreeController>();
-        btc.tree.blackboard.delegates.Add("DelegateTest", DelegateTest);
+        if (btc.tree.blackboard.delegates.Exist("DelegateTest"))
+            btc.tree.blackboard.delegates.Find("DelegateTest") = DelegateTest;
+        else
+            btc.tree.blackboard.delegates.Add("DelegateTest", DelegateTest);
     }
 
     public Node.State DelegateTest()

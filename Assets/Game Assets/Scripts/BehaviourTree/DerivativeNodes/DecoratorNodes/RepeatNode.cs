@@ -83,4 +83,14 @@ public class RepeatNode : DecoratorNode
             children.ForEach((n) => Traverse(n, visitor));
         }
     }
+    public override void OnBeforeSerialize()
+    {
+        keybinds.Clear();
+        foreach (Key<int> key in blackboard.integers.keys)
+            keybinds.Add(key.name + " (integer Key)");
+
+        foreach (Key<int> key in blackboard.integers.keys)
+            if (key.name == keybinds[index].Split(new string[] { " (" }, System.StringSplitOptions.None)[0])
+                keybind = key.name;
+    }
 }
