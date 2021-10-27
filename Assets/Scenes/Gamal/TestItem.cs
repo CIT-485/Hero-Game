@@ -34,13 +34,13 @@ public class TestItem : PlayerBaseStat
     public void Equip(PlayerBaseStat item)
     {
         flat = new StatModifier(10, StatModType.Flat);
-        item.Attack.AddModifier(flat);
+        //item.Attack.AddModifier(flat);
 
         percent = new StatModifier(0.1f, StatModType.PercentAdd);
-        item.Defense.AddModifier(percent);
-
-        Debug.Log(item.Attack.Value);
-        Debug.Log(item.Defense.Value);
+        //item.Defense.AddModifier(percent);
+        //
+        //Debug.Log(item.Attack.Value);
+       // Debug.Log(item.Defense.Value);
 
     }
 
