@@ -50,6 +50,9 @@
      <Compile Include="Assets\Scripts\Camera_Follow.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+     <Compile Include="Assets\UIAssets\PlayerHealthBar.cs" />
+     <Compile Include="Assets\Game Assets\Amulet_Pickup.cs" />
+     <Compile Include="Assets\UIAssets\HealthBar.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\Game Assets\Deathzone.cs" />
@@ -87,6 +90,9 @@
      <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
      <Compile Include="Assets\Game Assets\DEMO.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+     <Compile Include="Assets\Game Assets\Corruption_Bar.cs" />
+     <Compile Include="Assets\Game Assets\Event_Trigger.cs" />
+     <Compile Include="Assets\Game Assets\XP_Bar.cs" />
      <Compile Include="Assets\Game Assets\LetterBoxer.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
      <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
@@ -104,6 +110,7 @@
      <Compile Include="Assets\Scripts\backgroundLoop.cs" />
      <Compile Include="Assets\Game Assets\HealthBar\HealthBarUI.cs" />
      <Compile Include="Assets\Game Assets\Entities\Enemies\Bandit\BanditTest.cs" />
+     <Compile Include="Assets\UIAssets\PlayerHealthBarUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
