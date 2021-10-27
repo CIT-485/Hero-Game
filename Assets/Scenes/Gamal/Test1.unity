@@ -409,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4577364966792360732, guid: e19a21b51759e0a4e88302a5a61fc813, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4577364966792360737, guid: e19a21b51759e0a4e88302a5a61fc813, type: 3}
       propertyPath: m_RootOrder
@@ -554,6 +554,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91e7074be09f8b748adb71eb6479a157, type: 3}
+--- !u!1 &748435040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8136544694179990770, guid: 91e7074be09f8b748adb71eb6479a157, type: 3}
+  m_PrefabInstance: {fileID: 748435039}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &748435041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748435040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf613c5679b695948a75abb1458d0974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack:
+    BaseValue: 0
+  Defense:
+    BaseValue: 0
+  Health:
+    BaseValue: 0
+--- !u!114 &748435051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748435040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b6b562f52b306458d82a156a2b95b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack:
+    BaseValue: 0
+  Defense:
+    BaseValue: 0
+  Health:
+    BaseValue: 0
+  modifiedStats: {fileID: 0}
 --- !u!1 &778019026 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 622347162952217806, guid: 5f9ed68746bad6e48a1939e55a84acc2, type: 3}
@@ -879,7 +921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033216192012943596, guid: 84ce2c1d5d9698d4f8a7c7bfc29bf224, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84ce2c1d5d9698d4f8a7c7bfc29bf224, type: 3}
@@ -1918,7 +1960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 622347162952217806, guid: 5f9ed68746bad6e48a1939e55a84acc2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f9ed68746bad6e48a1939e55a84acc2, type: 3}
@@ -1987,7 +2029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1419437948120684693, guid: 5465ef38ec3ab854b93ed8d4910dea37, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1419437948120684694, guid: 5465ef38ec3ab854b93ed8d4910dea37, type: 3}
       propertyPath: m_RootOrder
@@ -2124,7 +2166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1689866831511430, guid: f4bb598bfea20494a965d25c371967a8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4805181885227780, guid: f4bb598bfea20494a965d25c371967a8, type: 3}
       propertyPath: m_RootOrder
@@ -2172,19 +2214,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8587564701707742856, guid: f4bb598bfea20494a965d25c371967a8, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8587564701707742856, guid: f4bb598bfea20494a965d25c371967a8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8587564701794929834, guid: f4bb598bfea20494a965d25c371967a8, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8587564701794929834, guid: f4bb598bfea20494a965d25c371967a8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bb598bfea20494a965d25c371967a8, type: 3}
