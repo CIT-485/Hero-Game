@@ -312,6 +312,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4596292418160577302, guid: 971a4d095adf3ff4daff03be2fa2f0ef, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596292418160577302, guid: 971a4d095adf3ff4daff03be2fa2f0ef, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
     - target: {fileID: 4596292419212943233, guid: 971a4d095adf3ff4daff03be2fa2f0ef, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
