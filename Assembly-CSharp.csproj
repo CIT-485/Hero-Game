@@ -97,6 +97,7 @@
      <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
      <Compile Include="Assets\Game Assets\DEMO.cs" />
      <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+     <Compile Include="Assets\Game Assets\Menus\InventorySystem.cs" />
      <Compile Include="Assets\Game Assets\LetterBoxer.cs" />
      <Compile Include="Assets\Game Assets\Monsters Creatures Fantasy\Scripts\Patrol.cs" />
      <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -105,6 +106,7 @@
      <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
      <Compile Include="Assets\Bandits - Pixel Art\Demo\Sensor_Bandit.cs" />
      <Compile Include="Assets\Game Assets\Camera\GiantRatBossTrigger.cs" />
+     <Compile Include="Assets\Game Assets\Menus\Item.cs" />
      <Compile Include="Assets\Game Assets\FlashingLight2D.cs" />
      <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
      <Compile Include="Assets\Scenes\Gamal\CharacterStat.cs" />
@@ -130,8 +132,6 @@
      <Compile Include="Assets\Game Assets\Player\LandingSensor.cs" />
      <Compile Include="Assets\Game Assets\Menus\InteractionSystem.cs" />
      <Compile Include="Assets\Game Assets\Player\PlayerMovement.cs" />
-     <Compile Include="Assets\Game Assets\Menus\InventorySystem.cs" />
-     <Compile Include="Assets\Game Assets\Menus\Item.cs" />
      <None Include="Assets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />
      <None Include="Assets\Text\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Text\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

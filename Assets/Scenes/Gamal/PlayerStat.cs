@@ -2,15 +2,15 @@ using UnityEngine;
 using Kryz.CharacterStats;
 public class PlayerStat : MonoBehaviour
 {
-    public CharacterStat playerAttack;
-    public CharacterStat playerDefense;
-    public CharacterStat playerHealth;
+    public CharacterStat attack;
+    public CharacterStat defense;
+    public CharacterStat health;
 
     private void Start()
     {
-        playerAttack.BaseValue = 16;
-        playerDefense.BaseValue = 22;
-        playerHealth.BaseValue = 22;
+        attack.BaseValue = 16;
+        defense.BaseValue = 22;
+        health.BaseValue = 22;
     }
 
 }
