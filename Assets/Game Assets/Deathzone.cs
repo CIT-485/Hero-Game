@@ -9,7 +9,7 @@ public class Deathzone : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            SceneManager.LoadScene("ClassDemo");
+            SceneManager.LoadScene("GameOverMenu");
         }
     }
 }
