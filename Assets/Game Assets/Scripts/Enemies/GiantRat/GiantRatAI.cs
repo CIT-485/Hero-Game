@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
 
 public class GiantRatAI : MonoBehaviour
 {
@@ -111,7 +110,7 @@ public class GiantRatAI : MonoBehaviour
                     // Summon Laser
                     // Shoot Laser
                     // Start Phase 2
-                    //doOnce = true;
+                    // doOnce = true;`
                 }
             }
         }
@@ -264,7 +263,6 @@ public class GiantRatAI : MonoBehaviour
         }
 
         body2d.AddForce(directionalForce);
-
         if (body2d.velocity.x > maxSpeed)
             body2d.velocity = new Vector2(maxSpeed, body2d.velocity.y);
         else if (body2d.velocity.x < -maxSpeed)

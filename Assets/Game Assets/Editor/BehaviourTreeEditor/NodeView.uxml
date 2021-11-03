@@ -9,7 +9,7 @@
                 </ui:VisualElement>
                 <ui:VisualElement name="divider" class="vertical" />
                 <ui:VisualElement name="title">
-                    <ui:Label name="title-label" text="WaitNode" class="unity-text-element unity-label" />
+                    <ui:Label name="title-label" text="WaitNode" class="unity-text-element unity-label" style="white-space: normal;" />
                     <ui:VisualElement name="title-button-container">
                         <ui:VisualElement name="collapse-button">
                             <ui:VisualElement name="icon" />

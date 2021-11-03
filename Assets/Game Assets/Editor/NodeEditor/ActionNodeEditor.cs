@@ -21,6 +21,12 @@ public class WaitNodeEditor : Editor
         EditorGUILayout.LabelField("Wait Node", font);
         EditorGUILayout.Separator();
 
+        GUIStyle wrap = new GUIStyle();
+        wrap.wordWrap = true;
+        wrap.normal.textColor = new Color32(200, 200, 200, 255);
+        EditorGUILayout.LabelField("This will wait for a given period of time in seconds", wrap);
+
+
         node.enableKey = EditorGUILayout.Toggle("Get Blackboard Value", node.enableKey);
         if (node.enableKey)
         {
@@ -62,6 +68,11 @@ public class DebugLogNodeEditor : Editor
         font.normal.background = tex;
         EditorGUILayout.LabelField("Debug Log Node", font);
         EditorGUILayout.Separator();
+
+        GUIStyle wrap = new GUIStyle();
+        wrap.wordWrap = true;
+        wrap.normal.textColor = new Color32(200, 200, 200, 255);
+        EditorGUILayout.LabelField("This will write a message to the unity console", wrap);
 
         node.enableKey = EditorGUILayout.Toggle("Get Blackboard Value", node.enableKey);
         if (node.enableKey)
@@ -105,6 +116,11 @@ public class DelegateNodeEditor : Editor
         EditorGUILayout.LabelField("Delegate Node", font);
         EditorGUILayout.Separator();
 
+        GUIStyle wrap = new GUIStyle();
+        wrap.wordWrap = true;
+        wrap.normal.textColor = new Color32(200, 200, 200, 255);
+        EditorGUILayout.LabelField("This will perform a chosen delegate. Be sure to have a delegate in your blackboard", wrap);
+
         GUIContent content = new GUIContent("Keybind");
         node.index = EditorGUILayout.Popup(content, node.index, node.keybinds.ToArray());
 
@@ -117,9 +133,8 @@ public class DelegateNodeEditor : Editor
 
 
 
-
 [CustomEditor(typeof(SetValueNode))]
-public class BlackboardEditNodeEditor : Editor
+public class SetValueNodeEditor : Editor
 {
     public System.Object obj;
     public override void OnInspectorGUI()
@@ -138,47 +153,61 @@ public class BlackboardEditNodeEditor : Editor
         GUIStyle wrap = new GUIStyle();
         wrap.wordWrap = true;
         wrap.normal.textColor = new Color32(200, 200, 200, 255);
-        EditorGUILayout.LabelField("Choose the type of the variable you want to edit then pick the variable itself. You can then assign a value or copy a value from the blackboard from another key", wrap);
-        node.variableIndex = EditorGUILayout.Popup(new GUIContent("Type"), node.variableIndex, Enum.GetNames(typeof(VariableType)));
 
+        GUIStyle note = new GUIStyle();
+        note.wordWrap = true;
+        note.normal.textColor = new Color32(200, 200, 200, 255);
+        note.fontSize = 10;
 
+        EditorGUILayout.LabelField("Choose a key to change the value of. You can enter an value yourself, or copy and value from another key", wrap);
+        EditorGUILayout.Separator();
+
+        // display option to use blackboard key
+        if (node.chosenKeybind[1].Contains("Boolean"))
+        {
+            GUI.enabled = false;
+            node.useBlackboardKey = false;
+            node.useBlackboardKey = EditorGUILayout.Toggle("Copy From Blackboard", node.useBlackboardKey);
+            GUI.enabled = true;
+        }
+        else
+            node.useBlackboardKey = EditorGUILayout.Toggle("Copy From Blackboard", node.useBlackboardKey);
+
+        // display keybind
         node.index = EditorGUILayout.Popup(new GUIContent("Keybind"), node.index, node.keybinds.ToArray());
 
-        EditorGUI.indentLevel++;
-        node.enableKey = EditorGUILayout.Toggle("Copy Blackboard Value", node.enableKey);
-        EditorGUI.indentLevel--;
-        if (node.enableKey)
+        // display value
+        if (node.useBlackboardKey)
         {
-            node.indexCopy = EditorGUILayout.Popup(new GUIContent("Copy From"), node.indexCopy, node.keybindsCopy.ToArray());
+            node.newIndex = EditorGUILayout.Popup(new GUIContent("New Value"), node.newIndex, node.newList.ToArray());
+            if (node.chosenKeybind[1].Contains("Integer"))
+            {
+                EditorGUI.indentLevel++;
+                EditorGUILayout.LabelField("Note: Choosing an integer will round the number to fit the parameters", note);
+                EditorGUI.indentLevel--;
+            }
         }
         else
         {
-            switch (node.variableIndex)
-            {
-                case 0:
+            if (node.IsNumeric())
+                if (node.chosenKeybind[1].Contains("Integer"))
                     node.intValue = EditorGUILayout.IntField("New Value", node.intValue);
-                    break;
-                case 1:
+                else
                     node.floatValue = EditorGUILayout.FloatField("New Value", node.floatValue);
-                    break;
-                case 2:
-                    node.enableInvert = EditorGUILayout.Toggle("Invert Boolean", node.enableInvert);
-                    if (!node.enableInvert)
-                        node.boolIndex = EditorGUILayout.Popup("New Value", node.boolIndex, new string[] { "True", "False" });
-                    break;
-                case 3:
-                    node.stringValue = EditorGUILayout.TextField("New Value", node.stringValue);
-                    break;
-                case 4:
-                    node.vector2Value = EditorGUILayout.Vector2Field("New Value", node.vector2Value);
-                    break;
-                case 5:
-                    obj = EditorGUILayout.ObjectField("New Value", node.gameObjectValue, typeof(GameObject), true);
-                    node.gameObjectValue = obj as GameObject;
-                    break;
-                case 6:
-                    EditorGUILayout.LabelField("You can't assign an abstract delegate. This will return FAILURE!", wrap);
-                    break;
+            else if (node.chosenKeybind[1].Contains("String"))
+                node.stringValue = EditorGUILayout.TextField("New Value", node.stringValue);
+            else if (node.chosenKeybind[1].Contains("Boolean"))
+            {
+                node.invert = EditorGUILayout.Toggle("Invert boolean", node.invert);
+                if (!node.invert)
+                    node.boolIndex = EditorGUILayout.Popup("New Value", node.boolIndex, node.boolList.ToArray());
+            }
+            else if (node.chosenKeybind[1].Contains("2 Key)"))
+                node.vector2Value = EditorGUILayout.Vector2Field("New Value", node.vector2Value);
+            else
+            {
+                obj = EditorGUILayout.ObjectField("New Value", node.objValue, typeof(GameObject), true);
+                node.objValue = obj as GameObject;
             }
         }
 
@@ -191,12 +220,12 @@ public class BlackboardEditNodeEditor : Editor
 
 
 
-[CustomEditor(typeof(GenerateRandomNumeralNode))]
-public class GenerateRandomNumeralNodeEditor : Editor
+[CustomEditor(typeof(RNGNode))]
+public class RNGNodeEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        var node = target as GenerateRandomNumeralNode;
+        var node = target as RNGNode;
 
         GUIStyle font = new GUIStyle();
         Texture2D tex = new Texture2D(2, 2);
@@ -204,14 +233,20 @@ public class GenerateRandomNumeralNodeEditor : Editor
         font.fontSize = 16;
         font.normal.textColor = new Color32(200, 200, 200, 255);
         font.normal.background = tex;
-        EditorGUILayout.LabelField("Debug Log Node", font);
+        EditorGUILayout.LabelField("Random Number Generator Node", font);
         EditorGUILayout.Separator();
 
         GUIStyle wrap = new GUIStyle();
         wrap.wordWrap = true;
         wrap.normal.textColor = new Color32(200, 200, 200, 255);
+
+        GUIStyle note = new GUIStyle();
+        note.wordWrap = true;
+        note.normal.textColor = new Color32(200, 200, 200, 255);
+        note.fontSize = 10;
+
         EditorGUILayout.LabelField("Choose the type of the variable you want to have generate a random number, then specify the range. (Lower bound is inclusive; Upper bound is exclusive)", wrap);
-        node.variableIndex = EditorGUILayout.Popup(new GUIContent("Type"), node.variableIndex, node.variableTypes.ToArray());
+        EditorGUILayout.Separator();
 
         GUIContent content = new GUIContent("Keybind");
         node.index = EditorGUILayout.Popup(content, node.index, node.keybinds.ToArray());
@@ -219,13 +254,19 @@ public class GenerateRandomNumeralNodeEditor : Editor
         node.lowerBound = EditorGUILayout.FloatField("Lower Bound", node.lowerBound);
         node.upperBound = EditorGUILayout.FloatField("Upper Bound", node.upperBound);
 
+        if (node.chosenKeybind[1].Contains("Integer"))
+        {
+            EditorGUI.indentLevel++;
+            EditorGUILayout.LabelField("Note: Choosing an integer will round the number to fit the parameters", note);
+            EditorGUI.indentLevel--;
+        }
+
         EditorGUILayout.LabelField("Description");
         node.description = EditorGUILayout.TextArea(node.description, GUILayout.MaxHeight(75));
 
         //base.OnInspectorGUI();
     }
 }
-
 
 
 
@@ -249,21 +290,87 @@ public class ArithmeticNodeEditor : Editor
         GUIStyle wrap = new GUIStyle();
         wrap.wordWrap = true;
         wrap.normal.textColor = new Color32(200, 200, 200, 255);
-        EditorGUILayout.LabelField("Choose the variable you want to compare then enter a value, or choose from the blackboard a value you want to compare it with.", wrap);
-        node.variableIndex = EditorGUILayout.Popup(new GUIContent("Type"), node.variableIndex, node.variableTypes.ToArray());
 
-        node.enableKey = EditorGUILayout.Toggle("Use Blackboard Value", node.enableKey);
-        node.index = EditorGUILayout.Popup(new GUIContent("Operand 1"), node.index, node.keybinds.ToArray());
-        
+        GUIStyle note = new GUIStyle();
+        note.wordWrap = true;
+        note.normal.textColor = new Color32(200, 200, 200, 255);
+        note.fontSize = 10;
+
+        EditorGUILayout.LabelField("Choose two operands and an operator, then a key to store to results in. Toggle boolean below to have to option enter an value for the second operand instead.", wrap);
+        EditorGUILayout.Separator();
+
+        node.getBlackboardKey = EditorGUILayout.Toggle("Get Blackboard Value", node.getBlackboardKey);
+
+        // display Operand One
+        node.operandOneIndex = EditorGUILayout.Popup("First Operand", node.operandOneIndex, node.operandOneList.ToArray());
+
+        // display Operator
         node.operatorList = new List<string>() { "+", "-", "~", "€ (division)" };
-        node.operatorIndex = EditorGUILayout.Popup(new GUIContent("Operator"), node.operatorIndex, node.operatorList.ToArray());
+        node.operatorIndex = EditorGUILayout.Popup("Operator", node.operatorIndex, node.operatorList.ToArray());
 
-        if (node.enableKey)
-            node.indexCopy = EditorGUILayout.Popup(new GUIContent("Operand 2"), node.indexCopy, node.keybindsCopy.ToArray());
+        // display Operand Two
+        if (node.getBlackboardKey)
+            node.operandTwoIndex = EditorGUILayout.Popup("Second Operand", node.operandTwoIndex, node.operandTwoList.ToArray());
         else
-            node.floatValue = EditorGUILayout.FloatField("Operand 2", node.floatValue);
+            node.enteredValue = EditorGUILayout.FloatField("Second Operand", node.enteredValue);
 
+        EditorGUILayout.Separator();
+
+        // display Results
         node.resultIndex = EditorGUILayout.Popup("Save Results to", node.resultIndex, node.resultList.ToArray());
+        if (node.resultList.Count > 0)
+        {
+            if (node.resultList[node.resultIndex].Split(new string[] { " (" }, System.StringSplitOptions.None)[1].Contains("Integer"))
+            {
+                EditorGUI.indentLevel++;
+                EditorGUILayout.LabelField("Note: Choosing an integer as the save location will round the number to fit the parameters", note);
+                EditorGUI.indentLevel--;
+            }
+        }
+
+        EditorGUILayout.LabelField("Description");
+        node.description = EditorGUILayout.TextArea(node.description, GUILayout.MaxHeight(75));
+
+        //base.OnInspectorGUI();
+    }
+}
+
+
+
+[CustomEditor(typeof(AnimationNode))]
+public class AnimationNodeEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        var node = target as AnimationNode;
+
+        GUIStyle font = new GUIStyle();
+        Texture2D tex = new Texture2D(2, 2);
+        tex.SetColor(new Color32(37, 37, 37, 255));
+        font.fontSize = 16;
+        font.normal.textColor = new Color32(200, 200, 200, 255);
+        font.normal.background = tex;
+        EditorGUILayout.LabelField("Animation Node", font);
+        EditorGUILayout.Separator();
+
+        node.index = EditorGUILayout.Popup("Animator", node.index, node.keybinds.ToArray());
+
+        node.varIndex = EditorGUILayout.Popup("Variable Type", node.varIndex, node.variables.ToArray()); ;
+
+        node.varName = EditorGUILayout.TextField("Variable Name", node.varName);
+
+        switch (node.varIndex)
+        {
+            case 0:
+                node.floatValue = EditorGUILayout.FloatField("New Value", node.floatValue);
+                break;
+            case 1:
+                node.intValue = EditorGUILayout.IntField("New Value", node.intValue);
+                break;
+            case 2:
+                node.boolIndex = EditorGUILayout.Popup("New Value", node.boolIndex, node.boolList.ToArray());
+                break;
+        }
 
         EditorGUILayout.LabelField("Description");
         node.description = EditorGUILayout.TextArea(node.description, GUILayout.MaxHeight(75));

@@ -56,15 +56,15 @@
     <Compile Include="Assets\Game Assets\Editor\LetterBoxerEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\FlagEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\NodeEditor\ActionNodeEditor.cs" />
+    <Compile Include="Assets\Game Assets\Editor\NodeEditor\DecoratorNodeEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\BehaviourTreeView.cs" />
+    <Compile Include="Assets\Game Assets\Editor\NodeEditor\CompositeNodeEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\AttackManagerEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\NodeView.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\InspectorView.cs" />
     <Compile Include="Assets\Game Assets\Editor\NodeEditor\NodeEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\BehaviourTreeEditor.cs" />
     <Compile Include="Assets\Game Assets\Editor\BehaviourTreeEditor\SplitView.cs" />
-    <Compile Include="Assets\Game Assets\Editor\NodeEditor\DecoratorNodeEditor.cs" />
-    <Compile Include="Assets\Game Assets\Editor\NodeEditor\CompositeNodeEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Game Assets\Editor\BehaviourTreeEditor\NodeViewStyle.uss" />

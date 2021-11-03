@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c033d50ca0ab179479d15e9423875cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8136544694179990770}
+  entity: {fileID: 8136544694179990770}
 --- !u!212 &2821660753088310467
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0148bec727979dc42b7cb8c5c3ae5715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  entity: {fileID: 8136544694179990770}
 --- !u!251 &2821660753130919629
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -743,6 +743,7 @@ GameObject:
   - component: {fileID: 619454045553876166}
   - component: {fileID: 5679550978233548672}
   - component: {fileID: 7514561592060748015}
+  - component: {fileID: 6602214647730857729}
   m_Layer: 0
   m_Name: Attack_Hitbox
   m_TagString: PlayerHitbox
@@ -841,6 +842,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6602214647730857729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6602214647730857728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2006ffdc67c08a458c8f0c1314a86ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 6046734807515988133}
+  positionOffset: {x: 0.65, y: 0.85}
 --- !u!1 &7653663047281818561
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +976,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8136544694179990770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 255, y: 9.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2821660753130919665}
@@ -995,7 +1010,7 @@ MonoBehaviour:
   damageFlash: {fileID: 7653663047281818561}
   facingDirection: 1
   inputX: 0
-  acceration: 2
+  acceration: 5
   maxSpeed: 4
   jumpForce: 8.5
   fallMultiplier: 3
@@ -1006,10 +1021,11 @@ MonoBehaviour:
   grounded: 0
   rolling: 0
   wallSliding: 0
-  hurtbox: {fileID: 0}
+  hurtbox: {fileID: 2028229299}
   rollingHurtbox: {fileID: 5929774134208653547}
   attackHitbox: {fileID: 6602214647730857728}
-  attackLungingForce: 200
+  attackLungingForce: 10
+  jumpAttackLungingMultiplier: 0.33
   invul: 0
   attackConnected: 0
   attacking: 0
@@ -1046,12 +1062,16 @@ MonoBehaviour:
   attacks:
   - attackName: SwordAttack
     attackDamage: 10
+    poiseDamage: 0
+    poiseMultiplier: 0
     stunTime: 0.1
   attackList:
   - SwordAttack
   currentAttack:
     attackName: 
     attackDamage: 0
+    poiseDamage: 0
+    poiseMultiplier: 0
     stunTime: 0
 --- !u!95 &284485754101065813
 Animator:
@@ -1110,7 +1130,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1023093069
-  m_SortingLayer: -1
+  m_SortingLayer: -11
   m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

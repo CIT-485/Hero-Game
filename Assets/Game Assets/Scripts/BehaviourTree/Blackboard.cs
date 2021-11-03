@@ -24,13 +24,21 @@ public class Group<T>
 {
     public List<Key<T>> keys = new List<Key<T>>();
     private T dummy = default(T);
+    private Key<T> dummmy = new Key<T>();
 
-    public ref T Find(string name)
+    public ref T GetValue(string name)
     {
         foreach (Key<T> key in keys)
             if (key.name == name)
                 return ref key.value;
         return ref dummy;
+    }
+    public Key<T> GetKey(string name)
+    {
+        foreach (Key<T> key in keys)
+            if (key.name == name)
+                return key;
+        return default;
     }
     public void Add(string name, T value)
     {

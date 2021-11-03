@@ -25,77 +25,68 @@ public class ConditionNodeEditor : Editor
         GUIStyle wrap = new GUIStyle();
         wrap.wordWrap = true;
         wrap.normal.textColor = new Color32(200, 200, 200, 255);
-        EditorGUILayout.LabelField("Choose the variable you want to compare then enter a value, or choose from the blackboard a value you want to compare it with.", wrap);
-        node.variableIndex = EditorGUILayout.Popup(new GUIContent("Type"), node.variableIndex, Enum.GetNames(typeof(VariableType)));
+        EditorGUILayout.LabelField("Choose two operands and an operator. Once the resulting boolean is true, then the node will perform its child's update function continuously.", wrap);
 
-        if (node.variableIndex < 5)
+        EditorGUILayout.Separator();
+
+        if (node.chosenKeybind[1].Contains("Boolean"))
         {
-            if (node.variableIndex != 2)
-                node.enableKey = EditorGUILayout.Toggle("Compare Blackboard Value", node.enableKey);
-            node.index = EditorGUILayout.Popup(new GUIContent("Keybind"), node.index, node.keybinds.ToArray());
+            GUI.enabled = false;
+            node.compareWithBlackboardKey = EditorGUILayout.Toggle("Compare Blackboard Value", false);
+            GUI.enabled = true;
+        }
+        else
+            node.compareWithBlackboardKey = EditorGUILayout.Toggle("Compare Blackboard Value", node.compareWithBlackboardKey);
+
+        // Greys out percent toggle if the blackboard key is NOT a numeral
+        if ((node.chosenKeybind[1].Contains("Integer") ||
+            node.chosenKeybind[1].Contains("Float") ||
+            node.chosenKeybind[1].Contains("[X]") ||
+            node.chosenKeybind[1].Contains("[Y]")) &&
+            node.compareWithBlackboardKey)
+            node.comparePercent = EditorGUILayout.Toggle("Compare Percentage(%)", node.comparePercent);
+        else
+        {
+            GUI.enabled = false;
+            node.comparePercent = EditorGUILayout.Toggle("Compare Percentage(%)", false);
+            GUI.enabled = true;
         }
 
-        if (node.variableIndex == 2 || node.variableIndex == 4)
-        {
-            node.operatorList = new List<string>() { "==", "!=" };
-            node.operatorIndex = EditorGUILayout.Popup(new GUIContent("Operator"), node.operatorIndex, node.operatorList.ToArray());
-        }
-        else if (node.variableIndex == 3)
-        {
-            node.operatorList = new List<string>() { "==", "!=", "Contains" };
-            node.operatorIndex = EditorGUILayout.Popup(new GUIContent("Operator"), node.operatorIndex, node.operatorList.ToArray());
-        }
-        else if (node.variableIndex < 5)
-        {
-            node.operatorList = new List<string>() { "==", "!=", "<", "<=", ">", ">=" };
-            node.operatorIndex = EditorGUILayout.Popup(new GUIContent("Operator"), node.operatorIndex, node.operatorList.ToArray());
-        }
+        // display blackboard key
+        node.index = EditorGUILayout.Popup("Operand One", node.index, node.keybinds.ToArray());
 
-        if (node.enableKey)
+        // display associated operators
+        if (node.chosenKeybind[1].Contains("Boolean"))
         {
-            if (node.variableIndex < 2)
-            {
-                node.indexCopy = EditorGUILayout.Popup(new GUIContent("Compare with"), node.indexCopy, node.keybindsCopy.ToArray());
-                node.comparePercent = EditorGUILayout.Toggle("Compare Percentage", node.comparePercent);
-                if (node.comparePercent)
-                    node.floatValue = EditorGUILayout.FloatField(node.keybindCopy + " (%)", node.floatValue);
-            }
-            else if (node.variableIndex == 2)
-                node.boolIndex = EditorGUILayout.Popup("Compare New Value", node.boolIndex, new string[] { "True", "False" });
-            else if (node.variableIndex == 5)
-                EditorGUILayout.LabelField("There is no reason to compare GameObjects, This will return FAILURE", wrap);
-            else if (node.variableIndex == 6)
-                EditorGUILayout.LabelField("There is no reason to compare Delegates, This will return FAILURE", wrap);
-            else
-                node.indexCopy = EditorGUILayout.Popup(new GUIContent("Compare with"), node.indexCopy, node.keybindsCopy.ToArray());
+            GUI.enabled = false;
+            node.operatorIndex = 0;
+            node.operatorIndex = EditorGUILayout.Popup("Operator", node.operatorIndex, node.operatorList.ToArray());
+            GUI.enabled = true;
+        }
+        else
+            node.operatorIndex = EditorGUILayout.Popup("Operator", node.operatorIndex, node.operatorList.ToArray());
+
+        // display comparison
+        if (node.compareWithBlackboardKey)
+        {
+            node.compareIndex = EditorGUILayout.Popup("Operand Two", node.compareIndex, node.compareList.ToArray());
         }
         else
         {
-            switch (node.variableIndex)
-            {
-                case 0:
-                    node.floatValue = EditorGUILayout.FloatField("Compare New Value", node.floatValue);
-                    break;
-                case 1:
-                    node.floatValue = EditorGUILayout.FloatField("Compare New Value", node.floatValue);
-                    break;
-                case 2:
-                    node.boolIndex = EditorGUILayout.Popup("Compare New Value", node.boolIndex, new string[] { "True", "False" });
-                    break;
-                case 3:
-                    node.stringValue = EditorGUILayout.TextField("Compare New Value", node.stringValue);
-                    break;
-                case 4:
-                    node.vector2Value = EditorGUILayout.Vector2Field("Compare New Value", node.vector2Value);
-                    break;
-                case 5:
-                    EditorGUILayout.LabelField("There is no reason to compare GameObjects, This will return FAILURE", wrap);
-                    break;
-                case 6:
-                    EditorGUILayout.LabelField("There is no reason to compare Delegates, This will return FAILURE", wrap);
-                    break;
-            }
+            if (node.chosenKeybind[1].Contains("Integer") ||
+               node.chosenKeybind[1].Contains("Float") ||
+               node.chosenKeybind[1].Contains("[X]") ||
+               node.chosenKeybind[1].Contains("[Y]"))
+                node.floatValue = EditorGUILayout.FloatField("Operand Two", node.floatValue);
+            else if (node.chosenKeybind[1].Contains("Boolean"))
+                node.boolIndex = EditorGUILayout.Popup("Operand Two", node.boolIndex, node.boolList.ToArray());
+            else if (node.chosenKeybind[1].Contains("String"))
+                node.stringValue = EditorGUILayout.TextField("Operand Two", node.stringValue);
+            else if (node.chosenKeybind[1].Contains("2 Key)"))
+                node.vector2Value = EditorGUILayout.Vector2Field("Operand Two", node.vector2Value);
         }
+        if (node.comparePercent && node.compareWithBlackboardKey)
+            node.percent = EditorGUILayout.FloatField("% of Operand Two", node.percent);
 
         EditorGUILayout.LabelField("Description");
         node.description = EditorGUILayout.TextArea(node.description, GUILayout.MaxHeight(75));
@@ -121,6 +112,11 @@ public class RepeatNodeEditor : Editor
         font.normal.background = tex;
         EditorGUILayout.LabelField("Repeat Node", font);
         EditorGUILayout.Separator();
+
+        GUIStyle wrap = new GUIStyle();
+        wrap.wordWrap = true;
+        wrap.normal.textColor = new Color32(200, 200, 200, 255);
+        EditorGUILayout.LabelField("This will repeat its child's update status until a it hits its max loop count.", wrap);
 
         node.loopInfinitely = EditorGUILayout.Toggle("Loop Infinitely", node.loopInfinitely);
         if (node.loopInfinitely == false)
@@ -169,6 +165,71 @@ public class InvertNodeEditor : Editor
         font.normal.background = tex;
         EditorGUILayout.LabelField("Invert Node", font);
         EditorGUILayout.Separator();
+
+        GUIStyle wrap = new GUIStyle();
+        wrap.wordWrap = true;
+        wrap.normal.textColor = new Color32(200, 200, 200, 255);
+        EditorGUILayout.LabelField("This will return the inverted state of it's child. For example; if the child returns successful, then this node will return as failure and vice-versa", wrap);
+
+        EditorGUILayout.LabelField("Description");
+        node.description = EditorGUILayout.TextArea(node.description, GUILayout.MaxHeight(75));
+
+        //base.OnInspectorGUI();
+    }
+}
+
+
+
+[CustomEditor(typeof(FailureNode))]
+public class FailureNodeEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        var node = target as FailureNode;
+
+        GUIStyle font = new GUIStyle();
+        Texture2D tex = new Texture2D(2, 2);
+        tex.SetColor(new Color32(37, 37, 37, 255));
+        font.fontSize = 16;
+        font.normal.textColor = new Color32(200, 200, 200, 255);
+        font.normal.background = tex;
+        EditorGUILayout.LabelField("Failure Node", font);
+        EditorGUILayout.Separator();
+
+        GUIStyle wrap = new GUIStyle();
+        wrap.wordWrap = true;
+        wrap.normal.textColor = new Color32(200, 200, 200, 255);
+        EditorGUILayout.LabelField("This will always return as failure, regardless if the child was successful or not.", wrap);
+
+        EditorGUILayout.LabelField("Description");
+        node.description = EditorGUILayout.TextArea(node.description, GUILayout.MaxHeight(75));
+
+        //base.OnInspectorGUI();
+    }
+}
+
+
+
+[CustomEditor(typeof(SuccessNode))]
+public class SuccessNodeEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        var node = target as SuccessNode;
+
+        GUIStyle font = new GUIStyle();
+        Texture2D tex = new Texture2D(2, 2);
+        tex.SetColor(new Color32(37, 37, 37, 255));
+        font.fontSize = 16;
+        font.normal.textColor = new Color32(200, 200, 200, 255);
+        font.normal.background = tex;
+        EditorGUILayout.LabelField("Success Node", font);
+        EditorGUILayout.Separator();
+
+        GUIStyle wrap = new GUIStyle();
+        wrap.wordWrap = true;
+        wrap.normal.textColor = new Color32(200, 200, 200, 255);
+        EditorGUILayout.LabelField("This will always return as successful, regardless if the child was successful or not.", wrap);
 
         EditorGUILayout.LabelField("Description");
         node.description = EditorGUILayout.TextArea(node.description, GUILayout.MaxHeight(75));

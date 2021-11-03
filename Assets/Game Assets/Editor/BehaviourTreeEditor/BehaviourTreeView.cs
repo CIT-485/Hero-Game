@@ -132,13 +132,17 @@ public class BehaviourTreeView : GraphView
 
     public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
     {
+        VisualElement contentViewContainer = ElementAt(1);
+        Vector3 screenMousePosition = evt.localMousePosition;
+        Vector2 worldMousePosition = screenMousePosition - contentViewContainer.transform.position;
+        worldMousePosition *= 1 / contentViewContainer.transform.scale.x;
         //base.BuildContextualMenu(evt);
         {
             var types = TypeCache.GetTypesDerivedFrom<ActionNode>();
             foreach (var type in types)
             {
                 if (type.Name == "DelegateNode")
-                    evt.menu.AppendAction($"[{type.Name}] {type.Name}", (a) => CreateNode(type));
+                    evt.menu.AppendAction($"[{type.Name}] {type.Name}", (a) => CreateNode(type, worldMousePosition));
             }
         }
         {
@@ -146,28 +150,29 @@ public class BehaviourTreeView : GraphView
             foreach (var type in types)
             {
                 if (type.Name != "DelegateNode")
-                    evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+                    evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type, worldMousePosition));
             }
         }
         {
             var types = TypeCache.GetTypesDerivedFrom<CompositeNode>();
             foreach (var type in types)
             {
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type, worldMousePosition));
             }
         }
         {
             var types = TypeCache.GetTypesDerivedFrom<DecoratorNode>();
             foreach (var type in types)
             {
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type));
+                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) => CreateNode(type, worldMousePosition));
             }
         }
     }
 
-    void CreateNode(System.Type type)
+    void CreateNode(Type type, Vector2 worldMousePosition)
     {
         Node node = tree.CreateNode(type);
+        node.position = worldMousePosition;
         CreateNodeView(node);
     }
 

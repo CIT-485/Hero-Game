@@ -145,7 +145,6 @@ public class BanditTest : MonoBehaviour {
         m_attackHitbox.SetActive(false);
         m_attacking = false;
     }
-
     IEnumerator invul(float time)
     {
         damageFlash.SetActive(true);

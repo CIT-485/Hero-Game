@@ -48,6 +48,9 @@ public class BehaviourTreeEditor : EditorWindow
         treeView = root.Q<BehaviourTreeView>();
         inspectorView = root.Q<InspectorView>();
         blackboardView = root.Q<IMGUIContainer>();
+
+        OnSelectionChange();
+
         blackboardView.onGUIHandler = () =>
         {
             if (treeObject != null)

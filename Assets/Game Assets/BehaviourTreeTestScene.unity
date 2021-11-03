@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 1087154676}
   - component: {fileID: 1087154677}
   - component: {fileID: 1087154678}
+  - component: {fileID: 1087154679}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9086c9c93169acf45a9f94ff65e8b8c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: 90ea0c8237c1e7f4da68a71dcc9e3b6b, type: 2}
+  tree: {fileID: 11400000, guid: 6de75eea3416d174683846b7198abb2c, type: 2}
 --- !u!114 &1087154678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +181,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b67228bdd1dd2b41a853933961650e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1087154679
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087154675}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1236079944
 GameObject:
   m_ObjectHideFlags: 0

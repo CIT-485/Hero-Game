@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IEntity
 {
     [HideInInspector] public Animator animator;
     [HideInInspector] public HealthBar healthBar;
@@ -49,6 +49,8 @@ public class Player : MonoBehaviour
     private float                   m_invulStartUpDuration = 8.0f / 60.0f;
     private float                   m_invulStartUpTime = 0;
     private float                   m_timeSinceAttack = 0.0f;
+
+    public bool Grounded { get => grounded; set => grounded = value; }
 
     // Use this for initialization
     void Start()

@@ -67,9 +67,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\SuccessNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\CollisionSensor.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Flag.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\FailureNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\CompositeNodes\SequenceNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\AttackManager.cs" />
@@ -80,8 +82,8 @@
     <Compile Include="Assets\Game Assets\Scripts\SpriteFade.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\GroundSensor.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\AnimationNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\CompositeNodes\ParallelNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\ConditionNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\CompositeNodes\SelectorNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Game Assets\Scripts\DEMO.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\RNGNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\TestDelegateScript.cs" />
     <Compile Include="Assets\Game Assets\Scripts\LetterBoxer.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\CompositeNode.cs" />
@@ -119,6 +122,7 @@
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\Blackboard.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\WaitNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\ArithmeticNode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Game Assets\Scripts\StickToObject.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
@@ -135,15 +139,18 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\BreakNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRat.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\EnemySpriteFlashRenderer.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Camera\CameraFollowObject.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\LandingSensor.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTreeController.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\SuccessNode.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\FailureNode.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\GenerateRandomNumeralNode.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\ArithmeticNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\CompositeNodes\ParallelSequenceNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\CompositeNodes\ParallelSelectorNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\Bandit\BanditAI.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\Waypoint.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\IEntity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

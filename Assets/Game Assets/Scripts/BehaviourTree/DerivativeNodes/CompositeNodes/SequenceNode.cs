@@ -8,17 +8,20 @@ public class SequenceNode : CompositeNode
     protected override void OnStart() { current = 0; }
     protected override State OnUpdate()
     {
-        var child = children[current];
-        switch (child.Update())
+        while (current < children.Count)
         {
-            case State.RUNNING:
-                return State.RUNNING;
-            case State.FAILURE:
-                return State.FAILURE;
-            case State.SUCCESS:
-                current++;
-                break;
+            var child = children[current];
+            switch (child.Update())
+            {
+                case State.RUNNING:
+                    return State.RUNNING;
+                case State.FAILURE:
+                    return State.FAILURE;
+                case State.SUCCESS:
+                    current++;
+                    break;
+            }
         }
-        return current == children.Count ? State.SUCCESS : State.RUNNING;
+        return State.SUCCESS;
     }
 }

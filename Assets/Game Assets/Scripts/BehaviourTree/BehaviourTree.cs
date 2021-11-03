@@ -25,6 +25,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         Node node = ScriptableObject.CreateInstance(type) as Node;
         node.name = type.Name;
         node.guid = GUID.Generate().ToString();
+        node.blackboard = blackboard;
 
         Undo.RecordObject(this, "Behaviour Tree (CreateNode)");
         nodes.Add(node);
@@ -138,7 +139,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
     public BehaviourTree Clone()
     {
         BehaviourTree tree = Instantiate(this);
-        tree.rootNode = tree.rootNode.Clone();
+        tree.rootNode = rootNode.Clone();
         tree.nodes = new List<Node>();
         Traverse(tree.rootNode, (n) =>
         {

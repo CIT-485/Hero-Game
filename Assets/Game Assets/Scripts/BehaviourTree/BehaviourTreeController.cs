@@ -8,7 +8,8 @@ public class BehaviourTreeController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        tree = tree.Clone();
+        BehaviourTree clone = tree.Clone();
+        tree = clone;
         tree.Bind();
     }
 

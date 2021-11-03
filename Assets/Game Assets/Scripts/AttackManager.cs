@@ -7,12 +7,16 @@ public class Attack
 {
     public string attackName;
     public int attackDamage;
+    public int poiseDamage;
+    public float poiseMultiplier = 1;
     public float stunTime;
 
-    public Attack(string name, int damage, float stun)
+    public Attack(string name, int damage, int poise, float poiseMult, float stun)
     {
         attackName = name;
         attackDamage = damage;
+        poiseDamage = poise;
+        poiseMultiplier = poiseMult;
         stunTime = stun;
     }
 }
@@ -32,6 +36,16 @@ public class AttackManager : MonoBehaviour, ISerializationCallbackReceiver
                 currentAttack = attacks[index];
             }
         }
+    }
+    public void SetAttack(string name)
+    {
+        int get = 0;
+        for (int i = 0; i < attacks.Length; i++)
+        {
+            if (attacks[i].attackName == name)
+                get = i;
+        }
+        index = get;
     }
     public void OnBeforeSerialize()
     {

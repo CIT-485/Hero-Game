@@ -9,6 +9,8 @@ public class RepeatNode : DecoratorNode
     [HideInInspector] public int count;
     [HideInInspector] public int prevCountForState;
     [HideInInspector] public bool enableKeyloop = false;
+    public string keybindName;
+    public int prevCount;
 
     protected override void OnStart() 
     { 
@@ -17,7 +19,7 @@ public class RepeatNode : DecoratorNode
         if (!loopInfinitely)
         {
             if (blackboard.integers.Exist(keybind) && enableKeyloop)
-                loopCount = blackboard.integers.Find(keybind);
+                loopCount = blackboard.integers.GetValue(keybind);
             else if (enableKeyloop)
             {
                 loopCount = 0;
@@ -89,8 +91,25 @@ public class RepeatNode : DecoratorNode
         foreach (Key<int> key in blackboard.integers.keys)
             keybinds.Add(key.name + " (integer Key)");
 
+        if (prevCount != keybinds.Count)
+        {
+            prevCount = keybinds.Count;
+            bool found = false;
+            int i = 0;
+            for (i = 0; i < keybinds.Count && !found; i++)
+                if (keybinds[i] == keybindName)
+                    found = true;
+            if (found)
+                index = i - 1;
+            else
+                index = 0;
+        }
+
         foreach (Key<int> key in blackboard.integers.keys)
             if (key.name == keybinds[index].Split(new string[] { " (" }, System.StringSplitOptions.None)[0])
+            {
                 keybind = key.name;
+                keybindName = keybinds[index];
+            }
     }
 }

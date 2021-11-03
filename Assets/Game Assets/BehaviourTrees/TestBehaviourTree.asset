@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8607363407325368419
+--- !u!114 &-8230798503350729923
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15,492 +15,45 @@ MonoBehaviour:
   state: 0
   index: 0
   keybinds:
-  - DelegateTest (Delegate Key)
+  - AAA (Delegate Key)
+  - 1231231231 (Delegate Key)
+  - rt5t4r33t3 (Delegate Key)
   started: 0
   doneOnce: 0
-  guid: ed7288fda2b860c46b0faf3ad83112ab
-  position: {x: 665.55005, y: 706.00006}
+  guid: 198a759cd4ddef9428e3b7bc691e8a88
+  position: {x: 192, y: 308}
   blackboard:
     integers:
       keys:
-      - name: asd
-        value: 1
-      - name: COSPAOFEF
-        value: 2342342
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
     floats:
       keys:
-      - name: awdwd
-        value: 23
-      - name: FloatDelegate
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
         value: 0
     strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
+      keys: []
     booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
+      keys: []
     vector2s:
       keys: []
     gameObjects:
       keys: []
     delegates:
       keys:
-      - name: DelegateTest
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
   description: 
-  keybind: DelegateTest
---- !u!114 &-7284426572263718148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daeeb086b2ba8df4dbbb2cb1afda4442, type: 3}
-  m_Name: DebugLogNode
-  m_EditorClassIdentifier: 
-  state: 0
-  index: 0
-  keybinds:
-  - asd (Integer Key)
-  - COSPAOFEF (Integer Key)
-  - awdwd (Float Key)
-  - FloatDelegate (Float Key)
-  - boolstart (Boolean Key)
-  - boolrundelegate (Boolean Key)
-  - etst (string Key)
-  - DelegateTest (Delegate Key)
-  started: 0
-  doneOnce: 0
-  guid: ee92824937bb4834b8999f06e95415ea
-  position: {x: 1134.7202, y: 706}
-  blackboard:
-    integers:
-      keys:
-      - name: asd
-        value: 1
-      - name: COSPAOFEF
-        value: 2342342
-    floats:
-      keys:
-      - name: awdwd
-        value: 23
-      - name: FloatDelegate
-        value: 0
-    strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
-    booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
-    vector2s:
-      keys: []
-    gameObjects:
-      keys: []
-    delegates:
-      keys:
-      - name: DelegateTest
-  description: 
-  keybind: asd
-  message: String Comparison WORKS
-  enableKey: 0
---- !u!114 &-6890390318493329456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24c39224472027243944779d9551c164, type: 3}
-  m_Name: RootNode
-  m_EditorClassIdentifier: 
-  state: 0
-  index: 0
-  keybinds: []
-  started: 0
-  doneOnce: 0
-  guid: fbac709398a435343831677d07d9b53c
-  position: {x: 257, y: -45}
-  blackboard:
-    integers:
-      keys:
-      - name: asd
-        value: 1
-      - name: COSPAOFEF
-        value: 2342342
-    floats:
-      keys:
-      - name: awdwd
-        value: 23
-      - name: FloatDelegate
-        value: 0
-    strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
-    booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
-    vector2s:
-      keys: []
-    gameObjects:
-      keys: []
-    delegates:
-      keys:
-      - name: DelegateTest
-  description: 
-  keybind: 
-  child: {fileID: 4521304799548559692}
---- !u!114 &-5464618847342975079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
-  m_Name: ConditionNode
-  m_EditorClassIdentifier: 
-  state: 0
-  index: 1
-  keybinds:
-  - awdwd (Float Key)
-  - FloatDelegate (Float Key)
-  started: 0
-  doneOnce: 0
-  guid: e0ca9ea154350c9478d756d4d33d2dac
-  position: {x: 1134.7202, y: 567}
-  blackboard:
-    integers:
-      keys:
-      - name: asd
-        value: 1
-      - name: COSPAOFEF
-        value: 2342342
-    floats:
-      keys:
-      - name: awdwd
-        value: 23
-      - name: FloatDelegate
-        value: 0
-    strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
-    booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
-    vector2s:
-      keys: []
-    gameObjects:
-      keys: []
-    delegates:
-      keys:
-      - name: DelegateTest
-  description: 
-  keybind: FloatDelegate
-  child: {fileID: -7284426572263718148}
-  intValue: 0
-  floatValue: 12
-  boolValue: 0
-  stringValue: 
-  vector2Value: {x: 0, y: 0}
-  gameObjectValue: {fileID: 0}
-  variableIndex: 1
-  prevVariableIndex: 1
-  operatorIndex: 5
-  operatorList:
-  - ==
-  - '!='
-  - <
-  - <=
-  - '>'
-  - '>='
-  keybindsCopy:
-  - asd (Integer Key)
-  - COSPAOFEF (Integer Key)
-  - awdwd (Float Key)
-  - FloatDelegate (Float Key)
-  indexCopy: 0
-  keybindCopy: asd
-  enableKey: 0
-  enableInvert: 0
-  comparePercent: 0
-  boolIndex: 0
---- !u!114 &-2068116735140800253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
-  m_Name: ConditionNode
-  m_EditorClassIdentifier: 
-  state: 0
-  index: 0
-  keybinds:
-  - boolstart (Boolean Key)
-  - boolrundelegate (Boolean Key)
-  started: 0
-  doneOnce: 0
-  guid: 6e858ac172ea0c54ab68757074029ae8
-  position: {x: 257, y: 219}
-  blackboard:
-    integers:
-      keys:
-      - name: asd
-        value: 1
-      - name: COSPAOFEF
-        value: 2342342
-    floats:
-      keys:
-      - name: awdwd
-        value: 23
-      - name: FloatDelegate
-        value: 0
-    strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
-    booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
-    vector2s:
-      keys: []
-    gameObjects:
-      keys: []
-    delegates:
-      keys:
-      - name: DelegateTest
-  description: 
-  keybind: boolstart
-  child: {fileID: 6489381846028041844}
-  intValue: 0
-  floatValue: 0
-  boolValue: 0
-  stringValue: 
-  vector2Value: {x: 0, y: 0}
-  gameObjectValue: {fileID: 0}
-  variableIndex: 2
-  prevVariableIndex: 2
-  operatorIndex: 0
-  operatorList:
-  - ==
-  - '!='
-  keybindsCopy:
-  - boolstart (Boolean Key)
-  - boolrundelegate (Boolean Key)
-  indexCopy: 0
-  keybindCopy: boolstart
-  enableKey: 1
-  enableInvert: 0
-  comparePercent: 0
-  boolIndex: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12410d90be1daa2499cac6d907a2966f, type: 3}
-  m_Name: TestBehaviourTree
-  m_EditorClassIdentifier: 
-  rootNode: {fileID: -6890390318493329456}
-  treeState: 0
-  nodes:
-  - {fileID: -6890390318493329456}
-  - {fileID: -8607363407325368419}
-  - {fileID: 4521304799548559692}
-  - {fileID: 6489381846028041844}
-  - {fileID: 7681320000553386257}
-  - {fileID: -2068116735140800253}
-  - {fileID: 8014018566687224588}
-  - {fileID: -7284426572263718148}
-  - {fileID: -5464618847342975079}
-  - {fileID: 8685448986340130656}
-  blackboard:
-    integers:
-      keys:
-      - name: asd
-        value: 1
-      - name: COSPAOFEF
-        value: 2342342
-    floats:
-      keys:
-      - name: awdwd
-        value: 23
-      - name: FloatDelegate
-        value: 0
-    strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
-    booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
-    vector2s:
-      keys: []
-    gameObjects:
-      keys: []
-    delegates:
-      keys:
-      - name: DelegateTest
---- !u!114 &4521304799548559692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c9c09a170e57d34ab622867e811d627, type: 3}
-  m_Name: RepeatNode
-  m_EditorClassIdentifier: 
-  state: 0
-  index: 0
-  keybinds:
-  - asd (integer Key)
-  - COSPAOFEF (integer Key)
-  started: 0
-  doneOnce: 0
-  guid: 9a1a1f16b3819b041b1523469e9a2c75
-  position: {x: 257, y: 94}
-  blackboard:
-    integers:
-      keys:
-      - name: asd
-        value: 1
-      - name: COSPAOFEF
-        value: 2342342
-    floats:
-      keys:
-      - name: awdwd
-        value: 23
-      - name: FloatDelegate
-        value: 0
-    strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
-    booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
-    vector2s:
-      keys: []
-    gameObjects:
-      keys: []
-    delegates:
-      keys:
-      - name: DelegateTest
-  description: 
-  keybind: asd
-  child: {fileID: -2068116735140800253}
-  loopInfinitely: 1
-  loopCount: 0
-  count: 0
-  prevCountForState: 0
-  enableKeyloop: 1
---- !u!114 &5964506504800362441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd12a5c57aa821b4780ea10eff8a9eb1, type: 3}
-  m_Name: BlackboardEditNode
-  m_EditorClassIdentifier: 
-  state: 0
-  index: 0
-  keybinds:
-  - etst (String Key)
-  started: 0
-  doneOnce: 0
-  guid: 8eb42e14bdca3df4e858a80de1ad6cc0
-  position: {x: 697.2525, y: 555}
-  blackboard:
-    integers:
-      keys:
-      - name: asd
-        value: 0
-      - name: COSPAOFEF
-        value: 2342342
-    floats:
-      keys:
-      - name: awdwd
-        value: 0
-    strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
-    booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
-    vector2s:
-      keys: []
-    gameObjects:
-      keys: []
-    delegates:
-      keys:
-      - name: DelegateTest
-  description: 
-  keybind: etst
-  intValue: 5
-  floatValue: 0
-  boolValue: 0
-  stringValue: 123123
-  vector2Value: {x: 0, y: 0}
-  gameObjectValue: {fileID: 0}
-  variableIndex: 3
-  prevVariableIndex: 3
-  keybindsCopy:
-  - etst (String Key)
-  indexCopy: 0
-  keybindCopy: etst
-  enableKey: 0
-  enableInvert: 0
-  boolIndex: 0
---- !u!114 &6489381846028041844
+  keybind: AAA (Delegate Key)
+  prevCount: 3
+--- !u!114 &-343351098012552519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -517,46 +70,41 @@ MonoBehaviour:
   keybinds: []
   started: 0
   doneOnce: 0
-  guid: 37f388cdc5f00cb4d81c2486e3b5f5ec
-  position: {x: 256.99988, y: 351.00003}
+  guid: 233f58ba877ed574a9994894c474d1b1
+  position: {x: -0.00000333786, y: 178.15}
   blackboard:
     integers:
       keys:
-      - name: asd
-        value: 1
-      - name: COSPAOFEF
-        value: 2342342
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
     floats:
       keys:
-      - name: awdwd
-        value: 23
-      - name: FloatDelegate
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
         value: 0
     strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
+      keys: []
     booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
+      keys: []
     vector2s:
       keys: []
     gameObjects:
       keys: []
     delegates:
       keys:
-      - name: DelegateTest
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
   description: 
   keybind: 
   children:
-  - {fileID: 7681320000553386257}
-  - {fileID: 8014018566687224588}
-  - {fileID: 8685448986340130656}
-  - {fileID: -5464618847342975079}
---- !u!114 &7681320000553386257
+  - {fileID: 2932290747712388287}
+--- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -565,55 +113,147 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c67b30722d3ecc047ad873caf36c4e2f, type: 3}
-  m_Name: WaitNode
+  m_Script: {fileID: 11500000, guid: 12410d90be1daa2499cac6d907a2966f, type: 3}
+  m_Name: TestBehaviourTree
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 1321365297275300837}
+  treeState: 0
+  nodes:
+  - {fileID: 1321365297275300837}
+  - {fileID: 7603501856875103614}
+  - {fileID: -8230798503350729923}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+--- !u!114 &1321365297275300837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c39224472027243944779d9551c164, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 6f6a6a089cbb73849a975af398414b77
+  position: {x: 0, y: 0}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: 
+  child: {fileID: 7603501856875103614}
+--- !u!114 &2932290747712388287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
   m_EditorClassIdentifier: 
   state: 0
   index: 0
   keybinds:
-  - asd (Integer Key)
-  - COSPAOFEF (Integer Key)
-  - awdwd (Float Key)
-  - FloatDelegate (Float Key)
+  - AAA (Delegate Key)
+  - 1231231231 (Delegate Key)
+  - rt5t4r33t3 (Delegate Key)
   started: 0
   doneOnce: 0
-  guid: 62f0241da8c3d994baf578678b91fd17
-  position: {x: 257, y: 567}
+  guid: 38e8208ad9adf6a4bbdeda2ac4d5e7d7
+  position: {x: -0.00000333786, y: 317.40002}
   blackboard:
     integers:
       keys:
-      - name: asd
-        value: 1
-      - name: COSPAOFEF
-        value: 2342342
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
     floats:
       keys:
-      - name: awdwd
-        value: 23
-      - name: FloatDelegate
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
         value: 0
     strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
+      keys: []
     booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
+      keys: []
     vector2s:
       keys: []
     gameObjects:
       keys: []
     delegates:
       keys:
-      - name: DelegateTest
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
   description: 
-  keybind: asd
-  duration: 3
-  enableKey: 1
---- !u!114 &8014018566687224588
+  keybind: AAA (Delegate Key)
+  prevCount: 3
+--- !u!114 &7603501856875103614
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -622,142 +262,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
-  m_Name: ConditionNode
-  m_EditorClassIdentifier: 
-  state: 0
-  index: 1
-  keybinds:
-  - boolstart (Boolean Key)
-  - boolrundelegate (Boolean Key)
-  started: 0
-  doneOnce: 0
-  guid: 073ef613b4d2354408705f55cf065218
-  position: {x: 665.55005, y: 567}
-  blackboard:
-    integers:
-      keys:
-      - name: asd
-        value: 1
-      - name: COSPAOFEF
-        value: 2342342
-    floats:
-      keys:
-      - name: awdwd
-        value: 23
-      - name: FloatDelegate
-        value: 0
-    strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
-    booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
-    vector2s:
-      keys: []
-    gameObjects:
-      keys: []
-    delegates:
-      keys:
-      - name: DelegateTest
-  description: 
-  keybind: boolrundelegate
-  child: {fileID: -8607363407325368419}
-  intValue: 0
-  floatValue: 12
-  boolValue: 0
-  stringValue: 
-  vector2Value: {x: 0, y: 0}
-  gameObjectValue: {fileID: 0}
-  variableIndex: 2
-  prevVariableIndex: 2
-  operatorIndex: 0
-  operatorList:
-  - ==
-  - '!='
-  keybindsCopy:
-  - boolstart (Boolean Key)
-  - boolrundelegate (Boolean Key)
-  indexCopy: 0
-  keybindCopy: boolstart
-  enableKey: 0
-  enableInvert: 0
-  comparePercent: 0
-  boolIndex: 0
---- !u!114 &8685448986340130656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d0b1a9cc6c0fed448ee6376966fc7e5, type: 3}
-  m_Name: ArithmeticNode
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
   m_EditorClassIdentifier: 
   state: 0
   index: 0
-  keybinds:
-  - awdwd (Float Key)
-  - FloatDelegate (Float Key)
+  keybinds: []
   started: 0
   doneOnce: 0
-  guid: 83f1767a1dbdd934298006f87b81a0dd
-  position: {x: 861, y: 567}
+  guid: 112660512df80614c8250349484bd4e1
+  position: {x: 69, y: 155}
   blackboard:
     integers:
       keys:
-      - name: asd
-        value: 1
-      - name: COSPAOFEF
-        value: 2342342
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
     floats:
       keys:
-      - name: awdwd
-        value: 23
-      - name: FloatDelegate
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
         value: 0
     strings:
-      keys:
-      - name: etst
-        value: testfdseffaef
+      keys: []
     booleans:
-      keys:
-      - name: boolstart
-        value: 1
-      - name: boolrundelegate
-        value: 1
+      keys: []
     vector2s:
       keys: []
     gameObjects:
       keys: []
     delegates:
       keys:
-      - name: DelegateTest
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
   description: 
-  keybind: awdwd
-  floatValue: 0
-  variableIndex: 1
-  prevVariableIndex: 1
-  variableTypes:
-  - INTEGER
-  - FLOAT
-  operatorIndex: 3
-  operatorList:
-  - +
-  - '-'
-  - "\xD7"
-  - "\xF7 (division)"
-  keybindsCopy:
-  - asd (Integer Key)
-  - COSPAOFEF (Integer Key)
-  - awdwd (Float Key)
-  - FloatDelegate (Float Key)
-  indexCopy: 3
-  keybindCopy: FloatDelegate
-  enableKey: 1
+  keybind: 
+  children:
+  - {fileID: -8230798503350729923}
