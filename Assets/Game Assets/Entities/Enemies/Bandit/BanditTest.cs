@@ -23,6 +23,8 @@ public class BanditTest : MonoBehaviour {
     private bool                m_isDead = false;
     private bool                m_attacking = false;
 
+    public GameObject particles;
+
 
 
 
@@ -98,6 +100,11 @@ public class BanditTest : MonoBehaviour {
                 m_isDead = true;
                 m_animator.SetTrigger("Death");
                 Destroy(healthBarGameObject);
+            }
+
+            if (Input.GetKeyDown(KeyCode.U))
+            {
+                Instantiate(particles, new Vector3(transform.position.x,transform.position.y + 0.5f, transform.position.z), Quaternion.identity);
             }
         }
     }
