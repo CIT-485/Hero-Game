@@ -109,8 +109,8 @@
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\int4x4.gen.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\double2x3.gen.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\int3x4.gen.cs" />
-    <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\Noise\cellular2D.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\Noise\classicnoise2D.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\Noise\cellular2D.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\float3x2.gen.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\Noise\cellular3D.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\Noise\noise3Dgrad.cs" />
@@ -125,8 +125,8 @@
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\float4x3.gen.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\Noise\noise2D.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\bool2x3.gen.cs" />
-    <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\float3x4.gen.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\float2x4.gen.cs" />
+    <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\float3x4.gen.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\double4.gen.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\math_unity_conversion.cs" />
     <Compile Include="Library\PackageCache\com.unity.mathematics@1.1.0\Unity.Mathematics\float2x2.gen.cs" />
@@ -279,7 +279,7 @@
       <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIElementsNativeModule">
       <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsNativeModule.dll</HintPath>
@@ -354,7 +354,7 @@
       <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UIElementsModule">
-      <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UIElementsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UIElementsSamplesModule">
       <HintPath>Z:\Unity\2020.3.16f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>

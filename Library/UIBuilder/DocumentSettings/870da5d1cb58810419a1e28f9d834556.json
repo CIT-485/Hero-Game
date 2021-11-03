@@ -1,0 +1,30 @@
+{
+    "UxmlGuid": "870da5d1cb58810419a1e28f9d834556",
+    "UxmlPath": "Assets/Game Assets/Editor/BehaviourTreeEditor/NodeView.uxml",
+    "CanvasX": 0,
+    "CanvasY": 0,
+    "CanvasWidth": 350,
+    "CanvasHeight": 450,
+    "MatchGameView": false,
+    "ZoomScale": 1.5,
+    "PanOffset": {
+        "x": 229.73565673828126,
+        "y": -16.07147216796875
+    },
+    "ColorModeBackgroundOpacity": 1.0,
+    "ImageModeCanvasBackgroundOpacity": 1.0,
+    "CameraModeCanvasBackgroundOpacity": 1.0,
+    "EnableCanvasBackground": false,
+    "CanvasBackgroundMode": 0,
+    "CanvasBackgroundColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 255.0
+    },
+    "CanvasBackgroundImage": {
+        "instanceID": 0
+    },
+    "CanvasBackgroundImageScaleMode": 1,
+    "CanvasBackgroundCameraName": ""
+}

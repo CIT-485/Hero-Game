@@ -1,0 +1,2540 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8914118095883463560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd12a5c57aa821b4780ea10eff8a9eb1, type: 3}
+  m_Name: SetValueNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 4
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  started: 0
+  doneOnce: 0
+  guid: fca233ca7125d99428ffcec471b2a6f6
+  position: {x: -276, y: 949}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: IsActive (Boolean Key)
+  intValue: 0
+  floatValue: 0
+  boolValue: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  objValue: {fileID: 0}
+  prevIndex: 4
+  prevCount: 12
+  boolIndex: 1
+  boolList:
+  - True
+  - False
+  newIndex: 0
+  newList: []
+  invert: 0
+  useBlackboardKey: 0
+  chosenKeybind:
+  - IsActive
+  - Boolean Key)
+  chosenNew: []
+--- !u!114 &-6488600554179027830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c39224472027243944779d9551c164, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 25d83aa83ecb95246b288c5b8afa3a46
+  position: {x: 0, y: 0}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  child: {fileID: -4201911085053260907}
+--- !u!114 &-6341732922000794976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - Patrol (Delegate Key)
+  - Combat (Delegate Key)
+  - Chase (Delegate Key)
+  - Dead (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: d6122922685cc1142a066ad4c089037c
+  position: {x: 561.00006, y: 1083.0004}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: Patrol (Delegate Key)
+  prevCount: 4
+--- !u!114 &-5875143013385074461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd12a5c57aa821b4780ea10eff8a9eb1, type: 3}
+  m_Name: SetValueNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 5
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  started: 0
+  doneOnce: 0
+  guid: 30e354a00c7d0cd43a51b797143d8fab
+  position: {x: 1191.7615, y: 1356.9999}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: InCombat (Boolean Key)
+  intValue: 0
+  floatValue: 0
+  boolValue: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  objValue: {fileID: 0}
+  prevIndex: 5
+  prevCount: 12
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  newIndex: 0
+  newList: []
+  invert: 0
+  useBlackboardKey: 0
+  chosenKeybind:
+  - InCombat
+  - Boolean Key)
+  chosenNew: []
+--- !u!114 &-5625358826896335881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0b1a9cc6c0fed448ee6376966fc7e5, type: 3}
+  m_Name: ArithmeticNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 757aac221e77bb64f82145a0689365a9
+  position: {x: 792.7614, y: 1083}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  getBlackboardKey: 1
+  enteredValue: 0
+  operandOne: PlayerPosition (Vector2 Key [X])
+  operandTwo: CurrentPosition (Vector2 Key [X])
+  resultName: Distance (Float Key)
+  operandOneIndex: 5
+  operandOneCount: 8
+  operandOneInt: 0
+  operandOneFloat: 0
+  operandOneUseInt: 0
+  operandOneList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  operatorIndex: 1
+  operatorList: []
+  operandTwoIndex: 5
+  operandTwoCount: 9
+  operandTwoInt: 0
+  operandTwoFloat: 0
+  operandTwoUseInt: 0
+  operandTwoList:
+  - Time.deltaTime (secs)
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  resultIndex: 2
+  resultCount: 8
+  result: 0
+  resultList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  finishState: 2
+--- !u!114 &-5088161482384461444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  started: 0
+  doneOnce: 0
+  guid: ef4a28b2c14b4624a859fef3639358f3
+  position: {x: -78.999985, y: 650}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: CurrentHP (Integer Key)
+  child: {fileID: 2552339744155328247}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 12
+  prevIndex: 0
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 3
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - CurrentHP
+  - Integer Key)
+  chosenCompare: []
+--- !u!114 &-4850222787170357382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847151b3b863c4d4b91087fe80878daa, type: 3}
+  m_Name: SuccessNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: bc04f07e5fce4f64eb38e4e96b0f1131
+  position: {x: 310.56076, y: 808.99994}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  child: {fileID: -862996247416602476}
+--- !u!114 &-4201911085053260907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9c09a170e57d34ab622867e811d627, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - CurrentHP (integer Key)
+  - MaxHP (integer Key)
+  started: 0
+  doneOnce: 0
+  guid: cfb4906719da0e0418d2ea166a263e44
+  position: {x: 0, y: 165}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: CurrentHP
+  child: {fileID: 899015424970468487}
+  loopInfinitely: 1
+  loopCount: 0
+  count: 0
+  prevCountForState: 0
+  enableKeyloop: 0
+  keybindName: CurrentHP (integer Key)
+  prevCount: 2
+--- !u!114 &-3680899806294469362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 2
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  started: 0
+  doneOnce: 0
+  guid: 70ee26d781890424dbd774b232ace2c9
+  position: {x: 1191.7615, y: 1222.9999}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: Distance (Float Key)
+  child: {fileID: -5875143013385074461}
+  floatValue: 5
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 12
+  prevIndex: 2
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 2
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - Distance
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &-3346547559058064355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0b1a9cc6c0fed448ee6376966fc7e5, type: 3}
+  m_Name: ArithmeticNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: ba81fd2c8f49bf043b420a15e78db3e2
+  position: {x: 114.87755, y: 809}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  getBlackboardKey: 1
+  enteredValue: 0
+  operandOne: PlayerPosition (Vector2 Key [Y])
+  operandTwo: CurrentPosition (Vector2 Key [Y])
+  resultName: DistanceY (Float Key)
+  operandOneIndex: 7
+  operandOneCount: 8
+  operandOneInt: 0
+  operandOneFloat: 0
+  operandOneUseInt: 0
+  operandOneList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  operatorIndex: 1
+  operatorList: []
+  operandTwoIndex: 7
+  operandTwoCount: 9
+  operandTwoInt: 0
+  operandTwoFloat: 0
+  operandTwoUseInt: 0
+  operandTwoList:
+  - Time.deltaTime (secs)
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  resultIndex: 3
+  resultCount: 8
+  result: 0
+  resultList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  finishState: 2
+--- !u!114 &-2515447956531356382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847151b3b863c4d4b91087fe80878daa, type: 3}
+  m_Name: SuccessNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 313384f8667c4de40b55fcaf685dfa7f
+  position: {x: 979.7614, y: 1083}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  child: {fileID: 5316729624847525819}
+--- !u!114 &-1809025854725561691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: af22913ebdddfcc41a18af8766fa9d4e
+  position: {x: 311.00006, y: 650}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: -3346547559058064355}
+  - {fileID: -4850222787170357382}
+  - {fileID: 1726929404496467167}
+--- !u!114 &-862996247416602476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 3
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  started: 0
+  doneOnce: 0
+  guid: 713f1fa44ce1484438c3ae86279f30b4
+  position: {x: 311.00003, y: 949}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: DistanceY (Float Key)
+  child: {fileID: 328157689704466545}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 12
+  prevIndex: 3
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 2
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - DistanceY
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &-516544883089438106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 3
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  started: 0
+  doneOnce: 0
+  guid: 867d15d6322bb414dbbb420e955f193d
+  position: {x: 561.00006, y: 949.00006}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: DistanceY (Float Key)
+  child: {fileID: -6341732922000794976}
+  floatValue: 5
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 12
+  prevIndex: 3
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 4
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - DistanceY
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12410d90be1daa2499cac6d907a2966f, type: 3}
+  m_Name: BanditBT
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -6488600554179027830}
+  treeState: 0
+  nodes:
+  - {fileID: -6488600554179027830}
+  - {fileID: 899015424970468487}
+  - {fileID: -4201911085053260907}
+  - {fileID: 665164725152096938}
+  - {fileID: -5088161482384461444}
+  - {fileID: 8552961286476640011}
+  - {fileID: 7420913847713767595}
+  - {fileID: 5960373474808632708}
+  - {fileID: 4871672327171374402}
+  - {fileID: -5625358826896335881}
+  - {fileID: -2515447956531356382}
+  - {fileID: 5316729624847525819}
+  - {fileID: 6516533846568588019}
+  - {fileID: 6939484187258026691}
+  - {fileID: -3680899806294469362}
+  - {fileID: -5875143013385074461}
+  - {fileID: 8824525225461795223}
+  - {fileID: 6670748061165612533}
+  - {fileID: 900632185530431272}
+  - {fileID: 4146695834193309751}
+  - {fileID: 1735598723374454573}
+  - {fileID: 2552339744155328247}
+  - {fileID: -8914118095883463560}
+  - {fileID: -3346547559058064355}
+  - {fileID: -4850222787170357382}
+  - {fileID: -862996247416602476}
+  - {fileID: 328157689704466545}
+  - {fileID: 1726929404496467167}
+  - {fileID: -1809025854725561691}
+  - {fileID: -516544883089438106}
+  - {fileID: -6341732922000794976}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+--- !u!114 &328157689704466545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0b1a9cc6c0fed448ee6376966fc7e5, type: 3}
+  m_Name: ArithmeticNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: e10c40fc1bafdd94eb11da59234580e0
+  position: {x: 311.00003, y: 1083}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  getBlackboardKey: 0
+  enteredValue: -1
+  operandOne: DistanceY (Float Key)
+  operandTwo: Time.deltaTime (secs)
+  resultName: DistanceY (Float Key)
+  operandOneIndex: 3
+  operandOneCount: 8
+  operandOneInt: 0
+  operandOneFloat: 0
+  operandOneUseInt: 0
+  operandOneList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  operatorIndex: 2
+  operatorList: []
+  operandTwoIndex: 0
+  operandTwoCount: 9
+  operandTwoInt: 0
+  operandTwoFloat: 0
+  operandTwoUseInt: 0
+  operandTwoList:
+  - Time.deltaTime (secs)
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  resultIndex: 3
+  resultCount: 8
+  result: 0
+  resultList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  finishState: 2
+--- !u!114 &665164725152096938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 79d0185540c54524890b6d5fbc759d36
+  position: {x: 0.000030517578, y: 472.00003}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: -5088161482384461444}
+  - {fileID: -1809025854725561691}
+--- !u!114 &899015424970468487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 4
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  started: 0
+  doneOnce: 0
+  guid: 56d7aa5c306799f499f8903a372156f5
+  position: {x: 0, y: 323}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: IsActive (Boolean Key)
+  child: {fileID: 665164725152096938}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 12
+  prevIndex: 4
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 0
+  operatorList:
+  - ==
+  compareIndex: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList: []
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - IsActive
+  - Boolean Key)
+  chosenCompare: []
+--- !u!114 &900632185530431272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 2
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  started: 0
+  doneOnce: 0
+  guid: 47148b28b5f7ccd4dbc7ddc8feb3a96d
+  position: {x: 1394.7615, y: 1497.9999}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: Distance (Float Key)
+  child: {fileID: 8824525225461795223}
+  floatValue: 1
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 12
+  prevIndex: 2
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 2
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - Distance
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &1726929404496467167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: a205417f5d4556445ad0258df06e2636
+  position: {x: 807, y: 809}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: -516544883089438106}
+  - {fileID: 4871672327171374402}
+--- !u!114 &1735598723374454573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 3
+  keybinds:
+  - Patrol (Delegate Key)
+  - Combat (Delegate Key)
+  - Chase (Delegate Key)
+  - Dead (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: d04b37433f33e61498dd3ef67250d417
+  position: {x: -79, y: 949}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: Dead (Delegate Key)
+  prevCount: 4
+--- !u!114 &2552339744155328247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 2181ec05830accc4299bcaac38d9e530
+  position: {x: -79, y: 809}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: -8914118095883463560}
+  - {fileID: 1735598723374454573}
+--- !u!114 &4146695834193309751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 2
+  keybinds:
+  - Patrol (Delegate Key)
+  - Combat (Delegate Key)
+  - Chase (Delegate Key)
+  - Dead (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 955d96b20219a06438fec973476b52c4
+  position: {x: 1580.7614, y: 1497.9999}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: Chase (Delegate Key)
+  prevCount: 4
+--- !u!114 &4871672327171374402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 07ecbdc8bcbf975499449cf6db99d167
+  position: {x: 1089.7615, y: 948.99994}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: -5625358826896335881}
+  - {fileID: -2515447956531356382}
+  - {fileID: 6939484187258026691}
+  - {fileID: 8552961286476640011}
+--- !u!114 &5316729624847525819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 2
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  started: 0
+  doneOnce: 0
+  guid: 11ad992bb365e694b976c1916d74bf08
+  position: {x: 979.7614, y: 1222.9999}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: Distance (Float Key)
+  child: {fileID: 6516533846568588019}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 12
+  prevIndex: 2
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 2
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - Distance
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &5960373474808632708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - Patrol (Delegate Key)
+  - Combat (Delegate Key)
+  - Chase (Delegate Key)
+  - Dead (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 5bef4e3c90942ef428fea8c16601a561
+  position: {x: 1580.7614, y: 1222.9999}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: Patrol (Delegate Key)
+  prevCount: 4
+--- !u!114 &6516533846568588019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0b1a9cc6c0fed448ee6376966fc7e5, type: 3}
+  m_Name: ArithmeticNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 8a611259941f1d247a2a0086bce0a0a0
+  position: {x: 979.7614, y: 1356.9999}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  getBlackboardKey: 0
+  enteredValue: -1
+  operandOne: Distance (Float Key)
+  operandTwo: Time.deltaTime (secs)
+  resultName: Distance (Float Key)
+  operandOneIndex: 2
+  operandOneCount: 8
+  operandOneInt: 0
+  operandOneFloat: 0
+  operandOneUseInt: 0
+  operandOneList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  operatorIndex: 2
+  operatorList: []
+  operandTwoIndex: 0
+  operandTwoCount: 9
+  operandTwoInt: 0
+  operandTwoFloat: 0
+  operandTwoUseInt: 0
+  operandTwoList:
+  - Time.deltaTime (secs)
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  resultIndex: 2
+  resultCount: 8
+  result: 0
+  resultList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  finishState: 2
+--- !u!114 &6670748061165612533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: e015e278ea28e9641be0b81faf2c9fb9
+  position: {x: 1394.7615, y: 1356.9999}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: 900632185530431272}
+  - {fileID: 4146695834193309751}
+--- !u!114 &6939484187258026691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847151b3b863c4d4b91087fe80878daa, type: 3}
+  m_Name: SuccessNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: d098908189f41024e811759a393e04fc
+  position: {x: 1191.7615, y: 1083}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  child: {fileID: -3680899806294469362}
+--- !u!114 &7420913847713767595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 5
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - Distance (Float Key)
+  - DistanceY (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  started: 0
+  doneOnce: 0
+  guid: 652b6da0606b42b42bdadf094a9e38bc
+  position: {x: 1394.7615, y: 1222.9999}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: InCombat (Boolean Key)
+  child: {fileID: 6670748061165612533}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 12
+  prevIndex: 5
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 0
+  operatorList:
+  - ==
+  compareIndex: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList: []
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - InCombat
+  - Boolean Key)
+  chosenCompare: []
+--- !u!114 &8552961286476640011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 4dade7cac5df7a84d9433c66b181b88a
+  position: {x: 1394.7615, y: 1083}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: 7420913847713767595}
+  - {fileID: 5960373474808632708}
+--- !u!114 &8824525225461795223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 1
+  keybinds:
+  - Patrol (Delegate Key)
+  - Combat (Delegate Key)
+  - Chase (Delegate Key)
+  - Dead (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 46bc7d43c529f194fa0ce24e07609c28
+  position: {x: 1394.7615, y: 1641.9999}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+    floats:
+      keys:
+      - name: Distance
+        value: 0
+      - name: DistanceY
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys:
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Combat
+      - name: Chase
+      - name: Dead
+  description: 
+  keybind: Combat (Delegate Key)
+  prevCount: 4

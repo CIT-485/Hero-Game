@@ -1,0 +1,306 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8230798503350729923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - AAA (Delegate Key)
+  - 1231231231 (Delegate Key)
+  - rt5t4r33t3 (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 198a759cd4ddef9428e3b7bc691e8a88
+  position: {x: 192, y: 308}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: AAA (Delegate Key)
+  prevCount: 3
+--- !u!114 &-343351098012552519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 233f58ba877ed574a9994894c474d1b1
+  position: {x: -0.00000333786, y: 178.15}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: 
+  children:
+  - {fileID: 2932290747712388287}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12410d90be1daa2499cac6d907a2966f, type: 3}
+  m_Name: TestBehaviourTree
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 1321365297275300837}
+  treeState: 0
+  nodes:
+  - {fileID: 1321365297275300837}
+  - {fileID: 7603501856875103614}
+  - {fileID: -8230798503350729923}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+--- !u!114 &1321365297275300837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c39224472027243944779d9551c164, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 6f6a6a089cbb73849a975af398414b77
+  position: {x: 0, y: 0}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: 
+  child: {fileID: 7603501856875103614}
+--- !u!114 &2932290747712388287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - AAA (Delegate Key)
+  - 1231231231 (Delegate Key)
+  - rt5t4r33t3 (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 38e8208ad9adf6a4bbdeda2ac4d5e7d7
+  position: {x: -0.00000333786, y: 317.40002}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: AAA (Delegate Key)
+  prevCount: 3
+--- !u!114 &7603501856875103614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 112660512df80614c8250349484bd4e1
+  position: {x: 69, y: 155}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 0
+      - name: zzxxz
+        value: 0
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: 
+  children:
+  - {fileID: -8230798503350729923}

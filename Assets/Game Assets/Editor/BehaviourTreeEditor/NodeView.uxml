@@ -1,0 +1,28 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="NodeViewStyle.uss" />
+    <ui:VisualElement name="node-state" style="position: absolute; left: -3px; top: -3px; right: -3px; bottom: -3px; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;" />
+    <ui:VisualElement name="node-border">
+        <ui:VisualElement name="contents">
+            <ui:VisualElement name="top">
+                <ui:VisualElement name="input">
+                    <ui:VisualElement name="input-button" picking-mode="Ignore" style="position: absolute; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; min-width: 75px; align-items: center; min-height: 25px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="divider" class="vertical" />
+                <ui:VisualElement name="title">
+                    <ui:Label name="title-label" text="WaitNode" class="unity-text-element unity-label" style="white-space: normal;" />
+                    <ui:VisualElement name="title-button-container">
+                        <ui:VisualElement name="collapse-button">
+                            <ui:VisualElement name="icon" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Label text="description" display-tooltip-when-elided="true" name="description" />
+                <ui:VisualElement name="divider" class="horizontal" />
+                <ui:VisualElement name="output" picking-mode="Ignore">
+                    <ui:VisualElement name="output-button" picking-mode="Ignore" style="position: absolute; min-width: 75px; min-height: 25px; align-items: center; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="selection-border" picking-mode="Ignore" />
+</ui:UXML>

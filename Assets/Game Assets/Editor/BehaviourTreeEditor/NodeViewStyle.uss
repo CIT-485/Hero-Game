@@ -1,0 +1,290 @@
+#node-border {
+    min-width: 150px;
+}
+
+.root #node-border {
+    background-color: rgb(56, 44, 45);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgb(106, 106, 106);
+    border-right-color: rgb(106, 106, 106);
+    border-top-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(106, 106, 106);
+}
+
+.decorator #node-border {
+    background-color: rgb(44, 48, 56);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgb(106, 106, 106);
+    border-right-color: rgb(106, 106, 106);
+    border-top-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(106, 106, 106);
+}
+
+.composite #node-border {
+    background-color: rgb(56, 51, 44);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgb(106, 106, 106);
+    border-right-color: rgb(106, 106, 106);
+    border-top-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(106, 106, 106);
+}
+
+.action #node-border {
+    background-color: rgb(50, 44, 56);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgb(106, 106, 106);
+    border-right-color: rgb(106, 106, 106);
+    border-top-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(106, 106, 106);
+}
+
+.delegate #node-border {
+    background-color: rgb(44, 56, 51);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgb(106, 106, 106);
+    border-right-color: rgb(106, 106, 106);
+    border-top-color: rgb(106, 106, 106);
+    border-bottom-color: rgb(106, 106, 106);
+}
+
+#input {
+    align-items: center;
+    min-height: 30px;
+}
+
+#output {
+    align-items: center;
+}
+
+#selection-border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-color: rgb(0, 185, 255);
+    border-right-color: rgb(0, 185, 255);
+    border-top-color: rgb(0, 185, 255);
+    border-bottom-color: rgb(0, 185, 255);
+}
+
+:hover > #selection-border {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+:selected > #selection-border {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+:hover:selected > #selection-border {
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.node {
+    min-width: 150px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#title {
+    font-size: 14px;
+    -unity-font-style: bold;
+    white-space: normal;
+    max-width: 150px;
+}
+
+#description {
+    font-size: 10px;
+    white-space: normal;
+    max-width: 150px;
+}
+
+#divider {
+    background-color: rgb(95, 95, 95);
+    min-height: 1px;
+}
+
+.root #input {
+    background-color: rgb(219, 61, 83);
+    min-height: 30px;
+}
+
+.decorator #input {
+    background-color: rgb(79, 128, 229);
+}
+
+.composite #input {
+    background-color: rgb(236, 180, 50);
+}
+
+.action #input {
+    background-color: rgb(143, 50, 236);
+}
+
+.delegate #input {
+    background-color: rgb(73, 212, 152);
+}
+
+.running #node-state {
+    background-color: rgb(255, 255, 0);
+}
+
+.failure #node-state {
+    background-color: rgb(255, 0, 0);
+}
+
+.success #node-state {
+    background-color: rgb(0, 255, 0);
+}
+
+.output #connector {
+    left: 25%;
+    position: relative;
+}
+
+.input #connector {
+    left: -27.5%;
+}
+
+.port {
+    min-width: 150px;
+    left: -25%;
+}
+
+.input {
+    left: 25%;
+}
+
+#connector {
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    opacity: 0;
+}
+
+#cap {
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    width: 0;
+    height: 0;
+    max-height: 0;
+    max-width: 0;
+    min-width: 0;
+    min-height: 0;
+}
+
+.decorator #input-button {
+    background-color: rgb(61, 100, 178);
+}
+
+.decorator :hover > #input-button {
+    background-color: rgb(53, 86, 153);
+}
+
+.composite #input-button {
+    background-color: rgb(178, 136, 37);
+}
+
+.composite :hover > #input-button {
+    background-color: rgb(153, 117, 32);
+}
+
+.action #input-button {
+    background-color: rgb(108, 37, 178);
+}
+
+.action :hover > #input-button {
+    background-color: rgb(92, 31, 153);
+}
+
+.delegate #input-button {
+    background-color: rgb(58, 166, 119);
+}
+
+.delegate :hover > #input-button {
+    background-color: rgb(49, 140, 101);
+}
+
+.root #output-button {
+    background-color: rgb(46, 36, 36);
+}
+
+.root :hover > #output-button {
+    background-color: rgb(31, 24, 24);
+}
+
+.decorator #output-button {
+    background-color: rgb(36, 39, 46);
+}
+
+.decorator :hover > #output-button {
+    background-color: rgb(24, 26, 31);
+}
+
+.composite #output-button {
+    background-color: rgb(46, 43, 36);
+}
+
+.composite :hover > #output-button {
+    background-color: rgb(31, 29, 24);
+}
