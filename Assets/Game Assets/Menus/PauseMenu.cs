@@ -37,6 +37,12 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = true;
     }
 
+    public void LoadInventory()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("InventoryMenu");
+    }
+
     public void LoadMenu()
     {
         Time.timeScale = 1f;

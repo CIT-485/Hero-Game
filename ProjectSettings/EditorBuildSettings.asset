@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game Assets/Menus/GameOverMenu.unity
     guid: 9935d7566199cbc4aa3c5b17a9f41f0a
+  - enabled: 1
+    path: Assets/Game Assets/Menus/InventoryMenu.unity
+    guid: f4d29af2189bf6f43946a9f59d81f049
+  - enabled: 1
+    path: Assets/Game Assets/Menus/PauseMenu.unity
+    guid: fd45662e056ceb14ca070a13df6d9d72
   m_configObjects: {}

@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InventorySystem : MonoBehaviour
 {
+    
+    //private static bool gameIsPaused = false;
+
     [Header("General Fields")]
     // List of items picked up
     public List<GameObject> items = new List<GameObject>();

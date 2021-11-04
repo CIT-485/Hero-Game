@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1680
     height: 967
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1680
     height: 967
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 30
     width: 1680
     height: 917
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 678, y: 492}
+  m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 128
+  controlID: 22
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 129
+  controlID: 23
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 130
+  controlID: 24
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -275,8 +275,8 @@ MonoBehaviour:
     y: 0
     width: 523
     height: 917
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 12}
@@ -523,11 +523,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 21
       width: 775
-      height: 544
+      height: 523
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 387.5, y: 272}
+    m_Translation: {x: 387.5, y: 261.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -535,9 +535,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -387.5
-      y: -272
+      y: -261.5
       width: 775
-      height: 544
+      height: 523
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 775, y: 544}
@@ -574,23 +574,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1a4d0000
-      m_LastClickedID: 19738
-      m_ExpandedIDs: 40fbffffd44c0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: fcb2ffff3ab7ffff86b8ffffacb9ffff28c1ffff08c4ffff2ac6ffff2cc6ffffd6d3ffffd6ecffffe2ecffffe4ecffff02f1ffff7af2ffff7cf2ffff1af4ffff36f5ffff40fbffffbc290100c0290100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: InventoryCanvas
+        m_OriginalName: InventoryCanvas
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -18300
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -636,9 +636,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.44951385, y: 0.037589476, z: -11.039193}
+    m_Target: {x: 0.23466443, y: -0.8010685, z: -10.543674}
     speed: 2
-    m_Value: {x: 0.44951385, y: 0.037589476, z: -11.039193}
+    m_Value: {x: 0.23466443, y: -0.8010685, z: -10.543674}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -689,9 +689,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.251523
+    m_Target: 6.349515
     speed: 2
-    m_Value: 6.251523
+    m_Value: 6.349515
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -931,7 +931,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 70058
+  m_LastSelectedObjectID: -4894
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -995,22 +995,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Cainos/Pixel Art Icon Pack - RPG/Texture/Equipment
+    - Assets/Scenes/Gamal
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 75
   m_LastFolders:
-  - Assets/Cainos/Pixel Art Icon Pack - RPG/Texture/Equipment
+  - Assets/Scenes/Gamal
   m_LastFoldersGridSize: 75
   m_LastProjectPath: C:\Users\wolga\source\repos\MG5896TG\CIS485-01\Hero-Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: c2570000
-    m_LastClickedID: 22466
-    m_ExpandedIDs: 000000005457000056570000585700005a5700005c5700005e57000060570000625700006457000066570000685700006a5700006c570000a4570000c457000000ca9a3b
+    scrollPos: {x: 0, y: 237}
+    m_SelectedIDs: c69c0000
+    m_LastClickedID: 40134
+    m_ExpandedIDs: 000000005457000056570000585700005a5700005c5700005e570000605700006257000064570000665700006a5700006c5700008c5700009c570000a457000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1065,8 +1065,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000a61f00009a1f000040500000344f0000145600008e570000f818010006a300006aa2000036dd000098a200005c4e00007ca20000944e0000d2280000c2a4000096a500007ea5000082f6000094a00000d24c0000fea500000aa60000d64c00003ee4000090e50000aa4e000000000000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000a61f00009a1f000040500000344f0000145600008e570000f818010006a300006aa2000036dd000098a200005c4e00007ca20000944e0000d2280000c2a4000096a500007ea5000082f6000094a00000d24c0000fea500000aa60000d64c00003ee4000090e50000aa4e000000000000ec520000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
