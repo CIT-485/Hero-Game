@@ -10,6 +10,10 @@ public class InteractionSystem : MonoBehaviour
     private const float detectionRadius = 0.2f;
     // Detection layer
     public LayerMask detectionLayer;
+
+    // Cached Trigger Object
+    public GameObject detectedObject;
+
     // Update is called once per frame
     void Update()
     {
@@ -17,7 +21,7 @@ public class InteractionSystem : MonoBehaviour
         {
             if(InteractInput())
             {
-                Debug.Log("INTERACTION");
+                detectedObject.GetComponent<Item>().Interact();
             }
         }
     }
@@ -30,7 +34,21 @@ public class InteractionSystem : MonoBehaviour
     // Detect whether your interacting with an object
     bool DetectObject()
     {
-        return Physics2D.OverlapCircle(detectionPoint.position, detectionRadius, detectionLayer);
+        
+        Collider2D obj = Physics2D.OverlapCircle(detectionPoint.position, detectionRadius, detectionLayer);
+
+        // If the obj is null then there is no interactable ojbect near the player
+        // If obj is true 
+        if (obj == null)
+        {
+            detectedObject = null;
+            return false;
+        } 
+        else
+        {
+            detectedObject = obj.gameObject;
+            return true;
+        }
     }
 
     private void OnDrawGizmosSelected()
