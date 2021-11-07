@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractionSystem : MonoBehaviour
 {
+    [Header("Detection Parameters")]
     // Detection Point
     public Transform detectionPoint;
     // Detection radius
@@ -13,6 +15,16 @@ public class InteractionSystem : MonoBehaviour
 
     // Cached Trigger Object
     public GameObject detectedObject;
+
+    [Header("Examine Fields")]
+    // Examine window object
+    public GameObject examineWindow;
+    public Image examineImage;
+    public Text examineText;
+    public bool isExamining;
+    [Header("Others")]
+    // List of picked items
+    public List<GameObject> pickedItems = new List<GameObject>();
 
     // Update is called once per frame
     void Update()
@@ -57,4 +69,31 @@ public class InteractionSystem : MonoBehaviour
         Gizmos.DrawSphere(detectionPoint.position, detectionRadius);
     }
 
+    public void PickUpItem(GameObject item)
+    {
+        pickedItems.Add(item);
+    }
+
+    public void ExamineItem(Item item)
+    {
+        if(isExamining)
+        {
+            // Hide the Examine Window
+            examineWindow.SetActive(false);
+            // disable the bool
+            isExamining = false;
+        } else
+        {
+            // Show the item's image in the middle
+            examineImage.sprite = item.GetComponent<SpriteRenderer>().sprite;
+            // Write description text underneath the image
+            examineText.text = item.descriptionText;
+            // Display the Examine Window
+            examineWindow.SetActive(true);
+            // enable the bool
+            isExamining = true;
+        }
+    }
+
+    
 }

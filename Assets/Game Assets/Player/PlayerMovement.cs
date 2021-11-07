@@ -52,6 +52,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(canMove() == false) {
+            return;
+        }
+
         if (Input.GetKeyDown("space"))
             jumpButtonPressed = true;
         if (Input.GetKeyUp("space"))
@@ -177,6 +181,17 @@ public class PlayerMovement : MonoBehaviour
                     m_animator.SetInteger("AnimState", 0);
             }
         }
+    }
+
+    // Can the player move
+    bool canMove()
+    {
+        bool can = true;
+        if(FindObjectOfType<InteractionSystem>().isExamining)
+        {
+            can = false;
+        }
+        return can;
     }
 
     // Animation Events

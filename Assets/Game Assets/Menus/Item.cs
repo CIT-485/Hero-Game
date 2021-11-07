@@ -18,6 +18,7 @@ public class Item : MonoBehaviour
     public InteractionType type;
     [Header("Examine")]
     public string descriptionText;
+    public Sprite image;
     public UnityEvent customEvent;
 
     // gets called in the editor only to set the default values of the component of the object
@@ -42,7 +43,7 @@ public class Item : MonoBehaviour
             case InteractionType.Examine:
                 Debug.Log("Examine");
                 // Call the Examine item in the interaction system
-                //FindObjectOfType<InteractionSystem>().ExamineItem(this);
+                FindObjectOfType<InteractionSystem>().ExamineItem(this);
                 break;
             default:
                 Debug.Log("NULL ITEM");
