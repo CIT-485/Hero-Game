@@ -40,7 +40,8 @@ public class InteractionSystem : MonoBehaviour
 
     bool InteractInput()
     {
-        return Input.GetKeyDown(KeyCode.E);
+        //return Input.GetKeyDown(KeyCode.E);
+        return (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k"));
     }
 
     // Detect whether your interacting with an object
