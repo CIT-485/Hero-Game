@@ -12,7 +12,7 @@ public class Amulet_Pickup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        amuletImage.enabled = false;
+        amuletImage.enabled = true;
         tutorialBox.enabled = false;
     }
 
@@ -29,6 +29,7 @@ public class Amulet_Pickup : MonoBehaviour
             {
                 amuletImage.enabled = true;
                 tutorialBox.enabled = true;
+                count = 1;
             }
             
         }
