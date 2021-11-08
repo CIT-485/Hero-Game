@@ -1657,8 +1657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71137b14fe37e3e40a97e1042d849cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  descriptionText: 
+  type: 2
+  descriptionText: Fruit that can commonly be found in the Calmek forest
   image: {fileID: 0}
   customEvent:
     m_PersistentCalls:
@@ -4170,8 +4170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71137b14fe37e3e40a97e1042d849cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  descriptionText: Rolled up fabric
+  type: 2
+  descriptionText: A long forgotten piece of rolled up fabric
   image: {fileID: 0}
   customEvent:
     m_PersistentCalls:
