@@ -152,7 +152,7 @@ public class Player : MonoBehaviour, IEntity
             if (!rolling && !attacking)
             {
                 if (Mathf.Abs(inputX) < 0.01f)
-                    body2d.velocity = new Vector2(body2d.velocity.x * 0.97f, body2d.velocity.y);
+                    body2d.velocity = new Vector2(body2d.velocity.x * 0.94f, body2d.velocity.y);
                 else
                 {
                     if ((body2d.velocity.x < 0 && inputX > 0) || (body2d.velocity.x > 0 && inputX < 0))
@@ -169,7 +169,7 @@ public class Player : MonoBehaviour, IEntity
             else if (attacking)
             {
                 if (grounded)
-                    body2d.velocity = new Vector2(body2d.velocity.x * 0.96f, body2d.velocity.y);
+                    body2d.velocity = new Vector2(body2d.velocity.x * 0.94f, body2d.velocity.y);
                 else
                     body2d.velocity = new Vector2(body2d.velocity.x * 0.99f, body2d.velocity.y);
             }
@@ -351,6 +351,7 @@ public class Player : MonoBehaviour, IEntity
         // we will search for an Attack Manager from the hitboxs that hit us
         int damage = -1;
         float stun = 0.1f;
+        Vector2 knockback = Vector2.zero;
         Transform current = collision.transform.parent;
         while (current != null && damage < 0)
         {
@@ -358,6 +359,7 @@ public class Player : MonoBehaviour, IEntity
             {
                 damage = current.GetComponent<AttackManager>().currentAttack.attackDamage;
                 stun = current.GetComponent<AttackManager>().currentAttack.stunTime;
+                knockback = current.GetComponent<AttackManager>().currentAttack.knockback;
             }
             else
             {
@@ -367,10 +369,9 @@ public class Player : MonoBehaviour, IEntity
         if (damage < 0)
             damage = 0;
         healthBar.TakeDamage(damage);
-        if (collision.transform.position.x < transform.position.x)
-            body2d.AddForce(new Vector2(damage, damage / 2));
-        else
-            body2d.AddForce(new Vector2(-damage, damage / 2));
+        if (collision.transform.position.x > transform.position.x)
+            knockback = new Vector2(-knockback.x, knockback.y);
+        body2d.AddForce(knockback);
         StartCoroutine(InvulActivate(stun));
     }
 

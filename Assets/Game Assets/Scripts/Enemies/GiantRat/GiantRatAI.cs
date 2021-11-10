@@ -110,7 +110,7 @@ public class GiantRatAI : MonoBehaviour
                     // Summon Laser
                     // Shoot Laser
                     // Start Phase 2
-                    // doOnce = true;`
+                    // cinematic = true;
                 }
             }
         }

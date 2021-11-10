@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9086c9c93169acf45a9f94ff65e8b8c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: 6de75eea3416d174683846b7198abb2c, type: 2}
+  tree: {fileID: 11400000, guid: 8bd968e11d89bdf4db59b9680b0dd60b, type: 2}
 --- !u!114 &1087154678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b67228bdd1dd2b41a853933961650e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  a: 0
 --- !u!50 &1087154679
 Rigidbody2D:
   serializedVersion: 4

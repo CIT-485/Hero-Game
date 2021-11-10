@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8230798503350729923
+--- !u!114 &-9178057457146003840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,26 +9,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
-  m_Name: DelegateNode
+  m_Script: {fileID: 11500000, guid: bd12a5c57aa821b4780ea10eff8a9eb1, type: 3}
+  m_Name: SetValueNode
   m_EditorClassIdentifier: 
   state: 0
-  index: 0
+  index: 5
   keybinds:
-  - AAA (Delegate Key)
-  - 1231231231 (Delegate Key)
-  - rt5t4r33t3 (Delegate Key)
+  - ggg (Integer Key)
+  - zzxxz (Integer Key)
+  - dfvgbhnjbgvfdc (Integer Key)
+  - hhnhnhnh (Float Key)
+  - frscssdvds (Float Key)
+  - dne (Boolean Key)
   started: 0
   doneOnce: 0
-  guid: 198a759cd4ddef9428e3b7bc691e8a88
-  position: {x: 192, y: 308}
+  guid: 30108c18b69b5394498209c010fc5243
+  position: {x: 0.000017166138, y: 687.99994}
   blackboard:
     integers:
       keys:
       - name: ggg
-        value: 0
+        value: 100
       - name: zzxxz
-        value: 0
+        value: 100
       - name: dfvgbhnjbgvfdc
         value: 0
     floats:
@@ -40,7 +43,9 @@ MonoBehaviour:
     strings:
       keys: []
     booleans:
-      keys: []
+      keys:
+      - name: dne
+        value: 0
     vector2s:
       keys: []
     gameObjects:
@@ -51,8 +56,166 @@ MonoBehaviour:
       - name: 1231231231
       - name: rt5t4r33t3
   description: 
-  keybind: AAA (Delegate Key)
-  prevCount: 3
+  keybind: dne (Boolean Key)
+  intValue: 0
+  floatValue: 0
+  boolValue: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  objValue: {fileID: 0}
+  prevIndex: 5
+  prevCount: 6
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  newIndex: 0
+  newList: []
+  invert: 0
+  useBlackboardKey: 0
+  chosenKeybind:
+  - dne
+  - Boolean Key)
+  chosenNew: []
+--- !u!114 &-7978878423282011080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 5
+  keybinds:
+  - ggg (Integer Key)
+  - zzxxz (Integer Key)
+  - dfvgbhnjbgvfdc (Integer Key)
+  - hhnhnhnh (Float Key)
+  - frscssdvds (Float Key)
+  - dne (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 6fc9c92d29ea69845867c7ff6572e6ef
+  position: {x: 0, y: 262}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 100
+      - name: zzxxz
+        value: 100
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: dne
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: dne (Boolean Key)
+  child: {fileID: -6234962336197470613}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 6
+  prevIndex: 5
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 1
+  boolList:
+  - True
+  - False
+  operatorIndex: 0
+  operatorList:
+  - ==
+  compareIndex: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList: []
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - dne
+  - Boolean Key)
+  chosenCompare: []
+--- !u!114 &-6234962336197470613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 7089bebebf3e66547a32e0b4f74ecb60
+  position: {x: 0, y: 391}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 100
+      - name: zzxxz
+        value: 100
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: dne
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: 
+  children:
+  - {fileID: 4660246872147633521}
+  - {fileID: 7460321534363102099}
 --- !u!114 &-343351098012552519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +267,66 @@ MonoBehaviour:
   keybind: 
   children:
   - {fileID: 2932290747712388287}
+--- !u!114 &-224609980577033212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67b30722d3ecc047ad873caf36c4e2f, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - ggg (Integer Key)
+  - zzxxz (Integer Key)
+  - dfvgbhnjbgvfdc (Integer Key)
+  - hhnhnhnh (Float Key)
+  - frscssdvds (Float Key)
+  started: 0
+  doneOnce: 0
+  guid: 2fdb9ddba0f6ae940bfe3b508793ca4e
+  position: {x: 219, y: 688}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 100
+      - name: zzxxz
+        value: 100
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: dne
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: ggg
+  duration: 1
+  enableKey: 0
+  prevCount: 5
+  keybindName: ggg (Integer Key)
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,15 +343,21 @@ MonoBehaviour:
   treeState: 0
   nodes:
   - {fileID: 1321365297275300837}
-  - {fileID: 7603501856875103614}
-  - {fileID: -8230798503350729923}
+  - {fileID: 7521089919299716252}
+  - {fileID: 4660246872147633521}
+  - {fileID: -6234962336197470613}
+  - {fileID: -224609980577033212}
+  - {fileID: 7460321534363102099}
+  - {fileID: 2125301699482205837}
+  - {fileID: -7978878423282011080}
+  - {fileID: -9178057457146003840}
   blackboard:
     integers:
       keys:
       - name: ggg
-        value: 0
+        value: 100
       - name: zzxxz
-        value: 0
+        value: 100
       - name: dfvgbhnjbgvfdc
         value: 0
     floats:
@@ -140,7 +369,9 @@ MonoBehaviour:
     strings:
       keys: []
     booleans:
-      keys: []
+      keys:
+      - name: dne
+        value: 0
     vector2s:
       keys: []
     gameObjects:
@@ -173,9 +404,9 @@ MonoBehaviour:
     integers:
       keys:
       - name: ggg
-        value: 0
+        value: 100
       - name: zzxxz
-        value: 0
+        value: 100
       - name: dfvgbhnjbgvfdc
         value: 0
     floats:
@@ -187,7 +418,9 @@ MonoBehaviour:
     strings:
       keys: []
     booleans:
-      keys: []
+      keys:
+      - name: dne
+        value: 0
     vector2s:
       keys: []
     gameObjects:
@@ -199,7 +432,98 @@ MonoBehaviour:
       - name: rt5t4r33t3
   description: 
   keybind: 
-  child: {fileID: 7603501856875103614}
+  child: {fileID: 7521089919299716252}
+--- !u!114 &2125301699482205837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0b1a9cc6c0fed448ee6376966fc7e5, type: 3}
+  m_Name: ArithmeticNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 1ecdf6dbd46a4094d91eeb246b5b9a15
+  position: {x: 377, y: 688}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 100
+      - name: zzxxz
+        value: 100
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: dne
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: 
+  getBlackboardKey: 0
+  enteredValue: 1
+  operandOne: ggg (Integer Key)
+  operandTwo: Time.deltaTime (secs)
+  resultName: ggg (Integer Key)
+  operandOneIndex: 0
+  operandOneCount: 5
+  operandOneInt: 0
+  operandOneFloat: 0
+  operandOneUseInt: 0
+  operandOneList:
+  - ggg (Integer Key)
+  - zzxxz (Integer Key)
+  - dfvgbhnjbgvfdc (Integer Key)
+  - hhnhnhnh (Float Key)
+  - frscssdvds (Float Key)
+  operatorIndex: 1
+  operatorList: []
+  operandTwoIndex: 0
+  operandTwoCount: 6
+  operandTwoInt: 0
+  operandTwoFloat: 0
+  operandTwoUseInt: 0
+  operandTwoList:
+  - Time.deltaTime (secs)
+  - ggg (Integer Key)
+  - zzxxz (Integer Key)
+  - dfvgbhnjbgvfdc (Integer Key)
+  - hhnhnhnh (Float Key)
+  - frscssdvds (Float Key)
+  resultIndex: 0
+  resultCount: 5
+  result: 0
+  resultList:
+  - ggg (Integer Key)
+  - zzxxz (Integer Key)
+  - dfvgbhnjbgvfdc (Integer Key)
+  - hhnhnhnh (Float Key)
+  - frscssdvds (Float Key)
+  finishState: 2
 --- !u!114 &2932290747712388287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +577,102 @@ MonoBehaviour:
   description: 
   keybind: AAA (Delegate Key)
   prevCount: 3
---- !u!114 &7603501856875103614
+--- !u!114 &4660246872147633521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - ggg (Integer Key)
+  - zzxxz (Integer Key)
+  - dfvgbhnjbgvfdc (Integer Key)
+  - hhnhnhnh (Float Key)
+  - frscssdvds (Float Key)
+  - dne (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: af2cdd6d9d96e374cb6b6a69d77e695f
+  position: {x: 0, y: 541}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 100
+      - name: zzxxz
+        value: 100
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: dne
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: ggg (Integer Key)
+  child: {fileID: -9178057457146003840}
+  floatValue: 0
+  percent: 50
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 6
+  prevIndex: 0
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 3
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 1
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - ggg (Integer Key)
+  - zzxxz (Integer Key)
+  - dfvgbhnjbgvfdc (Integer Key)
+  - hhnhnhnh (Float Key)
+  - frscssdvds (Float Key)
+  compareWithBlackboardKey: 1
+  comparePercent: 1
+  chosenKeybind:
+  - ggg
+  - Integer Key)
+  chosenCompare: []
+--- !u!114 &7460321534363102099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,15 +689,15 @@ MonoBehaviour:
   keybinds: []
   started: 0
   doneOnce: 0
-  guid: 112660512df80614c8250349484bd4e1
-  position: {x: 69, y: 155}
+  guid: 7c75fd9847a4b2945b160ac13afe62e1
+  position: {x: 219, y: 541}
   blackboard:
     integers:
       keys:
       - name: ggg
-        value: 0
+        value: 100
       - name: zzxxz
-        value: 0
+        value: 100
       - name: dfvgbhnjbgvfdc
         value: 0
     floats:
@@ -290,7 +709,9 @@ MonoBehaviour:
     strings:
       keys: []
     booleans:
-      keys: []
+      keys:
+      - name: dne
+        value: 0
     vector2s:
       keys: []
     gameObjects:
@@ -303,4 +724,67 @@ MonoBehaviour:
   description: 
   keybind: 
   children:
-  - {fileID: -8230798503350729923}
+  - {fileID: -224609980577033212}
+  - {fileID: 2125301699482205837}
+--- !u!114 &7521089919299716252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9c09a170e57d34ab622867e811d627, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - ggg (integer Key)
+  - zzxxz (integer Key)
+  - dfvgbhnjbgvfdc (integer Key)
+  started: 0
+  doneOnce: 0
+  guid: 78cee3d3ce5fa26499d4de195919dcb5
+  position: {x: 0, y: 125}
+  blackboard:
+    integers:
+      keys:
+      - name: ggg
+        value: 100
+      - name: zzxxz
+        value: 100
+      - name: dfvgbhnjbgvfdc
+        value: 0
+    floats:
+      keys:
+      - name: hhnhnhnh
+        value: 0
+      - name: frscssdvds
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: dne
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: AAA
+      - name: 1231231231
+      - name: rt5t4r33t3
+  description: 
+  keybind: ggg
+  child: {fileID: -7978878423282011080}
+  loopInfinitely: 1
+  loopCount: 0
+  count: 0
+  prevCountForState: 0
+  enableKeyloop: 0
+  keybindName: ggg (integer Key)
+  prevCount: 3

@@ -10,6 +10,7 @@ public class Attack
     public int poiseDamage;
     public float poiseMultiplier = 1;
     public float stunTime;
+    public Vector2 knockback = new Vector2(100, 50);
 
     public Attack(string name, int damage, int poise, float poiseMult, float stun)
     {

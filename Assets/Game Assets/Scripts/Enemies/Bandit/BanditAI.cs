@@ -108,16 +108,16 @@ public class BanditAI : Enemy
         {
             int attackChance = Random.Range(0, 100);
             float holdTime = Random.Range(0.5f, 0.75f);
-            if (attackChance < 60)
+            if (attackChance < 75)
             {
-                // it will have a 60% chance of performing an attack after which the attack wait time is refreshed back to zero 
+                // it will have a 75% chance of performing an attack after which the attack wait time is refreshed back to zero 
                 isAttacking = true;
                 attackWaitTime = 0;
                 StartCoroutine(Attack0(holdTime));
             }
             else
                 // if it chooses not to attack, then the attack wait time is refreshed, but at a lower cooldown
-                attackWaitTime = 1.5f;
+                attackWaitTime = 2f;
         }
         return Node.State.RUNNING;
     }
@@ -165,6 +165,7 @@ public class BanditAI : Enemy
             directionalForce += new Vector2(-acceleration, 0);
         }
 
+        // This makes it so it can move, but only at the maxSpeed designated in the inspector
         rb.AddForce(directionalForce);
         if (rb.velocity.x > maxSpeed)
             rb.velocity = new Vector2(maxSpeed, rb.velocity.y);

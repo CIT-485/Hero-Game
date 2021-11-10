@@ -23,6 +23,8 @@ public class ConditionNode : DecoratorNode
     public List<string> operatorList = new List<string>();
 
     public int compareIndex;
+    public string compareName;
+    public int compareCount;
     public float compareFloat;
     public string compareString;
     public Vector2 compareVector2;
@@ -156,6 +158,21 @@ public class ConditionNode : DecoratorNode
                 operatorList = new List<string>() { "==" };
             }
         }
+        if (compareCount != compareList.Count)
+        {
+            compareCount = compareList.Count;
+            bool found = false;
+            int i = 0;
+            for (i = 0; i < compareList.Count && !found; i++)
+                if (compareList[i] == compareName)
+                    found = true;
+            if (found)
+                compareIndex = i - 1;
+            else
+                compareIndex = 0;
+        }
+        if (compareCount > 0)
+            compareName = compareList[compareIndex];
     }
     public bool NumericComparison(float op1, float op2)
     {
