@@ -189,11 +189,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &136649753 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-  m_PrefabInstance: {fileID: 1754897322947203238}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &138271074 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3978037507461940471, guid: ec39a580954c56f4499c467119fda074, type: 3}
@@ -918,7 +913,7 @@ Transform:
   - {fileID: 885293203}
   - {fileID: 1076665985}
   - {fileID: 1895413566}
-  - {fileID: 136649753}
+  - {fileID: 621435577}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -963,6 +958,11 @@ GameObject:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5285321218306486815, guid: ec39a580954c56f4499c467119fda074, type: 3}
   m_PrefabInstance: {fileID: 228386675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &621435577 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+  m_PrefabInstance: {fileID: 3090835151735512269}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &628493196 stripped
 RectTransform:
@@ -3557,7 +3557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1895413566
 Transform:
   m_ObjectHideFlags: 0
@@ -3566,7 +3566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895413565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.78, y: -1.92, z: 1.960651}
+  m_LocalPosition: {x: -4.43, y: -1.92, z: 1.960651}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 451821321}
@@ -3584,7 +3584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71137b14fe37e3e40a97e1042d849cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactType: 1
+  interactType: 2
   type: 0
   descriptionText: Our Hero Gutram Lighthold is an adventurer of the little village
     Soclana in the Kingdom of Kuscavania in the Realm of Ekkorus. Kuscavania shares
@@ -4000,63 +4000,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4805181885227780, guid: f4bb598bfea20494a965d25c371967a8, type: 3}
   m_PrefabInstance: {fileID: 2143819706}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1754897322947203238
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 451821321}
-    m_Modifications:
-    - target: {fileID: 1754897322814753982, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_Name
-      value: Potion
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.960651
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1754897322814753983, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
 --- !u!1001 &2332739358227518468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4118,3 +4061,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3186d24629ff1c947aedf9c0ae76afc0, type: 3}
+--- !u!1001 &3090835151735512269
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 451821321}
+    m_Modifications:
+    - target: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.960651
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090835152221636212, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090835152221636213, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
+      propertyPath: m_Name
+      value: Potion
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f866d0302259ce4b9c1ca4ff3afad12, type: 3}
