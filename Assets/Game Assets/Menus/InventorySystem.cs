@@ -23,12 +23,20 @@ public class InventorySystem : MonoBehaviour
     public Image descriptionImage;
     public Text descriptionTitle;
     public Text descriptionText;
+
+    // 
+    public HealthBar healthBar;
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.I))
         {
             ToggleInventory();
         }
+    }
+    
+    void Start()
+    {
+        healthBar = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar>();
     }
 
     void ToggleInventory()
@@ -90,8 +98,10 @@ public class InventorySystem : MonoBehaviour
         descriptionText.gameObject.SetActive(false);
     }
 
+    // Player has consumed a healing item
     public void Consume(int id)
     {
+        // Get the a consumable item
         if(items[id].GetComponent<Item>().type == Item.ItemType.Consumables) 
         {
             Debug.Log($"CONSUMED {items[id].name}");
@@ -104,6 +114,7 @@ public class InventorySystem : MonoBehaviour
             // Update the UI
             UpdateUI();
 
+            healthBar.Healing(25);
         }
     }
 }
