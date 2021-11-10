@@ -15,12 +15,19 @@ public class Item : MonoBehaviour
         NONE, PickUp, Examine
     }
 
-    public InteractionType type;
+    public enum ItemType
+    {
+        Static, Consumables
+    }
+    [Header("Attributes")]
+    public InteractionType interactType;
+    public ItemType type;
     [Header("Examine")]
     public string descriptionText;
     public Sprite image;
+    [Header("Custom Events")]
     public UnityEvent customEvent;
-
+    public UnityEvent consumeEvent;
     // gets called in the editor only to set the default values of the component of the object
     private void Reset()
     {
@@ -31,7 +38,7 @@ public class Item : MonoBehaviour
     
     public void Interact()
     {
-        switch(type) 
+        switch(interactType) 
         {
             case InteractionType.PickUp:
                 //Debug.Log("PICK UP");

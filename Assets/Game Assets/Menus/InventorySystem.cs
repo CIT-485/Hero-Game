@@ -22,7 +22,7 @@ public class InventorySystem : MonoBehaviour
     public GameObject uiDescriptionWindow;
     public Image descriptionImage;
     public Text descriptionTitle;
-
+    public Text descriptionText;
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.I))
@@ -35,6 +35,7 @@ public class InventorySystem : MonoBehaviour
     {
         isOpen = !isOpen;
         uiWindow.SetActive(isOpen);
+        UpdateUI();
     }
 
     // Add the item to the items list
@@ -64,6 +65,7 @@ public class InventorySystem : MonoBehaviour
         foreach(var i in itemsImages)
         {
             i.gameObject.SetActive(false);
+            HideDescription();
         }
     }
 
@@ -71,16 +73,37 @@ public class InventorySystem : MonoBehaviour
     {
         // Set the image
         descriptionImage.sprite = itemsImages[id].sprite;
-        // Set the text
+        // Set the title
         descriptionTitle.text = items[id].name;
+        // Show the description
+        descriptionText.text = items[id].GetComponent<Item>().descriptionText;
         // Show the elements
         descriptionImage.gameObject.SetActive(true);
         descriptionTitle.gameObject.SetActive(true);
+        descriptionText.gameObject.SetActive(true);
     }
 
     public void HideDescription()
     {
         descriptionImage.gameObject.SetActive(false);
         descriptionTitle.gameObject.SetActive(false);
+        descriptionText.gameObject.SetActive(false);
+    }
+
+    public void Consume(int id)
+    {
+        if(items[id].GetComponent<Item>().type == Item.ItemType.Consumables) 
+        {
+            Debug.Log($"CONSUMED {items[id].name}");
+            // Invoke the consume custome event
+            items[id].GetComponent<Item>().consumeEvent.Invoke();
+            // destroy the item in a short period of time
+            Destroy(items[id], 0.1f);
+            // Clear the item from the list
+            items.RemoveAt(id);
+            // Update the UI
+            UpdateUI();
+
+        }
     }
 }
