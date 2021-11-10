@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -281,6 +282,10 @@ public class Player : MonoBehaviour
             //m_animator.SetTrigger("Block");
 
             body2d.AddForce(directionalForce);
+            if (healthBar.currentHealth < 1)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 

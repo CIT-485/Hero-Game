@@ -93,10 +93,12 @@
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
     <Compile Include="Assets\Game Assets\DEMO.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+    <Compile Include="Assets\ParticleDestroy.cs" />
     <Compile Include="Assets\Game Assets\LetterBoxer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\ParticleTest.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Sensor_Bandit.cs" />
     <Compile Include="Assets\Game Assets\Entities\Enemies\Giant Rat\GiantRatBossTrigger.cs" />
     <Compile Include="Assets\Game Assets\FlashingLight2D.cs" />
@@ -120,8 +122,9 @@
     <Compile Include="Assets\Game Assets\Entities\Enemies\EnemySpriteFlashRenderer.cs" />
     <Compile Include="Assets\Game Assets\Camera\CameraFollowObject.cs" />
     <Compile Include="Assets\Game Assets\Entities\Player\LandingSensor.cs" />
-    <Compile Include="Assets\ParticleTest.cs" />
-    <Compile Include="Assets\ParticleDestroy.cs" />
+    <Compile Include="Assets\Scripts\Respawn.cs" />
+    <Compile Include="Assets\Scripts\PlayerPos.cs" />
+    <Compile Include="Assets\Scripts\GameMaster.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
