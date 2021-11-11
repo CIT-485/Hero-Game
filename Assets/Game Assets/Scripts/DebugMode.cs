@@ -5,6 +5,18 @@ using UnityEngine;
 public class DebugMode : MonoBehaviour
 {
     public bool debugMode = false;
+    GameObject hero;
+    GameObject[] points;
+    public int cnt;
+
+    private void Start()
+    {
+        points = GameObject.FindGameObjectsWithTag("Respawn");
+        hero = GameObject.FindGameObjectWithTag("Player");
+        cnt = points.Length - 1;
+        Debug.Log(cnt);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F1))
@@ -29,6 +41,16 @@ public class DebugMode : MonoBehaviour
             {
                 g.GetComponent<SpriteRenderer>().enabled = debugMode;
             }
+        }
+
+        if (Input.GetKeyDown("i"))
+        {
+            if (cnt < 0)
+            {
+                cnt = points.Length - 1;
+            }
+            hero.transform.position = new Vector3((points[cnt].transform.position.x), (points[cnt].transform.position.y));
+            cnt = cnt - 1;
         }
     }
 }
