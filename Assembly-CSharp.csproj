@@ -64,6 +64,7 @@
     <Compile Include="Assets\Game Assets\Amulet_Pickup.cs" />
     <Compile Include="Assets\Game Assets\Menus\MainMenu.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
+    <Compile Include="Assets\Scripts\Respawn.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Deathzone.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\ConditionNode.cs" />
     <Compile Include="Assets\Game Assets\Menus\PauseMenu.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\ValueWrapper.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\CompositeNodes\SelectorNode.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -161,17 +163,18 @@
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\ActionNode.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
+    <Compile Include="Assets\Scripts\GameMaster.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\BreakNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRat.cs" />
-    <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\PlayerPos.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\EnemySpriteFlashRenderer.cs" />
+    <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Camera\CameraFollowObject.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\LandingSensor.cs" />
     <Compile Include="Assets\Game Assets\Menus\InteractionSystem.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTreeController.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\ValueWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

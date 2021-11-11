@@ -62,6 +62,7 @@
     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\Messaging\UdpSocket.cs" />
     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\VisualStudioInstallation.cs" />
     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\Symbols.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\SessionSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\SolutionProperties.cs" />
     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\AssemblyInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\SolutionParser.cs" />
@@ -92,7 +93,6 @@
     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\Messaging\Message.cs" />
     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\AsyncOperation.cs" />
     <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\Discovery.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\SessionSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.12\Editor\com.unity.ide.visualstudio.asmdef" />

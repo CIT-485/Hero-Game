@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637721661395150491
-    m_Hash: 2834952448
+      ticks: 637722120545250982
+    m_Hash: 3180539468
   m_LockFileStatus:
     m_FilePath: C:/Users/XJeff/Documents/GitHub/Hero-Game/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637721661395200650
-    m_Hash: 3442670713
+      ticks: 637722120545260965
+    m_Hash: 150886560
 m_EmbeddedPackageManifests:
   m_ManifestsStatus:
     C:/Users/XJeff/Documents/GitHub/Hero-Game/Packages/com.unity.render-pipelines.core/package.json:
@@ -23,7 +23,7 @@ m_EmbeddedPackageManifests:
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
-        ticks: 637709662616570940
+        ticks: 637722017242758506
       m_Hash: 2721925725
     C:/Users/XJeff/Documents/GitHub/Hero-Game/Packages/com.unity.render-pipelines.universal/package.json:
       m_FilePath: C:/Users/XJeff/Documents/GitHub/Hero-Game/Packages/com.unity.render-pipelines.universal/package.json
@@ -31,7 +31,7 @@ m_EmbeddedPackageManifests:
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
-        ticks: 637709662624333754
+        ticks: 637722017250840338
       m_Hash: 2670881049
 m_PackageAssets:
   m_Packages:
