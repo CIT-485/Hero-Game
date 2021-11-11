@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InventorySystem : MonoBehaviour
 {
+    
+    //private static bool gameIsPaused = false;
+
     [Header("General Fields")]
     // List of items picked up
     public List<GameObject> items = new List<GameObject>();
@@ -19,7 +22,10 @@ public class InventorySystem : MonoBehaviour
     public GameObject uiDescriptionWindow;
     public Image descriptionImage;
     public Text descriptionTitle;
+    public Text descriptionText;
 
+    // 
+    public HealthBar healthBar;
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.I))
@@ -27,11 +33,17 @@ public class InventorySystem : MonoBehaviour
             ToggleInventory();
         }
     }
+    
+    void Start()
+    {
+        healthBar = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar>();
+    }
 
     void ToggleInventory()
     {
         isOpen = !isOpen;
         uiWindow.SetActive(isOpen);
+        UpdateUI();
     }
 
     // Add the item to the items list
@@ -61,6 +73,7 @@ public class InventorySystem : MonoBehaviour
         foreach(var i in itemsImages)
         {
             i.gameObject.SetActive(false);
+            HideDescription();
         }
     }
 
@@ -68,16 +81,40 @@ public class InventorySystem : MonoBehaviour
     {
         // Set the image
         descriptionImage.sprite = itemsImages[id].sprite;
-        // Set the text
+        // Set the title
         descriptionTitle.text = items[id].name;
+        // Show the description
+        descriptionText.text = items[id].GetComponent<Item>().descriptionText;
         // Show the elements
         descriptionImage.gameObject.SetActive(true);
         descriptionTitle.gameObject.SetActive(true);
+        descriptionText.gameObject.SetActive(true);
     }
 
     public void HideDescription()
     {
         descriptionImage.gameObject.SetActive(false);
         descriptionTitle.gameObject.SetActive(false);
+        descriptionText.gameObject.SetActive(false);
+    }
+
+    // Player has consumed a healing item
+    public void Consume(int id)
+    {
+        // Get the a consumable item
+        if(items[id].GetComponent<Item>().type == Item.ItemType.Consumables) 
+        {
+            Debug.Log($"CONSUMED {items[id].name}");
+            // Invoke the consume custome event
+            items[id].GetComponent<Item>().consumeEvent.Invoke();
+            // destroy the item in a short period of time
+            Destroy(items[id], 0.1f);
+            // Clear the item from the list
+            items.RemoveAt(id);
+            // Update the UI
+            UpdateUI();
+
+            healthBar.Healing(25);
+        }
     }
 }
