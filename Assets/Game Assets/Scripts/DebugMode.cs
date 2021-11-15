@@ -14,7 +14,6 @@ public class DebugMode : MonoBehaviour
         points = GameObject.FindGameObjectsWithTag("Respawn");
         hero = GameObject.FindGameObjectWithTag("Player");
         cnt = points.Length - 1;
-        Debug.Log(cnt);
     }
 
     void Update()

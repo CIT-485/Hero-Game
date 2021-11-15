@@ -236,7 +236,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 30e354a00c7d0cd43a51b797143d8fab
-  position: {x: 1191.7615, y: 1356.9999}
+  position: {x: 1192, y: 1357}
   blackboard:
     integers:
       keys:
@@ -490,6 +490,8 @@ MonoBehaviour:
   - '>'
   - '>='
   compareIndex: 0
+  compareName: CurrentHP (Integer Key)
+  compareCount: 8
   compareFloat: 0
   compareString: 
   compareVector2: {x: 0, y: 0}
@@ -722,6 +724,8 @@ MonoBehaviour:
   - '>'
   - '>='
   compareIndex: 0
+  compareName: CurrentHP (Integer Key)
+  compareCount: 8
   compareFloat: 0
   compareString: 
   compareVector2: {x: 0, y: 0}
@@ -1053,6 +1057,8 @@ MonoBehaviour:
   - '>'
   - '>='
   compareIndex: 0
+  compareName: CurrentHP (Integer Key)
+  compareCount: 8
   compareFloat: 0
   compareString: 
   compareVector2: {x: 0, y: 0}
@@ -1162,6 +1168,8 @@ MonoBehaviour:
   - '>'
   - '>='
   compareIndex: 0
+  compareName: CurrentHP (Integer Key)
+  compareCount: 8
   compareFloat: 0
   compareString: 
   compareVector2: {x: 0, y: 0}
@@ -1511,6 +1519,8 @@ MonoBehaviour:
   operatorList:
   - ==
   compareIndex: 0
+  compareName: 
+  compareCount: 0
   compareFloat: 0
   compareString: 
   compareVector2: {x: 0, y: 0}
@@ -1551,7 +1561,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 47148b28b5f7ccd4dbc7ddc8feb3a96d
-  position: {x: 1394.7615, y: 1497.9999}
+  position: {x: 1395, y: 1498}
   blackboard:
     integers:
       keys:
@@ -1612,6 +1622,8 @@ MonoBehaviour:
   - '>'
   - '>='
   compareIndex: 0
+  compareName: CurrentHP (Integer Key)
+  compareCount: 8
   compareFloat: 0
   compareString: 
   compareVector2: {x: 0, y: 0}
@@ -1711,7 +1723,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: d04b37433f33e61498dd3ef67250d417
-  position: {x: -79, y: 949}
+  position: {x: -78.99987, y: 949}
   blackboard:
     integers:
       keys:
@@ -1831,7 +1843,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 955d96b20219a06438fec973476b52c4
-  position: {x: 1580.7614, y: 1497.9999}
+  position: {x: 1581, y: 1498}
   blackboard:
     integers:
       keys:
@@ -1961,7 +1973,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 11ad992bb365e694b976c1916d74bf08
-  position: {x: 979.7614, y: 1222.9999}
+  position: {x: 979.99994, y: 1223}
   blackboard:
     integers:
       keys:
@@ -2022,6 +2034,8 @@ MonoBehaviour:
   - '>'
   - '>='
   compareIndex: 0
+  compareName: CurrentHP (Integer Key)
+  compareCount: 8
   compareFloat: 0
   compareString: 
   compareVector2: {x: 0, y: 0}
@@ -2119,7 +2133,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 8a611259941f1d247a2a0086bce0a0a0
-  position: {x: 979.7614, y: 1356.9999}
+  position: {x: 980, y: 1357}
   blackboard:
     integers:
       keys:
@@ -2408,6 +2422,8 @@ MonoBehaviour:
   operatorList:
   - ==
   compareIndex: 0
+  compareName: 
+  compareCount: 0
   compareFloat: 0
   compareString: 
   compareVector2: {x: 0, y: 0}
