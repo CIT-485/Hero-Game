@@ -9,6 +9,14 @@ public class BanditAI : Enemy
     [HideInInspector] public HealthBar          healthBar;
     [HideInInspector] public Rigidbody2D        rb;
     [HideInInspector] public SpriteRenderer     render;
+    [HideInInspector] public bool               isAttacking = false;
+    [HideInInspector] public bool               isDamaged = false;
+    [HideInInspector] public bool               isAbsorbed = false;
+    [HideInInspector] public bool               waypointReached = false;
+    [HideInInspector] public float              waitTime = 0;
+    [HideInInspector] public float              attackWaitTime = 0;
+    private GameObject                          currentStop;
+    private float                               jumpWaitTime = 0;
 
     public BehaviourTree                        tree;
     public GameObject                           player;
@@ -16,19 +24,12 @@ public class BanditAI : Enemy
     public GameObject                           damageFlash;
     public GameObject                           healtBarCanvas;
 
-    public int                                  waypointIndex = 0;
     public float                                acceleration = 5;
     public float                                maxSpeed = 2.5f;
     public float                                jumpForce = 2.5f;
-    public float                                waitTime = 0;
-    public float                                attackWaitTime = 0;
-    public bool                                 waypointReached = false;
-    public bool                                 isAttacking = false;
-    public bool                                 isDamaged = false;
-    public bool                                 isAbsorbed = false;
-    
+    public int                                  waypointIndex = 0;
+
     public List<Waypoint>                       waypoints = new List<Waypoint>();
-    public List<Waypoint>                       jumps = new List<Waypoint>();
 
     // Start is called before the first frame update
     void Awake()
@@ -84,7 +85,7 @@ public class BanditAI : Enemy
         {
             animator.SetInteger("AnimState", 1);
             // When the player is out of range, then this action will fail
-            if (tree.blackboard.floats.GetValue("Distance") > 1)
+            if (tree.blackboard.floats.GetValue("Distance") > 1 || tree.blackboard.floats.GetValue("DistanceY") > 2)
                 return Node.State.FAILURE;
 
             // This will correct the facing direction of the bandit
@@ -147,6 +148,10 @@ public class BanditAI : Enemy
 
         // if the bandit hits a wall that reduces it's horizontal velocity to zero, then it will attempt to jump
         if (rb.velocity.x == 0)
+            jumpWaitTime += Time.deltaTime;
+        else
+            jumpWaitTime = 0;
+        if (jumpWaitTime > 0.1f)
             Jump();
 
         // This will correct the facing direction of the bandit and allows it to move
@@ -164,13 +169,16 @@ public class BanditAI : Enemy
                 ChangeFacingDirection();
             directionalForce += new Vector2(-acceleration, 0);
         }
-
-        // This makes it so it can move, but only at the maxSpeed designated in the inspector
-        rb.AddForce(directionalForce);
-        if (rb.velocity.x > maxSpeed)
-            rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
-        else if (rb.velocity.x < -2.5f)
-            rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
+        if (currentStop != null)
+        {
+            if ((player.transform.position.x > currentStop.transform.position.x && directionalForce.x <= 0) ||
+                (player.transform.position.x < currentStop.transform.position.x && directionalForce.x >= 0))
+                Move(directionalForce);
+            else
+                ReduceVelocity();
+        }
+        else
+            Move(directionalForce);
         return Node.State.RUNNING;
     }
     Node.State Patrol()
@@ -211,6 +219,15 @@ public class BanditAI : Enemy
         // if the waypoint has not been reached yet, then it will move towards it.
         else
         {
+
+            // if the bandit hits a wall that reduces it's horizontal velocity to zero, then it will attempt to jump
+            if (rb.velocity.x == 0)
+                jumpWaitTime += Time.deltaTime;
+            else
+                jumpWaitTime = 0;
+            if (jumpWaitTime > 0.1f)
+                Jump();
+
             animator.SetInteger("AnimState", 2);
             if (transform.position.x < waypoints[waypointIndex].transform.position.x)
             {
@@ -226,12 +243,7 @@ public class BanditAI : Enemy
             }
         }
 
-        // This makes it so it can move, but only at the maxSpeed designated in the inspector
-        rb.AddForce(directionalForce);
-        if (rb.velocity.x > maxSpeed)
-            rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
-        else if (rb.velocity.x < -2.5f)
-            rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
+        Move(directionalForce);
         return Node.State.RUNNING;
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -248,6 +260,34 @@ public class BanditAI : Enemy
             else
                 rb.AddForce(new Vector2(-30, 10));
         }
+        else if (collision.tag == "Stop")
+        {
+            if (collision.transform.position.x > transform.position.x)
+            {
+                transform.position += new Vector3(-0.05f, 0f);
+            }
+            if (collision.transform.position.x < transform.position.x)
+            {
+                transform.position += new Vector3(0.05f, 0f);
+            }
+            currentStop = collision.gameObject;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Stop")
+        {
+            currentStop = null;
+        }
+    }
+    private void Move(Vector2 directionalForce)
+    {
+        // This makes it so it can move, but only at the maxSpeed designated in the inspector
+        rb.AddForce(directionalForce);
+        if (rb.velocity.x > maxSpeed)
+            rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
+        else if (rb.velocity.x < -2.5f)
+            rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
     }
     bool IsDead()
     {
@@ -259,6 +299,7 @@ public class BanditAI : Enemy
     {
         if (Grounded)
         {
+            jumpWaitTime = 0;
             Grounded = false;
             animator.SetTrigger("Jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -277,9 +318,9 @@ public class BanditAI : Enemy
             FixHitboxes(attackHitboxes);
         }
     }
-    void ReduceVelocity()
+    void ReduceVelocity(float reducePercentage = 0.9f)
     {
-        rb.velocity = new Vector2(rb.velocity.x * 0.9f, rb.velocity.y);
+        rb.velocity = new Vector2(rb.velocity.x * reducePercentage, rb.velocity.y);
     }
     IEnumerator Attack0(float time)
     {

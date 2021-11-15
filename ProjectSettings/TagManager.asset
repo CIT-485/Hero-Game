@@ -12,6 +12,7 @@ TagManager:
   - Draw
   - Particles
   - GM
+  - Stop
   layers:
   - Default
   - TransparentFX
