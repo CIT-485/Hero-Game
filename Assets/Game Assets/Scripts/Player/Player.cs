@@ -9,6 +9,7 @@ public class Player : MonoBehaviour, IEntity
     [HideInInspector] public HealthBar healthBar;
     [HideInInspector] public Rigidbody2D body2d;
 
+    public CanvasGroup              deathCrossfade;
     public GameObject               groundSensor;
     public GameObject               slideDust;
     public GameObject               damageFlash;
@@ -20,12 +21,17 @@ public class Player : MonoBehaviour, IEntity
     public float                    fallMultiplier = 3.0f;
     public float                    lowJumpFallMultiplier = 0.1f;
     public float                    rollForce = 6.0f;
+    public float                    differenceAlpha = 0;
     public bool                     actionAllowed = true;
     public bool                     prevGround = false;
     public bool                     grounded = false;
     public bool                     rolling = false;
     public bool                     wallSliding = false;
-    
+    public bool                     isDead = false;
+    public bool                     deathAnimationDone = false;
+    public bool                     playFadeOutOne = false;
+    public bool                     playFadeOutTwo = false;
+
     public Collider2D               hurtbox;
     public GameObject               rollingHurtbox;
     public GameObject               attackHitbox;
@@ -284,11 +290,42 @@ public class Player : MonoBehaviour, IEntity
             //m_animator.SetTrigger("Block");
 
             body2d.AddForce(directionalForce);
-            if (healthBar.currentHealth < 1)
+            if (healthBar.currentHealth == 0)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                deathCrossfade.gameObject.GetComponent<Animator>().enabled = false;
+                isDead = true;
+                StartCoroutine(Dead());
             }
         }
+        if (playFadeOutOne && deathCrossfade.alpha < 0.4f)
+        {
+            differenceAlpha = Mathf.Abs(deathCrossfade.alpha - 0.4f);
+            if (differenceAlpha < 0.1f)
+                differenceAlpha = 0.1f;
+            deathCrossfade.alpha += Time.deltaTime * differenceAlpha * 2;
+        }
+        if (playFadeOutTwo && deathCrossfade.alpha < 1)
+        {
+            differenceAlpha = Mathf.Abs(deathCrossfade.alpha - 1);
+            if (differenceAlpha < 0.1f)
+                differenceAlpha = 0.1f;
+            deathCrossfade.alpha += Time.deltaTime * differenceAlpha * 1.5f;
+        }
+    }
+
+    IEnumerator Dead()
+    {
+        actionAllowed = false;
+        animator.SetTrigger("Death");
+        yield return new WaitUntil(() => deathAnimationDone);
+        yield return new WaitForSeconds(1f);
+        playFadeOutOne = true;
+        yield return new WaitWhile(() => deathCrossfade.alpha < 0.39f);
+        yield return new WaitForSeconds(2f);
+        playFadeOutTwo = true;
+        yield return new WaitWhile(() => deathCrossfade.alpha < 0.99f);
+        yield return new WaitForSeconds(0.25f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void DeactivateHitboxes()
@@ -315,6 +352,11 @@ public class Player : MonoBehaviour, IEntity
     {
     }
 
+    void AE_Death_End()
+    {
+        deathAnimationDone = true;
+    }
+
     // Animation Events
     // Called in slide animation.
     void AE_SlideDust()
@@ -337,7 +379,7 @@ public class Player : MonoBehaviour, IEntity
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "EnemyHitbox" && !damaged && !invul)
+        if (collision.tag == "EnemyHitbox" && !damaged && !invul && !isDead)
             DamageCalculation(collision);
     }
 
@@ -357,7 +399,7 @@ public class Player : MonoBehaviour, IEntity
         int damage = -1;
         float stun = 0.1f;
         Vector2 knockback = Vector2.zero;
-        Transform current = collision.transform.parent;
+        Transform current = collision.transform;
         while (current != null && damage < 0)
         {
             if (current.GetComponent<AttackManager>())

@@ -9,7 +9,8 @@ public class Deathzone : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollowObject>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().healthBar.TakeDamage(GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().healthBar.maxHealth * 5);
         }
     }
 }

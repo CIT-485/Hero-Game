@@ -219,7 +219,6 @@ public class BanditAI : Enemy
         // if the waypoint has not been reached yet, then it will move towards it.
         else
         {
-
             // if the bandit hits a wall that reduces it's horizontal velocity to zero, then it will attempt to jump
             if (rb.velocity.x == 0)
                 jumpWaitTime += Time.deltaTime;

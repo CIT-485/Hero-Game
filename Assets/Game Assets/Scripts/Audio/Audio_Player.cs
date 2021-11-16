@@ -89,9 +89,13 @@ public class Audio_Player : MonoBehaviour
 
 	private void LateUpdate()
 	{
-		playFootsteps();
-		playJump();
-		playSword();
+		if (!GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().isDead)
+		{
+			playFootsteps();
+			playJump();
+			playSword();
+		}
+		playLand();
 	}
 
     private void playFootsteps()
@@ -117,15 +121,19 @@ public class Audio_Player : MonoBehaviour
     {
 		if (Input.GetKeyDown("space") && isJumping == false)
 		{
-			isJumping = true;
 			//PlaySound("Jump");
+			isJumping = true;
 			isLanded = false;
 			isWalking = false;
 		}
-		else if (player.grounded == true && isLanded == false)
+	}
+
+	private void playLand()
+	{
+		if (player.grounded == true && isLanded == false)
 		{
-			isLanded = true;
 			PlaySound("Jump");
+			isLanded = true;
 			isJumping = false;
 		}
 	}
