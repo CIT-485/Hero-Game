@@ -5,6 +5,7 @@ using UnityEngine;
 public class LandingSensor : MonoBehaviour
 {
     public GameObject entity;
+    public Vector3 positionOffset;
     List<Vector3> points = new List<Vector3>();
     void Update()
     {
@@ -12,8 +13,8 @@ public class LandingSensor : MonoBehaviour
         // in the list and then place the landing sensor on that point.
         points.Clear();
         
-        RaycastHit2D[] hitR = Physics2D.RaycastAll(entity.transform.position + new Vector3(0.375f, 1f), Vector2.down);
-        RaycastHit2D[] hitL = Physics2D.RaycastAll(entity.transform.position + new Vector3(-0.375f, 1f), Vector2.down);
+        RaycastHit2D[] hitR = Physics2D.RaycastAll(entity.transform.position + positionOffset + new Vector3(0.375f, 1f), Vector2.down);
+        RaycastHit2D[] hitL = Physics2D.RaycastAll(entity.transform.position + positionOffset + new Vector3(-0.375f, 1f), Vector2.down);
 
         foreach (RaycastHit2D h in hitR)
             if (h && h.collider.tag == "Platform")
@@ -27,7 +28,7 @@ public class LandingSensor : MonoBehaviour
 
         // If the raycast cannot find a platform underneath the player, then we will have a fail safe so things don't crash
         if (points.Count == 0)
-            transform.position = entity.transform.position;
+            transform.position = entity.transform.position + positionOffset;
         else
         {
             Vector3 highest = points[0];

@@ -8,6 +8,7 @@ public class GroundSensor : MonoBehaviour
     private void OnTriggerStay2D(Collider2D col)
     {
         // This is only needed if the enemies will have a collision box
+        /*
         if (col.tag == "Enemy")
         {
             if (col.transform.position.x > entity.transform.position.x)
@@ -21,6 +22,7 @@ public class GroundSensor : MonoBehaviour
                 col.transform.position += new Vector3(-0.01f, 0);
             }
         }
+        */
     }
     private void OnTriggerExit2D(Collider2D col)
     {
