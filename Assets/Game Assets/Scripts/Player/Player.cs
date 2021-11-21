@@ -394,4 +394,23 @@ public class Player : MonoBehaviour, IEntity
         yield return new WaitForSeconds(time);
         attacking = false;
     }
+
+    /*
+    // Retrict player movement if player is examining an object or if the inventory system is open
+    bool CanMove()
+    {
+        actionAllowed = true;
+
+        if (FindObjectOfType<InteractionSystem>().isExamining)
+        {
+            actionAllowed = false;
+        }
+        if(FindObjectOfType<InventorySystem>().isOpen)
+        {
+            actionAllowed = false;
+        }
+
+        return actionAllowed;
+    }
+    */
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InventorySystem : MonoBehaviour
 {
-    
+
     //private static bool gameIsPaused = false;
 
     [Header("General Fields")]
