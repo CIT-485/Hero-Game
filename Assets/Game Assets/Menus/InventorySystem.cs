@@ -28,7 +28,7 @@ public class InventorySystem : MonoBehaviour
     public HealthBar healthBar;
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleInventory();
         }
