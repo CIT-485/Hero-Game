@@ -24,6 +24,8 @@ public class InventorySystem : MonoBehaviour
     public Text descriptionTitle;
     public Text descriptionText;
 
+    public Player player;
+
     // 
     public HealthBar healthBar;
     private void Update()
@@ -31,12 +33,14 @@ public class InventorySystem : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             ToggleInventory();
+            player.actionAllowed = !player.actionAllowed;
         }
     }
     
     void Start()
     {
         healthBar = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     void ToggleInventory()
