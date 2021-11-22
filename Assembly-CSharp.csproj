@@ -116,6 +116,7 @@
     <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRatAI.cs" />
     <Compile Include="Assets\Game Assets\Scripts\HealthBar\HealthBar.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\UITabs\scripts\TabsUI.cs" />
     <Compile Include="Assets\Scenes\Gamal\StatModifier.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Assets\Scenes\Gamal\TestItem.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\Bandit\BanditTest.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\RootNode.cs" />
+    <Compile Include="Assets\UITabs\scripts\TabButtonUI.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\ActionNode.cs" />
@@ -175,8 +177,10 @@
     <Compile Include="Assets\Game Assets\Scripts\Player\LandingSensor.cs" />
     <Compile Include="Assets\Game Assets\Menus\InteractionSystem.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTreeController.cs" />
-    <Compile Include="Assets\UITabs\scripts\TabButtonUI.cs" />
-    <Compile Include="Assets\UITabs\scripts\TabsUI.cs" />
+    <Compile Include="Assets\Scenes\Gamal\StatMenu\BaseClass.cs" />
+    <Compile Include="Assets\Scenes\Gamal\StatMenu\BaseKnightClass.cs" />
+    <Compile Include="Assets\Scenes\Gamal\StatMenu\BasePlayerStatClass.cs" />
+    <Compile Include="Assets\Scenes\Gamal\StatMenu\CreatePlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

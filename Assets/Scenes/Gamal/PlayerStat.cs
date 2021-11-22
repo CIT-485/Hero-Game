@@ -2,15 +2,18 @@ using UnityEngine;
 using Kryz.CharacterStats;
 public class PlayerStat : MonoBehaviour
 {
-    public CharacterStat attack;
-    public CharacterStat defense;
-    public CharacterStat health;
-
+    public CharacterStat strength;
+    public CharacterStat vitality;
+    public CharacterStat dexterity;
+    public CharacterStat physicalDef;
+    public CharacterStat magicDef;
+    public CharacterStat FireDef;
+    public CharacterStat lightningDef;
     private void Start()
     {
-        attack.BaseValue = 16;
-        defense.BaseValue = 22;
-        health.BaseValue = 22;
+        strength.BaseValue = 16;
+        vitality.BaseValue = 22;
+        dexterity.BaseValue = 22;
     }
 
 }

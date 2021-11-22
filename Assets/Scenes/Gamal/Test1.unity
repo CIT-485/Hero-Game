@@ -7696,11 +7696,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf613c5679b695948a75abb1458d0974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack:
+  strength:
     BaseValue: 0
-  defense:
+  vitality:
     BaseValue: 0
-  health:
+  dexterity:
+    BaseValue: 0
+  physicalDef:
+    BaseValue: 0
+  magicDef:
+    BaseValue: 0
+  FireDef:
+    BaseValue: 0
+  lightningDef:
     BaseValue: 0
 --- !u!114 &748435042
 MonoBehaviour:
