@@ -43,6 +43,7 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: 
   keybind: 
   children:
@@ -94,6 +95,7 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: Deaggro/Patrol
   keybind: distance (Float Key)
   child: {fileID: 6964463232886909051}
@@ -179,6 +181,7 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: Aggro
   keybind: distance (Float Key)
   child: {fileID: 64684016053914113}
@@ -239,7 +242,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 8256f4e2bc2df2f4c944351ecca340b7
-  position: {x: 12, y: 735}
+  position: {x: -263.16177, y: 970.93225}
   blackboard:
     integers:
       keys:
@@ -264,6 +267,7 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: 
   keybind: isActive (Boolean Key)
   intValue: 0
@@ -330,6 +334,7 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: 
   keybind: currentHP
   child: {fileID: 8876142313468868548}
@@ -340,6 +345,55 @@ MonoBehaviour:
   enableKeyloop: 0
   keybindName: currentHP (integer Key)
   prevCount: 1
+--- !u!114 &-382364017648249430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 44ff2867f10790142af03ab5e8e9e9fb
+  position: {x: -220.96005, y: 751.22546}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: -1223264083709204560}
+  - {fileID: 2994759420142393400}
 --- !u!114 &-105483174055517338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +437,7 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: 
   keybind: 
   child: {fileID: -868623872474011251}
@@ -432,9 +487,10 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: Dead
   keybind: currentHP (Integer Key)
-  child: {fileID: -1223264083709204560}
+  child: {fileID: -382364017648249430}
   floatValue: 0
   percent: 0
   stringValue: 
@@ -500,6 +556,8 @@ MonoBehaviour:
   - {fileID: 8170501249497962710}
   - {fileID: 4438277427382474007}
   - {fileID: 566511533499941487}
+  - {fileID: -382364017648249430}
+  - {fileID: 2994759420142393400}
   blackboard:
     integers:
       keys:
@@ -524,6 +582,7 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
 --- !u!114 &64684016053914113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,6 +626,7 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: 
   keybind: 
   children:
@@ -590,6 +650,7 @@ MonoBehaviour:
   - Patrol (Delegate Key)
   - Aggro (Delegate Key)
   - Attack (Delegate Key)
+  - Dead (Delegate Key)
   started: 0
   doneOnce: 0
   guid: 898708742bebc96459b737c753ed8338
@@ -618,9 +679,61 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: 
   keybind: Aggro (Delegate Key)
-  prevCount: 3
+  prevCount: 4
+--- !u!114 &2994759420142393400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 3
+  keybinds:
+  - Patrol (Delegate Key)
+  - Aggro (Delegate Key)
+  - Attack (Delegate Key)
+  - Dead (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: ad57aaa71d52daf4fb945001f7239ed0
+  position: {x: 2.313061, y: 899.7807}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: Dead (Delegate Key)
+  prevCount: 4
 --- !u!114 &4438277427382474007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,6 +752,7 @@ MonoBehaviour:
   - Patrol (Delegate Key)
   - Aggro (Delegate Key)
   - Attack (Delegate Key)
+  - Dead (Delegate Key)
   started: 0
   doneOnce: 0
   guid: f2525893922f9f54285929a1dde9b022
@@ -667,9 +781,10 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: 
   keybind: Attack (Delegate Key)
-  prevCount: 3
+  prevCount: 4
 --- !u!114 &6964463232886909051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,6 +803,7 @@ MonoBehaviour:
   - Patrol (Delegate Key)
   - Aggro (Delegate Key)
   - Attack (Delegate Key)
+  - Dead (Delegate Key)
   started: 0
   doneOnce: 0
   guid: 1b6264f699ba5d744999aeec77e95a73
@@ -716,9 +832,10 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: 
   keybind: Patrol (Delegate Key)
-  prevCount: 3
+  prevCount: 4
 --- !u!114 &7534845618631772853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +879,7 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: 
   keybind: 
   children:
@@ -813,6 +931,7 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: Attack
   keybind: distance (Float Key)
   child: {fileID: 4438277427382474007}
@@ -898,6 +1017,7 @@ MonoBehaviour:
       - name: Patrol
       - name: Aggro
       - name: Attack
+      - name: Dead
   description: 
   keybind: isActive (Boolean Key)
   child: {fileID: 7534845618631772853}
