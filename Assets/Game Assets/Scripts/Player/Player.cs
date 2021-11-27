@@ -1,63 +1,83 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IEntity
 {
-    [HideInInspector] public Animator animator;
-    [HideInInspector] public HealthBar healthBar;
-    [HideInInspector] public Rigidbody2D body2d;
+    [HideInInspector] public Animator       animator;
+    [HideInInspector] public HealthBar      healthBar;
+    [HideInInspector] public Rigidbody2D    body2d;
+    [HideInInspector] public int            facingDirection = 1;
+    [HideInInspector] public float          inputX = 0;
+    [HideInInspector] public bool           attacking = false;
+    [HideInInspector] public bool           isDead = false;
+    [HideInInspector] public bool           wallSliding = false;
+    [HideInInspector] public bool           rolling = false;
 
-    public CanvasGroup              deathCrossfade;
+    public CanvasGroup              crossfade;
+    public CanvasGroup              deathFade;
+    public AudioPlayer              audioPlayer;
+    public GameObject               playerCanvas;
     public GameObject               groundSensor;
     public GameObject               slideDust;
     public GameObject               damageFlash;
-    public int                      facingDirection = 1;
-    public float                    inputX = 0;
+    public GameObject               absorbFlash;
+    public GameObject               soulPrefab;
+    public GameObject               soulCollectionPrefab;
+    public GameObject               absorbSoundPrefab;
+    public PhysicsMaterial2D        noFriction;
+    public int                      corruption = 0;
+    public int                    currentCorruption = 0;
     public float                    acceration = 1.0f;
     public float                    maxSpeed = 4.0f;
     public float                    jumpForce = 8.5f;
     public float                    fallMultiplier = 3.0f;
     public float                    lowJumpFallMultiplier = 0.1f;
     public float                    rollForce = 6.0f;
-    public float                    differenceAlpha = 0;
     public bool                     actionAllowed = true;
-    public bool                     prevGround = false;
     public bool                     grounded = false;
-    public bool                     rolling = false;
-    public bool                     wallSliding = false;
-    public bool                     isDead = false;
-    public bool                     deathAnimationDone = false;
-    public bool                     playFadeOutOne = false;
-    public bool                     playFadeOutTwo = false;
+    public bool                     hasAmulet = false;
 
     public Collider2D               hurtbox;
     public GameObject               rollingHurtbox;
     public GameObject               attackHitbox;
-    public float                    attackLungingForce = 200;
+    public float                    attackLungingForce = 30;
     public float                    jumpAttackLungingMultiplier = .33f;
-    public bool                     invul = false;
-    public bool                     attackConnected = false;
-    public bool                     attacking = false;
-    public bool                     damaged = false;
-    public bool                     guarding = false;
 
     private CollisionSensor         m_wallSensorR1;
     private CollisionSensor         m_wallSensorR2;
     private CollisionSensor         m_wallSensorL1;
     private CollisionSensor         m_wallSensorL2;
+    private TMP_Text                corruptionCount;
     private int                     m_currentAttack = 0;
+    private int                     testies = 0;
     private float                   m_delayToIdle = 0.0f;
     private float                   m_rollDuration = 8.0f / 14.0f;
     private float                   m_rollCurrentTime = 0;
-    private float                   m_invulDuration = 30.0f / 60.0f;
+    private float                   m_invulDuration = 25.0f / 60.0f;
     private float                   m_invulCurrentTime = 0;
-    private float                   m_invulStartUpDuration = 8.0f / 60.0f;
+    private float                   m_invulStartUpDuration = 4.0f / 60.0f;
     private float                   m_invulStartUpTime = 0;
     private float                   m_timeSinceAttack = 0.0f;
+    private float                   differenceAlpha = 0;
+    private float                   absorbWaitTime = 0;
+    private float                   absorbingTime = 0;
+    private float                   corruptionCountTime = 0;
+    private bool                    deathAnimationDone = false;
+    private bool                    playFadeOutOne = false;
+    private bool                    playFadeOutTwo = false;
+    private bool                    prevGround = false;
+    private bool                    invul = false;
+    private bool                    doneInvul = false;
+    private bool                    damaged = false;
+    private bool                    guarding = false;
+    private bool                    absorbing = false;
 
     public bool Grounded { get => grounded; set => grounded = value; }
+    public bool IsDead { get => isDead; set => isDead = value; }
+    public int CorruptionValue { get => testies; set => testies = value; }
 
     // Use this for initialization
     void Start()
@@ -69,6 +89,7 @@ public class Player : MonoBehaviour, IEntity
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<CollisionSensor>();
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<CollisionSensor>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<CollisionSensor>();
+        corruptionCount = GameObject.Find("CorruptionCount").GetComponent<TMP_Text>();
 
         attackHitbox.transform.localPosition = new Vector2(0.65f, 0.85f);
         DeactivateHitboxes();
@@ -77,8 +98,24 @@ public class Player : MonoBehaviour, IEntity
     // Update is called once per frame
     void Update()
     {
+        corruptionCount.text = currentCorruption.ToString();
+
+        if (currentCorruption < corruption)
+        {
+            corruptionCountTime += Time.deltaTime;
+            if (corruptionCountTime > (float) 3f / 120f)
+            {
+                corruptionCountTime = 0;
+                currentCorruption += 1;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+            playerCanvas.GetComponent<Animator>().SetTrigger("FirstTime");
+                
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
+        absorbWaitTime += Time.deltaTime;
 
         // If the jump button is held, then the player will slower so they will re higher
         if (body2d.velocity.y > 0 && Input.GetKey("space"))
@@ -95,7 +132,7 @@ public class Player : MonoBehaviour, IEntity
         if (rolling)
         {
             m_rollCurrentTime += Time.deltaTime;
-            if (!invul)
+            if (!invul && !doneInvul)
             {
                 m_invulStartUpTime += Time.deltaTime;
             }
@@ -122,22 +159,29 @@ public class Player : MonoBehaviour, IEntity
         if (m_rollCurrentTime > m_rollDuration)
         {
             rolling = false;
+            invul = false;
+            doneInvul = false;
             m_rollCurrentTime = 0;
+            m_invulStartUpTime = 0;
+            m_invulCurrentTime = 0;
         }
 
         // Dables invulnerability after invul timer is reached
         if (m_invulCurrentTime > m_invulDuration)
         {
+            rollingHurtbox.SetActive(false);
             hurtbox.enabled = true;
             groundSensor.SetActive(true);
-            rollingHurtbox.SetActive(false);
             invul = false;
+            doneInvul = true;
             m_invulCurrentTime = 0;
         }
 
         // If the player is landing or jumping, then the hitboxes will dable
         if (prevGround != grounded)
         {
+            if (!prevGround && !rolling)
+                audioPlayer.PlaySound("Land");
             DeactivateHitboxes();
             prevGround = grounded;
         }
@@ -146,13 +190,13 @@ public class Player : MonoBehaviour, IEntity
         if (wallSliding)
             DeactivateHitboxes();
 
+        // Initalize the grounded state of the player animation
+        animator.SetBool("Grounded", grounded);
+
         // If action is allowed
         if (actionAllowed)
         {
             Vector2 directionalForce = new Vector2(0, 0);
-
-            // Initalize the grounded state of the player animation
-            animator.SetBool("Grounded", grounded);
 
             // This will handle the player movement
             inputX = Input.GetAxis("Horizontal");
@@ -163,9 +207,9 @@ public class Player : MonoBehaviour, IEntity
                 else
                 {
                     if ((body2d.velocity.x < 0 && inputX > 0) || (body2d.velocity.x > 0 && inputX < 0))
-                        directionalForce += new Vector2(inputX * acceration * 5, 0);
+                        directionalForce += new Vector2(inputX * acceration * 5 * Time.deltaTime * 150, 0);
                     else
-                        directionalForce += new Vector2(inputX * acceration, 0);
+                        directionalForce += new Vector2(inputX * acceration * Time.deltaTime * 150, 0);
                 }
 
                 if (body2d.velocity.x > maxSpeed)
@@ -208,12 +252,14 @@ public class Player : MonoBehaviour, IEntity
             {
                 rolling = true;
                 animator.SetTrigger("Roll");
+                audioPlayer.PlaySound("Rolling");
                 body2d.velocity = new Vector2(facingDirection * rollForce, body2d.velocity.y);
             }
 
             // Jump
             else if (Input.GetKeyDown("space") && grounded && !rolling && !attacking)
             {
+                audioPlayer.PlaySound("Jump");
                 DeactivateHitboxes();
                 grounded = false;
                 animator.SetTrigger("Jump");
@@ -260,6 +306,41 @@ public class Player : MonoBehaviour, IEntity
                 m_timeSinceAttack = 0.0f;
             }
 
+            // Abosrb souls
+            var flag = GameObject.Find("AbsorbCircle").GetComponent<Flag>();
+            if (Input.GetKeyDown(KeyCode.C)) 
+            {
+                if (hasAmulet && absorbWaitTime > 1)
+                {
+                    audioPlayer.PlaySound("AbsorbCollection");
+                    absorbWaitTime = 0;
+                    Instantiate(soulCollectionPrefab, transform.position + new Vector3(0, 0.75f, 0), transform.rotation, transform);
+                    absorbing = true;
+                }
+            }
+
+            if (absorbing)
+            {
+                absorbingTime += Time.deltaTime;
+                if (GameObject.Find("AbsorbCircle").GetComponent<Flag>().flagged)
+                {
+                    foreach (Collider2D col in flag.collisions)
+                    {
+                        if (col.GetComponent<Enemy>().IsDead && !col.GetComponent<Enemy>().IsAbsorbed)
+                        {
+                            col.GetComponent<Enemy>().IsAbsorbed = true;
+                            GameObject soul = Instantiate(soulPrefab, col.transform);
+                            soul.GetComponent<FindEnemy>().enemy = col.GetComponent<Enemy>();
+                        }
+                    }
+                }
+                if (absorbingTime > 1)
+                {
+                    absorbing = false;
+                    absorbingTime = 0;
+                }
+            }
+
             // Run
             if (Mathf.Abs(body2d.velocity.x) > 0.1f && !rolling)
             {
@@ -292,24 +373,29 @@ public class Player : MonoBehaviour, IEntity
             body2d.AddForce(directionalForce);
             if (healthBar.currentHealth == 0)
             {
-                deathCrossfade.gameObject.GetComponent<Animator>().enabled = false;
+                crossfade.gameObject.GetComponent<Animator>().enabled = false;
                 isDead = true;
                 StartCoroutine(Dead());
             }
         }
-        if (playFadeOutOne && deathCrossfade.alpha < 0.4f)
+        if (playFadeOutOne && deathFade.alpha < 1)
         {
-            differenceAlpha = Mathf.Abs(deathCrossfade.alpha - 0.4f);
+            differenceAlpha = Mathf.Abs(deathFade.alpha - 1);
             if (differenceAlpha < 0.1f)
                 differenceAlpha = 0.1f;
-            deathCrossfade.alpha += Time.deltaTime * differenceAlpha * 2;
+            deathFade.alpha += Time.deltaTime * differenceAlpha * 1.5f;
         }
-        if (playFadeOutTwo && deathCrossfade.alpha < 1)
+        if (playFadeOutTwo && crossfade.alpha < 1)
         {
-            differenceAlpha = Mathf.Abs(deathCrossfade.alpha - 1);
+            differenceAlpha = Mathf.Abs(crossfade.alpha - 1);
             if (differenceAlpha < 0.1f)
                 differenceAlpha = 0.1f;
-            deathCrossfade.alpha += Time.deltaTime * differenceAlpha * 1.5f;
+            crossfade.alpha += Time.deltaTime * differenceAlpha * 1.5f;
+        }
+
+        if (absorbFlash.activeSelf == true)
+        {
+            absorbFlash.GetComponent<Light2DFade>().Fade(0.5f);
         }
     }
 
@@ -318,12 +404,13 @@ public class Player : MonoBehaviour, IEntity
         actionAllowed = false;
         animator.SetTrigger("Death");
         yield return new WaitUntil(() => deathAnimationDone);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.25f);
+        audioPlayer.PlaySound("Death");
         playFadeOutOne = true;
-        yield return new WaitWhile(() => deathCrossfade.alpha < 0.39f);
+        yield return new WaitWhile(() => deathFade.alpha < 1);
         yield return new WaitForSeconds(2f);
         playFadeOutTwo = true;
-        yield return new WaitWhile(() => deathCrossfade.alpha < 0.99f);
+        yield return new WaitWhile(() => crossfade.alpha < 1);
         yield return new WaitForSeconds(0.25f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -379,8 +466,17 @@ public class Player : MonoBehaviour, IEntity
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "EnemyHitbox" && !damaged && !invul && !isDead)
+        if (collision.tag == "EnemyHitbox" &&  !damaged && !invul && !isDead)
             DamageCalculation(collision);
+        if (collision.tag == "Souls")
+        {
+            Instantiate(absorbSoundPrefab, transform);
+            collision.GetComponent<ParticleFade>().Fade();
+            collision.GetComponent<Light2DFade>().Fade(1);
+            collision.GetComponent<Collider2D>().enabled = false;
+            corruption += collision.GetComponent<FindEnemy>().enemy.CorruptionValue;
+            absorbFlash.SetActive(true);
+        }
     }
 
     void DamageCalculation(Collider2D collision)

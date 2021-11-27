@@ -37,7 +37,7 @@ public class LandingSensor : MonoBehaviour
             transform.position = new Vector2(entity.transform.position.x, highest.y);
         }
     }
-    private void OnTriggerStay2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         // If the player enter the landing sensor, then the player's grounded state will be flagged as true
         if (col == entity.GetComponent<Collider2D>())

@@ -7836,6 +7836,184 @@ MonoBehaviour:
   - PlayerPosition
   - Vector2 Key [X])
   chosenCompare: []
+--- !u!114 &-2563355993999298051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd12a5c57aa821b4780ea10eff8a9eb1, type: 3}
+  m_Name: SetValueNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 10
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - AttackChance (Integer Key)
+  - MoveChance (Integer Key)
+  - RunCount (Integer Key)
+  - AttackWaitTime (Float Key)
+  - AttackHoldTime (Float Key)
+  - Distance (Float Key)
+  - MoveCommitTime (Float Key)
+  - Acceleration (Float Key)
+  - IsAlive (Boolean Key)
+  - IsAttacking (Boolean Key)
+  - InCloseRange (Boolean Key)
+  - InFarRange (Boolean Key)
+  - MoveActionDecided (Boolean Key)
+  - StayStill (Boolean Key)
+  - MoveFoward (Boolean Key)
+  - FacingRight (Boolean Key)
+  - 50%DoOnce (Boolean Key)
+  - Cinematic (Boolean Key)
+  - CinematicDoneMoving (Boolean Key)
+  - CinematicRunning (Boolean Key)
+  - CinematicRunLeft (Boolean Key)
+  - 33%DoOnce (Boolean Key)
+  - Laser (Boolean Key)
+  - DirectionalForce (Vector2 Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - IntoDownPosition (Vector2 Key)
+  - RunningLeftLimit (Vector2 Key)
+  - RunningRightLimit (Vector2 Key)
+  - LaserPosition (Vector2 Key)
+  - DirectionalForce (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - IntoDownPosition (Vector2 Key [X])
+  - RunningLeftLimit (Vector2 Key [X])
+  - RunningRightLimit (Vector2 Key [X])
+  - LaserPosition (Vector2 Key [X])
+  - DirectionalForce (Vector2 Key [Y])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  - IntoDownPosition (Vector2 Key [Y])
+  - RunningLeftLimit (Vector2 Key [Y])
+  - RunningRightLimit (Vector2 Key [Y])
+  - LaserPosition (Vector2 Key [Y])
+  - This (GameObject Key)
+  started: 0
+  doneOnce: 0
+  guid: f0b1205eb9f00e144bdd6b4e423bea13
+  position: {x: -6295, y: 948.0001}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+      - name: AttackChance
+        value: 0
+      - name: MoveChance
+        value: 0
+      - name: RunCount
+        value: 0
+    floats:
+      keys:
+      - name: AttackWaitTime
+        value: 0
+      - name: AttackHoldTime
+        value: 0
+      - name: Distance
+        value: 0
+      - name: MoveCommitTime
+        value: 0
+      - name: Acceleration
+        value: 5
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsAlive
+        value: 1
+      - name: IsAttacking
+        value: 0
+      - name: InCloseRange
+        value: 0
+      - name: InFarRange
+        value: 0
+      - name: MoveActionDecided
+        value: 0
+      - name: StayStill
+        value: 0
+      - name: MoveFoward
+        value: 0
+      - name: FacingRight
+        value: 0
+      - name: 50%DoOnce
+        value: 0
+      - name: Cinematic
+        value: 0
+      - name: CinematicDoneMoving
+        value: 0
+      - name: CinematicRunning
+        value: 0
+      - name: CinematicRunLeft
+        value: 0
+      - name: 33%DoOnce
+        value: 0
+      - name: Laser
+        value: 0
+    vector2s:
+      keys:
+      - name: DirectionalForce
+        value: {x: 0, y: 0}
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+      - name: IntoDownPosition
+        value: {x: 0, y: 0}
+      - name: RunningLeftLimit
+        value: {x: 0, y: 0}
+      - name: RunningRightLimit
+        value: {x: 0, y: 0}
+      - name: LaserPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys:
+      - name: This
+        value: {fileID: 0}
+    delegates:
+      keys:
+      - name: CloseRangeAttacks
+      - name: FarRangeAttacks
+      - name: ReduceVelocity
+      - name: ChangeFacingDirection
+      - name: Move
+      - name: RunningAttack
+      - name: UndoCinematicChanges
+      - name: LaserAttack
+  description: 
+  keybind: IsAlive (Boolean Key)
+  intValue: 0
+  floatValue: 0
+  boolValue: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  objValue: {fileID: 0}
+  prevIndex: 10
+  prevCount: 47
+  boolIndex: 1
+  boolList:
+  - True
+  - False
+  newIndex: 0
+  newList:
+  - This (GameObject Key)
+  invert: 0
+  useBlackboardKey: 0
+  chosenKeybind:
+  - IsAlive
+  - Boolean Key)
+  chosenNew: []
 --- !u!114 &-2535081013996371613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9729,6 +9907,221 @@ MonoBehaviour:
   children:
   - {fileID: 796790175287366944}
   - {fileID: -822993196546012436}
+--- !u!114 &-1270789110230663847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - AttackChance (Integer Key)
+  - MoveChance (Integer Key)
+  - RunCount (Integer Key)
+  - AttackWaitTime (Float Key)
+  - AttackHoldTime (Float Key)
+  - Distance (Float Key)
+  - MoveCommitTime (Float Key)
+  - Acceleration (Float Key)
+  - IsAlive (Boolean Key)
+  - IsAttacking (Boolean Key)
+  - InCloseRange (Boolean Key)
+  - InFarRange (Boolean Key)
+  - MoveActionDecided (Boolean Key)
+  - StayStill (Boolean Key)
+  - MoveFoward (Boolean Key)
+  - FacingRight (Boolean Key)
+  - 50%DoOnce (Boolean Key)
+  - Cinematic (Boolean Key)
+  - CinematicDoneMoving (Boolean Key)
+  - CinematicRunning (Boolean Key)
+  - CinematicRunLeft (Boolean Key)
+  - 33%DoOnce (Boolean Key)
+  - Laser (Boolean Key)
+  - DirectionalForce (Vector2 Key)
+  - CurrentPosition (Vector2 Key)
+  - PlayerPosition (Vector2 Key)
+  - IntoDownPosition (Vector2 Key)
+  - RunningLeftLimit (Vector2 Key)
+  - RunningRightLimit (Vector2 Key)
+  - LaserPosition (Vector2 Key)
+  - DirectionalForce (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - IntoDownPosition (Vector2 Key [X])
+  - RunningLeftLimit (Vector2 Key [X])
+  - RunningRightLimit (Vector2 Key [X])
+  - LaserPosition (Vector2 Key [X])
+  - DirectionalForce (Vector2 Key [Y])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  - IntoDownPosition (Vector2 Key [Y])
+  - RunningLeftLimit (Vector2 Key [Y])
+  - RunningRightLimit (Vector2 Key [Y])
+  - LaserPosition (Vector2 Key [Y])
+  started: 0
+  doneOnce: 0
+  guid: ec588cd38439d064b8cec5154a6284e8
+  position: {x: -6216.001, y: 768}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+      - name: MaxHP
+        value: 0
+      - name: AttackChance
+        value: 0
+      - name: MoveChance
+        value: 0
+      - name: RunCount
+        value: 0
+    floats:
+      keys:
+      - name: AttackWaitTime
+        value: 0
+      - name: AttackHoldTime
+        value: 0
+      - name: Distance
+        value: 0
+      - name: MoveCommitTime
+        value: 0
+      - name: Acceleration
+        value: 5
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsAlive
+        value: 1
+      - name: IsAttacking
+        value: 0
+      - name: InCloseRange
+        value: 0
+      - name: InFarRange
+        value: 0
+      - name: MoveActionDecided
+        value: 0
+      - name: StayStill
+        value: 0
+      - name: MoveFoward
+        value: 0
+      - name: FacingRight
+        value: 0
+      - name: 50%DoOnce
+        value: 0
+      - name: Cinematic
+        value: 0
+      - name: CinematicDoneMoving
+        value: 0
+      - name: CinematicRunning
+        value: 0
+      - name: CinematicRunLeft
+        value: 0
+      - name: 33%DoOnce
+        value: 0
+      - name: Laser
+        value: 0
+    vector2s:
+      keys:
+      - name: DirectionalForce
+        value: {x: 0, y: 0}
+      - name: CurrentPosition
+        value: {x: 0, y: 0}
+      - name: PlayerPosition
+        value: {x: 0, y: 0}
+      - name: IntoDownPosition
+        value: {x: 0, y: 0}
+      - name: RunningLeftLimit
+        value: {x: 0, y: 0}
+      - name: RunningRightLimit
+        value: {x: 0, y: 0}
+      - name: LaserPosition
+        value: {x: 0, y: 0}
+    gameObjects:
+      keys:
+      - name: This
+        value: {fileID: 0}
+    delegates:
+      keys:
+      - name: CloseRangeAttacks
+      - name: FarRangeAttacks
+      - name: ReduceVelocity
+      - name: ChangeFacingDirection
+      - name: Move
+      - name: RunningAttack
+      - name: UndoCinematicChanges
+      - name: LaserAttack
+  description: 
+  keybind: CurrentHP (Integer Key)
+  child: {fileID: -2563355993999298051}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 46
+  prevIndex: 0
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 0
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareName: CurrentHP (Integer Key)
+  compareCount: 24
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - MaxHP (Integer Key)
+  - AttackChance (Integer Key)
+  - MoveChance (Integer Key)
+  - RunCount (Integer Key)
+  - AttackWaitTime (Float Key)
+  - AttackHoldTime (Float Key)
+  - Distance (Float Key)
+  - MoveCommitTime (Float Key)
+  - Acceleration (Float Key)
+  - DirectionalForce (Vector2 Key [X])
+  - CurrentPosition (Vector2 Key [X])
+  - PlayerPosition (Vector2 Key [X])
+  - IntoDownPosition (Vector2 Key [X])
+  - RunningLeftLimit (Vector2 Key [X])
+  - RunningRightLimit (Vector2 Key [X])
+  - LaserPosition (Vector2 Key [X])
+  - DirectionalForce (Vector2 Key [Y])
+  - CurrentPosition (Vector2 Key [Y])
+  - PlayerPosition (Vector2 Key [Y])
+  - IntoDownPosition (Vector2 Key [Y])
+  - RunningLeftLimit (Vector2 Key [Y])
+  - RunningRightLimit (Vector2 Key [Y])
+  - LaserPosition (Vector2 Key [Y])
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - CurrentHP
+  - Integer Key)
+  chosenCompare: []
 --- !u!114 &-1180889119794043403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12370,6 +12763,8 @@ MonoBehaviour:
   - {fileID: -8838362199602321660}
   - {fileID: 8271139113510435494}
   - {fileID: 8671768626203142963}
+  - {fileID: -1270789110230663847}
+  - {fileID: -2563355993999298051}
   blackboard:
     integers:
       keys:
@@ -22708,6 +23103,7 @@ MonoBehaviour:
   description: 
   keybind: 
   children:
+  - {fileID: -1270789110230663847}
   - {fileID: -5943063532117556398}
   - {fileID: 806872656425425383}
   - {fileID: -4963781540517314092}

@@ -66,9 +66,11 @@
     <Compile Include="Assets\Scripts\XP_Bar.cs" />
     <Compile Include="Assets\Scripts\Respawn.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Arrow.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Deathzone.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Game Assets\Menus\GameOverMenu.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Player\CollisionDraw.cs" />
     <Compile Include="Assets\Game Assets\Scripts\DebugMode.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -108,10 +110,11 @@
     <Compile Include="Assets\Game Assets\Scripts\ChangeBackground.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Game Assets\Monsters Creatures Fantasy\Scripts\IdleBehavior.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\Audio\Audio_Player.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Audio\AudioPlayer.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\EnemyHitAudio.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\DecoratorNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\Bandit\BanditArcherAI.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRatAI.cs" />
     <Compile Include="Assets\Game Assets\Scripts\HealthBar\HealthBar.cs" />
@@ -123,7 +126,6 @@
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\RNGNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\TestDelegateScript.cs" />
     <Compile Include="Assets\Game Assets\Menus\InventorySystem.cs" />
-    <Compile Include="Assets\ParticleDestroy.cs" />
     <Compile Include="Assets\Game Assets\Scripts\LetterBoxer.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\CompositeNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\InvertNode.cs" />
@@ -133,7 +135,7 @@
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\SetValueNode.cs" />
     <Compile Include="Assets\Game Assets\Menus\OptionsMenu.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
-    <Compile Include="Assets\ParticleTest.cs" />
+    <Compile Include="Assets\SoulsMovement.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Sensor_Bandit.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRatBossTrigger.cs" />
     <Compile Include="Assets\Game Assets\Menus\Item.cs" />
@@ -143,7 +145,9 @@
     <Compile Include="Assets\Game Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\Bandit\BanditAI.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\IEntity.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\FindEnemy.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\Blackboard.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\ParticleFade.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scenes\Gamal\PlayerStat.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\WaitNode.cs" />
@@ -158,15 +162,19 @@
     <Compile Include="Assets\Scenes\Gamal\TestItem.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\Bandit\BanditTest.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\RootNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRatDead.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\SoundDestroyWhenFinished.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\ActionNode.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Light2DFade.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Scripts\GameMaster.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\BreakNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Player\SoulCollection.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRat.cs" />
     <Compile Include="Assets\Scripts\PlayerPos.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\EnemySpriteFlashRenderer.cs" />
@@ -175,6 +183,7 @@
     <Compile Include="Assets\Game Assets\Scripts\Player\LandingSensor.cs" />
     <Compile Include="Assets\Game Assets\Menus\InteractionSystem.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTreeController.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\EmitLight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

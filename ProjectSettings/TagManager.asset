@@ -10,9 +10,9 @@ TagManager:
   - Enemy
   - Platform
   - Draw
-  - Particles
   - GM
   - Stop
+  - Souls
   layers:
   - Default
   - TransparentFX
@@ -20,11 +20,11 @@ TagManager:
   - Player
   - Water
   - UI
-  - Ignore Player
+  - Enemy
   - Only Player
   - Item
-  - 
-  - 
+  - Ignore Enemy
+  - Hurtboxes & Hitboxes
   - 
   - 
   - 

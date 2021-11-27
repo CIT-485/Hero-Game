@@ -25,6 +25,7 @@ public class GiantRat : MonoBehaviour
     public GameObject laserPosition;
     public GameObject damageFlash;
     public GameObject laserBeamKnockback;
+    public GameObject DeadRat;
     public ParticleSystem LaserBeam;
     public Light2D LaserBeamLight;
     public Light2D LaserBeamBodyLight;
@@ -39,6 +40,9 @@ public class GiantRat : MonoBehaviour
     public bool doneOnce;
     public ValueWrapper<bool> laserReady = new ValueWrapper<bool>(false);
     public bool laserRotate;
+    public bool laserShrink;
+    public bool doOnce;
+    public Vector3 originalPosition;
 
     public float laserRotation = 1;
     public float laserShake = 0.015f;
@@ -113,11 +117,23 @@ public class GiantRat : MonoBehaviour
         LaserBeamLight.transform.localPosition = new Vector3(0, LaserBeam.main.startSize.constant * 13, 0);
         laserShake = LaserBeam.main.startSize.constant / 20;
 
-        if (LaserBeam.gameObject.activeSelf)
+        if (LaserBeam.gameObject.activeSelf && !laserShrink)
         {
             if (LaserBeam.startSize < 2)
-            {
                 LaserBeam.startSize *= 1.05f;
+        }
+        else if (laserShrink || healthbar.currentHealth == 0)
+        {
+            if (LaserBeam.startSize > 0.1f)
+                LaserBeam.startSize *= 0.95f;
+            else
+            {
+                LaserBeam.Stop();
+                LaserBeamLight.gameObject.SetActive(false);
+                LaserBeamBodyLight.gameObject.SetActive(false);
+                laserReady.Value = false;
+                tree.blackboard.booleans.GetValue("Laser") = false;
+                animator.SetTrigger("Attack1_End_Trigger");
             }
         }
 
@@ -136,7 +152,18 @@ public class GiantRat : MonoBehaviour
             }
         }
 
-        tree.Update();
+        if (healthbar.currentHealth > 0)
+            tree.Update();
+        else
+        {
+            DeadRat.GetComponent<SpriteRenderer>().enabled = true;
+            DeadRat.GetComponent<StickToObject>().enabled = false;
+            DeadRat.GetComponent<GiantRatDead>().enabled = true;
+            DeadRat.GetComponent<GiantRatDead>().amuletLight.gameObject.SetActive(true);
+            if (tree.blackboard.booleans.GetValue("FacingRight"))
+                DeadRat.GetComponent<SpriteRenderer>().flipX = true;
+            Destroy(transform.parent.gameObject);
+        }
     }
     private Node.State RunningAttack()
     {
@@ -314,7 +341,9 @@ public class GiantRat : MonoBehaviour
         laserBeamKnockback.SetActive(false);
         yield return new WaitForSeconds(2);
         laserRotate = true;
-        yield return new WaitUntil(() => false);
+        yield return new WaitUntil(() => LaserBeam.transform.localRotation.eulerAngles.z > 290);
+        laserRotate = false;
+        laserShrink = true;
     }
     IEnumerator Attack1(float time)
     {
@@ -509,7 +538,7 @@ public class GiantRat : MonoBehaviour
         {
             damaged = true;
             StartCoroutine(invulActivate(player.GetComponent<AttackManager>().currentAttack.stunTime));
-            if (!tree.blackboard.booleans.GetValue("Cinematic") || running)
+            if (!tree.blackboard.booleans.GetValue("Cinematic") && !running && !tree.blackboard.booleans.GetValue("Laser"))
                 healthbar.TakeDamage(player.GetComponent<AttackManager>().currentAttack.attackDamage);
             else
                 healthbar.TakeDamage(player.GetComponent<AttackManager>().currentAttack.attackDamage / 10);

@@ -5,7 +5,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, IEntity
 {
     [SerializeField] private bool grounded;
+    [SerializeField] private bool isDead;
+    [SerializeField] private bool isAbsorbed;
+    [SerializeField] private int corruptionValue;
     public bool Grounded { get => grounded; set => grounded = value; }
+    public bool IsDead { get => isDead; set => isDead = value; }
+    public bool IsAbsorbed { get => isAbsorbed; set => isAbsorbed = value; }
+    public int CorruptionValue { get => corruptionValue; set => corruptionValue = value; }
 
     public void FixHitboxes(List<GameObject> hitboxes)
     {
