@@ -34,6 +34,7 @@ public class GiantRatBossTrigger : MonoBehaviour
     IEnumerator Cinematic()
     {
         GetComponent<Collider2D>().enabled = false;
+        player.GetComponent<Player>().playerCanvas.GetComponent<Animator>().SetTrigger("Hide");
         turnOffMusic = true;
         CameraFollowObject followScript = m_cam.GetComponent<CameraFollowObject>();
         followScript.objectToFollow = giantRat.transform;
@@ -42,6 +43,7 @@ public class GiantRatBossTrigger : MonoBehaviour
         player.GetComponent<Player>().body2d.velocity = Vector3.zero;
         player.GetComponent<Player>().actionAllowed = false;
         yield return new WaitForSeconds(4);
+        player.GetComponent<Player>().playerCanvas.GetComponent<Animator>().SetTrigger("Show");
         followScript.objectToFollow = player.transform;
         followScript.cameraSpeed = 3f;
         giantRatBoss.SetActive(true);
