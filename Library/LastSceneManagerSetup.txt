@@ -1,10 +1,5 @@
 sceneSetups:
 - path: Assets/Scenes/Final Level.unity
-<<<<<<< Updated upstream
-  isLoaded: 0
-  isActive: 0
-=======
   isLoaded: 1
   isActive: 1
->>>>>>> Stashed changes
   isSubScene: 0
