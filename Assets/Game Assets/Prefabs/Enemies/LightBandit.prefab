@@ -266,6 +266,7 @@ MonoBehaviour:
   waypointReached: 0
   waitTime: 0
   attackWaitTime: 0
+  jumpWaitTime: 0
   tree: {fileID: 11400000, guid: 9ef0f5ac8f76a264f8b4cf70a877c741, type: 2}
   player: {fileID: 0}
   attackHitboxes: {fileID: 1382237577832444825}
@@ -585,7 +586,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3528284261559145599}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.05, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -691,7 +692,7 @@ GameObject:
   - component: {fileID: 3528284262256882821}
   - component: {fileID: 3528284262256884602}
   - component: {fileID: 3528284262256884603}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GroundSensor
   m_TagString: Draw
   m_Icon: {fileID: 0}
@@ -814,7 +815,7 @@ GameObject:
   - component: {fileID: 3528284262426678478}
   - component: {fileID: 3528284262426678479}
   - component: {fileID: 3528284262426678476}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LandingSensor
   m_TagString: Draw
   m_Icon: {fileID: 0}

@@ -16,7 +16,7 @@ public class BanditAI : Enemy
     [HideInInspector] public float              waitTime = 0;
     [HideInInspector] public float              attackWaitTime = 0;
     private GameObject                          currentStop;
-    private float                               jumpWaitTime = 0;
+    public float                               jumpWaitTime = 0;
 
     public BehaviourTree                        tree;
     public GameObject                           player;
@@ -64,6 +64,7 @@ public class BanditAI : Enemy
     }
     Node.State Dead()
     {
+        attackHitboxes.SetActive(false);
         healtBarCanvas.SetActive(false);
         tree.blackboard.booleans.GetValue("IsActive") = false;
         ReduceVelocity();

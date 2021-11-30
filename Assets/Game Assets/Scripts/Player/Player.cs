@@ -198,7 +198,7 @@ public class Player : MonoBehaviour, IEntity
             animator.SetBool("WallSlide", wallSliding);
 
             // Roll
-            if (Input.GetKeyDown("v") && grounded && !rolling && !attacking)
+            if (Input.GetKeyDown("c") && grounded && !rolling && !attacking)
             {
                 rolling = true;
                 animator.SetTrigger("Roll");
