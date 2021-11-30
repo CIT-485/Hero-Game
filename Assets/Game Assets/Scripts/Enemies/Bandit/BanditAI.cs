@@ -64,6 +64,7 @@ public class BanditAI : Enemy
     }
     Node.State Dead()
     {
+        attackHitboxes.SetActive(false);
         healtBarCanvas.SetActive(false);
         tree.blackboard.booleans.GetValue("IsActive") = false;
         ReduceVelocity();

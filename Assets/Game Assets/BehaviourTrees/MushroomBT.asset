@@ -1,0 +1,1052 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7019014641886805839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 2
+  keybinds:
+  - Patrol (Delegate Key)
+  - Aggro (Delegate Key)
+  - Attack (Delegate Key)
+  - Dead (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 0f740cd8fa91d4f4aa5f7309f1653e63
+  position: {x: 507.3226, y: 1139}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: Attack (Delegate Key)
+  prevCount: 4
+--- !u!114 &-5226332983247219996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 1
+  keybinds:
+  - Patrol (Delegate Key)
+  - Aggro (Delegate Key)
+  - Attack (Delegate Key)
+  - Dead (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 8b7708455354e0d418b0d2aa120bf60f
+  position: {x: 424.32257, y: 869}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: Aggro (Delegate Key)
+  prevCount: 4
+--- !u!114 &-4998982648462678378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c39224472027243944779d9551c164, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: d3b5ba0111335894298dd00f4a463d3d
+  position: {x: 331.72, y: 73.36}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: 
+  child: {fileID: 885602342806600911}
+--- !u!114 &-1881075561029706166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 1
+  keybinds:
+  - Patrol (Delegate Key)
+  - Aggro (Delegate Key)
+  - Attack (Delegate Key)
+  - Dead (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: e89990be2ff10114d87edae672be58ed
+  position: {x: 741.6776, y: 1004.71014}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: Aggro (Delegate Key)
+  prevCount: 4
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12410d90be1daa2499cac6d907a2966f, type: 3}
+  m_Name: MushroomBT
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -4998982648462678378}
+  treeState: 0
+  nodes:
+  - {fileID: -4998982648462678378}
+  - {fileID: 885602342806600911}
+  - {fileID: 4687613648541645800}
+  - {fileID: 350416873715908367}
+  - {fileID: 8762821447795485656}
+  - {fileID: 7812566481405768812}
+  - {fileID: 3048543373498195610}
+  - {fileID: 1702044340007095198}
+  - {fileID: 4603722921707944391}
+  - {fileID: 7806327931703881438}
+  - {fileID: 6905759852171724481}
+  - {fileID: -5226332983247219996}
+  - {fileID: 3381565745678888897}
+  - {fileID: 201717601292158474}
+  - {fileID: -1881075561029706166}
+  - {fileID: -7019014641886805839}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+--- !u!114 &201717601292158474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  - isActive (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 0479d49c21d4c6e429b5f6c09854e1ae
+  position: {x: 508.32263, y: 1004.0001}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: currentHP (Integer Key)
+  child: {fileID: -7019014641886805839}
+  floatValue: 1
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 3
+  prevIndex: 0
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 2
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareName: currentHP (Integer Key)
+  compareCount: 2
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - currentHP
+  - Integer Key)
+  chosenCompare: []
+--- !u!114 &350416873715908367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: ca17cff9204410449b97f42a673babcb
+  position: {x: 329.32254, y: 468}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: 8762821447795485656}
+  - {fileID: 7812566481405768812}
+--- !u!114 &885602342806600911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9c09a170e57d34ab622867e811d627, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - currentHP (integer Key)
+  started: 0
+  doneOnce: 0
+  guid: 6990f557f42e894478e68392265c1a5f
+  position: {x: 331, y: 210.35751}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: currentHP
+  child: {fileID: 4687613648541645800}
+  loopInfinitely: 1
+  loopCount: 0
+  count: 0
+  prevCountForState: 0
+  enableKeyloop: 0
+  keybindName: currentHP (integer Key)
+  prevCount: 1
+--- !u!114 &1702044340007095198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd12a5c57aa821b4780ea10eff8a9eb1, type: 3}
+  m_Name: SetValueNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 2
+  keybinds:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  - isActive (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: a93894ad2506f49458ed7ba1888ccdaf
+  position: {x: 28.385057, y: 874.645}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: isActive (Boolean Key)
+  intValue: 0
+  floatValue: 0
+  boolValue: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  objValue: {fileID: 0}
+  prevIndex: 2
+  prevCount: 3
+  boolIndex: 1
+  boolList:
+  - True
+  - False
+  newIndex: 0
+  newList: []
+  invert: 0
+  useBlackboardKey: 0
+  chosenKeybind:
+  - isActive
+  - Boolean Key)
+  chosenNew: []
+--- !u!114 &3048543373498195610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 44d98b7ab7b447a4199d5b210d88bbc7
+  position: {x: 132.38507, y: 739.645}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: 1702044340007095198}
+  - {fileID: 4603722921707944391}
+--- !u!114 &3381565745678888897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 556fadeee88c6244e9406b59cfc9175a
+  position: {x: 612.3225, y: 871}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: 201717601292158474}
+  - {fileID: -1881075561029706166}
+--- !u!114 &4603722921707944391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 3
+  keybinds:
+  - Patrol (Delegate Key)
+  - Aggro (Delegate Key)
+  - Attack (Delegate Key)
+  - Dead (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 0220ba1d6e7730a45aded8637195310c
+  position: {x: 214.385, y: 875.64514}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: Dead (Delegate Key)
+  prevCount: 4
+--- !u!114 &4687613648541645800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 2
+  keybinds:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  - isActive (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 7e53e81a61345c243b4a689efab8b715
+  position: {x: 330.355, y: 337.00003}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: isActive (Boolean Key)
+  child: {fileID: 350416873715908367}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 3
+  prevIndex: 2
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 0
+  operatorList:
+  - ==
+  compareIndex: 0
+  compareName: currentHP (Integer Key)
+  compareCount: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList: []
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - isActive
+  - Boolean Key)
+  chosenCompare: []
+--- !u!114 &6905759852171724481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 1
+  keybinds:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  - isActive (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: fc6b2b920534d0243a85719a88eb5e1f
+  position: {x: 613.32263, y: 734}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: distance (Float Key)
+  child: {fileID: 3381565745678888897}
+  floatValue: 5
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 3
+  prevIndex: 1
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 3
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareName: currentHP (Integer Key)
+  compareCount: 2
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - distance
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &7806327931703881438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 1
+  keybinds:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  - isActive (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: dd5ef7dc7aa884f488de80aa0a70e1c8
+  position: {x: 425.3226, y: 735.0001}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: distance (Float Key)
+  child: {fileID: -5226332983247219996}
+  floatValue: 5
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 3
+  prevIndex: 1
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 4
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareName: currentHP (Integer Key)
+  compareCount: 2
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - distance
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &7812566481405768812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 1c6a9df1856b2ba4fbfff99f15535747
+  position: {x: 525.32263, y: 601}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: 
+  children:
+  - {fileID: 7806327931703881438}
+  - {fileID: 6905759852171724481}
+--- !u!114 &8762821447795485656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  - isActive (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 698d080f64889c742862344cf565911c
+  position: {x: 132.87503, y: 603}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: currentHP (Integer Key)
+  child: {fileID: 3048543373498195610}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 3
+  prevIndex: 0
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 0
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareName: currentHP (Integer Key)
+  compareCount: 2
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - currentHP
+  - Integer Key)
+  chosenCompare: []

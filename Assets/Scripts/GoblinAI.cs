@@ -74,6 +74,7 @@ public class GoblinAI : Enemy
 
     Node.State Dead()
     {
+        attackHitboxes.SetActive(false);
         healtBarCanvas.SetActive(false);
         tree.blackboard.booleans.GetValue("IsActive") = false;
         ReduceVelocity();
@@ -213,7 +214,6 @@ public class GoblinAI : Enemy
         // Increase wait time by the amount of seconds that has elapsed since the last frame
         attackWaitTime += Time.deltaTime;
         tree.blackboard.floats.GetValue("distance") = Mathf.Abs(player.transform.position.x - transform.position.x);
-        Debug.Log(tree.blackboard.floats.GetValue("distance"));
 
         // If an attack is not in motion
         if (!isAttacking)
