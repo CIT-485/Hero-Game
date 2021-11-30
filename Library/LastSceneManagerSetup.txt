@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Final Level.unity
+- path: Assets/Scenes/Gamal/Test1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

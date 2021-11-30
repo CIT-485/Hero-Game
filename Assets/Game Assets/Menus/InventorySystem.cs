@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InventorySystem : MonoBehaviour
 {
-    
+
     //private static bool gameIsPaused = false;
 
     [Header("General Fields")]
@@ -24,19 +24,23 @@ public class InventorySystem : MonoBehaviour
     public Text descriptionTitle;
     public Text descriptionText;
 
+    public Player player;
+
     // 
     public HealthBar healthBar;
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+        if(Input.GetKeyDown(KeyCode.E))
         {
             ToggleInventory();
+            player.actionAllowed = !player.actionAllowed;
         }
     }
     
     void Start()
     {
         healthBar = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     void ToggleInventory()
