@@ -1,0 +1,1909 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5493855009105690328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 050a39bec07a24d40bcdaa432376d877
+  position: {x: -78.99997, y: 1159}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: 
+  children:
+  - {fileID: -1880905223630455217}
+  - {fileID: -5088981038998070203}
+  - {fileID: -3266871783421104611}
+--- !u!114 &-5088981038998070203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 1
+  keybinds:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: fa95f34338688c94bbbf5fabeecf4695
+  position: {x: -78.99997, y: 1314}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: XDelta (Float Key)
+  child: {fileID: 915840216166496300}
+  floatValue: 10
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 9
+  prevIndex: 1
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 2
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 6
+  compareName: XEndAggroRange (Float Key)
+  compareCount: 7
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  compareWithBlackboardKey: 1
+  comparePercent: 0
+  chosenKeybind:
+  - XDelta
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &-4927010534893353243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 5d66baa9e7c51cb4ca0480fca24c6d96
+  position: {x: -158.00002, y: 708.4526}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: 
+  children:
+  - {fileID: 9217721894840494862}
+  - {fileID: 3762421733614085672}
+--- !u!114 &-3919819034820177254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 3
+  keybinds:
+  - Dead (Delegate Key)
+  - Combat (Delegate Key)
+  - Repos (Delegate Key)
+  - Patrol (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 23276cd2fbe4e2643880ab59ec22b974
+  position: {x: 316, y: 856}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: Patrol (Delegate Key)
+  prevCount: 4
+--- !u!114 &-3643654384884712826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd12a5c57aa821b4780ea10eff8a9eb1, type: 3}
+  m_Name: SetValueNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 8
+  keybinds:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 49e1d0b20314f63478513a640e06ceee
+  position: {x: 158, y: 856}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: InCombat (Boolean Key)
+  intValue: 0
+  floatValue: 0
+  boolValue: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  objValue: {fileID: 0}
+  prevIndex: 8
+  prevCount: 9
+  boolIndex: 1
+  boolList:
+  - True
+  - False
+  newIndex: 0
+  newList: []
+  invert: 0
+  useBlackboardKey: 0
+  chosenKeybind:
+  - InCombat
+  - Boolean Key)
+  chosenNew: []
+--- !u!114 &-3546747861245483139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9c09a170e57d34ab622867e811d627, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - CurrentHP (integer Key)
+  started: 0
+  doneOnce: 0
+  guid: 7b46094a97ad7c543b65d659b21baee1
+  position: {x: -0.000030517578, y: 131.90001}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: CurrentHP
+  child: {fileID: 1713804916006419605}
+  loopInfinitely: 1
+  loopCount: 0
+  count: 0
+  prevCountForState: 0
+  enableKeyloop: 0
+  keybindName: CurrentHP (integer Key)
+  prevCount: 1
+--- !u!114 &-3266871783421104611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd12a5c57aa821b4780ea10eff8a9eb1, type: 3}
+  m_Name: SetValueNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 8
+  keybinds:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 61d15f8e0f2e3de46854e094a53bb2d9
+  position: {x: 79.00004, y: 1314}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: InCombat (Boolean Key)
+  intValue: 0
+  floatValue: 0
+  boolValue: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  objValue: {fileID: 0}
+  prevIndex: 8
+  prevCount: 9
+  boolIndex: 1
+  boolList:
+  - True
+  - False
+  newIndex: 0
+  newList: []
+  invert: 0
+  useBlackboardKey: 0
+  chosenKeybind:
+  - InCombat
+  - Boolean Key)
+  chosenNew: []
+--- !u!114 &-3087734098050168199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 1
+  keybinds:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 1c5cc142e69d6c44cb6f2b953101e30f
+  position: {x: 79.00004, y: 1011}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: XDelta (Float Key)
+  child: {fileID: -1151007276391729781}
+  floatValue: 7
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 9
+  prevIndex: 1
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 2
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 3
+  compareName: XStartAggroRange (Float Key)
+  compareCount: 7
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  compareWithBlackboardKey: 1
+  comparePercent: 0
+  chosenKeybind:
+  - XDelta
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &-1880905223630455217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 1
+  keybinds:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 38f7337703c0c85498979ec97dd158af
+  position: {x: -236.99997, y: 1314}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: XDelta (Float Key)
+  child: {fileID: 1701109486593387038}
+  floatValue: 3
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 9
+  prevIndex: 1
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 2
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 5
+  compareName: XReposRange (Float Key)
+  compareCount: 7
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  compareWithBlackboardKey: 1
+  comparePercent: 0
+  chosenKeybind:
+  - XDelta
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &-1151007276391729781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd12a5c57aa821b4780ea10eff8a9eb1, type: 3}
+  m_Name: SetValueNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 8
+  keybinds:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 966aa50ebb63c9f4f964a86b3d4f023a
+  position: {x: 79.00004, y: 1159}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: InCombat (Boolean Key)
+  intValue: 0
+  floatValue: 0
+  boolValue: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  objValue: {fileID: 0}
+  prevIndex: 8
+  prevCount: 9
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  newIndex: 0
+  newList: []
+  invert: 0
+  useBlackboardKey: 0
+  chosenKeybind:
+  - InCombat
+  - Boolean Key)
+  chosenNew: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12410d90be1daa2499cac6d907a2966f, type: 3}
+  m_Name: BanditArcherBT
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 7246735050531635326}
+  treeState: 0
+  nodes:
+  - {fileID: 7246735050531635326}
+  - {fileID: -3546747861245483139}
+  - {fileID: 1713804916006419605}
+  - {fileID: 745664858887617666}
+  - {fileID: 4572489044790450810}
+  - {fileID: 4379661988290557868}
+  - {fileID: -4927010534893353243}
+  - {fileID: 9217721894840494862}
+  - {fileID: 3762421733614085672}
+  - {fileID: 5270824972108170671}
+  - {fileID: -5493855009105690328}
+  - {fileID: -1880905223630455217}
+  - {fileID: -5088981038998070203}
+  - {fileID: 1701109486593387038}
+  - {fileID: 915840216166496300}
+  - {fileID: -3266871783421104611}
+  - {fileID: -3087734098050168199}
+  - {fileID: -3919819034820177254}
+  - {fileID: -1151007276391729781}
+  - {fileID: 6034436087444720942}
+  - {fileID: 6463033983257264630}
+  - {fileID: 3862248343475569081}
+  - {fileID: -3643654384884712826}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+--- !u!114 &745664858887617666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 3589e5e3475e1c1488f8954e2793c69e
+  position: {x: -0.000018119812, y: 415.05005}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: 
+  children:
+  - {fileID: 4572489044790450810}
+  - {fileID: 4379661988290557868}
+--- !u!114 &915840216166496300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 1
+  keybinds:
+  - Dead (Delegate Key)
+  - Combat (Delegate Key)
+  - Repos (Delegate Key)
+  - Patrol (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 708373dc92dc2454ca5c3dffed731118
+  position: {x: -78.99997, y: 1472}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: Combat (Delegate Key)
+  prevCount: 4
+--- !u!114 &1701109486593387038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 2
+  keybinds:
+  - Dead (Delegate Key)
+  - Combat (Delegate Key)
+  - Repos (Delegate Key)
+  - Patrol (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 8580c124e2f31eb42898dd5606c0ead2
+  position: {x: -236.99997, y: 1472}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: Repos (Delegate Key)
+  prevCount: 4
+--- !u!114 &1713804916006419605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 7
+  keybinds:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: e2dedc16bba54d14caa1e64406b54ab9
+  position: {x: -0.000002861023, y: 274.5001}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: IsActive (Boolean Key)
+  child: {fileID: 745664858887617666}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 9
+  prevIndex: 7
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 0
+  operatorList:
+  - ==
+  compareIndex: 0
+  compareName: 
+  compareCount: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList: []
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - IsActive
+  - Boolean Key)
+  chosenCompare: []
+--- !u!114 &3762421733614085672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - Dead (Delegate Key)
+  - Combat (Delegate Key)
+  - Repos (Delegate Key)
+  - Patrol (Delegate Key)
+  started: 0
+  doneOnce: 0
+  guid: 066dd86eec9628744888be5afd9a71d2
+  position: {x: -158.00002, y: 856.4526}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: Dead (Delegate Key)
+  prevCount: 4
+--- !u!114 &3862248343475569081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 5b5f60eabaa4ed743809b531a32dde6b
+  position: {x: 158.00002, y: 708}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: 
+  children:
+  - {fileID: -3643654384884712826}
+  - {fileID: -3919819034820177254}
+--- !u!114 &4379661988290557868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 5de87405ca602314d9b468b3f45cc02f
+  position: {x: 157.99998, y: 567.4526}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: 
+  children:
+  - {fileID: 6034436087444720942}
+  - {fileID: 3862248343475569081}
+--- !u!114 &4572489044790450810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 3940a24886c8a0b4481ef7b99f4d5583
+  position: {x: -158.00002, y: 567.4526}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: CurrentHP (Integer Key)
+  child: {fileID: -4927010534893353243}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 9
+  prevIndex: 0
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 3
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareName: CurrentHP (Integer Key)
+  compareCount: 7
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - CurrentHP
+  - Integer Key)
+  chosenCompare: []
+--- !u!114 &5270824972108170671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 8
+  keybinds:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: f5b6914375a37464dacc320036ef8d74
+  position: {x: -78.99997, y: 1011}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: InCombat (Boolean Key)
+  child: {fileID: -5493855009105690328}
+  floatValue: 3
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 9
+  prevIndex: 8
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 0
+  operatorList:
+  - ==
+  compareIndex: 0
+  compareName: CurrentHP (Integer Key)
+  compareCount: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList: []
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - InCombat
+  - Boolean Key)
+  chosenCompare: []
+--- !u!114 &6034436087444720942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 2
+  keybinds:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 351615b17372e304ba5cc31748e7e302
+  position: {x: 0.000038146973, y: 708}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: YDelta (Float Key)
+  child: {fileID: 6463033983257264630}
+  floatValue: 4
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 9
+  prevIndex: 2
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 2
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 4
+  compareName: YStartAggroRange (Float Key)
+  compareCount: 7
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  compareWithBlackboardKey: 1
+  comparePercent: 0
+  chosenKeybind:
+  - YDelta
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &6463033983257264630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: b31f479688d96f14ab9eb081d036534b
+  position: {x: 0.000038146973, y: 856}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: 
+  children:
+  - {fileID: 5270824972108170671}
+  - {fileID: -3087734098050168199}
+--- !u!114 &7246735050531635326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c39224472027243944779d9551c164, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 7e34b72eea8d8f349ab8b97466b823c1
+  position: {x: 0, y: 0}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: 
+  child: {fileID: -3546747861245483139}
+--- !u!114 &9217721894840494862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd12a5c57aa821b4780ea10eff8a9eb1, type: 3}
+  m_Name: SetValueNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 7
+  keybinds:
+  - CurrentHP (Integer Key)
+  - XDelta (Float Key)
+  - YDelta (Float Key)
+  - XStartAggroRange (Float Key)
+  - YStartAggroRange (Float Key)
+  - XReposRange (Float Key)
+  - XEndAggroRange (Float Key)
+  - IsActive (Boolean Key)
+  - InCombat (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 655d7c6a1bab7e544a06acf090bf3dd7
+  position: {x: -316.00003, y: 856.4526}
+  blackboard:
+    integers:
+      keys:
+      - name: CurrentHP
+        value: 0
+    floats:
+      keys:
+      - name: XDelta
+        value: 0
+      - name: YDelta
+        value: 0
+      - name: XStartAggroRange
+        value: 0
+      - name: YStartAggroRange
+        value: 0
+      - name: XReposRange
+        value: 0
+      - name: XEndAggroRange
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: IsActive
+        value: 1
+      - name: InCombat
+        value: 0
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Dead
+      - name: Combat
+      - name: Repos
+      - name: Patrol
+  description: 
+  keybind: IsActive (Boolean Key)
+  intValue: 0
+  floatValue: 0
+  boolValue: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  objValue: {fileID: 0}
+  prevIndex: 7
+  prevCount: 9
+  boolIndex: 1
+  boolList:
+  - True
+  - False
+  newIndex: 0
+  newList: []
+  invert: 0
+  useBlackboardKey: 0
+  chosenKeybind:
+  - IsActive
+  - Boolean Key)
+  chosenNew: []

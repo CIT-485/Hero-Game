@@ -4,32 +4,31 @@ using UnityEngine;
 
 public class BanditAI : Enemy
 {
-    [HideInInspector] public Animator           animator;
-    [HideInInspector] public AttackManager      am;
-    [HideInInspector] public HealthBar          healthBar;
-    [HideInInspector] public Rigidbody2D        rb;
-    [HideInInspector] public SpriteRenderer     render;
-    [HideInInspector] public bool               isAttacking = false;
-    [HideInInspector] public bool               isDamaged = false;
-    [HideInInspector] public bool               isAbsorbed = false;
-    [HideInInspector] public bool               waypointReached = false;
-    [HideInInspector] public float              waitTime = 0;
-    [HideInInspector] public float              attackWaitTime = 0;
-    private GameObject                          currentStop;
-    public float                               jumpWaitTime = 0;
+    [HideInInspector] public Animator animator;
+    [HideInInspector] public AttackManager am;
+    [HideInInspector] public HealthBar healthBar;
+    [HideInInspector] public Rigidbody2D rb;
+    [HideInInspector] public SpriteRenderer render;
+    [HideInInspector] public bool isAttacking = false;
+    [HideInInspector] public bool isDamaged = false;
+    [HideInInspector] public bool waypointReached = false;
+    [HideInInspector] public float waitTime = 0;
+    [HideInInspector] public float attackWaitTime = 0;
+    private GameObject currentStop;
+    private float jumpWaitTime = 0;
 
-    public BehaviourTree                        tree;
-    public GameObject                           player;
-    public GameObject                           attackHitboxes;
-    public GameObject                           damageFlash;
-    public GameObject                           healtBarCanvas;
+    public BehaviourTree tree;
+    public GameObject player;
+    public GameObject attackHitboxes;
+    public GameObject damageFlash;
+    public GameObject healtBarCanvas;
 
-    public float                                acceleration = 5;
-    public float                                maxSpeed = 2.5f;
-    public float                                jumpForce = 2.5f;
-    public int                                  waypointIndex = 0;
+    public float acceleration = 5;
+    public float maxSpeed = 2.5f;
+    public float jumpForce = 2.5f;
+    public int waypointIndex = 0;
 
-    public List<Waypoint>                       waypoints = new List<Waypoint>();
+    public List<Waypoint> waypoints = new List<Waypoint>();
 
     // Start is called before the first frame update
     void Awake()
@@ -64,18 +63,18 @@ public class BanditAI : Enemy
     }
     Node.State Dead()
     {
-        attackHitboxes.SetActive(false);
         healtBarCanvas.SetActive(false);
         tree.blackboard.booleans.GetValue("IsActive") = false;
         ReduceVelocity();
         animator.SetTrigger("Death");
-        if (isAbsorbed)
+        IsDead = true;
+        if (IsAbsorbed)
             return Node.State.SUCCESS;
         return Node.State.RUNNING;
     }
     Node.State Combat()
     {
-        if (IsDead())
+        if (healthBar.currentHealth <= 0)
             return Node.State.FAILURE;
         // Increase wait time by the amount of seconds that has elapsed since the last frame
         attackWaitTime += Time.deltaTime;
@@ -125,7 +124,7 @@ public class BanditAI : Enemy
     }
     Node.State Chase()
     {
-        if (IsDead())
+        if (healthBar.currentHealth <= 0)
             return Node.State.FAILURE;
         // The attack wait time is also built up during the chase.
         attackWaitTime += Time.deltaTime;
@@ -184,7 +183,7 @@ public class BanditAI : Enemy
     }
     Node.State Patrol()
     {
-        if (IsDead())
+        if (healthBar.currentHealth <= 0)
             return Node.State.FAILURE;
         Vector2 directionalForce = Vector2.zero;
 
@@ -220,7 +219,6 @@ public class BanditAI : Enemy
         // if the waypoint has not been reached yet, then it will move towards it.
         else
         {
-
             // if the bandit hits a wall that reduces it's horizontal velocity to zero, then it will attempt to jump
             if (rb.velocity.x == 0)
                 jumpWaitTime += Time.deltaTime;
@@ -249,7 +247,7 @@ public class BanditAI : Enemy
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "PlayerHitbox" && !isDamaged && !IsDead())
+        if (collision.tag == "PlayerHitbox" && !isDamaged && !IsDead)
         {
             isDamaged = true;
             StartCoroutine(invul(player.GetComponent<AttackManager>().currentAttack.stunTime));
@@ -289,12 +287,6 @@ public class BanditAI : Enemy
             rb.velocity = new Vector2(maxSpeed, rb.velocity.y);
         else if (rb.velocity.x < -2.5f)
             rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
-    }
-    bool IsDead()
-    {
-        if (healthBar.currentHealth <= 0)
-            return true;
-        return false;
     }
     void Jump()
     {

@@ -9,7 +9,8 @@ public class Flag : MonoBehaviour
     int                     prevIndex = 0;
     [HideInInspector]
     public string[]         tags = new string[] { };
-    List<string>            selectedTags = new List<string>();
+    private List<string>    selectedTags = new List<string>();
+    public List<Collider2D> collisions = new List<Collider2D>();
     public bool             flagged;
     public bool             paused;
 
@@ -47,6 +48,8 @@ public class Flag : MonoBehaviour
                 if (collision.tag == tag)
                 {
                     flagged = true;
+                    if (!collisions.Contains(collision))
+                        collisions.Add(collision);
                 }
             }
         }
@@ -58,6 +61,8 @@ public class Flag : MonoBehaviour
             if (collision.tag == tag)
             {
                 flagged = false;
+                if (collisions.Contains(collision))
+                    collisions.Remove(collision);
             }
         }
     }
