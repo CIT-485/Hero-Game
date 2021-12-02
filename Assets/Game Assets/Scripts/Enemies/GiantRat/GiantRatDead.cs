@@ -10,6 +10,9 @@ public class GiantRatDead : MonoBehaviour
     public GameObject       whiteCrossFade;
     public Light2D          amuletLight;
     public GameObject       emitLightPrefab;
+    public GameObject       amuletExamine;
+    public GameObject       aspectRatio;
+    public GameObject       exit;
     Camera                  m_cam;
     GameObject              player;
     bool                    turnOffMusic = false;
@@ -75,6 +78,7 @@ public class GiantRatDead : MonoBehaviour
         player.GetComponent<Player>().Grounded = true;
         player.GetComponent<Player>().GetComponent<Animator>().SetInteger("AnimState", 0);
         amuletLight.gameObject.SetActive(false);
+        aspectRatio.GetComponent<Animator>().SetTrigger("FadeIn");
         yield return new WaitForSeconds(3);
         amuletLight.gameObject.SetActive(true);
         turnOnLight = true;
@@ -90,12 +94,17 @@ public class GiantRatDead : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         fadeIn = false;
         fadeOut = true;
+        amuletExamine = Instantiate(amuletExamine, giantRatDead.transform.position + Vector3.up * 2, giantRatDead.transform.rotation);
         yield return new WaitForSeconds(1.5f);
         fadeOut = false;
-        yield return new WaitUntil(() => false);
+        amuletExamine.GetComponent<Rigidbody2D>().gravityScale = 0.2f;
+        yield return new WaitUntil(() => amuletExamine.GetComponent<Flag>().flagged);
+        aspectRatio.GetComponent<Animator>().SetTrigger("FadeOut");
+        amuletExamine.GetComponent<Collider2D>().isTrigger = true;
+        amuletExamine.gameObject.layer = 8;
+        amuletExamine.GetComponent<Rigidbody2D>().gravityScale = 0;
         followScript.objectToFollow = player.transform;
         player.GetComponent<Player>().actionAllowed = true;
         followScript.cameraSpeed = 5f;
-        GameObject.Destroy(this.gameObject);
     }
 }

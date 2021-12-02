@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ParticleFade : MonoBehaviour
 {
+    public bool destoryAfter = true;
     public List<ParticleSystem> particles = new List<ParticleSystem>();
     public void Fade()
     {
@@ -15,6 +16,7 @@ public class ParticleFade : MonoBehaviour
         foreach (ParticleSystem ps in particles)
             ps.Stop(true);
         yield return new WaitForSeconds(3);
-        Destroy(gameObject);
+        if (destoryAfter)
+            Destroy(gameObject);
     }
 }

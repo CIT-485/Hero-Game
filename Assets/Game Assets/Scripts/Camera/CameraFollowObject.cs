@@ -8,11 +8,14 @@ public class CameraFollowObject : MonoBehaviour
     public Vector2 positionOffset;
     [Range(0.0f, 10.0f)]
     public float cameraSpeed = 5;
+    public float zoomSpeed = 5;
+    public float targetZoom = 5;
 
     public List<ShakeEvent> shakeEvents = new List<ShakeEvent>();
     public List<ShakeEvent> removeFromShakeEvents = new List<ShakeEvent>();
     
     private Vector3 totalShakeAmount;
+    private Camera cam;
 
     public class ShakeEvent
     {
@@ -35,6 +38,10 @@ public class CameraFollowObject : MonoBehaviour
             this.shakeEnd = shakeEnd;
         }
     }
+    private void Start()
+    {
+        cam = GetComponent<Camera>();
+    }
 
     void FixedUpdate()
     {
@@ -55,6 +62,16 @@ public class CameraFollowObject : MonoBehaviour
             }
 
             transform.position = newCameraPosition;
+        }
+
+        float zoomDistance = Mathf.Abs(cam.orthographicSize - targetZoom);
+        if (cam.orthographicSize > targetZoom)
+        {
+            cam.orthographicSize -= zoomDistance * zoomSpeed * Time.deltaTime;
+        }
+        else if (cam.orthographicSize < targetZoom)
+        {
+            cam.orthographicSize += zoomDistance * zoomSpeed * Time.deltaTime;
         }
 
         if (shakeEvents.Count > 0)

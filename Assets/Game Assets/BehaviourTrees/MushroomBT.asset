@@ -228,9 +228,9 @@ MonoBehaviour:
   - {fileID: 6905759852171724481}
   - {fileID: -5226332983247219996}
   - {fileID: 3381565745678888897}
-  - {fileID: 201717601292158474}
   - {fileID: -1881075561029706166}
   - {fileID: -7019014641886805839}
+  - {fileID: 7483072872729302272}
   blackboard:
     integers:
       keys:
@@ -256,92 +256,6 @@ MonoBehaviour:
       - name: Aggro
       - name: Attack
       - name: Dead
---- !u!114 &201717601292158474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
-  m_Name: ConditionNode
-  m_EditorClassIdentifier: 
-  state: 0
-  index: 0
-  keybinds:
-  - currentHP (Integer Key)
-  - distance (Float Key)
-  - isActive (Boolean Key)
-  started: 0
-  doneOnce: 0
-  guid: 0479d49c21d4c6e429b5f6c09854e1ae
-  position: {x: 508.32263, y: 1004.0001}
-  blackboard:
-    integers:
-      keys:
-      - name: currentHP
-        value: 0
-    floats:
-      keys:
-      - name: distance
-        value: 0
-    strings:
-      keys: []
-    booleans:
-      keys:
-      - name: isActive
-        value: 1
-    vector2s:
-      keys: []
-    gameObjects:
-      keys: []
-    delegates:
-      keys:
-      - name: Patrol
-      - name: Aggro
-      - name: Attack
-      - name: Dead
-  description: 
-  keybind: currentHP (Integer Key)
-  child: {fileID: -7019014641886805839}
-  floatValue: 1
-  percent: 0
-  stringValue: 
-  vector2Value: {x: 0, y: 0}
-  prevCount: 3
-  prevIndex: 0
-  keybindFloat: 0
-  keybindString: 
-  keybindVector2: {x: 0, y: 0}
-  boolIndex: 0
-  boolList:
-  - True
-  - False
-  operatorIndex: 2
-  operatorList:
-  - ==
-  - '!='
-  - <
-  - <=
-  - '>'
-  - '>='
-  compareIndex: 0
-  compareName: currentHP (Integer Key)
-  compareCount: 2
-  compareFloat: 0
-  compareString: 
-  compareVector2: {x: 0, y: 0}
-  compareList:
-  - currentHP (Integer Key)
-  - distance (Float Key)
-  compareWithBlackboardKey: 0
-  comparePercent: 0
-  chosenKeybind:
-  - currentHP
-  - Integer Key)
-  chosenCompare: []
 --- !u!114 &350416873715908367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,7 +525,7 @@ MonoBehaviour:
   description: 
   keybind: 
   children:
-  - {fileID: 201717601292158474}
+  - {fileID: 7483072872729302272}
   - {fileID: -1881075561029706166}
 --- !u!114 &4603722921707944391
 MonoBehaviour:
@@ -807,6 +721,92 @@ MonoBehaviour:
   - True
   - False
   operatorIndex: 3
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareName: currentHP (Integer Key)
+  compareCount: 2
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - distance
+  - Float Key)
+  chosenCompare: []
+--- !u!114 &7483072872729302272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 1
+  keybinds:
+  - currentHP (Integer Key)
+  - distance (Float Key)
+  - isActive (Boolean Key)
+  started: 0
+  doneOnce: 0
+  guid: 3ad5ec7200f53c14ab7ba169bdae85c3
+  position: {x: 507, y: 1005.0001}
+  blackboard:
+    integers:
+      keys:
+      - name: currentHP
+        value: 0
+    floats:
+      keys:
+      - name: distance
+        value: 0
+    strings:
+      keys: []
+    booleans:
+      keys:
+      - name: isActive
+        value: 1
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys:
+      - name: Patrol
+      - name: Aggro
+      - name: Attack
+      - name: Dead
+  description: 
+  keybind: distance (Float Key)
+  child: {fileID: -7019014641886805839}
+  floatValue: 1
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 3
+  prevIndex: 1
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 2
   operatorList:
   - ==
   - '!='

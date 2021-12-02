@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class InteractionSystem : MonoBehaviour
     // Detection Point
     public Transform detectionPoint;
     // Detection radius
-    private const float detectionRadius = 0.2f;
+    private const float detectionRadius = 0.6f;
     // Detection layer
     public LayerMask detectionLayer;
 
@@ -22,30 +23,35 @@ public class InteractionSystem : MonoBehaviour
     public Image examineImage;
     public Text examineText;
     public bool isExamining;
+    public GameObject interactPrompt;
+    public TMP_Text interactText;
     [Header("Others")]
     // List of picked items
     public List<GameObject> pickedItems = new List<GameObject>();
 
+    public string fullText;
+    public string currentText;
+
     // Update is called once per frame
     void Update()
     {
-        if(DetectObject())
+        DetectObject();
+        if (!DetectObject() || GetComponent<Player>().damaged || GetComponent<InventorySystem>().isOpen)
         {
-            if(InteractInput())
-            {
-                detectedObject.GetComponent<Item>().Interact();
-            }
+            // Hide the Examine Window
+            examineWindow.SetActive(false);
+            // disable the bool
+            isExamining = false;
         }
     }
 
-    bool InteractInput()
+    public bool InteractInput()
     {
-        //return Input.GetKeyDown(KeyCode.E);
-        return (Input.GetMouseButtonDown(0) || Input.GetKeyDown("k"));
+        return Input.GetKeyDown(KeyCode.E);
     }
 
     // Detect whether your interacting with an object
-    bool DetectObject()
+    public bool DetectObject()
     {
         
         Collider2D obj = Physics2D.OverlapCircle(detectionPoint.position, detectionRadius, detectionLayer);
@@ -54,12 +60,29 @@ public class InteractionSystem : MonoBehaviour
         // If obj is true 
         if (obj == null)
         {
+            interactPrompt.GetComponent<Animator>().SetBool("Visible", false);
             detectedObject = null;
             return false;
         } 
         else
         {
             detectedObject = obj.gameObject;
+
+            if (!isExamining && !GetComponent<InventorySystem>().isOpen)
+            {
+                if (detectedObject.GetComponent<Item>().interactType == Item.InteractionType.PickUp)
+                {
+                    interactPrompt.GetComponent<Animator>().SetBool("Visible", true);
+                    interactText.text = "Pick up item";
+                }
+                else
+                {
+                    interactPrompt.GetComponent<Animator>().SetBool("Visible", true);
+                    interactText.text = "Examine";
+                }
+            }
+            else
+                interactPrompt.GetComponent<Animator>().SetBool("Visible", false);
             return true;
         }
     }
@@ -83,18 +106,41 @@ public class InteractionSystem : MonoBehaviour
             examineWindow.SetActive(false);
             // disable the bool
             isExamining = false;
-        } else
+            if (item.type == Item.ItemType.Consumables)
+            {
+                Destroy(item.gameObject);
+                item.exitEvent.Invoke();
+            }
+            StopCoroutine(ShowText(item.delay));
+        }
+        else
         {
             // Show the item's image in the middle
-            examineImage.sprite = item.GetComponent<SpriteRenderer>().sprite;
+            if (item.image)
+            {
+                examineImage.sprite = item.image;
+                examineImage.rectTransform.localScale = item.imageSize;
+            }
+            else
+                examineImage.sprite = item.GetComponent<SpriteRenderer>().sprite;
             // Write description text underneath the image
-            examineText.text = item.descriptionText;
+            fullText = item.descriptionText;
+            StartCoroutine(ShowText(item.delay));
+            // examineText.text = item.descriptionText;
             // Display the Examine Window
             examineWindow.SetActive(true);
             // enable the bool
             isExamining = true;
         }
     }
-
-    
+    IEnumerator ShowText(float delay)
+    {
+        for(int i = 0; i < fullText.Length; i++)
+        {
+            currentText = fullText.Substring(0, i);
+            examineText.text = currentText;
+            if (delay > 0)
+                yield return new WaitForSeconds(delay);
+        }
+    }
 }

@@ -540,8 +540,6 @@ public class GiantRat : MonoBehaviour
             StartCoroutine(invulActivate(player.GetComponent<AttackManager>().currentAttack.stunTime));
             if (!tree.blackboard.booleans.GetValue("Cinematic") && !running && !tree.blackboard.booleans.GetValue("Laser"))
                 healthbar.TakeDamage(player.GetComponent<AttackManager>().currentAttack.attackDamage);
-            else
-                healthbar.TakeDamage(player.GetComponent<AttackManager>().currentAttack.attackDamage / 10);
         }
     }
     IEnumerator invulActivate(float time)

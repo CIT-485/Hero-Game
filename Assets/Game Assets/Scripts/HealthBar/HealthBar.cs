@@ -5,8 +5,10 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     public int maxHealth = 100;
+    public int baseHealth = 100;
     public int currentHealth;
     public HealthBarUI healthBarUI;
+    public bool player;
     
     void Start()
     {
@@ -14,10 +16,17 @@ public class HealthBar : MonoBehaviour
         currentHealth = maxHealth;
         healthBarUI.SetMaxHealth(maxHealth);
         healthBarUI.SetHealth(maxHealth);
+
+        if (player)
+            SetMaxHealth(baseHealth + 15 * (int)GetComponent<PlayerStat>().vitality.Value);
     }
     void Update()
     {
         currentHealth = (int)healthBarUI.healthSlider.value;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
     }
 
     // Function to simulate take damage
@@ -30,5 +39,12 @@ public class HealthBar : MonoBehaviour
     public void Healing(int amount)
     {
         healthBarUI.IncreaseHealth(amount);
+    }
+    public void SetMaxHealth(int value)
+    {
+        maxHealth = value;
+        healthBarUI.SetMaxHealth(maxHealth);
+        float difference = Mathf.Abs(currentHealth - maxHealth * (currentHealth / maxHealth));
+        Healing((int)difference);
     }
 }

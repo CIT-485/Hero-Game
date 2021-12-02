@@ -60,6 +60,7 @@
     <Compile Include="Assets\Game Assets\Monsters Creatures Fantasy\Scripts\FollowBehavior.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\Waypoint.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+    <Compile Include="Assets\Scenes\Gamal\StatMenu\BasePlayerStatClass.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\DelegateNode.cs" />
     <Compile Include="Assets\Game Assets\Menus\MainMenu.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\RepeatNode.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Game Assets\Scripts\HealthBar\BossHealthBar.cs" />
+    <Compile Include="Assets\Scripts\SkeletonAI.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Game Assets\Scripts\SpriteFade.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -107,7 +109,9 @@
     <Compile Include="Assets\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\Node.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\Scripts\GoblinAI.cs" />
     <Compile Include="Assets\Scripts\Amulet_Pickup.cs" />
+    <Compile Include="Assets\Scenes\Gamal\StatMenu\CreatePlayer.cs" />
     <Compile Include="Assets\Game Assets\Scripts\ChangeBackground.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Game Assets\Monsters Creatures Fantasy\Scripts\IdleBehavior.cs" />
@@ -120,6 +124,7 @@
     <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRatAI.cs" />
     <Compile Include="Assets\Game Assets\Scripts\HealthBar\HealthBar.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\UITabs\scripts\TabsUI.cs" />
     <Compile Include="Assets\Scenes\Gamal\StatModifier.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
@@ -157,6 +162,7 @@
     <Compile Include="Assets\Game Assets\Scripts\StickToObject.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Scripts\MushroomAI.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\backgroundLoop.cs" />
     <Compile Include="Assets\Game Assets\Scripts\HealthBar\HealthBarUI.cs" />
@@ -164,16 +170,19 @@
     <Compile Include="Assets\Game Assets\Scripts\Enemies\Bandit\BanditTest.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\RootNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRatDead.cs" />
+    <Compile Include="Assets\UITabs\scripts\TabButtonUI.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\Game Assets\Scripts\SoundDestroyWhenFinished.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\ActionNode.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\Scenes\Gamal\StatMenu\BaseKnightClass.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Light2DFade.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Scripts\GameMaster.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
+    <Compile Include="Assets\Scenes\Gamal\StatMenu\BaseClass.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\BreakNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\SoulCollection.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRat.cs" />
@@ -184,6 +193,12 @@
     <Compile Include="Assets\Game Assets\Scripts\Player\LandingSensor.cs" />
     <Compile Include="Assets\Game Assets\Menus\InteractionSystem.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTreeController.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Item\ItemConsume.cs" />
+    <Compile Include="Assets\Game Assets\Menus\AbilitySlot.cs" />
+    <Compile Include="Assets\Game Assets\Menus\StatNumber.cs" />
+    <Compile Include="Assets\DestroyParticleWhenStop.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\TransitionToNextScene.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\SpawnObjectAfterTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

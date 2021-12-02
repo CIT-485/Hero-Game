@@ -11,7 +11,6 @@ public class GoblinAI : Enemy
     [HideInInspector] public SpriteRenderer render;
     [HideInInspector] public bool isAttacking = false;
     [HideInInspector] public bool isDamaged = false;
-    [HideInInspector] public bool isAbsorbed = false;
     [HideInInspector] public bool waypointReached = false;
     [HideInInspector] public float waitTime = 0;
     [HideInInspector] public float attackWaitTime = 0;
@@ -29,6 +28,7 @@ public class GoblinAI : Enemy
     public float jumpForce = 2.5f;
     public int waypointIndex = 0;
     public bool facingRight;
+    public bool defaultRight;
     public bool doOnce;
 
     public List<Waypoint> waypoints = new List<Waypoint>();
@@ -66,31 +66,44 @@ public class GoblinAI : Enemy
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerHitbox"))
+        if (collision.CompareTag("PlayerHitbox") && !IsDead)
         {
+            isDamaged = true;
+            StartCoroutine(invul(player.GetComponent<AttackManager>().currentAttack.stunTime));
             health.TakeDamage(player.GetComponent<AttackManager>().currentAttack.attackDamage);
+            if (collision.transform.parent.position.x < transform.position.x)
+                rb.AddForce(new Vector2(30, 10));
+            else
+                rb.AddForce(new Vector2(-30, 10));
         }
     }
-
+    IEnumerator invul(float time)
+    {
+        damageFlash.SetActive(true);
+        yield return new WaitForSeconds(time);
+        damageFlash.SetActive(false);
+        isDamaged = false;
+    }
     Node.State Dead()
     {
         attackHitboxes.SetActive(false);
         healtBarCanvas.SetActive(false);
         tree.blackboard.booleans.GetValue("IsActive") = false;
         ReduceVelocity();
+        IsDead = true;
         if (!doOnce)
         {
             animator.SetTrigger("Death");
             doOnce = true;
         }
-        if (isAbsorbed)
+        if (IsAbsorbed)
             return Node.State.SUCCESS;
         return Node.State.RUNNING;
     }
 
     Node.State Patrol()
     {
-        if (IsDead())
+        if (health.currentHealth <= 0)
             return Node.State.FAILURE;
         Vector2 directionalForce = Vector2.zero;
         if (tree.blackboard.floats.GetValue("distance") < 5)
@@ -105,7 +118,7 @@ public class GoblinAI : Enemy
         }
         if (waypointReached)
         {
-            ReduceVelocity();
+            ReduceVelocity(0.3f);
             waitTime += Time.deltaTime;
             if (waitTime > waypoints[waypointIndex].stayTime)
             {
@@ -132,13 +145,13 @@ public class GoblinAI : Enemy
             animator.SetInteger("AnimState", 2);
             if (transform.position.x < waypoints[waypointIndex].transform.position.x)
             {
-                if (facingRight)
+                if (!facingRight)
                     ChangeFacingDirection();
                 directionalForce += new Vector2(acceleration, 0);
             }
             else
             {
-                if (!facingRight)
+                if (facingRight)
                     ChangeFacingDirection();
                 directionalForce += new Vector2(-acceleration, 0);
             }
@@ -150,7 +163,7 @@ public class GoblinAI : Enemy
 
     Node.State Aggro()
     {
-        if (IsDead())
+        if (health.currentHealth <= 0)
             return Node.State.FAILURE;
         // The attack wait time is also built up during the chase.
         attackWaitTime += Time.deltaTime;
@@ -184,13 +197,13 @@ public class GoblinAI : Enemy
         animator.SetInteger("AnimState", 2);
         if (transform.position.x < player.transform.position.x)
         {
-            if (facingRight)
+            if (!facingRight)
                 ChangeFacingDirection();
             directionalForce += new Vector2(acceleration, 0);
         }
         else
         {
-            if (!facingRight)
+            if (facingRight)
                 ChangeFacingDirection();
             directionalForce += new Vector2(-acceleration, 0);
         }
@@ -209,7 +222,7 @@ public class GoblinAI : Enemy
 
     Node.State Attack()
     {
-        if (IsDead())
+        if (health.currentHealth <= 0)
             return Node.State.FAILURE;
         // Increase wait time by the amount of seconds that has elapsed since the last frame
         attackWaitTime += Time.deltaTime;
@@ -226,12 +239,12 @@ public class GoblinAI : Enemy
             // This will correct the facing direction of the bandit
             if (transform.position.x < player.transform.position.x)
             {
-                if (facingRight)
+                if (!facingRight)
                     ChangeFacingDirection();
             }
-            else
+            else if (transform.position.x > player.transform.position.x)
             {
-                if (!facingRight)
+                if (facingRight)
                     ChangeFacingDirection();
             }
         }
@@ -240,7 +253,7 @@ public class GoblinAI : Enemy
         ReduceVelocity();
 
         // When the attack wait time is over 3 seconds, then it will decide on an attack
-        if (attackWaitTime > 3)
+        if (attackWaitTime > 0.75f)
         {
             int attackChance = Random.Range(0, 100);
             float holdTime = Random.Range(0.5f, 0.75f);
@@ -253,7 +266,7 @@ public class GoblinAI : Enemy
             }
             else
                 // if it chooses not to attack, then the attack wait time is refreshed, but at a lower cooldown
-                attackWaitTime = 2f;
+                attackWaitTime = 0.5f;
         }
         return Node.State.RUNNING;
     }
@@ -270,7 +283,7 @@ public class GoblinAI : Enemy
 
     void ReduceVelocity(float reducePercentage = 0.9f)
     {
-        rb.velocity = new Vector2(rb.velocity.x * reducePercentage, rb.velocity.y);
+        rb.velocity = new Vector2((float)(rb.velocity.x * reducePercentage), rb.velocity.y);
     }
 
     void Jump()
@@ -287,22 +300,21 @@ public class GoblinAI : Enemy
         if (facingRight)
         {
             facingRight = false;
-            render.flipX = false;
+            if (defaultRight)
+                render.flipX = true;
+            else
+                render.flipX = false;
             FixHitboxes(attackHitboxes);
         }
         else
         {
             facingRight = true;
-            render.flipX = true;
+            if (defaultRight)
+                render.flipX = false;
+            else
+                render.flipX = true;
             FixHitboxes(attackHitboxes);
         }
-    }
-
-    bool IsDead()
-    {
-        if (health.currentHealth <= 0)
-            return true;
-        return false;
     }
     IEnumerator Attack0(float time)
     {

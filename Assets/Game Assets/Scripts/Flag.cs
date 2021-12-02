@@ -10,7 +10,8 @@ public class Flag : MonoBehaviour
     [HideInInspector]
     public string[]         tags = new string[] { };
     private List<string>    selectedTags = new List<string>();
-    public List<Collider2D> collisions = new List<Collider2D>();
+    public List<Collider2D> colliders = new List<Collider2D>();
+    public List<Collision2D>collisions = new List<Collision2D>();
     public bool             flagged;
     public bool             paused;
 
@@ -48,8 +49,8 @@ public class Flag : MonoBehaviour
                 if (collision.tag == tag)
                 {
                     flagged = true;
-                    if (!collisions.Contains(collision))
-                        collisions.Add(collision);
+                    if (!colliders.Contains(collision))
+                        colliders.Add(collision);
                 }
             }
         }
@@ -59,6 +60,33 @@ public class Flag : MonoBehaviour
         foreach (string tag in selectedTags)
         {
             if (collision.tag == tag)
+            {
+                flagged = false;
+                if (colliders.Contains(collision))
+                    colliders.Remove(collision);
+            }
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!paused)
+        {
+            foreach (string tag in selectedTags)
+            {
+                if (collision.gameObject.tag == tag)
+                {
+                    flagged = true;
+                    if (!collisions.Contains(collision))
+                        collisions.Add(collision);
+                }
+            }
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        foreach (string tag in selectedTags)
+        {
+            if (collision.gameObject.tag == tag)
             {
                 flagged = false;
                 if (collisions.Contains(collision))

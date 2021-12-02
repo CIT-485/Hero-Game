@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class InventorySystem : MonoBehaviour
@@ -10,6 +11,9 @@ public class InventorySystem : MonoBehaviour
     [Header("General Fields")]
     // List of items picked up
     public List<GameObject> items = new List<GameObject>();
+    public List<AbilitySlot> abilities = new List<AbilitySlot>();
+    public List<StatNumber> stats = new List<StatNumber>();
+    private List<int> unmodifiedStats = new List<int>() { 0, 0, 0 };
     // flag indicates if the inventory is open or not
     public bool isOpen;
     [Header("UI Items Section")]
@@ -21,32 +25,92 @@ public class InventorySystem : MonoBehaviour
     [Header("UI Items Description")]
     public GameObject uiDescriptionWindow;
     public Image descriptionImage;
-    public Text descriptionTitle;
-    public Text descriptionText;
+    public TMP_Text descriptionTitle;
+    public TMP_Text descriptionText;
+    public Image abilityImage;
+    public TMP_Text abilityTitle;
+    public TMP_Text abilityText;
+    private int pointCount = 0;
+    private int originalPointsAvailable;
+    private int pointsAvailable;
+    public TMP_Text points;
+    private int nextPointBase = 100;
+    private int nextPointThreshold;
+    public TMP_Text nextPoint;
+    private PlayerStat stat;
 
     public Player player;
-
-    // 
-    public HealthBar healthBar;
+    public CameraFollowObject cam;
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Tab) && player.actionAllowed)
         {
             ToggleInventory();
-            player.actionAllowed = !player.actionAllowed;
         }
+        if (isOpen)
+        {
+            cam.targetZoom = 3;
+            cam.positionOffset = new Vector2(3.5f, 1);
+        }
+        else
+        {
+            cam.targetZoom = 5;
+            cam.positionOffset = new Vector2(0, 2);
+        }
+        if (player.IsDead || !player.actionAllowed)
+        {
+            if (isOpen)
+                ToggleInventory();
+        }
+        foreach (AbilitySlot ab in abilities)
+        {
+            if (ab.name.Contains("Absorb"))
+            {
+                if (player.hasAmulet)
+                    ab.image.color = new Color(255, 255, 255, 255);
+            }
+            else if (player.corruption >= ab.prerequisiteCorruption)
+                ab.image.color = new Color(255, 255, 255, 255);
+        }
+
+        points.text = pointsAvailable.ToString();
+        if (player.corruption > nextPointThreshold)
+        {
+            pointCount++;
+            originalPointsAvailable++;
+            Debug.Log(nextPointThreshold);
+            nextPointThreshold += (int)(nextPointThreshold * 0.15f);
+        }
+
+        nextPoint.text = player.corruption + "/" + nextPointThreshold;
     }
     
     void Start()
     {
-        healthBar = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthBar>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        stat = GetComponent<PlayerStat>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollowObject>();
+        unmodifiedStats[0] = (int)stat.strength.Value;
+        unmodifiedStats[1] = (int)stat.vitality.Value;
+        unmodifiedStats[2] = (int)stat.agility.Value;
+        pointsAvailable = originalPointsAvailable;
+        stats[0].number = unmodifiedStats[0];
+        stats[1].number = unmodifiedStats[1];
+        stats[2].number = unmodifiedStats[2];
+        nextPointThreshold = nextPointBase;
     }
 
     void ToggleInventory()
     {
         isOpen = !isOpen;
         uiWindow.SetActive(isOpen);
+        unmodifiedStats[0] = (int)stat.strength.Value;
+        unmodifiedStats[1] = (int)stat.vitality.Value;
+        unmodifiedStats[2] = (int)stat.agility.Value;
+        pointsAvailable = originalPointsAvailable;
+        stats[0].number = unmodifiedStats[0];
+        stats[1].number = unmodifiedStats[1];
+        stats[2].number = unmodifiedStats[2];
         UpdateUI();
     }
 
@@ -81,6 +145,41 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
+    public void IncreaseStat(int id)
+    {
+        if (pointsAvailable > 0)
+        {
+            stats[id].number++;
+            pointsAvailable--;
+        }
+    }
+    public void DecreaseStat(int id)
+    {
+        if (stats[id].number > unmodifiedStats[id])
+        {
+            stats[id].number--;
+            pointsAvailable++;
+        }
+    }
+    public void SaveStats()
+    {
+        if (pointsAvailable != originalPointsAvailable)
+        {
+            stat.strength.BaseValue += Mathf.Abs(stats[0].number - unmodifiedStats[0]);
+            stat.vitality.BaseValue += Mathf.Abs(stats[1].number - unmodifiedStats[1]);
+            stat.agility.BaseValue += Mathf.Abs(stats[2].number - unmodifiedStats[2]);
+            originalPointsAvailable = pointsAvailable;
+            player.healthBar.SetMaxHealth(player.healthBar.baseHealth + 15 * (int)GetComponent<PlayerStat>().vitality.Value);
+
+            unmodifiedStats[0] = (int)stat.strength.Value;
+            unmodifiedStats[1] = (int)stat.vitality.Value;
+            unmodifiedStats[2] = (int)stat.agility.Value;
+            pointsAvailable = originalPointsAvailable;
+            stats[0].number = unmodifiedStats[0];
+            stats[1].number = unmodifiedStats[1];
+            stats[2].number = unmodifiedStats[2];
+        }
+    }
     public void ShowDescription(int id)
     {
         // Set the image
@@ -94,8 +193,28 @@ public class InventorySystem : MonoBehaviour
         descriptionTitle.gameObject.SetActive(true);
         descriptionText.gameObject.SetActive(true);
     }
+    public void ShowAbility(int id)
+    {
+        // Set the image
+        abilityImage.sprite = abilities[id].image.sprite;
+        abilityImage.color = abilities[id].image.color;
+        // Set the title
+        abilityTitle.text = abilities[id].abilityName;
+        // Show the description
+        abilityText.text = abilities[id].abilityDescription;
+        // Show the elements
+        abilityImage.gameObject.SetActive(true);
+        abilityTitle.gameObject.SetActive(true);
+        abilityText.gameObject.SetActive(true);
+    }
 
     public void HideDescription()
+    {
+        descriptionImage.gameObject.SetActive(false);
+        descriptionTitle.gameObject.SetActive(false);
+        descriptionText.gameObject.SetActive(false);
+    }
+    public void HideAbility()
     {
         descriptionImage.gameObject.SetActive(false);
         descriptionTitle.gameObject.SetActive(false);
@@ -108,17 +227,12 @@ public class InventorySystem : MonoBehaviour
         // Get the a consumable item
         if(items[id].GetComponent<Item>().type == Item.ItemType.Consumables) 
         {
-            Debug.Log($"CONSUMED {items[id].name}");
             // Invoke the consume custome event
             items[id].GetComponent<Item>().consumeEvent.Invoke();
-            // destroy the item in a short period of time
-            Destroy(items[id], 0.1f);
             // Clear the item from the list
             items.RemoveAt(id);
             // Update the UI
             UpdateUI();
-
-            healthBar.Healing(25);
         }
     }
 }

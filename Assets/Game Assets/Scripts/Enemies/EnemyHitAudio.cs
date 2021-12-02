@@ -8,7 +8,7 @@ public class EnemyHitAudio : MonoBehaviour
     public AudioSource audioSource;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "PlayerHitbox")
+        if (collision.tag == "PlayerHitbox" && !GetComponent<Enemy>().IsDead)
         {
             //FindObjectOfType<Audio_Player>().PlaySound("Hit noise");
             audioSource.Play();

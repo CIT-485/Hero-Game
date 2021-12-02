@@ -95,15 +95,15 @@ public class AudioPlayer : MonoBehaviour
 		{
 			playJump();
 			playSword();
+			playFootsteps();
+			playLand();
 		}
-		playFootsteps();
-		playLand();
 	}
 
     private void playFootsteps()
 	{
 
-		if ((player.inputX > 0 || player.inputX < 0) && isWalking == false && player.grounded == true && !player.rolling)
+		if ((player.inputX > 0 || player.inputX < 0) && isWalking == false && player.grounded == true && !player.rolling && !player.attacking && !player.damaged)
 		{
 			playFootstepTime += Time.deltaTime;
 			if (playFootstepTime > 0.25f)
@@ -117,8 +117,8 @@ public class AudioPlayer : MonoBehaviour
 		{
 			playFootstepTime = 0;
 			StopSound("Footstep");
-        }
-		else if (player.inputX == 0 || isWalking == false || !player.grounded || player.rolling)
+		}
+		else if (player.inputX == 0 || isWalking == false || !player.grounded || player.rolling || player.attacking || player.damaged)
 		{
 			playFootstepTime = 0;
 			FadeOutSound("Footstep");

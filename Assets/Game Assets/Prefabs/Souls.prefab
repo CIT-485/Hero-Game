@@ -4880,7 +4880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afb27699a81f5044bb294cb9a6eddc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.005
+  speed: 0.02
 --- !u!114 &656045106077252935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4893,6 +4893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fe3d05cb1266e46b322fbdc951e8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destoryAfter: 1
   particles:
   - {fileID: 3673570014414786057}
   - {fileID: 3553999549270729427}
@@ -4925,6 +4926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711567e1c68970649ae44ed7040b3e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
 --- !u!114 &607493626930053278
 MonoBehaviour:
   m_ObjectHideFlags: 0

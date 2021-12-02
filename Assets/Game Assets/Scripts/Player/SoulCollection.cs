@@ -17,7 +17,7 @@ public class SoulCollection : MonoBehaviour
     {
         sr.gameObject.transform.localScale = new Vector3(radius, radius, radius);
         GameObject.Find("AbsorbCircle").transform.localScale = new Vector3(radius, radius, radius);
-        radius *= 1.02f;
+        radius *= 1.1f;
         if (radius >= maxRadius)
         {
             GameObject.Find("AbsorbCircle").transform.localScale = new Vector3(1, 1, 1);
