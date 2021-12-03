@@ -180,15 +180,14 @@ public class BanditArcherAI : Enemy
                 ChangeFacingDirection();
             directionalForce += new Vector2(acceleration, 0);
         }
-
-        // IF the bandit hits a stop trigger
         if (currentStop != null)
         {
-            if ((player.transform.position.x > currentStop.transform.position.x && directionalForce.x <= 0) ||
-                (player.transform.position.x < currentStop.transform.position.x && directionalForce.x >= 0))
+            if (player.transform.position.x > currentStop.transform.position.x && transform.position.x > currentStop.transform.position.x && directionalForce.x >= 0)
+                Move(directionalForce);
+            else if (player.transform.position.x < currentStop.transform.position.x && transform.position.x < currentStop.transform.position.x && directionalForce.x <= 0)
                 Move(directionalForce);
             else
-                ReduceVelocity();
+                ReduceVelocity(0.0f);
         }
         else
             Move(directionalForce);
@@ -269,16 +268,8 @@ public class BanditArcherAI : Enemy
             else
                 rb.AddForce(new Vector2(-30, 10));
         }
-        else if (collision.tag == "Stop")
+        if (collision.tag == "Stop")
         {
-            if (collision.transform.position.x > transform.position.x)
-            {
-                transform.position += new Vector3(-0.05f, 0f);
-            }
-            if (collision.transform.position.x < transform.position.x)
-            {
-                transform.position += new Vector3(0.05f, 0f);
-            }
             currentStop = collision.gameObject;
         }
     }

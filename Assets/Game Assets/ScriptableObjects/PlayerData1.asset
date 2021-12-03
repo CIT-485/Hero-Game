@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 092e5d58e2498ae41a11be1467569338, type: 3}
+  m_Name: PlayerData1
+  m_EditorClassIdentifier: 
+  baseData: {fileID: 11400000, guid: 8827eccad892aa04985b86b52f7f0aa8, type: 2}
+  str: 10
+  vit: 10
+  agi: 10
+  currenthealth: 351
+  corruption: 0
+  pointsAvailable: 0
+  nextPointThreshold: 100
+  hasAmulet: 0
+  scene: 0
+  lastRespawnPos: {x: 14.01, y: -0.16}
+  abilityUnlocked: 000000

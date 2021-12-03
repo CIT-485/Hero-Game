@@ -30,14 +30,15 @@ public class InventorySystem : MonoBehaviour
     public Image abilityImage;
     public TMP_Text abilityTitle;
     public TMP_Text abilityText;
-    private int pointCount = 0;
-    private int originalPointsAvailable;
+    public int originalPointsAvailable;
     private int pointsAvailable;
     public TMP_Text points;
-    private int nextPointBase = 100;
-    private int nextPointThreshold;
+    public int nextPointThreshold = 100;
     public TMP_Text nextPoint;
     private PlayerStat stat;
+
+    public GameObject levelPrompt;
+    public GameObject abilityPrompt;
 
     public Player player;
     public CameraFollowObject cam;
@@ -62,21 +63,61 @@ public class InventorySystem : MonoBehaviour
             if (isOpen)
                 ToggleInventory();
         }
+
+
+        if (abilityImage.gameObject.activeSelf)
+            if (abilityPrompt.GetComponent<Animator>().GetBool("Visible"))
+            {
+                abilityPrompt.GetComponent<Animator>().SetTrigger("Exit");
+                abilityPrompt.GetComponent<Animator>().SetBool("Visible", false);
+            }
         foreach (AbilitySlot ab in abilities)
         {
             if (ab.name.Contains("Absorb"))
             {
                 if (player.hasAmulet)
-                    ab.image.color = new Color(255, 255, 255, 255);
+                {
+                    if (!ab.unlocked)
+                    {
+                        ab.unlocked = true;
+                        ab.image.color = new Color(255, 255, 255, 255);
+                        if (!abilityPrompt.GetComponent<Animator>().GetBool("Visible"))
+                        {
+                            abilityPrompt.GetComponent<Animator>().SetTrigger("Enter");
+                            abilityPrompt.GetComponent<Animator>().SetBool("Visible", true);
+                        }
+                    }
+                }
             }
             else if (player.corruption >= ab.prerequisiteCorruption)
-                ab.image.color = new Color(255, 255, 255, 255);
+            {
+                if (!ab.unlocked)
+                {
+                    ab.unlocked = true;
+                    ab.image.color = new Color(255, 255, 255, 255);
+                    if (!abilityPrompt.GetComponent<Animator>().GetBool("Visible"))
+                    {
+                        abilityPrompt.GetComponent<Animator>().SetTrigger("Enter");
+                        abilityPrompt.GetComponent<Animator>().SetBool("Visible", true);
+                    }
+                }
+            }
         }
+        if (originalPointsAvailable == 0)
+            if (levelPrompt.GetComponent<Animator>().GetBool("Visible"))
+            {
+                levelPrompt.GetComponent<Animator>().SetTrigger("Exit");
+                levelPrompt.GetComponent<Animator>().SetBool("Visible", false);
+            }
 
         points.text = pointsAvailable.ToString();
-        if (player.corruption > nextPointThreshold)
+        if (player.corruption >= nextPointThreshold)
         {
-            pointCount++;
+            if (!levelPrompt.GetComponent<Animator>().GetBool("Visible"))
+            {
+                levelPrompt.GetComponent<Animator>().SetTrigger("Enter");
+                levelPrompt.GetComponent<Animator>().SetBool("Visible", true);
+            }
             originalPointsAvailable++;
             Debug.Log(nextPointThreshold);
             nextPointThreshold += (int)(nextPointThreshold * 0.15f);
@@ -97,7 +138,6 @@ public class InventorySystem : MonoBehaviour
         stats[0].number = unmodifiedStats[0];
         stats[1].number = unmodifiedStats[1];
         stats[2].number = unmodifiedStats[2];
-        nextPointThreshold = nextPointBase;
     }
 
     void ToggleInventory()
@@ -111,6 +151,9 @@ public class InventorySystem : MonoBehaviour
         stats[0].number = unmodifiedStats[0];
         stats[1].number = unmodifiedStats[1];
         stats[2].number = unmodifiedStats[2];
+        abilityImage.gameObject.SetActive(false);
+        abilityText.gameObject.SetActive(false);
+        abilityTitle.gameObject.SetActive(false);
         UpdateUI();
     }
 
@@ -165,11 +208,13 @@ public class InventorySystem : MonoBehaviour
     {
         if (pointsAvailable != originalPointsAvailable)
         {
+            if (stat.vitality.BaseValue != stats[1].number)
+                player.healthBar.SetMaxHealth(player.healthBar.baseHealth + 15 * (int)GetComponent<PlayerStat>().vitality.Value);
+
             stat.strength.BaseValue += Mathf.Abs(stats[0].number - unmodifiedStats[0]);
             stat.vitality.BaseValue += Mathf.Abs(stats[1].number - unmodifiedStats[1]);
             stat.agility.BaseValue += Mathf.Abs(stats[2].number - unmodifiedStats[2]);
             originalPointsAvailable = pointsAvailable;
-            player.healthBar.SetMaxHealth(player.healthBar.baseHealth + 15 * (int)GetComponent<PlayerStat>().vitality.Value);
 
             unmodifiedStats[0] = (int)stat.strength.Value;
             unmodifiedStats[1] = (int)stat.vitality.Value;
@@ -185,14 +230,13 @@ public class InventorySystem : MonoBehaviour
         // Set the image
         descriptionImage.sprite = itemsImages[id].sprite;
         // Set the title
-        descriptionTitle.text = items[id].name;
+        descriptionTitle.text = items[id].GetComponent<Item>().itemName;
         // Show the description
         descriptionText.text = items[id].GetComponent<Item>().descriptionText;
         // Show the elements
         descriptionImage.gameObject.SetActive(true);
         descriptionTitle.gameObject.SetActive(true);
-        descriptionText.gameObject.SetActive(true);
-    }
+        descriptionText.gameObject.SetActive(true);    }
     public void ShowAbility(int id)
     {
         // Set the image

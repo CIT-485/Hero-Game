@@ -288,7 +288,7 @@ MonoBehaviour:
   damageFlash: {fileID: 1780041901557244044}
   healtBarCanvas: {fileID: 7588306643016358276}
   acceleration: 5
-  maxSpeed: 2.5
+  maxSpeed: 3
   jumpForce: 5
   waypointIndex: 0
   waypoints:
@@ -309,7 +309,7 @@ MonoBehaviour:
   index: 0
   attacks:
   - attackName: Attack0
-    attackDamage: 75
+    attackDamage: 90
     poiseDamage: 0
     poiseMultiplier: 1
     stunTime: 0.3
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d35ec792c5b28449bc5f0db8a612e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 240
   baseHealth: 100
   currentHealth: 0
   healthBarUI: {fileID: 2768481577341706716}

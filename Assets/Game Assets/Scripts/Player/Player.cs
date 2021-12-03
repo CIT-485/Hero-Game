@@ -20,6 +20,7 @@ public class Player : MonoBehaviour, IEntity
     public CanvasGroup              crossfade;
     public CanvasGroup              deathFade;
     public CanvasGroup              aspectRatio;
+    public GameObject               whiteCrossFade;
     public AudioPlayer              audioPlayer;
     public GameObject               playerCanvas;
     public GameObject               groundSensor;
@@ -91,9 +92,13 @@ public class Player : MonoBehaviour, IEntity
     public bool IsDead { get => isDead; set => isDead = value; }
     public int CorruptionValue { get => testies; set => testies = value; }
 
+    private void Awake()
+    {
+    }
     // Use this for initialization
     void Start()
     {
+
         Application.targetFrameRate = 60;
         animator = GetComponent<Animator>();
         body2d = GetComponent<Rigidbody2D>();
@@ -106,6 +111,31 @@ public class Player : MonoBehaviour, IEntity
 
         attackHitbox.transform.localPosition = new Vector2(0.65f, 0.85f);
         DeactivateHitboxes();
+
+
+        GameMaster gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+
+        GetComponent<InventorySystem>().nextPointThreshold = gm.playerData.nextPointThreshold;
+        GetComponent<InventorySystem>().originalPointsAvailable = gm.playerData.pointsAvailable;
+        corruption = gm.playerData.corruption;
+        GetComponent<PlayerStat>().strength.BaseValue = gm.playerData.str;
+        GetComponent<PlayerStat>().vitality.BaseValue = gm.playerData.vit;
+        GetComponent<PlayerStat>().agility.BaseValue = gm.playerData.agi;
+
+        healthBar.SetMaxHealth(healthBar.baseHealth + 15 * (int)GetComponent<PlayerStat>().vitality.Value);
+        if (gm.playerData.currenthealth <= 0)
+            gm.playerData.currenthealth = 1;
+        StartCoroutine(StartHealth(gm.playerData.currenthealth));
+    }
+
+    IEnumerator StartHealth(float currenthealth)
+    {
+        yield return new WaitForSeconds(0.1f);
+        float difference = Mathf.Abs(currenthealth - healthBar.currentHealth);
+        if (currenthealth > healthBar.currentHealth)
+            healthBar.Healing((int)difference);
+        else
+            healthBar.TakeDamage((int)difference);
     }
 
     // Update is called once per frame
@@ -225,7 +255,7 @@ public class Player : MonoBehaviour, IEntity
         }
 
         // If the player is wall sliding, then the hitboxes will dable
-        if (wallSliding)
+        if (wallSliding && !isDead)
         {
             DeactivateHitboxes();
             attacking = false;
@@ -434,14 +464,15 @@ public class Player : MonoBehaviour, IEntity
             //m_animator.SetTrigger("Block");
 
             body2d.AddForce(directionalForce);
-            if (healthBar.currentHealth <= 0)
-            {
-                GetComponent<InteractionSystem>().enabled = false;
-                actionAllowed = false;
-                isDead = true;
-                StartCoroutine(Dead());
-            }
         }
+        if (healthBar.currentHealth <= 0 && !isDead)
+        {
+            GetComponent<InteractionSystem>().enabled = false;
+            actionAllowed = false;
+            isDead = true;
+            StartCoroutine(Dead());
+        }
+
         if (playFadeOutOne && deathFade.alpha < 1)
         {
             differenceAlpha = Mathf.Abs(deathFade.alpha - 1);
@@ -458,10 +489,10 @@ public class Player : MonoBehaviour, IEntity
 
     IEnumerator Dead()
     {
+        Debug.Log("dead");
         actionAllowed = false;
         animator.SetTrigger("Death");
-        yield return new WaitUntil(() => deathAnimationDone);
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(1.25f);
         audioPlayer.PlaySound("Death");
         playFadeOutOne = true;
         yield return new WaitWhile(() => deathFade.alpha < 1);

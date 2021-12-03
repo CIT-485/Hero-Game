@@ -75,6 +75,17 @@ public class SkeletonAI : Enemy
             else
                 rb.AddForce(new Vector2(-30, 10));
         }
+        if (collision.tag == "Stop")
+        {
+            currentStop = collision.gameObject;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Stop")
+        {
+            currentStop = null;
+        }
     }
     IEnumerator invul(float time)
     {
@@ -209,11 +220,12 @@ public class SkeletonAI : Enemy
         }
         if (currentStop != null)
         {
-            if ((player.transform.position.x > currentStop.transform.position.x && directionalForce.x <= 0) ||
-                (player.transform.position.x < currentStop.transform.position.x && directionalForce.x >= 0))
+            if (player.transform.position.x > currentStop.transform.position.x && transform.position.x > currentStop.transform.position.x && directionalForce.x >= 0)
+                Move(directionalForce);
+            else if (player.transform.position.x < currentStop.transform.position.x && transform.position.x < currentStop.transform.position.x && directionalForce.x <= 0)
                 Move(directionalForce);
             else
-                ReduceVelocity();
+                ReduceVelocity(0.0f);
         }
         else
             Move(directionalForce);

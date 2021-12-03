@@ -54,9 +54,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTree.cs" />
+    <Compile Include="Assets\Game Assets\Menus\AbilitySlot.cs" />
     <Compile Include="Assets\Scripts\Camera_Follow.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\DebugLogNode.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\TransitionToNextScene.cs" />
     <Compile Include="Assets\Game Assets\Monsters Creatures Fantasy\Scripts\FollowBehavior.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\Waypoint.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -76,11 +78,13 @@
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
+    <Compile Include="Assets\DestroyParticleWhenStop.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\SuccessNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\CollisionSensor.cs" />
     <Compile Include="Assets\Game Assets\Monsters Creatures Fantasy\Scripts\EnemyFollow.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Flag.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\SpawnObjectAfterTrigger.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\FailureNode.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scenes\Gamal\EnemyStat.cs" />
@@ -94,6 +98,7 @@
     <Compile Include="Assets\Game Assets\Scripts\SpriteFade.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Corruption_Bar.cs" />
+    <Compile Include="Assets\Game Assets\Menus\StatNumber.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\GroundSensor.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\AnimationNode.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
@@ -147,6 +152,7 @@
     <Compile Include="Assets\Game Assets\Menus\Item.cs" />
     <Compile Include="Assets\Game Assets\Scripts\FlashingLight2D.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Item\ItemConsume.cs" />
     <Compile Include="Assets\Scenes\Gamal\CharacterStat.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\Bandit\BanditAI.cs" />
@@ -193,12 +199,8 @@
     <Compile Include="Assets\Game Assets\Scripts\Player\LandingSensor.cs" />
     <Compile Include="Assets\Game Assets\Menus\InteractionSystem.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTreeController.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\Item\ItemConsume.cs" />
-    <Compile Include="Assets\Game Assets\Menus\AbilitySlot.cs" />
-    <Compile Include="Assets\Game Assets\Menus\StatNumber.cs" />
-    <Compile Include="Assets\DestroyParticleWhenStop.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\TransitionToNextScene.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\SpawnObjectAfterTrigger.cs" />
+    <Compile Include="Assets\Game Assets\ScriptableObjects\PlayerDataSO.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\SetMapPosition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemConsume : MonoBehaviour
 {
     public GameObject healParticles;
+    public GameObject absorbParticles;
     private Player player;
     private void Start()
     {
@@ -16,6 +17,13 @@ public class ItemConsume : MonoBehaviour
         player.healFlash.SetActive(true);
         player.healFlash.GetComponent<Light2DFade>().Fade(1.25f);
         StartCoroutine(FadeParticle(Instantiate(healParticles, player.transform).GetComponent<ParticleSystem>()));
+    }
+    public void PotionSoul(int amount)
+    {
+        player.corruption += amount;
+        player.absorbFlash.SetActive(true);
+        player.absorbFlash.GetComponent<Light2DFade>().Fade(1.25f);
+        StartCoroutine(FadeParticle(Instantiate(absorbParticles, player.transform).GetComponent<ParticleSystem>()));
     }
     public void GetAmulet()
     {

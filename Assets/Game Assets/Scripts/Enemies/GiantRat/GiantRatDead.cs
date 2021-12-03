@@ -7,7 +7,6 @@ public class GiantRatDead : MonoBehaviour
 {
     public GameObject       giantRatDead;
     public GameObject       bossHealthBar;
-    public GameObject       whiteCrossFade;
     public Light2D          amuletLight;
     public GameObject       emitLightPrefab;
     public GameObject       amuletExamine;
@@ -54,11 +53,11 @@ public class GiantRatDead : MonoBehaviour
         }
         if (fadeIn)
         {
-            whiteCrossFade.GetComponent<CanvasGroup>().alpha += Time.deltaTime / 0.5f;
+            player.GetComponent<Player>().whiteCrossFade.GetComponent<CanvasGroup>().alpha += Time.deltaTime / 0.5f;
         }
         if (fadeOut)
         {
-            whiteCrossFade.GetComponent<CanvasGroup>().alpha -= Time.deltaTime / 1;
+            player.GetComponent<Player>().whiteCrossFade.GetComponent<CanvasGroup>().alpha -= Time.deltaTime / 1;
         }
         if (turnOffMusic)
         {
@@ -78,12 +77,12 @@ public class GiantRatDead : MonoBehaviour
         player.GetComponent<Player>().Grounded = true;
         player.GetComponent<Player>().GetComponent<Animator>().SetInteger("AnimState", 0);
         amuletLight.gameObject.SetActive(false);
-        aspectRatio.GetComponent<Animator>().SetTrigger("FadeIn");
+        player.GetComponent<Player>().aspectRatio.GetComponent<Animator>().SetTrigger("FadeIn");
         yield return new WaitForSeconds(3);
         amuletLight.gameObject.SetActive(true);
         turnOnLight = true;
         yield return new WaitForSeconds(13);
-        whiteCrossFade.SetActive(true);
+        player.GetComponent<Player>().whiteCrossFade.SetActive(true);
         fadeIn = true;
         turnOnLight = false;
         yield return new WaitForSeconds(2);
@@ -99,7 +98,7 @@ public class GiantRatDead : MonoBehaviour
         fadeOut = false;
         amuletExamine.GetComponent<Rigidbody2D>().gravityScale = 0.2f;
         yield return new WaitUntil(() => amuletExamine.GetComponent<Flag>().flagged);
-        aspectRatio.GetComponent<Animator>().SetTrigger("FadeOut");
+        player.GetComponent<Player>().aspectRatio.GetComponent<Animator>().SetTrigger("FadeOut");
         amuletExamine.GetComponent<Collider2D>().isTrigger = true;
         amuletExamine.gameObject.layer = 8;
         amuletExamine.GetComponent<Rigidbody2D>().gravityScale = 0;

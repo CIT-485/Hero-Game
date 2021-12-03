@@ -9,13 +9,15 @@ public class Respawn : MonoBehaviour
     public ParticleSystem psConsist;
     public ParticleSystem psStart;
     public Light2D bonfireLight;
+    public Player player;
     private bool doneIntensity;
     private bool doneRadius;
     private bool playedOnce;
-
+    private float healTime;
     private void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
     private void Update()
     {
@@ -60,6 +62,19 @@ public class Respawn : MonoBehaviour
         {
             StartCoroutine(Bonfire());
             gm.lastRespawnPos = transform.position;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            gm.Save();
+            healTime += Time.fixedDeltaTime;
+            if (healTime > 1)
+            {
+                collision.GetComponent<Player>().healthBar.Healing(1);
+                healTime = 0;
+            }
         }
     }
     IEnumerator Bonfire()

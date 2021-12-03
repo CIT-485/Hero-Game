@@ -11,7 +11,6 @@ public class GiantRatBossTrigger : MonoBehaviour
     public GameObject   giantRatCinematic;
     public GameObject   bossMusic;
     public GameObject   bossHealthBar;
-    public GameObject   aspectRatio;
     bool turnOffMusic = false;
     void Start()
     {
@@ -43,9 +42,9 @@ public class GiantRatBossTrigger : MonoBehaviour
         followScript.cameraSpeed = 1.5f;
         player.GetComponent<Player>().body2d.velocity = Vector3.zero;
         player.GetComponent<Player>().actionAllowed = false;
-        aspectRatio.GetComponent<Animator>().SetTrigger("FadeIn");
+        player.GetComponent<Player>().aspectRatio.GetComponent<Animator>().SetTrigger("FadeIn");
         yield return new WaitForSeconds(4);
-        aspectRatio.GetComponent<Animator>().SetTrigger("FadeOut");
+        player.GetComponent<Player>().aspectRatio.GetComponent<Animator>().SetTrigger("FadeOut");
         player.GetComponent<Player>().playerCanvas.GetComponent<Animator>().SetTrigger("Show");
         followScript.objectToFollow = player.transform;
         followScript.cameraSpeed = 3f;
