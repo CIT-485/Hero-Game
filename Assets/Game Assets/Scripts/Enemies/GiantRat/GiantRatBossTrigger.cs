@@ -21,7 +21,12 @@ public class GiantRatBossTrigger : MonoBehaviour
     {
         if (turnOffMusic)
         {
-            GameObject.Find("Music").GetComponent<AudioSource>().volume -= Time.deltaTime / 33;
+            if (GameObject.Find("BGM"))
+            {
+                GameObject.Find("BGM").GetComponent<AudioSource>().volume -= Time.deltaTime / 25;
+                if (GameObject.Find("BGM").GetComponent<AudioSource>().volume < 0.001f)
+                    Destroy(GameObject.Find("BGM"));
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -53,9 +58,10 @@ public class GiantRatBossTrigger : MonoBehaviour
         Destroy(giantRat.GetComponent<Rigidbody2D>());
         player.GetComponent<Player>().actionAllowed = true;
         bossMusic.SetActive(true);
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.6f);
         bossHealthBar.SetActive(true);
         followScript.cameraSpeed = 5f;
+        bossMusic.name = "BGM";
         GameObject.Destroy(this.gameObject);
     }
 }

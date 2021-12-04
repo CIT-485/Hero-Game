@@ -20,7 +20,6 @@ MonoBehaviour:
   corruption: 0
   pointsAvailable: 0
   nextPointThreshold: 100
-  hasAmulet: 0
-  scene: 0
-  lastRespawnPos: {x: 0, y: 0}
+  scene: 1
+  lastRespawnPos: {x: -16, y: -1}
   abilityUnlocked: 000000

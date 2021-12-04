@@ -105,7 +105,7 @@ public class BanditAI : Enemy
         ReduceVelocity();
 
         // When the attack wait time is over 3 seconds, then it will decide on an attack
-        if (attackWaitTime > 3)
+        if (attackWaitTime > 1.5F)
         {
             int attackChance = Random.Range(0, 100);
             float holdTime = Random.Range(0.5f, 0.75f);
@@ -118,7 +118,7 @@ public class BanditAI : Enemy
             }
             else
                 // if it chooses not to attack, then the attack wait time is refreshed, but at a lower cooldown
-                attackWaitTime = 2f;
+                attackWaitTime = 1;
         }
         return Node.State.RUNNING;
     }
@@ -312,7 +312,7 @@ public class BanditAI : Enemy
             FixHitboxes(attackHitboxes);
         }
     }
-    void ReduceVelocity(float reducePercentage = 0.9f)
+    void ReduceVelocity(float reducePercentage = 0.6f)
     {
         rb.velocity = new Vector2(rb.velocity.x * reducePercentage, rb.velocity.y);
     }

@@ -292,7 +292,7 @@ public class SkeletonAI : Enemy
             rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
     }
 
-    void ReduceVelocity(float reducePercentage = 0.9f)
+    void ReduceVelocity(float reducePercentage = 0.6f)
     {
         rb.velocity = new Vector2(rb.velocity.x * reducePercentage, rb.velocity.y);
     }

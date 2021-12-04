@@ -16,11 +16,10 @@ MonoBehaviour:
   str: 10
   vit: 10
   agi: 10
-  currenthealth: 351
-  corruption: 0
-  pointsAvailable: 0
-  nextPointThreshold: 100
-  hasAmulet: 0
-  scene: 0
+  currenthealth: 450
+  corruption: 100
+  pointsAvailable: 1
+  nextPointThreshold: 115
+  scene: 3
   lastRespawnPos: {x: 14.01, y: -0.16}
   abilityUnlocked: 000000

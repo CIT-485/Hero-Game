@@ -85,6 +85,7 @@ public class Player : MonoBehaviour, IEntity
     private bool                    doneInvul = false;
     private bool                    guarding = false;
     private bool                    absorbing = false;
+    private bool                    stopBGM = false;
     private int                     jumpCount;
     private int                     jumpLimit = 1;
 
@@ -94,12 +95,6 @@ public class Player : MonoBehaviour, IEntity
 
     private void Awake()
     {
-    }
-    // Use this for initialization
-    void Start()
-    {
-
-        Application.targetFrameRate = 60;
         animator = GetComponent<Animator>();
         body2d = GetComponent<Rigidbody2D>();
         healthBar = GetComponent<HealthBar>();
@@ -108,19 +103,18 @@ public class Player : MonoBehaviour, IEntity
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<CollisionSensor>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<CollisionSensor>();
         corruptionCount = GameObject.Find("CorruptionCount").GetComponent<TMP_Text>();
-
+    }
+    // Use this for initialization
+    void Start()
+    {
         attackHitbox.transform.localPosition = new Vector2(0.65f, 0.85f);
         DeactivateHitboxes();
 
-
         GameMaster gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        InventorySystem invSys = GetComponent<InventorySystem>();
+        PlayerStat stats = GetComponent<PlayerStat>();
 
-        GetComponent<InventorySystem>().nextPointThreshold = gm.playerData.nextPointThreshold;
-        GetComponent<InventorySystem>().originalPointsAvailable = gm.playerData.pointsAvailable;
-        corruption = gm.playerData.corruption;
-        GetComponent<PlayerStat>().strength.BaseValue = gm.playerData.str;
-        GetComponent<PlayerStat>().vitality.BaseValue = gm.playerData.vit;
-        GetComponent<PlayerStat>().agility.BaseValue = gm.playerData.agi;
+        gm.Load();
 
         healthBar.SetMaxHealth(healthBar.baseHealth + 15 * (int)GetComponent<PlayerStat>().vitality.Value);
         if (gm.playerData.currenthealth <= 0)
@@ -471,6 +465,12 @@ public class Player : MonoBehaviour, IEntity
             actionAllowed = false;
             isDead = true;
             StartCoroutine(Dead());
+            if (GameObject.Find("BGM").GetComponent<AudioSource>())
+                stopBGM = true;
+        }
+        if (stopBGM)
+        {
+            GameObject.Find("BGM").GetComponent<AudioSource>().volume -= GameObject.Find("BGM").GetComponent<AudioSource>().volume * Time.deltaTime / 1.5f;
         }
 
         if (playFadeOutOne && deathFade.alpha < 1)
@@ -493,13 +493,18 @@ public class Player : MonoBehaviour, IEntity
         actionAllowed = false;
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(1.25f);
+        actionAllowed = false;
         audioPlayer.PlaySound("Death");
         playFadeOutOne = true;
         yield return new WaitWhile(() => deathFade.alpha < 1);
+        actionAllowed = false;
         yield return new WaitForSeconds(2f);
+        actionAllowed = false;
         crossfade.gameObject.GetComponent<Animator>().SetTrigger("FadeIn");
         yield return new WaitWhile(() => crossfade.alpha < 1);
+        actionAllowed = false;
         yield return new WaitForSeconds(0.25f);
+        actionAllowed = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -613,7 +618,8 @@ public class Player : MonoBehaviour, IEntity
         yield return new WaitForSeconds(time);
         damageFlash.SetActive(false);
         animator.SetTrigger("HurtDone");
-        actionAllowed = true;
+        if (!isDead)
+            actionAllowed = true;
         damaged = false;
     }
     IEnumerator AttackRecovery(float time)

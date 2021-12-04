@@ -301,7 +301,7 @@ public class GoblinAI : Enemy
             rb.velocity = new Vector2(-maxSpeed, rb.velocity.y);
     }
 
-    void ReduceVelocity(float reducePercentage = 0.9f)
+    void ReduceVelocity(float reducePercentage = 0.7f)
     {
         rb.velocity = new Vector2((float)(rb.velocity.x * reducePercentage), rb.velocity.y);
     }

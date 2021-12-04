@@ -135,8 +135,10 @@
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Game Assets\Scripts\DEMO.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\RNGNode.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\SetMapPosition.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\TestDelegateScript.cs" />
     <Compile Include="Assets\Game Assets\Menus\InventorySystem.cs" />
+    <Compile Include="Assets\Game Assets\ScriptableObjects\PlayerDataSO.cs" />
     <Compile Include="Assets\Game Assets\Scripts\LetterBoxer.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\AbtractNodes\CompositeNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\InvertNode.cs" />
@@ -199,8 +201,8 @@
     <Compile Include="Assets\Game Assets\Scripts\Player\LandingSensor.cs" />
     <Compile Include="Assets\Game Assets\Menus\InteractionSystem.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTreeController.cs" />
-    <Compile Include="Assets\Game Assets\ScriptableObjects\PlayerDataSO.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\SetMapPosition.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\MoveCameraStart.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\GoToSTART.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

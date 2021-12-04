@@ -65,6 +65,11 @@ public class InventorySystem : MonoBehaviour
         }
 
 
+       
+    }
+
+    private void LateUpdate()
+    {
         if (abilityImage.gameObject.activeSelf)
             if (abilityPrompt.GetComponent<Animator>().GetBool("Visible"))
             {
@@ -77,10 +82,10 @@ public class InventorySystem : MonoBehaviour
             {
                 if (player.hasAmulet)
                 {
+                    ab.image.color = new Color(255, 255, 255, 255);
                     if (!ab.unlocked)
                     {
                         ab.unlocked = true;
-                        ab.image.color = new Color(255, 255, 255, 255);
                         if (!abilityPrompt.GetComponent<Animator>().GetBool("Visible"))
                         {
                             abilityPrompt.GetComponent<Animator>().SetTrigger("Enter");
@@ -91,10 +96,10 @@ public class InventorySystem : MonoBehaviour
             }
             else if (player.corruption >= ab.prerequisiteCorruption)
             {
+                ab.image.color = new Color(255, 255, 255, 255);
                 if (!ab.unlocked)
                 {
                     ab.unlocked = true;
-                    ab.image.color = new Color(255, 255, 255, 255);
                     if (!abilityPrompt.GetComponent<Animator>().GetBool("Visible"))
                     {
                         abilityPrompt.GetComponent<Animator>().SetTrigger("Enter");
@@ -125,7 +130,7 @@ public class InventorySystem : MonoBehaviour
 
         nextPoint.text = player.corruption + "/" + nextPointThreshold;
     }
-    
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();

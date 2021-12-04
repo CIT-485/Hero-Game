@@ -61,7 +61,7 @@ public class GiantRatDead : MonoBehaviour
         }
         if (turnOffMusic)
         {
-            GameObject.Find("BosssssMusic").GetComponent<AudioSource>().volume -= Time.deltaTime / 10;
+            GameObject.Find("BGM").GetComponent<AudioSource>().volume -= Time.deltaTime / 10;
         }
     }
     IEnumerator Dead()

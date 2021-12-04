@@ -663,7 +663,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 70ee26d781890424dbd774b232ace2c9
-  position: {x: 1191.7615, y: 1222.9999}
+  position: {x: 1169, y: 1223.0001}
   blackboard:
     integers:
       keys:
@@ -702,7 +702,7 @@ MonoBehaviour:
   description: 
   keybind: Distance (Float Key)
   child: {fileID: -5875143013385074461}
-  floatValue: 5
+  floatValue: 4
   percent: 0
   stringValue: 
   vector2Value: {x: 0, y: 0}

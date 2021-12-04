@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Jeffrey/MainMenu.unity
+    guid: 082640f784d04fb45922589435796090
+  - enabled: 1
     path: Assets/Scenes/Jeffrey/Level 1.unity
     guid: e353d29308afaba41ab8b31597ab31d3
   - enabled: 1

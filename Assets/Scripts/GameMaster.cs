@@ -11,7 +11,8 @@ public class GameMaster : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        Application.targetFrameRate = 60;
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(instance);
@@ -21,7 +22,26 @@ public class GameMaster : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    public void Load()
+    {
+        if (SceneManager.GetActiveScene().buildIndex != playerData.scene)
+            SceneManager.LoadScene(playerData.scene);
+        else
+        {
+            Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            PlayerStat playerStat = player.GetComponent<PlayerStat>();
+            InventorySystem playerInv = player.GetComponent<InventorySystem>();
+            playerInv.nextPointThreshold = playerData.nextPointThreshold;
+            playerInv.originalPointsAvailable = playerData.pointsAvailable;
+            player.corruption = playerData.corruption;
+            playerStat.strength.BaseValue = playerData.str;
+            playerStat.vitality.BaseValue = playerData.vit;
+            playerStat.agility.BaseValue = playerData.agi;
+            player.transform.position = playerData.lastRespawnPos;
+            for (int i = 0; i < playerData.abilityUnlocked.Count; i++)
+                playerInv.abilities[i].unlocked = playerData.abilityUnlocked[i];
+        }
+    }
     public void Save()
     {
         Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
