@@ -44,14 +44,15 @@ public class MainMenu : MonoBehaviour
     {
         fade = true;
         yield return new WaitWhile(() => crossfade.GetComponent<CanvasGroup>().alpha < 1);
-        GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>().playerData.Reset();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>().Reset();
+        GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>().SaveWithoutPlayer();
+        SceneManager.LoadScene(1);
     }
     IEnumerator ContinueGame()
     {
         fade = true;
         yield return new WaitWhile(() => crossfade.GetComponent<CanvasGroup>().alpha < 1);
-        GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>().Load();
         SceneManager.LoadScene(GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>().playerData.scene);
     }
 }

@@ -43,9 +43,11 @@ public class HealthBar : MonoBehaviour
     }
     public void SetMaxHealth(int value)
     {
+        float oldMaxHealth = maxHealth;
         maxHealth = value;
         healthBarUI.SetMaxHealth(maxHealth);
-        float difference = Mathf.Abs(currentHealth - maxHealth * (currentHealth / maxHealth));
+        float newCurrentHealth = (float)maxHealth * currentHealth / oldMaxHealth;
+        float difference = Mathf.Abs(newCurrentHealth - currentHealth);
         Healing((int)difference);
     }
 }

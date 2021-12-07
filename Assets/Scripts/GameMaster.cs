@@ -8,7 +8,6 @@ public class GameMaster : MonoBehaviour
     public PlayerDataSO playerData;
     private static GameMaster instance;
     public Vector2 lastRespawnPos;
-
     private void Awake()
     {
         Application.targetFrameRate = 60;
@@ -22,8 +21,15 @@ public class GameMaster : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void Reset()
+    {
+        playerData.Reset();
+        lastRespawnPos = playerData.lastRespawnPos;
+    }
     public void Load()
     {
+        SaveSystem.LoadData(playerData);
+        lastRespawnPos = playerData.lastRespawnPos;
         if (SceneManager.GetActiveScene().buildIndex != playerData.scene)
             SceneManager.LoadScene(playerData.scene);
         else
@@ -42,6 +48,10 @@ public class GameMaster : MonoBehaviour
                 playerInv.abilities[i].unlocked = playerData.abilityUnlocked[i];
         }
     }
+    public void SaveWithoutPlayer()
+    {
+        SaveSystem.SaveData(playerData);
+    }
     public void Save()
     {
         Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -59,5 +69,6 @@ public class GameMaster : MonoBehaviour
         List<AbilitySlot> abList = player.GetComponent<InventorySystem>().abilities;
         for (int i = 0; i < abList.Count; i++)
             playerData.abilityUnlocked[i] = abList[i].unlocked;
+        SaveSystem.SaveData(playerData);
     }
 }

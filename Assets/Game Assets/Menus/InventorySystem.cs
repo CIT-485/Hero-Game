@@ -48,15 +48,18 @@ public class InventorySystem : MonoBehaviour
         {
             ToggleInventory();
         }
-        if (isOpen)
+        if (GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>())
         {
-            cam.targetZoom = 3;
-            cam.positionOffset = new Vector2(3.5f, 1);
-        }
-        else
-        {
-            cam.targetZoom = 5;
-            cam.positionOffset = new Vector2(0, 2);
+            if (isOpen)
+            {
+                cam.targetZoom = 3;
+                cam.positionOffset = new Vector2(3.5f, 1);
+            }
+            else
+            {
+                cam.targetZoom = cam.originalTargetZoom;
+                cam.positionOffset = cam.originalPositonalOffset;
+            }
         }
         if (player.IsDead || !player.actionAllowed)
         {
@@ -213,13 +216,14 @@ public class InventorySystem : MonoBehaviour
     {
         if (pointsAvailable != originalPointsAvailable)
         {
-            if (stat.vitality.BaseValue != stats[1].number)
-                player.healthBar.SetMaxHealth(player.healthBar.baseHealth + 15 * (int)GetComponent<PlayerStat>().vitality.Value);
-
             stat.strength.BaseValue += Mathf.Abs(stats[0].number - unmodifiedStats[0]);
             stat.vitality.BaseValue += Mathf.Abs(stats[1].number - unmodifiedStats[1]);
             stat.agility.BaseValue += Mathf.Abs(stats[2].number - unmodifiedStats[2]);
             originalPointsAvailable = pointsAvailable;
+
+
+            if (stat.vitality.BaseValue != unmodifiedStats[1])
+                player.healthBar.SetMaxHealth(player.healthBar.baseHealth + 15 * (int)GetComponent<PlayerStat>().vitality.Value);
 
             unmodifiedStats[0] = (int)stat.strength.Value;
             unmodifiedStats[1] = (int)stat.vitality.Value;
@@ -241,7 +245,8 @@ public class InventorySystem : MonoBehaviour
         // Show the elements
         descriptionImage.gameObject.SetActive(true);
         descriptionTitle.gameObject.SetActive(true);
-        descriptionText.gameObject.SetActive(true);    }
+        descriptionText.gameObject.SetActive(true);
+    }
     public void ShowAbility(int id)
     {
         // Set the image

@@ -12,6 +12,8 @@ public class GiantRatDead : MonoBehaviour
     public GameObject       amuletExamine;
     public GameObject       aspectRatio;
     public GameObject       exit;
+    public AudioSource      rumble;
+    public AudioSource      zoop;
     Camera                  m_cam;
     GameObject              player;
     bool                    turnOffMusic = false;
@@ -77,6 +79,7 @@ public class GiantRatDead : MonoBehaviour
         player.GetComponent<Player>().Grounded = true;
         player.GetComponent<Player>().GetComponent<Animator>().SetInteger("AnimState", 0);
         amuletLight.gameObject.SetActive(false);
+        rumble.Play();
         player.GetComponent<Player>().aspectRatio.GetComponent<Animator>().SetTrigger("FadeIn");
         yield return new WaitForSeconds(3);
         amuletLight.gameObject.SetActive(true);
@@ -85,6 +88,7 @@ public class GiantRatDead : MonoBehaviour
         player.GetComponent<Player>().whiteCrossFade.SetActive(true);
         fadeIn = true;
         turnOnLight = false;
+        zoop.Play();
         yield return new WaitForSeconds(2);
         foreach (GameObject g in lightPrefabs)
             Destroy(g);

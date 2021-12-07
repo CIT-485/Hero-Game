@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+
+[System.Serializable] [CreateAssetMenu]
 public class PlayerDataSO : ScriptableObject
 {
     public PlayerDataSO baseData;
@@ -33,6 +34,19 @@ public class PlayerDataSO : ScriptableObject
         nextPointThreshold = other.nextPointThreshold;
         scene = other.scene;
         lastRespawnPos = other.lastRespawnPos;
+        abilityUnlocked = other.abilityUnlocked;
+    }
+    public void Copy(FileData other)
+    {
+        str = other.str;
+        vit = other.vit;
+        agi = other.agi;
+        currenthealth = other.currenthealth;
+        corruption = other.corruption;
+        pointsAvailable = other.pointsAvailable;
+        nextPointThreshold = other.nextPointThreshold;
+        scene = other.scene;
+        lastRespawnPos = new Vector2(other.lastRespawnPosX, other.lastRespawnPosY);
         abilityUnlocked = other.abilityUnlocked;
     }
 }

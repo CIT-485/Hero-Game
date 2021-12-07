@@ -10,6 +10,8 @@ public class CameraFollowObject : MonoBehaviour
     public float cameraSpeed = 5;
     public float zoomSpeed = 5;
     public float targetZoom = 5;
+    [HideInInspector] public Vector2 originalPositonalOffset;
+    [HideInInspector] public float originalTargetZoom;
 
     public List<ShakeEvent> shakeEvents = new List<ShakeEvent>();
     public List<ShakeEvent> removeFromShakeEvents = new List<ShakeEvent>();
@@ -41,6 +43,8 @@ public class CameraFollowObject : MonoBehaviour
     private void Start()
     {
         cam = GetComponent<Camera>();
+        originalTargetZoom = targetZoom;
+        originalPositonalOffset = positionOffset;
     }
 
     void FixedUpdate()

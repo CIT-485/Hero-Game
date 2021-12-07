@@ -916,10 +916,10 @@ MonoBehaviour:
   damageFlash: {fileID: 8566834781715442054}
   healtBarCanvas: {fileID: 513248566262059150}
   xReposRange: 3
-  xStartAggroRange: 8
-  xEndAggroRange: 10
-  yStartAggroRange: 4
-  yEndAggroRange: 6
+  xStartAggroRange: 13
+  xEndAggroRange: 15
+  yStartAggroRange: 5
+  yEndAggroRange: 7
   acceleration: 4
   maxSpeed: 2
   jumpForce: 5

@@ -127,7 +127,7 @@ public class BanditArcherAI : Enemy
         if (attackWaitTime > 2f)
         {
             int attackChance = Random.Range(0, 100);
-            float holdTime = Random.Range(0.5f, 0.75f);
+            float holdTime = Random.Range(1, 1.5f);
             if (attackChance < 85)
             {
                 // it will have a 85% chance of performing an attack after which the attack wait time is refreshed back to zero 

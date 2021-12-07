@@ -40,9 +40,10 @@ public class TransitionToNextScene : MonoBehaviour
         GameMaster gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         gm.playerData.lastRespawnPos = nextMapStartingPosition;
         gm.lastRespawnPos = nextMapStartingPosition;
-        gm.playerData.currenthealth = 9999;
+        gm.playerData.currenthealth = player.healthBar.maxHealth;
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         gm.playerData.scene = nextSceneIndex;
+        gm.Save();
         SceneManager.LoadScene(nextSceneIndex);
     }
 }

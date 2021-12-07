@@ -66,6 +66,7 @@
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\DelegateNode.cs" />
     <Compile Include="Assets\Game Assets\Menus\MainMenu.cs" />
     <Compile Include="Assets\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\GoToSTART.cs" />
     <Compile Include="Assets\Scripts\XP_Bar.cs" />
     <Compile Include="Assets\Scripts\Respawn.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\DestroyParticleWhenStop.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\DecoratorNodes\SuccessNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Player\CollisionSensor.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\SaveSystem\SaveSystem.cs" />
     <Compile Include="Assets\Game Assets\Monsters Creatures Fantasy\Scripts\EnemyFollow.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Flag.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\ActionNodes\SetValueNode.cs" />
     <Compile Include="Assets\Game Assets\Menus\OptionsMenu.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\MoveCameraStart.cs" />
     <Compile Include="Assets\SoulsMovement.cs" />
     <Compile Include="Assets\Bandits - Pixel Art\Demo\Sensor_Bandit.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRatBossTrigger.cs" />
@@ -178,6 +181,7 @@
     <Compile Include="Assets\Game Assets\Scripts\Enemies\Bandit\BanditTest.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\DerivativeNodes\RootNode.cs" />
     <Compile Include="Assets\Game Assets\Scripts\Enemies\GiantRat\GiantRatDead.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\SaveSystem\FileData.cs" />
     <Compile Include="Assets\UITabs\scripts\TabButtonUI.cs" />
     <Compile Include="Assets\Text\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\Game Assets\Scripts\SoundDestroyWhenFinished.cs" />
@@ -201,8 +205,7 @@
     <Compile Include="Assets\Game Assets\Scripts\Player\LandingSensor.cs" />
     <Compile Include="Assets\Game Assets\Menus\InteractionSystem.cs" />
     <Compile Include="Assets\Game Assets\Scripts\BehaviourTree\BehaviourTreeController.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\MoveCameraStart.cs" />
-    <Compile Include="Assets\Game Assets\Scripts\GoToSTART.cs" />
+    <Compile Include="Assets\Game Assets\Scripts\Enemies\BanditDemoAI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

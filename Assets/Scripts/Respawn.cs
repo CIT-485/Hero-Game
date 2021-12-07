@@ -69,7 +69,7 @@ public class Respawn : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             gm.Save();
-            healTime += Time.fixedDeltaTime;
+            healTime += Time.deltaTime;
             if (healTime > 1)
             {
                 collision.GetComponent<Player>().healthBar.Healing(1);
@@ -80,7 +80,7 @@ public class Respawn : MonoBehaviour
     IEnumerator Bonfire()
     {
         psStart.gameObject.SetActive(true);
-        if (!playedOnce)
+        if (!psStart.isPlaying)
             psStart.Play();
         bonfireLight.enabled = true;
         playedOnce = true;
