@@ -18,7 +18,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 2910c7d573c47c5448d7aac0365a6201
-  position: {x: 47.3861, y: 726.4889}
+  position: {x: 120.00002, y: 729.0001}
   blackboard:
     integers:
       keys:
@@ -47,8 +47,8 @@ MonoBehaviour:
   description: 
   keybind: 
   children:
-  - {fileID: 8492643818818686061}
   - {fileID: -4059125508125157837}
+  - {fileID: 8492643818818686061}
 --- !u!114 &-6175317472868031235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 59fb5def9d07849458ff1d01bdb3ea5d
-  position: {x: 409.36395, y: 729.4889}
+  position: {x: 435.99997, y: 729}
   blackboard:
     integers:
       keys:
@@ -157,7 +157,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: d20d7f293ecadef419c5451659cb0cdb
-  position: {x: 1015.70465, y: 1040.0231}
+  position: {x: 910, y: 1016}
   blackboard:
     integers:
       keys:
@@ -276,7 +276,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 2edd8d53e0f9a53428f23c0d0360786d
-  position: {x: 689.03406, y: 1008.1475}
+  position: {x: 594, y: 1016}
   blackboard:
     integers:
       keys:
@@ -359,7 +359,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: dc499a6b7a6413a4badbb75b1d5e5ba6
-  position: {x: 696.0801, y: 856.21625}
+  position: {x: 752, y: 880}
   blackboard:
     integers:
       keys:
@@ -409,7 +409,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 813870ba66d095345bbd632dc310d186
-  position: {x: 302, y: 147}
+  position: {x: 278, y: 140}
   blackboard:
     integers:
       keys:
@@ -466,7 +466,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 9261016e5cacf9b49a58933a8cc4642c
-  position: {x: 300, y: 292}
+  position: {x: 278, y: 285}
   blackboard:
     integers:
       keys:
@@ -546,7 +546,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 61c27062767bef746a238abd40a6ba67
-  position: {x: 690.10223, y: 1184.9316}
+  position: {x: 594, y: 1178}
   blackboard:
     integers:
       keys:
@@ -596,7 +596,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: fcc403d371ca3d1419010cac6521a1ea
-  position: {x: 177.40884, y: 590.69324}
+  position: {x: 120.00002, y: 582.0001}
   blackboard:
     integers:
       keys:
@@ -739,7 +739,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 94f33f8e15902254c9a4a6e60ffe6115
-  position: {x: 407.3753, y: 878.13684}
+  position: {x: 435.99997, y: 880}
   blackboard:
     integers:
       keys:
@@ -835,7 +835,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: ddb1d7b4a6449de43bfcf626daadc9d0
-  position: {x: 407.28445, y: 581.6706}
+  position: {x: 594, y: 582}
   blackboard:
     integers:
       keys:
@@ -887,7 +887,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: f21cabfc0ad458d488313280b4497550
-  position: {x: 685.01184, y: 729.4889}
+  position: {x: 752, y: 729}
   blackboard:
     integers:
       keys:
@@ -970,7 +970,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 6d9d6317bb863b3419ee8f0512b0385e
-  position: {x: 300.36, y: 4.959984}
+  position: {x: 278, y: -8.520004}
   blackboard:
     integers:
       keys:
@@ -1021,7 +1021,7 @@ MonoBehaviour:
   started: 0
   doneOnce: 0
   guid: 291b557262851974f9785045d837cdd2
-  position: {x: 149.04544, y: 885.5342}
+  position: {x: 277.99997, y: 880}
   blackboard:
     integers:
       keys:

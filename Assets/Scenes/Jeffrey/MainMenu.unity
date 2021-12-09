@@ -2132,6 +2132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68de9496838eea4cab1fa66cc0608e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
 --- !u!50 &1647445614
 Rigidbody2D:
   serializedVersion: 4
@@ -3820,6 +3821,8 @@ MonoBehaviour:
   cameraSpeed: 5
   zoomSpeed: 5
   targetZoom: 7
+  originalPositonalOffset: {x: 0, y: 0}
+  originalTargetZoom: 0
 --- !u!114 &7871270628960953898
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp-Editor.dll:
+    - BehaviourTreeEditor
     Assembly-CSharp.dll:
     - AbilitySlot
     - AnimationNode
@@ -84,7 +86,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -145,10 +146,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -2157,12 +2156,6 @@ ScriptsOnlyBuild:
     className: RNGNode
   - hash:
       serializedVersion: 2
-      Hash: 3bc22060590b40485c480795835b51d0
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SetMapPosition
-  - hash:
-      serializedVersion: 2
       Hash: ffb7f57d61d46ff43d2afc903afbc25c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -2391,7 +2384,7 @@ ScriptsOnlyBuild:
     className: ItemConsume
   - hash:
       serializedVersion: 2
-      Hash: bc0938bc762d9654aaabcfc5c620dd86
+      Hash: ea69b23f4e9878c7774dbd272f3fb50c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player

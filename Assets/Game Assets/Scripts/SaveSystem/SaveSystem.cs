@@ -17,6 +17,8 @@ public static class SaveSystem
 
         data.Copy(playerData);
 
+        Debug.Log("NANI");
+
         formatter.Serialize(stream, data);
         stream.Close();
     }

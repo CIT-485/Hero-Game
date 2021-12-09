@@ -87,7 +87,8 @@ public class Player : MonoBehaviour, IEntity
     private bool                    absorbing = false;
     private bool                    stopBGM = false;
     private int                     jumpCount;
-    private int                     jumpLimit = 1;
+    public   int                     jumpLimit = 1;
+    public GameMaster              gm;
 
     public bool Grounded { get => grounded; set => grounded = value; }
     public bool IsDead { get => isDead; set => isDead = value; }
@@ -103,19 +104,14 @@ public class Player : MonoBehaviour, IEntity
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<CollisionSensor>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<CollisionSensor>();
         corruptionCount = GameObject.Find("CorruptionCount").GetComponent<TMP_Text>();
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
     }
     // Use this for initialization
     void Start()
     {
         attackHitbox.transform.localPosition = new Vector2(0.65f, 0.85f);
         DeactivateHitboxes();
-
-        GameMaster gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
-        InventorySystem invSys = GetComponent<InventorySystem>();
-        PlayerStat stats = GetComponent<PlayerStat>();
-
         gm.Load();
-
         healthBar.SetMaxHealth(healthBar.baseHealth + 15 * (int)GetComponent<PlayerStat>().vitality.Value);
         if (gm.playerData.currenthealth <= 0)
             gm.playerData.currenthealth = 1;

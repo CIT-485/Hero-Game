@@ -1,0 +1,653 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8926627613053316335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86724d461d7f0894d866d96a1aaf1995, type: 3}
+  m_Name: DelegateNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 27d6b11271c50374c8542510ac162a39
+  position: {x: 0.000061035156, y: 472.65012}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  prevCount: 0
+--- !u!114 &-8034609044022832717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a421da979939b4c89201ffd6181c69, type: 3}
+  m_Name: FailureNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 21583706654325248985c658712acc95
+  position: {x: 560, y: 121.99999}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  child: {fileID: 0}
+--- !u!114 &-4249258371044633251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0b1a9cc6c0fed448ee6376966fc7e5, type: 3}
+  m_Name: ArithmeticNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 19b996a6111eb934a800aebcb9a508ed
+  position: {x: 186.00002, y: 376}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  getBlackboardKey: 0
+  enteredValue: 0
+  operandOne: 
+  operandTwo: Time.deltaTime (secs)
+  resultName: 
+  operandOneIndex: 0
+  operandOneCount: 0
+  operandOneInt: 0
+  operandOneFloat: 0
+  operandOneUseInt: 0
+  operandOneList: []
+  operatorIndex: 0
+  operatorList: []
+  operandTwoIndex: 0
+  operandTwoCount: 1
+  operandTwoInt: 0
+  operandTwoFloat: 0
+  operandTwoUseInt: 0
+  operandTwoList:
+  - Time.deltaTime (secs)
+  resultIndex: 0
+  resultCount: 0
+  result: 0
+  resultList: []
+  finishState: 2
+--- !u!114 &-2214162330336285141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c427805784625b0458d967be27b4cf2c, type: 3}
+  m_Name: ConditionNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 7b1362e6830a70c4889f4c67fb0262d0
+  position: {x: 0.0000076293945, y: 121.90001}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  child: {fileID: 0}
+  floatValue: 0
+  percent: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  prevCount: 0
+  prevIndex: 0
+  keybindFloat: 0
+  keybindString: 
+  keybindVector2: {x: 0, y: 0}
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  operatorIndex: 0
+  operatorList:
+  - ==
+  - '!='
+  - <
+  - <=
+  - '>'
+  - '>='
+  compareIndex: 0
+  compareName: 
+  compareCount: 0
+  compareFloat: 0
+  compareString: 
+  compareVector2: {x: 0, y: 0}
+  compareList: []
+  compareWithBlackboardKey: 0
+  comparePercent: 0
+  chosenKeybind:
+  - 
+  - 
+  chosenCompare: []
+--- !u!114 &-1525834229863499301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9c09a170e57d34ab622867e811d627, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 8704f1470c08aaf4f9b38d0f7473a8bf
+  position: {x: 374.00006, y: 122}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  child: {fileID: 0}
+  loopInfinitely: 1
+  loopCount: 0
+  count: 0
+  prevCountForState: 0
+  enableKeyloop: 0
+  keybindName: 
+  prevCount: 0
+--- !u!114 &-1499698765279517024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf13466e578e37428a1cc80f48a9de1, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: f16638205afd938438cd1e8541e811d8
+  position: {x: 0, y: 244}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  children: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12410d90be1daa2499cac6d907a2966f, type: 3}
+  m_Name: New Behaviour Tree
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 484262059114078033}
+  treeState: 0
+  nodes:
+  - {fileID: 484262059114078033}
+  - {fileID: -2214162330336285141}
+  - {fileID: -1499698765279517024}
+  - {fileID: 245827371084038647}
+  - {fileID: 1295118252192846075}
+  - {fileID: -4249258371044633251}
+  - {fileID: 2095441726438710110}
+  - {fileID: 2762932575172876058}
+  - {fileID: 3441625006054619875}
+  - {fileID: -1525834229863499301}
+  - {fileID: -8926627613053316335}
+  - {fileID: -8034609044022832717}
+  - {fileID: 2107776086365408346}
+  - {fileID: 1598382662531296876}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+--- !u!114 &245827371084038647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00396856abcacff4d9355509f09b8ef1, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 52a3352bfe58e804f8b6c057ef0e3143
+  position: {x: 186, y: 244}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  children: []
+--- !u!114 &484262059114078033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c39224472027243944779d9551c164, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 43b3a8fa395c5a84d994bdc0c44babd1
+  position: {x: 0, y: 0}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  child: {fileID: 0}
+--- !u!114 &1295118252192846075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daeeb086b2ba8df4dbbb2cb1afda4442, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: e9243a5de2b503d4eaa4bde5f2ef737e
+  position: {x: -0.000011444092, y: 375.70007}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  message: 
+  prevCount: 0
+  enableKey: 0
+--- !u!114 &1598382662531296876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3163354489701f4181337625114711a, type: 3}
+  m_Name: InvertNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: b9594ed8a8376474989ba78360cb0015
+  position: {x: 941.06964, y: 121.999954}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  child: {fileID: 0}
+--- !u!114 &2095441726438710110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd12a5c57aa821b4780ea10eff8a9eb1, type: 3}
+  m_Name: SetValueNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 33a614e46c757b14daa4ef8a54d70d08
+  position: {x: 374.2, y: 376.00006}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  intValue: 0
+  floatValue: 0
+  boolValue: 0
+  stringValue: 
+  vector2Value: {x: 0, y: 0}
+  objValue: {fileID: 0}
+  prevIndex: 0
+  prevCount: 0
+  boolIndex: 0
+  boolList:
+  - True
+  - False
+  newIndex: 0
+  newList: []
+  invert: 0
+  useBlackboardKey: 0
+  chosenKeybind:
+  - 
+  - 
+  chosenNew: []
+--- !u!114 &2107776086365408346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847151b3b863c4d4b91087fe80878daa, type: 3}
+  m_Name: SuccessNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: e76ba7cdb1696ce48bdc10b5838cfa8a
+  position: {x: 750.4721, y: 122}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  child: {fileID: 0}
+--- !u!114 &2762932575172876058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67b30722d3ecc047ad873caf36c4e2f, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: 639e43d865ec08d46911c191c494a1be
+  position: {x: 559.8002, y: 376.00006}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  duration: 1
+  enableKey: 0
+  prevCount: 0
+  keybindName: 
+--- !u!114 &3441625006054619875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3163354489701f4181337625114711a, type: 3}
+  m_Name: InvertNode
+  m_EditorClassIdentifier: 
+  state: 0
+  index: 0
+  keybinds: []
+  started: 0
+  doneOnce: 0
+  guid: ab6b2e9ef1892ce498845d8c0370b4c5
+  position: {x: 186, y: 122}
+  blackboard:
+    integers:
+      keys: []
+    floats:
+      keys: []
+    strings:
+      keys: []
+    booleans:
+      keys: []
+    vector2s:
+      keys: []
+    gameObjects:
+      keys: []
+    delegates:
+      keys: []
+  description: 
+  keybind: 
+  child: {fileID: 0}

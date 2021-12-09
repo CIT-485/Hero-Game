@@ -38,12 +38,13 @@ public class TransitionToNextScene : MonoBehaviour
         fadeBGM = true;
         yield return new WaitForSeconds(4f);
         GameMaster gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        gm.Save();
         gm.playerData.lastRespawnPos = nextMapStartingPosition;
         gm.lastRespawnPos = nextMapStartingPosition;
         gm.playerData.currenthealth = player.healthBar.maxHealth;
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         gm.playerData.scene = nextSceneIndex;
-        gm.Save();
+        gm.SaveWithoutPlayer();
         SceneManager.LoadScene(nextSceneIndex);
     }
 }

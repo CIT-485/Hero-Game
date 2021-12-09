@@ -21,6 +21,27 @@ public class GameMaster : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            if (GameObject.FindGameObjectWithTag("Player"))
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>().strength.BaseValue = 1000;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStat>().agility.BaseValue = 300;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().jumpForce = 15;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().jumpLimit = 15;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            Load();
+        }
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            Save();
+        }
+    }
     public void Reset()
     {
         playerData.Reset();
@@ -34,6 +55,7 @@ public class GameMaster : MonoBehaviour
             SceneManager.LoadScene(playerData.scene);
         else
         {
+            Debug.Log("Load Player data");
             Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             PlayerStat playerStat = player.GetComponent<PlayerStat>();
             InventorySystem playerInv = player.GetComponent<InventorySystem>();
